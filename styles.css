@@ -113,3 +113,12 @@ html {
     height: auto; /* This ensures the aspect ratio is maintained */
     /* Add any other styling properties you want */
 }
+
+.phone-number {
+    padding: 5px 10px; /* Add padding to create space around the phone number */
+    border: 2px solid #e7e3e2; /* Add a solid border around the phone number */
+    border-radius: 5px; /* Add border radius to make the corners rounded */
+    background-color: #ffb700; /* Add background color to the phone number */
+    color: #000; /* Set the text color */
+    font-weight: bold; /* Optionally, make the text bold */
+}
