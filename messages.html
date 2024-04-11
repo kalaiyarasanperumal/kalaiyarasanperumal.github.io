@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalai's Inbox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Kalai's Inbox</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="selected"><a href="messages.html">Messages</a></li>
+                    <!-- Add other navigation links if needed -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="background">
+        <div class="container" id="message-list">
+            <!-- Messages will be appended here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Copyright ©️ 2024 | Kalaiyarsan Perumal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to fetch messages and append them to message-list div
+            function fetchMessages() {
+                $.get('/get-messages', function(messages) {
+                    $('#message-list').empty(); // Clear previous messages
+                    messages.forEach(function(message) {
+                        $('#message-list').append('<div class="message">' + message.content + '</div>');
+                    });
+                });
+            }
+    
+            // Call fetchMessages function when the page loads
+            fetchMessages();
+        });
+    </script>
+</body>
+
+</html>

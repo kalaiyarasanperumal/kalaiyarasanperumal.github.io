@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Website Created by Kalaiyarsan</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script>
+        $(document).ready(function() {
+            // Function to fetch messages and append them to chat-messages div
+            function fetchMessages() {
+                $.get('/get-messages', function(messages) {
+                    $('#chat-messages').empty(); // Clear previous messages
+                    messages.forEach(function(message) {
+                        $('#chat-messages').append('<div class="message">' + message.content + '</div>');
+                    });
+                });
+            }
 
+            // Call fetchMessages function when the page loads
+            fetchMessages();
+
+            // Function to send message
+            function sendMessage() {
+                var message = $('#user-input').val();
+                $.post('/store-message', { message: message }, function() {
+                    fetchMessages(); // After sending message, fetch and display updated messages
+                    $('#send-feedback').text('Message sent successfully!'); // Update send feedback message
+                    $('#green-banner').fadeIn(); // Show green banner
+                    setTimeout(function() {
+                        $('#send-feedback').text(''); // Clear send feedback message after a delay
+                        $('#green-banner').fadeOut(); // Hide green banner after a delay
+                    }, 3000); // Adjust the delay (in milliseconds) as needed
+                });
+                $('#user-input').val(''); // Clear input field after sending
+            }
+
+            // Click event listener for send button
+            $('#send-btn').click(function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                sendMessage(); // Call sendMessage function
+            });
+
+            // Keypress event listener for input field
+            $('#user-input').keypress(function(event) {
+                if (event.which == 13) { // Enter key pressed
+                    event.preventDefault(); // Prevent the default form submission behavior
+                    sendMessage(); // Call sendMessage function
+                }
+            });
+        });
+    </script>
 </head>
-
 <body>
     <header>
         <div class="container">
-            <img src="profile-photo.jpeg" alt="Your Logo" class="logo">
-            <h1>Welcome to My Website</h1>
+            <img src="images/profile-photo.jpeg" alt="Your Logo" class="logo">
+            <h1>Kalai's Website</h1>
             <nav>
-
                 <ul>
                     <li class="selected"><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li class="button-li">
-                        <a href="tel:9042650727">
-                            <span class="phone-number">+91-9042650727</span>
+                    <!-- <li class="button-li">
+                        <a href="tel:9342424899">
+                            <span class="phone-number">+91-9342424899</span>
                         </a>
-                    </li>
-
+                    </li> -->
                 </ul>
             </nav>
         </div>
@@ -35,21 +76,35 @@
     <section class="background">
         <div class="container">
             <div class="chat-container">
-                <div id="chat-messages"></div>
-                <input type="text" id="user-input" placeholder="Type your message...">
-                <button id="send-btn">Send</button>
+                <div id="chat-messages"></div> <!-- This div will display chat messages -->
+                <input type="text" id="user-input" placeholder="Type your message..."> <!-- Input field for user's message -->
+                <button id="send-btn">Send</button> <!-- Button to send the message -->
+                <div id="send-feedback" class="send-feedback"></div> <!-- Element to display feedback after sending a message -->
             </div>
         </div>
+        <div id="green-banner" class="green-banner" style="display:none;">Message sent successfully!</div> <!-- Green banner element for displaying success message -->
+        <li><a href="messages.html">Kalai's Inbox</a></li> <!-- Remove the link to messages.html -->
     </section>
+
+
+    <section id="contact" class="section">
+        <!-- <h2>Contact Us</h2>
+        <p><strong>Address:</strong> Harur, Dharmapuri, TamilNadu 636903</p>
+        <p><strong>Phone:</strong> +91-9342424899</p>
+        <p><strong>Email:</strong> kalaiyarasansdet6@gmail.com</p> -->
+        <div class="button-container">
+            <a href="https://www.linkedin.com" class="button" target="_blank">Linkedin</a>
+            <a href="https://github.com/kalai625" class="button" target="_blank">GitHub</a>
+            <a href="https://kalai625.github.io/" class="button" target="_blank">Website</a>
+        </div>
+    </section>
+
+
 
     <footer>
         <div class="container">
             <p>&copy; Copyright ©️ 2024 | Kalaiyarsan Perumal. All Rights Reserved..</p>
         </div>
     </footer>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- <script src="script.js"></script> -->
 </body>
-
 </html>

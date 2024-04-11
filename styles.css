@@ -5,28 +5,28 @@ html, body, h1, h2, h3, p, ul, li {
 }
 
 /* Basic styles */
-/* body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f7f7f7;
-    color: #333333;
+body {
     background-image: url('background-image.jpg');
     background-size: cover;
     background-position: center;
-} */
-
-body {
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Set the height of the body to 100% of the viewport height */
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    font-size: 16px; /* Adjust the font size as needed */
+    line-height: 1.5; /* Adjust the line height as needed */
+    color: #333; /* Set text color */
 }
+
+
+
 
 
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 header {
@@ -88,7 +88,7 @@ nav ul li a {
 
 #user-input {
     flex: 1;
-    margin-right: 10px;
+    margin-right: 50px;
 }
 
 #send-btn {
@@ -102,9 +102,10 @@ nav ul li a {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 1px;
+    padding: 0px;
     text-align: center;
-    margin-top: 270px;
+    flex-shrink: 0;
+    margin-top: auto;
 }
 
 /* Smooth scrolling behavior */
@@ -169,31 +170,16 @@ html {
 
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: #333;
     color: #fff;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-    margin-right: 20px;
-}
-
-h1 {
-    font-size: 24px;
+    padding: 20px 0;
 }
 
 nav ul {
@@ -208,34 +194,54 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #ffc107; /* Change the color on hover */
 }
 
-.phone-number {
-    padding: 5px 10px;
-    border: 2px solid #ffc107; /* Yellow border */
-    border-radius: 5px;
+.main {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
     background-color: #333;
-    color: #ffc107; /* Yellow text */
-    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 
-.selected {
-    position: relative;
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 
-.selected::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #ffc107; /* Yellow underline */
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
