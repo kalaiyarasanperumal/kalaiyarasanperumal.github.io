@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalai's Inbox</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/inbox-email-icon-white_116137-5901.avif" type="image/x-icon">
 </head>
 
 <body>
@@ -24,9 +25,46 @@
 
     <section class="background">
         <div class="container" id="message-list">
-            <!-- Messages will be appended here -->
+            <!-- Table to display messages -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th> 
+                    </tr>
+                    <tr>
+                        <th>Message</th> 
+                    </tr>
+          
+                </thead>
+                <tbody>
+                  <!-- Messages will be appended here -->
+                </tbody>
+            </table>
         </div>
     </section>
+
+
+    <section id="contact" class="section">
+        <!-- <h2>Contact Us</h2> -->
+        <!-- <p><strong>Address:</strong> Harur, Dharmapuri, TamilNadu 636903</p>
+        <p><strong>Phone:</strong> +91-9342424899</p>
+        <p><strong>Email:</strong> kalaiyarasansdet6@gmail.com</p> -->
+        <div class="button-container">
+            <a href="https://medium.com/@kalaiyarasan61097/test-automation-playwright-javascript-in-jenkins-ci-cd-pipelines-with-cucumber-html-reports-9e0dcd208ea1">
+                <img src="images/Blog_pic-1030x584.png" class="button"  alt="Blog" width="45" height="25">
+            </a>
+            <a href="https://github.com/kalai625">
+                <img src="images/imageGitHub.png" class="button"  alt="github" width="45" height="25">
+            </a>
+            <a href="https://www.linkedin.com/">
+                <img src="images/linkinedin.png" class="button"  alt="LinkedIn" width="45" height="25">
+            </a>
+            <a href="https://wa.me/9342424899">
+                <img src="images/WhatsApp.svg.webp" alt="WhatsApp" class="button" width="45" height="25">
+            </a>
+        </div>
+    </section>
+
 
     <footer>
         <div class="container">
@@ -40,9 +78,10 @@
             // Function to fetch messages and append them to message-list div
             function fetchMessages() {
                 $.get('/get-messages', function(messages) {
-                    $('#message-list').empty(); // Clear previous messages
+                    $('#message-list tbody').empty(); // Clear previous messages
                     messages.forEach(function(message) {
-                        $('#message-list').append('<div class="message">' + message.content + '</div>');
+                        // Append each message as a row in the table
+                        $('#message-list tbody').append('<tr><td>' + message.name + '</td><td>' + message.content + '</td></tr>');
                     });
                 });
             }
@@ -50,7 +89,11 @@
             // Call fetchMessages function when the page loads
             fetchMessages();
         });
+
+        
     </script>
+
+    
 </body>
 
 </html>

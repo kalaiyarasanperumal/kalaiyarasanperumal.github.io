@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Function to fetch messages and append them to chat-messages div
             function fetchMessages() {
-                $.get('/get-messages', function(messages) {
+                $.get('/get-messages', function (messages) {
                     $('#chat-messages').empty(); // Clear previous messages
-                    messages.forEach(function(message) {
+                    messages.forEach(function (message) {
                         $('#chat-messages').append('<div class="message">' + message.content + '</div>');
                     });
                 });
@@ -25,11 +26,11 @@
             // Function to send message
             function sendMessage() {
                 var message = $('#user-input').val();
-                $.post('/store-message', { message: message }, function() {
+                $.post('/store-message', { message: message }, function () {
                     fetchMessages(); // After sending message, fetch and display updated messages
                     $('#send-feedback').text('Message sent successfully!'); // Update send feedback message
                     $('#green-banner').fadeIn(); // Show green banner
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $('#send-feedback').text(''); // Clear send feedback message after a delay
                         $('#green-banner').fadeOut(); // Hide green banner after a delay
                     }, 3000); // Adjust the delay (in milliseconds) as needed
@@ -38,13 +39,13 @@
             }
 
             // Click event listener for send button
-            $('#send-btn').click(function(event) {
+            $('#send-btn').click(function (event) {
                 event.preventDefault(); // Prevent the default form submission behavior
                 sendMessage(); // Call sendMessage function
             });
 
             // Keypress event listener for input field
-            $('#user-input').keypress(function(event) {
+            $('#user-input').keypress(function (event) {
                 if (event.which == 13) { // Enter key pressed
                     event.preventDefault(); // Prevent the default form submission behavior
                     sendMessage(); // Call sendMessage function
@@ -53,6 +54,7 @@
         });
     </script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -64,6 +66,11 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
+                    <!-- <span class="icon"><i class="fas fa-bell"></i></span>
+                    <span class="text">Kalai's Inbox</span>
+                    <span class="notification-count">3</span> -->
+
                     <!-- <li class="button-li">
                         <a href="tel:9342424899">
                             <span class="phone-number">+91-9342424899</span>
@@ -78,13 +85,18 @@
         <div class="container">
             <div class="chat-container">
                 <div id="chat-messages"></div> <!-- This div will display chat messages -->
-                <input type="text" id="user-input" placeholder="Type your message..."> <!-- Input field for user's message -->
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <!-- Input field for user's message -->
                 <button id="send-btn">Send</button> <!-- Button to send the message -->
-                <div id="send-feedback" class="send-feedback"></div> <!-- Element to display feedback after sending a message -->
+                <div id="send-feedback" class="send-feedback"></div>
+                <!-- Element to display feedback after sending a message -->
             </div>
         </div>
-        <div id="green-banner" class="green-banner" style="display:none;">Message sent successfully!</div> <!-- Green banner element for displaying success message -->
-        <li><a href="messages.html">Kalai's Inbox</a></li> <!-- Remove the link to messages.html -->
+        <!-- <div id="green-banner" class="green-banner" style="display:none;">Message sent successfully!</div> Green banner element for displaying success message -->
+        <li><a href="messages.html">Kalai's Inbox</a></li> 
+
+
+
     </section>
 
 
@@ -94,14 +106,15 @@
         <p><strong>Phone:</strong> +91-9342424899</p>
         <p><strong>Email:</strong> kalaiyarasansdet6@gmail.com</p> -->
         <div class="button-container">
-            <a href="https://medium.com/@kalaiyarasan61097/test-automation-playwright-javascript-in-jenkins-ci-cd-pipelines-with-cucumber-html-reports-9e0dcd208ea1">
-                <img src="images/Blog_pic-1030x584.png" class="button"  alt="Blog" width="45" height="25">
+            <a
+                href="https://medium.com/@kalaiyarasan61097/test-automation-playwright-javascript-in-jenkins-ci-cd-pipelines-with-cucumber-html-reports-9e0dcd208ea1">
+                <img src="images/Blog_pic-1030x584.png" class="button" alt="Blog" width="45" height="25">
             </a>
             <a href="https://github.com/kalai625">
-                <img src="images/imageGitHub.png" class="button"  alt="github" width="45" height="25">
+                <img src="images/imageGitHub.png" class="button" alt="github" width="45" height="25">
             </a>
             <a href="https://www.linkedin.com/">
-                <img src="images/linkinedin.png" class="button"  alt="LinkedIn" width="45" height="25">
+                <img src="images/linkinedin.png" class="button" alt="LinkedIn" width="45" height="25">
             </a>
             <a href="https://wa.me/9342424899">
                 <img src="images/WhatsApp.svg.webp" alt="WhatsApp" class="button" width="45" height="25">
@@ -110,11 +123,8 @@
     </section>
 
 
-  
-  
-    </li>
- 
-    </li>
+
+
 
 
 
@@ -124,4 +134,5 @@
         </div>
     </footer>
 </body>
+
 </html>
