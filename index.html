@@ -3,44 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalaiyarsan Perumal</title>
+    <title>Professional Website with Chatbot</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background">
+    <header>
         <div class="container">
-            <div class="profile">
-                <!-- Embedding profile photo as base64 -->
-                
-                <img class="profile-image" src="profile-photo.jpeg" alt="Profile Photo">
-                <div class="profile-details">
-                    <h1>Kalaiyarsan Perumal</h1>
-                    <h2>Software Development Engineer in Test</h2>
-                    <!-- h2>ZuciTech Software Solutions Pvt Ltd, Bangalore</h2> -->
-                    <p>
-                        Highly skilled Software Development Engineer in Test with expertise in Java, JavaScript, API testing, WireMock, Karate, Postman, Playwright, Selenium, wdio, Mobile Appium (Android & iOS), TestProject, qtest, and Jenkins. Proven ability to design, develop, and execute automated test cases and frameworks, ensuring the quality and reliability of software applications. Strong problem-solving skills and a passion for delivering high-quality software products.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="skills">
-                <h3>Skills</h3>
-                <div class="skill">Java</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">API Testing</div>
-                <div class="skill">WireMock</div>
-                <div class="skill">Karate</div>
-                <div class="skill">Postman</div>
-                <div class="skill">Playwright</div>
-                <div class="skill">Selenium</div>
-                <div class="skill">wdio</div>
-                <div class="skill">Mobile Appium (Android & iOS)</div>
-                <div class="skill">TestProject</div>
-                <div class="skill">qtest</div>
-                <div class="skill">Jenkins</div>
-                <!-- Add more skills as needed -->
+            <h1>Welcome to My Business</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="background">
+        <div class="container">
+            <div class="chat-container">
+                <div id="chat-messages"></div>
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-btn">Send</button>
             </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kalaiyarsan Perumal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
