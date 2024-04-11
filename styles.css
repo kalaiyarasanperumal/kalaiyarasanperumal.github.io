@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #93e680;
     color: #fff;
     padding: 20px 0;
 }
@@ -233,7 +233,7 @@ footer {
     display: inline-block;
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: #f4c39f; /* Button background color */
+    background-color: #c3f0ed; /* Button background color */
     color: #fff; /* Button text color */
     text-decoration: none;
     border: none;
