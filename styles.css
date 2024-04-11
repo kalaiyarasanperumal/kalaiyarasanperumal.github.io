@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f7f7f7;
-    color: #333;
+    color: #333333;
     /* Set background image for the entire page */
     background-image: url('background-image.jpg');
     background-size: cover; /* Cover the entire viewport */
@@ -106,3 +106,10 @@ html {
     scroll-behavior: smooth;
 }
 
+
+.logo {
+    /* Add CSS properties to control the size of the logo */
+    width: 100px; /* Adjust this value as needed */
+    height: auto; /* This ensures the aspect ratio is maintained */
+    /* Add any other styling properties you want */
+}
