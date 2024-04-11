@@ -122,3 +122,25 @@ html {
     color: #000; /* Set the text color */
     font-weight: bold; /* Optionally, make the text bold */
 }
+
+.selected {
+    position: relative;
+}
+
+.selected::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px; /* Adjust the height of the indicator as needed */
+    background-color: rgb(255, 255, 0); /* Change this to the desired color */
+    position: absolute;
+    bottom: 50;
+    left: 0;
+}
+
+.selected span.ba {
+    display: block;
+    text-align: center;
+    color: #000; /* Change this to the desired color */
+    font-weight: bold; /* Adjust as needed */
+}
