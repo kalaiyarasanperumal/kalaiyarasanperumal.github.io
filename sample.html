@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Phoenix editor</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body onload="onPageLoaded()">
+        <img id="starsLeft" alt="stars" src="images/stars-left.svg" />
+        <div id="mainDiv">
+            <img id="logo" alt="logo" src="images/phoenix-logo.svg" />
+            <div id="MainText">
+                <h1>Kalai Code</h1>
+                <span>Code Creatively: Visual Editing Tailored for Developers<br /></span><br />
+            </div>
+            <div class="video-container">
+                <a
+                        href="https://github.com/kalai625"
+                        target="_blank"
+                        title="Phoenix YouTube Channel">
+                    <img
+                            src="images.png"
+                            alt="Kalai Code on YouTube"
+                            title="Kalai Code on YouTube"
+                            style="max-width: 320px;" />
+                </a>
+                <svg class="play-button" viewBox="0 0 200 200" alt="Play video">
+                    <circle
+                            cx="100"
+                            cy="100"
+                            r="90"
+                            fill="#333"
+                            fill-opacity="0.6" />
+                    <polygon points="70, 55 70, 145 145, 100" fill="white" />
+                </svg>
+            </div>
+        </div>
+        <img id="cloudLeftTop" alt="cloud" src="images/vector-top-left.png" />
+        <img
+            id="cloudBottomRight"
+            alt="cloud"
+            src="images/vector-bottom-right.png" />
+        <img id="starsRight" alt="stars" src="images/stars-right.svg" />
+        <img
+            class="clouds"
+            alt="cloud"
+            style="z-index: 3; transform: translate(0px, -1.55909px)"
+            src="images/cloud1.svg" />
+        <img
+            class="clouds"
+            alt="cloud"
+            style="z-index: 6; transform: translate(0px, -2.33863px)"
+            src="images/cloud2.svg" />
+        <img
+            class="clouds"
+            alt="cloud"
+            style="z-index: 5; transform: translate(0px, -3.89772px)"
+            src="images/cloud3.svg" />
+        <img
+            class="clouds"
+            alt="cloud"
+            style="z-index: 6; transform: translate(0px, -3.89772px)"
+            src="images/apple.avif" />
+        <div class="night">
+            <div class="shooting_star">
+                <div class="shooting_star" />
+            </div>
+        </div>
+        <div class="night">
+            <div class="shooting_star">
+                <div class="shooting_star" />
+            </div>
+        </div>
+        <div class="night">
+            <div class="shooting_star">
+                <div class="shooting_star" />
+            </div>
+        </div>
+    </body>
+</html>
+<head>
+<style>
+
+body {
+  background: #000a2e;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+#starsLeft {
+  position: absolute;
+  left: 0px;
+  top: 5%;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+#starsRight {
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  top: 5%;
+  opacity: 0.7;
+}
+
+#mainDiv {
+  color: #ffffffef;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 8;
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#logo {
+  height: 35vh;
+  vertical-align: middle;
+  border-style: none;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 720px) {
+  #mainDiv {
+      color: #ffffffef;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      z-index: 8;
+      align-items: center;
+      justify-content: center;
+      display: flex !important;
+      flex-direction: column !important;
+  }
+
+  #logo {
+      height: 125px;
+      vertical-align: middle;
+      position: relative;
+  }
+}
+#MainText {
+  color: #ffffffef;
+  text-align: center !important;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+@keyframes Animation {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 0%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.clouds {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+}
+
+#cloudLeftTop {
+  position: absolute;
+  top: -10%;
+  left: -20px;
+  z-index: 1;
+}
+
+#cloudBottomRight {
+  position: absolute;
+  bottom: 10%;
+  right: -20px;
+  z-index: 1;
+}
+
+.night {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(45deg);
+}
+
+.shooting_star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+      -45deg,
+      rgba(95, 145, 255, 1),
+      rgba(0, 0, 255, 0)
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+  animation: tail 3000ms ease-in-out, shooting 3000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tail {
+  0% {
+      width: 0;
+  }
+
+  30% {
+      width: 100px;
+  }
+
+  100% {
+      width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(300px);
+  }
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.video-container {
+  position: relative;
+  display: inline-block; /* Or 'block' depending on layout */
+}
+
+.video-container img {
+  display: block; /* Remove bottom space/margin under the image */
+  width: 100%; /* Adjust based on your needs */
+  height: auto;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: 64px; /* Adjust size of the play button */
+  height: 64px; /* Adjust size of the play button */
+}
+
+</style>
+</head>
