@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Wedding</title>
-  <style>
-    /* Add your CSS styles here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f3f3f3;
-    }
-    .container {
-      max-width: 100%;
-      padding: 20px;
-    }
-    .invitation {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        /* .invitation {
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(1, 0, 0, 0.9);
       background-image: url('images/WhatsApp\ Image\ 2024-05-12\ at\ 12.09.42\ PM\ \(1\).jpeg');
       background-size: cover;
-      background-position: full;
+      background-position: center;
       padding: 100px 100px; /* Adjust padding as needed */
-    }
-    .header {
-      text-align: center;
-      color: white; /* Adjust text color for better visibility */
-    }
-    h1, h2, p {
-      text-align: center;
-      color: white; /* Adjust text color for better visibility */
-    }
-    /* Add more styles as needed */
-  </style>
+        /* } */
+
+        .invitation {
+            background-color: #e92e2e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-image: url('images/profile-photo.jpeg');
+            background-size: 100% 100%;
+            /* Cover the entire container */
+            background-position: center;
+            height: 400px;
+            /* Fixed height for the container */
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            /* Adjust text color for better visibility */
+        }
+
+        h1,
+        h2,
+        p {
+            text-align: center;
+            color: white;
+            /* Adjust text color for better visibility */
+        }
+
+        /* Add more styles as needed */
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="invitation">
-      <div class="header">
-        <h1>Kalai's & Hema's Wedding</h1>
-        <p>Embarking on a beautiful journey of arranged companionship, we invite you to share in our joyous union!</p>
-      </div>
-      <div class="details">
-        <h2>Details</h2>
-        <p>Date: Saturday, June 25th, 2024</p>
-        <p>Time: 3:00 PM</p>
-        <p>Location: [Venue Name], [City, State]</p>
-      </div>
-      <button onclick="RSVP()">RSVP</button>
-      <div id="rsvpForm" style="display: none;">
-        <h2>RSVP</h2>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required><br>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br>
-          <label for="attend">Will you attend?</label>
-          <select id="attend" name="attend">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select><br>
-          <button type="submit">Submit RSVP</button>
-        </form>
-      </div>
-    </div>
+    <div class="container">
+        <div class="invitation">
+            <div class="header">
+                <h1>Kalai's & Hema's Wedding</h1>
+                <p>Embarking on a beautiful journey of arranged companionship, we invite you to share in our joyous
+                    union!</p>
+            </div>
+            <div class="details">
+                <h2>Details</h2>
+                <p>Date: Saturday, June 25th, 2024</p>
+                <p>Time: 3:00 PM</p>
+                <p>Location: [Venue Name], [City, State]</p>
+            </div>
+            <button onclick="RSVP()">RSVP</button>
+            <div id="rsvpForm" style="display: none;">
+                <h2>RSVP</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="attend">Will you attend?</label>
+                    <select id="attend" name="attend">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+                    <button type="submit">Submit RSVP</button>
+                </form>
+            </div>
+        </div>
