@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalai & Hema's Wedding Invitation</title>
+    <style>
+        body {
+            background: #000a2e;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffffef;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        #starsLeft {
+            position: absolute;
+            left: 0px;
+            top: 5%;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        #starsRight {
+            position: absolute;
+            z-index: 2;
+            right: 0px;
+            top: 5%;
+            opacity: 0.7;
+        }
+
+        #mainDiv {
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+
+        #logo {
+            height: 35vh;
+            vertical-align: middle;
+            border-style: none;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 720px) {
+            #mainDiv {
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                z-index: 8;
+            }
+
+            #logo {
+                height: 125px;
+                vertical-align: middle;
+                position: relative;
+            }
+        }
+
+        #MainText {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .invite-text {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .video-container {
+            display: inline-block;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .video-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+</head>
+<body>
+    <img id="starsLeft" alt="stars" src="images/stars-left.svg" />
+    <div id="mainDiv">
+        <img id="logo" alt="logo" src="images/phoenix-logo.svg" />
+        <div id="MainText">
+            <h1>Kalai & Hema's Wedding</h1>
+            <p class="invite-text">You are cordially invited to celebrate the union of Kalai & Hema.</p>
+        </div>
+        <div class="video-container">
+            <a href="https://github.com/kalai625" target="_blank" title="Phoenix YouTube Channel">
+                <img src="images.png" alt="Kalai Code on YouTube" title="Kalai Code on YouTube" />
+            </a>
+            <svg class="play-button" viewBox="0 0 200 200" alt="Play video">
+                <circle cx="100" cy="100" r="90" fill="#333" fill-opacity="0.6" />
+                <polygon points="70, 55 70, 145 145, 100" fill="white" />
+            </svg>
+        </div>
+    </div>
+    <img id="starsRight" alt="stars" src="images/stars-right.svg" />
+    <img id="cloudLeftTop" alt="cloud" src="images/vector-top-left.png" />
+    <img id="cloudBottomRight" alt="cloud" src="images/vector-bottom-right.png" />
+    <img class="clouds" alt="cloud" style="z-index: 3; transform: translate(0px, -1.55909px)" src="images/cloud1.svg" />
+    <img class="clouds" alt="cloud" style="z-index: 6; transform: translate(0px, -2.33863px)" src="images/cloud2.svg" />
+    <img class="clouds" alt="cloud" style="z-index: 5; transform: translate(0px, -3.89772px)" src="images/cloud3.svg" />
+    <img class="clouds" alt="cloud" style="z-index: 6; transform: translate(0px, -3.89772px)" src="images/apple.avif" />
+    <div class="night">
+        <div class="shooting_star">
+            <div class="shooting_star" />
+        </div>
+    </div>
+    <div class="night">
+        <div class="shooting_star">
+            <div class="shooting_star" />
+        </div>
+    </div>
+    <div class="night">
+        <div class="shooting_star">
+            <div class="shooting_star" />
+        </div>
+    </div>
+</body>
+</html>
