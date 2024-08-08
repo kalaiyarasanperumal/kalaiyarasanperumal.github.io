@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalai's Car Delivery</title>
+    <link rel="icon" href="images/TabLogo.jpeg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        #countdown-container {
+            position: relative;
+            text-align: center;
+            margin-top: 40px;
+            background: url('images/car/car\ counddown\ background.jpeg') no-repeat center center;
+            background-size: cover;
+            padding: 50px;
+            color: #b30909;
+            font-size: 2em;
+        }
+
+        #countdown {
+            font-size: 3em;
+            color: #f4b302;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery img,
+        .gallery video {
+            margin: 10px;
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        .quote {
+            font-size: 1.5em;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #333;
+            color: #ffffff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Car Delivery Countdown</h1>
+    </header>
+
+    <div id="countdown-container">
+        <div id="countdown"></div>
+    </div>
+
+    <div class="quote">Biggest Dream is to buy a car with my own salary.</div>
+    <!-- <div class="quote">"Happiness is not something ready made. It comes from your own actions." - Dalai Lama</div>
+    <div class="quote">"The best way to predict the future is to create it." - Peter Drucker</div>
+    <div class="quote">"Success is not the key to happiness. Happiness is the key to success." - Albert Schweitzer</div> -->
+
+    <div class="gallery">
+
+        <img src="images/car/img 1.jpeg" alt="Memory 1">
+   
+        <img src="images/car/img 2.jpeg" alt="Memory 1">
+        <video src="images/car/car sign video.mp4" controls></video>
+        <img src="images/car/img 3.jpeg" alt="Memory 1">
+        <img src="images/car/img 4.jpeg" alt="Memory 1">
+        <img src="images/car/img 5.jpeg" alt="Memory 1">
+        <img src="images/car/img 6.jpeg" alt="Memory 1">
+
+        <video src="images/car/car sign video.mp4" controls></video>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 | Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("August 9, 2024 10:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+        
+    </script>
+
+<li><a href="index.html">My Website Home Page</a></li>
+</body>
+
+</html>
