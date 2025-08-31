@@ -1,3 +1,3 @@
-npm init -y
-npm install express multer sqlite3
-node app.js
+sudo npm init -y
+sudo npm install express multer sqlite3
+sudo node app.js
