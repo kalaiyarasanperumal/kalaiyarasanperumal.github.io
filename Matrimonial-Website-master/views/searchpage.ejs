@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SearchPage : </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/range.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+    <!-- SCRIPT -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/script/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+</head>
+
+<body>
+    <% include paritials/navbar.ejs %>
+    <!-- Info Modal -->
+    <div class="modal fade" id="filter" role="dialog" style="z-index: 9999; display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="font-weight:bold;">Filter Result</h3>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-auto my-1">
+                        <div class="container-fluid m-2">
+                            <div id="rangeBox">
+                                <label>Age</label>
+                                <div id="sliderBox">
+                                    <input type="range" id="slider0to50" step="5" min="0" max="50" />
+                                    <input type="range" id="slider51to100" step="5" min="50" max="100" />
+                                </div>
+                                <div id="inputRange">
+                                    <input type="number" step="5" min="0" max="50" placeholder="Min" id="min" />
+                                    <input type="number" step="5" min="51" max="100" placeholder="Max" id="max" />
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Education</label>
+                            <select class="custom-select mr-sm-2" id="education">
+                                <option selected>Choose...</option>
+                                <option value="10th">10th</option>
+                                <option value="12th">12th</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Post-Graduate">Post-Graduate</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Religion</label>
+                            <select class="custom-select mr-sm-2" id="religion">
+                                <option selected>Choose...</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Muslim">Muslim</option>
+                                <option value="Christians">Christians</option>
+                            </select>
+                        </div>
+
+                        <div class="col-auto my-1">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="searchdata()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 col-12 d-inline-flex">
+        <div class="row col-10">
+            <input class="form-control col-10" id="searchinput" type="search" placeholder="Search"
+                aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit" id="submitsearch">Search</button>
+        </div>
+        <div class="d-flex">
+            <p>Search:</p>
+            <a class="nav-link col-2" href="#" data-toggle="modal" data-target="#filter">
+                <i class="fa fa-filter logo" style="font-size: 25px;"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="container fa-2x p-3">
+        <div id="maincontainer">
+
+        </div>
+        <div class="d-flex justify-content-between">
+            <i class="btn fa fa-arrow-left" onclick="increaseleft()" id="pullleft"></i>
+            <i class="btn fa fa-arrow-right" onclick="increaseright()" id="pullright"></i>
+        </div>
+        <!-- <div class="container mr-auto border border-dark rounded">
+            <div id="can-create-community">
+                <div class="col-sm-12" style="display: flex;">
+                    <div class="col-sm-2" style="padding:10px;flex:1;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Salman_Khan_filmfare.jpg"
+                            class="cpic img-fluid" style="width: 200px;height: 200px;" />
+                    </div>
+
+                    <div class="col-sm-10 text-lg-left" style="padding:20px;">
+                        <h4><b>Name :</b>Salaman Khan</h4>
+                        <h4><b>Age :</b>21</h4>
+                        <h4><b>Hightest Education :</b>10th</h4>
+                        <h4><b>Religion :</b>Hindu</h4>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="/script/searchpage-js.js"></script>
+</body>
+
+</html>

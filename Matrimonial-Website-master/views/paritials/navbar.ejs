@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white sticky-top">
+    <a class="navbar-brand" href="/user/home">Matrimonial</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <% if(data.type == "User"){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/home">Home</a>
+            </li>
+            <% } %>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/editprofile">Your Profile</a>
+            </li>
+            <% if(data.type == "User"){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/searchpage">Search People</a>
+            </li>
+            <% } %>
+
+            <% if(data.type == "Admin"){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/manage_people">Manage People</a>
+            </li>
+            <% } %>
+        </ul>
+        <ul class="navbar-nav pr-5">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <%= data.firstname %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onclick=logoutPerson()>Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    function logoutPerson() {
+        $.confirm({
+            theme: 'supervan',
+            title: 'Confirm Logout!',
+            content: 'Do you really want logout?',
+            draggable: true,
+            buttons: {
+                Yes: {
+                    action: function () {
+                        window.location = "/user/logout";
+                    }
+                },
+                No: {
+                    action: function () {}
+                },
+            }
+        });
+    }
+</script>
