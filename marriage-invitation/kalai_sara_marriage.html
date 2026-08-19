@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
-
-  <!-- QR Code Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
 
@@ -16,6 +14,7 @@
       margin: 0;
       padding: 0;
     }
+
 
     /* =========================================
        PAGE BACKGROUND
@@ -43,13 +42,14 @@
        ========================================= */
 
     .invitation {
+
       width: 100%;
       max-width: 650px;
 
       min-height: 900px;
 
       /*
-        BACKGROUND IMAGE INSIDE INVITATION
+        Background image INSIDE invitation
       */
 
       background-image:
@@ -118,9 +118,7 @@
     }
 
 
-    /*
-      Keep all content above background
-    */
+    /* Keep content above background */
 
     .invitation > * {
       position: relative;
@@ -173,8 +171,8 @@
       color: #8b4513;
 
       text-shadow:
-        1px 1px 2px rgba(255,255,255,0.9),
-        1px 1px 3px rgba(0,0,0,0.15);
+        1px 1px 2px rgba(255, 255, 255, 0.9),
+        1px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
 
@@ -213,7 +211,7 @@
       color: #68452f;
 
       text-shadow:
-        0 1px 2px rgba(255,255,255,0.8);
+        0 1px 2px rgba(255, 255, 255, 0.8);
     }
 
 
@@ -246,7 +244,7 @@
       color: #8b4513;
 
       text-shadow:
-        1px 1px 2px rgba(255,255,255,0.8);
+        1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
 
@@ -291,7 +289,7 @@
       color: #68401f;
 
       text-shadow:
-        1px 1px 2px rgba(255,255,255,0.8);
+        1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
 
@@ -338,7 +336,7 @@
       transition: 0.3s;
 
       box-shadow:
-        0 4px 10px rgba(0,0,0,0.15);
+        0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
 
@@ -378,16 +376,20 @@
     }
 
 
-    #qrcode {
+    .qr-section img {
+
+      width: 130px;
+
+      height: 130px;
+
+      padding: 8px;
 
       background: white;
-
-      padding: 10px;
 
       border-radius: 10px;
 
       box-shadow:
-        0 3px 10px rgba(0,0,0,0.15);
+        0 3px 10px rgba(0, 0, 0, 0.15);
     }
 
 
@@ -490,7 +492,6 @@
     @media (max-width: 500px) {
 
       body {
-
         padding: 10px;
       }
 
@@ -683,9 +684,7 @@
     </div>
 
 
-    <!-- =========================================
-         GOOGLE MAPS BUTTON
-         ========================================= -->
+    <!-- Google Maps -->
 
     <div class="map-button">
 
@@ -700,9 +699,7 @@
     </div>
 
 
-    <!-- =========================================
-         GOOGLE MAPS QR CODE
-         ========================================= -->
+    <!-- QR Code -->
 
     <div class="qr-section">
 
@@ -711,7 +708,10 @@
       </div>
 
 
-      <div id="qrcode"></div>
+      <img
+        src="./wedding-map-qr.png"
+        alt="QR Code for Wedding Venue"
+      >
 
     </div>
 
@@ -759,37 +759,6 @@
 
 
   <script>
-
-
-    /* =========================================
-       GOOGLE MAPS LINK
-       ========================================= */
-
-    const mapLink =
-      "https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9";
-
-
-    /* =========================================
-       CREATE QR CODE
-       ========================================= */
-
-    new QRCode(
-      document.getElementById("qrcode"),
-      {
-        text: mapLink,
-
-        width: 120,
-
-        height: 120,
-
-        colorDark: "#5a321d",
-
-        colorLight: "#ffffff",
-
-        correctLevel: QRCode.CorrectLevel.H
-      }
-    );
-
 
     /* =========================================
        WEDDING COUNTDOWN
@@ -924,4 +893,5 @@ will make our special day memorable.`;
 
 
 </body>
+
 </html>
