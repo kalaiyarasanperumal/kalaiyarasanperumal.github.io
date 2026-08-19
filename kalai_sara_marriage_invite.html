@@ -14,16 +14,13 @@
       padding: 0;
     }
 
-
     /* =========================================
        PAGE BACKGROUND
        ========================================= */
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-
       background: #f5ead8;
-
       min-height: 100vh;
 
       display: flex;
@@ -31,29 +28,23 @@
       align-items: center;
 
       padding: 20px;
-
       color: #5a321d;
     }
-
 
     /* =========================================
        INVITATION BOX
        ========================================= */
 
     .invitation {
-
       width: 100%;
       max-width: 650px;
-
       min-height: 900px;
 
-      /*
-        Background image INSIDE invitation
-      */
-
       background-image:
-        linear-gradient(rgba(255, 253, 248, 0.72),
-          rgba(255, 253, 248, 0.72)),
+        linear-gradient(
+          rgba(255, 253, 248, 0.72),
+          rgba(255, 253, 248, 0.72)
+        ),
         url("./wedding-bg.jpeg");
 
       background-size: cover;
@@ -61,7 +52,6 @@
       background-repeat: no-repeat;
 
       border: 8px double #b8860b;
-
       border-radius: 20px;
 
       padding: 45px 30px;
@@ -72,99 +62,76 @@
         0 10px 35px rgba(0, 0, 0, 0.25);
 
       position: relative;
-
       overflow: hidden;
     }
-
 
     /* =========================================
        DECORATIVE FLOWERS
        ========================================= */
 
     .invitation::before {
-
       content: "🌸";
 
       position: absolute;
-
       top: 10px;
       left: 15px;
 
       font-size: 65px;
-
       opacity: 0.35;
 
       z-index: 0;
     }
 
-
     .invitation::after {
-
       content: "🌸";
 
       position: absolute;
-
       bottom: 10px;
       right: 15px;
 
       font-size: 65px;
-
       opacity: 0.35;
 
       z-index: 0;
     }
 
-
-    /* Keep content above background */
-
-    .invitation>* {
+    .invitation > * {
       position: relative;
       z-index: 1;
     }
-
 
     /* =========================================
        FLOWER
        ========================================= */
 
     .flower {
-
       font-size: 42px;
-
       margin-bottom: 10px;
     }
-
 
     /* =========================================
        SAVE THE DATE
        ========================================= */
 
     .save-date {
-
       font-size: 20px;
-
       letter-spacing: 4px;
 
       color: #a36b00;
-
       font-weight: bold;
 
       margin-bottom: 30px;
     }
-
 
     /* =========================================
        NAMES
        ========================================= */
 
     .names {
-
       font-size: 42px;
-
       line-height: 1.4;
 
       font-weight: bold;
-
       color: #8b4513;
 
       text-shadow:
@@ -172,37 +139,29 @@
         1px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
-
     /* =========================================
-       &
+       AND
        ========================================= */
 
     .and {
-
       font-size: 28px;
-
       color: #c49b3a;
 
       margin: 8px 0;
 
       font-style: italic;
-
       font-weight: bold;
     }
-
 
     /* =========================================
        MESSAGE
        ========================================= */
 
     .message {
-
       margin: 30px auto;
-
       max-width: 500px;
 
       font-size: 18px;
-
       line-height: 1.8;
 
       color: #68452f;
@@ -211,15 +170,12 @@
         0 1px 2px rgba(255, 255, 255, 0.8);
     }
 
-
     /* =========================================
        DIVIDER
        ========================================= */
 
     .divider {
-
       width: 180px;
-
       height: 2px;
 
       background: #c49b3a;
@@ -227,28 +183,22 @@
       margin: 25px auto;
     }
 
-
     /* =========================================
        DATE
        ========================================= */
 
     .date {
-
       font-size: 30px;
 
       font-weight: bold;
-
       color: #8b4513;
 
       text-shadow:
         1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
-
     .day {
-
       font-size: 20px;
-
       letter-spacing: 3px;
 
       color: #a36b00;
@@ -256,31 +206,24 @@
       margin-top: 8px;
     }
 
-
     /* =========================================
        VENUE
        ========================================= */
 
     .venue-title {
-
       font-size: 18px;
-
       letter-spacing: 3px;
 
       font-weight: bold;
-
       color: #a36b00;
 
       margin-bottom: 12px;
     }
 
-
     .venue {
-
       font-size: 20px;
 
       font-weight: bold;
-
       line-height: 1.6;
 
       color: #68401f;
@@ -289,11 +232,8 @@
         1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
-
     .address {
-
       font-size: 16px;
-
       line-height: 1.6;
 
       margin-top: 5px;
@@ -301,25 +241,20 @@
       color: #70513e;
     }
 
-
     /* =========================================
        GOOGLE MAP BUTTON
        ========================================= */
 
     .map-button {
-
       margin-top: 20px;
     }
 
-
     .map-button a {
-
       display: inline-block;
 
       padding: 12px 22px;
 
       background: #8b4513;
-
       color: white;
 
       text-decoration: none;
@@ -327,7 +262,6 @@
       border-radius: 25px;
 
       font-size: 15px;
-
       font-weight: bold;
 
       transition: 0.3s;
@@ -336,47 +270,34 @@
         0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
-
     .map-button a:hover {
-
       background: #a36b00;
-
       transform: translateY(-2px);
     }
-
 
     /* =========================================
        QR CODE
        ========================================= */
 
     .qr-section {
-
       margin-top: 22px;
 
       display: flex;
-
       flex-direction: column;
-
       align-items: center;
     }
 
-
     .qr-title {
-
       font-size: 15px;
 
       font-weight: bold;
-
       color: #8b4513;
 
       margin-bottom: 10px;
     }
 
-
     .qr-section img {
-
       width: 130px;
-
       height: 130px;
 
       padding: 8px;
@@ -389,27 +310,21 @@
         0 3px 10px rgba(0, 0, 0, 0.15);
     }
 
-
     /* =========================================
        HEART
        ========================================= */
 
     .heart {
-
       font-size: 28px;
-
       margin: 25px 0 10px;
     }
-
 
     /* =========================================
        BLESSING
        ========================================= */
 
     .blessing {
-
       font-size: 17px;
-
       line-height: 1.7;
 
       max-width: 450px;
@@ -419,13 +334,11 @@
       color: #68452f;
     }
 
-
     /* =========================================
        COUNTDOWN
        ========================================= */
 
     #countdown {
-
       margin-top: 25px;
 
       font-size: 18px;
@@ -435,17 +348,14 @@
       font-weight: bold;
     }
 
-
     /* =========================================
        BUTTONS
        ========================================= */
 
     .buttons {
-
       margin-top: 30px;
 
       display: flex;
-
       justify-content: center;
 
       gap: 12px;
@@ -453,9 +363,7 @@
       flex-wrap: wrap;
     }
 
-
     button {
-
       border: none;
 
       padding: 12px 20px;
@@ -471,16 +379,15 @@
       cursor: pointer;
 
       transition: 0.3s;
-    }
 
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
+    }
 
     button:hover {
-
       background: #a36b00;
-
       transform: translateY(-2px);
     }
-
 
     /* =========================================
        MOBILE
@@ -492,58 +399,60 @@
         padding: 10px;
       }
 
-
       .invitation {
-
         padding: 35px 20px;
-
         min-height: 850px;
-
         border-width: 6px;
       }
 
+      .flower {
+        font-size: 36px;
+      }
 
       .names {
-
         font-size: 32px;
       }
 
+      .and {
+        font-size: 24px;
+      }
 
       .date {
-
         font-size: 25px;
       }
 
-
       .message {
-
         font-size: 16px;
       }
 
-
       .venue {
-
         font-size: 18px;
       }
 
-
       .save-date {
-
         font-size: 17px;
-
         letter-spacing: 3px;
       }
 
-
       .map-button a {
-
         font-size: 14px;
-
         padding: 11px 18px;
       }
 
-    }
+      .qr-section img {
+        width: 120px;
+        height: 120px;
+      }
 
+      #countdown {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 11px 18px;
+      }
+    }
 
     /* =========================================
        PRINT
@@ -552,37 +461,27 @@
     @media print {
 
       body {
-
         background: white;
-
         padding: 0;
       }
 
-
       .buttons,
       #countdown {
-
         display: none;
       }
 
-
       .invitation {
-
         box-shadow: none;
 
         print-color-adjust: exact;
-
         -webkit-print-color-adjust: exact;
       }
-
     }
   </style>
 
 </head>
 
-
 <body>
-
 
   <!-- =========================================
        INVITATION
@@ -590,13 +489,11 @@
 
   <div class="invitation">
 
-
     <!-- Flower -->
 
     <div class="flower">
       💐
     </div>
-
 
     <!-- Save The Date -->
 
@@ -604,13 +501,11 @@
       SAVE THE DATE
     </div>
 
-
     <!-- Groom -->
 
     <div class="names">
       P. KALAIYARASAN
     </div>
-
 
     <!-- And -->
 
@@ -618,13 +513,11 @@
       &
     </div>
 
-
     <!-- Bride -->
 
     <div class="names">
       M. SARANYA
     </div>
-
 
     <!-- Message -->
 
@@ -638,9 +531,7 @@
 
     </div>
 
-
     <div class="divider"></div>
-
 
     <!-- Wedding Date -->
 
@@ -648,14 +539,11 @@
       25 OCTOBER 2026
     </div>
 
-
     <div class="day">
       SUNDAY
     </div>
 
-
     <div class="divider"></div>
-
 
     <!-- Venue -->
 
@@ -663,33 +551,28 @@
       WEDDING VENUE
     </div>
 
-
     <div class="venue">
-
       KT Varadharaj Goundar Thirumana Mandapam
-
     </div>
-
 
     <div class="address">
-
       Ramiyanahalli, Dharmapuri,<br>
-
       Tamil Nadu
-
     </div>
-
 
     <!-- Google Maps -->
 
     <div class="map-button">
 
-      <a href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         📍 View Wedding Venue on Google Maps
       </a>
 
     </div>
-
 
     <!-- QR Code -->
 
@@ -699,18 +582,18 @@
         Scan for Wedding Location
       </div>
 
-
-      <img src="./wedding-map-qr.png" alt="QR Code for Wedding Venue">
+      <img
+        src="./wedding-map-qr.png"
+        alt="QR Code for Wedding Venue"
+      >
 
     </div>
-
 
     <!-- Heart -->
 
     <div class="heart">
       ❤️
     </div>
-
 
     <!-- Blessing -->
 
@@ -722,13 +605,11 @@
 
     </div>
 
-
     <!-- Countdown -->
 
     <div id="countdown"></div>
 
-
-    <!-- Buttons -->
+    <!-- WhatsApp Button -->
 
     <div class="buttons">
 
@@ -738,9 +619,7 @@
 
     </div>
 
-
   </div>
-
 
   <script>
 
@@ -748,83 +627,73 @@
        WEDDING COUNTDOWN
        ========================================= */
 
-    const weddingDate =
-      new Date(
-        "October 25, 2026 09:00:00"
-      ).getTime();
+    /*
+      Wedding date:
+      25 October 2026
+      9:00 AM
+    */
+
+    const weddingDate = new Date(
+      "2026-10-25T09:00:00+05:30"
+    ).getTime();
 
 
     function updateCountdown() {
 
-      const now =
-        new Date().getTime();
+      const now = new Date().getTime();
 
-
-      const difference =
-        weddingDate - now;
+      const difference = weddingDate - now;
 
 
       if (difference <= 0) {
 
-        document.getElementById(
-          "countdown"
-        ).innerHTML =
+        document.getElementById("countdown").innerHTML =
           "💐 Today is our special day! 💐";
 
         return;
       }
 
 
-      const days =
-        Math.floor(
-          difference /
+      const days = Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+      );
+
+
+      const hours = Math.floor(
+        (
+          difference %
           (1000 * 60 * 60 * 24)
-        );
+        ) /
+        (1000 * 60 * 60)
+      );
 
 
-      const hours =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60 * 60 * 24)
-          ) /
+      const minutes = Math.floor(
+        (
+          difference %
           (1000 * 60 * 60)
-        );
+        ) /
+        (1000 * 60)
+      );
 
 
-      const minutes =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60 * 60)
-          ) /
+      const seconds = Math.floor(
+        (
+          difference %
           (1000 * 60)
-        );
+        ) /
+        1000
+      );
 
 
-      const seconds =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60)
-          ) /
-          1000
-        );
-
-
-      document.getElementById(
-        "countdown"
-      ).innerHTML =
+      document.getElementById("countdown").innerHTML =
         `💍 ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
 
     }
 
 
-    setInterval(
-      updateCountdown,
-      1000
-    );
-
+    setInterval(updateCountdown, 1000);
 
     updateCountdown();
 
@@ -835,7 +704,8 @@
 
     function shareWhatsApp() {
 
-      const message = `💐✨ WEDDING INVITATION ✨💐
+      const message =
+`💐✨ WEDDING INVITATION ✨💐
 
 With the blessings of our beloved families,
 we warmly invite you to join us
@@ -867,15 +737,22 @@ truly memorable.
 💐 We look forward to celebrating
 this beautiful beginning with you. 💐`;
 
+
       const whatsappURL =
         "https://wa.me/?text=" +
         encodeURIComponent(message);
 
-      window.open(whatsappURL, "_blank");
+
+      /*
+        Using location.href is more reliable
+        than window.open on some mobile browsers.
+      */
+
+      window.location.href = whatsappURL;
+
     }
 
   </script>
-
 
 </body>
 
