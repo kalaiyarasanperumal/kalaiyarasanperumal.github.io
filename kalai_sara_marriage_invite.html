@@ -8,7 +8,6 @@
   <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -53,10 +52,8 @@
       */
 
       background-image:
-        linear-gradient(
-          rgba(255, 253, 248, 0.72),
-          rgba(255, 253, 248, 0.72)
-        ),
+        linear-gradient(rgba(255, 253, 248, 0.72),
+          rgba(255, 253, 248, 0.72)),
         url("./wedding-bg.jpeg");
 
       background-size: cover;
@@ -120,7 +117,7 @@
 
     /* Keep content above background */
 
-    .invitation > * {
+    .invitation>* {
       position: relative;
       z-index: 1;
     }
@@ -579,7 +576,6 @@
       }
 
     }
-
   </style>
 
 </head>
@@ -688,11 +684,7 @@
 
     <div class="map-button">
 
-      <a
-        href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9" target="_blank" rel="noopener noreferrer">
         📍 View Wedding Venue on Google Maps
       </a>
 
@@ -708,10 +700,7 @@
       </div>
 
 
-      <img
-        src="./wedding-map-qr.png"
-        alt="QR Code for Wedding Venue"
-      >
+      <img src="./wedding-map-qr.png" alt="QR Code for Wedding Venue">
 
     </div>
 
@@ -851,42 +840,43 @@
 
     function shareWhatsApp() {
 
-      const message =
-
-`💐 SAVE THE DATE 💐
-
-P. KALAIYARASAN
-&
-M. SARANYA
+      const message = `💐✨ WEDDING INVITATION ✨💐
 
 With the blessings of our beloved families,
-we invite you to join us as we begin
-our beautiful journey together.
+we warmly invite you to join us
+and bless us on our special day. ❤️
 
-📅 25 OCTOBER 2026
+💍 P. KALAIYARASAN
+&
+🌸 M. SARANYA
+
+📅 DATE
+25 OCTOBER 2026
 SUNDAY
 
-📍 KT Varadharaj Goundar Thirumana Mandapam
+🕘 WEDDING
+MORNING
+
+📍 VENUE
+KT Varadharaj Goundar Thirumana Mandapam
 Ramiyanahalli, Dharmapuri,
 Tamil Nadu
 
-📌 Wedding Venue:
+📌 GOOGLE MAPS
 https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9
 
-❤️ Your presence and blessings
-will make our special day memorable.`;
+🙏 Your presence and blessings
+will make our special day
+truly memorable.
 
+💐 We look forward to celebrating
+this beautiful beginning with you. 💐`;
 
       const whatsappURL =
         "https://wa.me/?text=" +
         encodeURIComponent(message);
 
-
-      window.open(
-        whatsappURL,
-        "_blank"
-      );
-
+      window.open(whatsappURL, "_blank");
     }
 
   </script>
