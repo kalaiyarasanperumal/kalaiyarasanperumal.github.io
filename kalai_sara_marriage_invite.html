@@ -10,11 +10,6 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <meta
-    name="theme-color"
-    content="#6f3d22"
-  >
-
   <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
 
 
@@ -28,357 +23,186 @@
   <style>
 
     /* =========================================
-       ROOT
-       ========================================= */
-
-    :root {
-
-      --brown: #6f3d22;
-
-      --dark-brown: #482515;
-
-      --gold: #c49b3a;
-
-      --light-gold: #e2c878;
-
-      --cream: #fffaf0;
-
-      --paper: #f8efdf;
-
-      --text: #68452f;
-
-      --white: #ffffff;
-
-      --shadow:
-        0 20px 60px
-        rgba(70, 38, 18, 0.18);
-
-    }
-
-
-    /* =========================================
        RESET
        ========================================= */
 
     * {
-
       box-sizing: border-box;
-
       margin: 0;
-
       padding: 0;
-
     }
 
 
-    html {
-
-      scroll-behavior: smooth;
-
+    html,
+    body {
       width: 100%;
-
+      height: 100%;
     }
 
+
+    /* =========================================
+       PAGE
+       ========================================= */
 
     body {
-
-      width: 100%;
-
-      min-height: 100vh;
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      color: var(--text);
+      width: 100%;
 
-      background:
+      min-height: 100dvh;
 
-        radial-gradient(
-          circle at top,
-          #fffdf8 0%,
-          #f5ead8 45%,
-          #ead9bd 100%
-        );
+      background: #f5ead8;
 
-      overflow-x: hidden;
+      display: flex;
 
-    }
+      justify-content: center;
 
+      align-items: center;
 
-    /* =========================================
-       BACKGROUND DECORATION
-       ========================================= */
-
-    body::before {
-
-      content: "";
-
-      position: fixed;
-
-      inset: 0;
-
-      pointer-events: none;
-
-      background:
-
-        radial-gradient(
-          circle at 15% 20%,
-          rgba(196,155,58,0.10),
-          transparent 22%
-        ),
-
-        radial-gradient(
-          circle at 85% 75%,
-          rgba(139,69,19,0.08),
-          transparent 25%
-        );
-
-      z-index: -2;
-
-    }
-
-
-    /* =========================================
-       PARTICLES
-       ========================================= */
-
-    #particles {
-
-      position: fixed;
-
-      inset: 0;
-
-      pointer-events: none;
+      color: #5a321d;
 
       overflow: hidden;
-
-      z-index: 1;
-
-    }
-
-
-    .particle {
-
-      position: absolute;
-
-      font-size: 14px;
-
-      opacity: 0;
-
-      animation:
-        floatParticle linear infinite;
-
-    }
-
-
-    @keyframes floatParticle {
-
-      0% {
-
-        transform:
-          translateY(110vh)
-          rotate(0deg);
-
-        opacity: 0;
-
-      }
-
-      10% {
-
-        opacity: 0.35;
-
-      }
-
-      90% {
-
-        opacity: 0.25;
-
-      }
-
-      100% {
-
-        transform:
-          translateY(-10vh)
-          rotate(360deg);
-
-        opacity: 0;
-
-      }
-
     }
 
 
     /* =========================================
-       MAIN PAGE
+       INVITATION
+       FULL MOBILE BROWSER SCREEN
        ========================================= */
 
     .invitation {
 
-      width: 100%;
+      width: 100dvw;
 
-      max-width: 650px;
+      height: 100dvh;
 
-      margin: auto;
+      max-width: none;
 
-      min-height: 100vh;
-
-      padding:
-
-        max(20px, env(safe-area-inset-top))
-
-        18px
-
-        max(35px, env(safe-area-inset-bottom));
-
-      position: relative;
-
-      z-index: 2;
-
-    }
+      min-height: 0;
 
 
-    /* =========================================
-       OPENING HERO
-       ========================================= */
-
-    .hero {
-
-      min-height: 92vh;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      align-items: center;
-
-      text-align: center;
-
-      position: relative;
-
-      padding: 30px 10px;
-
-      animation: heroReveal 1.5s ease forwards;
-
-    }
-
-
-    @keyframes heroReveal {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(25px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
-
-    }
-
-
-    /* =========================================
-       HERO FRAME
-       ========================================= */
-
-    .hero-frame {
-
-      width: 100%;
-
-      min-height: 76vh;
-
-      padding: 45px 22px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      align-items: center;
-
-      position: relative;
-
-      border:
-
-        1px solid
-        rgba(196,155,58,0.7);
-
-      border-radius: 28px;
-
-      background:
+      background-image:
 
         linear-gradient(
-          rgba(255,253,248,0.90),
-          rgba(255,250,240,0.90)
+          rgba(255, 253, 248, 0.72),
+          rgba(255, 253, 248, 0.72)
         ),
 
         url("./wedding-bg.jpeg");
+
 
       background-size: cover;
 
       background-position: center;
 
-      box-shadow: var(--shadow);
+      background-repeat: no-repeat;
 
-      overflow: hidden;
 
+      border: 0;
+
+      border-radius: 0;
+
+
+      padding-left: 20px;
+
+      padding-right: 20px;
+
+
+      padding-top:
+        max(
+          25px,
+          env(safe-area-inset-top)
+        );
+
+
+      padding-bottom:
+        max(
+          25px,
+          env(safe-area-inset-bottom)
+        );
+
+
+      text-align: center;
+
+
+      position: relative;
+
+
+      overflow-y: auto;
+
+      overflow-x: hidden;
+
+
+      -webkit-overflow-scrolling: touch;
+
+
+      box-shadow: none;
     }
 
 
     /* =========================================
-       GOLD FRAME
+       DECORATIVE FLOWERS
        ========================================= */
 
-    .hero-frame::before {
+    .invitation::before {
 
-      content: "";
+      content: "🌸";
 
       position: absolute;
 
-      inset: 12px;
+      top: 5px;
 
-      border:
+      left: 10px;
 
-        1px solid
-        rgba(196,155,58,0.45);
+      font-size:
+        clamp(
+          45px,
+          15vw,
+          65px
+        );
 
-      border-radius: 20px;
+      opacity: 0.35;
+
+      z-index: 0;
 
       pointer-events: none;
-
     }
 
 
-    .hero-frame::after {
+    .invitation::after {
 
-      content: "❈";
+      content: "🌸";
 
       position: absolute;
 
-      top: 18px;
+      bottom: 5px;
 
-      left: 50%;
+      right: 10px;
 
-      transform:
-        translateX(-50%);
+      font-size:
+        clamp(
+          45px,
+          15vw,
+          65px
+        );
 
-      color: var(--gold);
+      opacity: 0.35;
 
-      font-size: 22px;
+      z-index: 0;
 
+      pointer-events: none;
+    }
+
+
+    .invitation > * {
+
+      position: relative;
+
+      z-index: 1;
     }
 
 
@@ -386,57 +210,44 @@
        FLOWER
        ========================================= */
 
-    .hero-flower {
+    .flower {
 
-      font-size: 48px;
+      font-size:
+        clamp(
+          28px,
+          8vw,
+          42px
+        );
 
-      margin-bottom: 18px;
-
-      animation:
-
-        flowerFloat 3s
-        ease-in-out
-        infinite;
-
-    }
-
-
-    @keyframes flowerFloat {
-
-      0%,
-      100% {
-
-        transform:
-          translateY(0);
-
-      }
-
-      50% {
-
-        transform:
-          translateY(-7px);
-
-      }
-
+      margin-bottom: 8px;
     }
 
 
     /* =========================================
-       OPENING TEXT
+       SAVE THE DATE
        ========================================= */
 
-    .opening-text {
+    .save-date {
 
-      font-size: 13px;
+      font-size:
+        clamp(
+          15px,
+          4.5vw,
+          20px
+        );
 
-      letter-spacing: 5px;
+      letter-spacing:
+        clamp(
+          2px,
+          1vw,
+          4px
+        );
 
-      color: var(--gold);
+      color: #a36b00;
 
       font-weight: bold;
 
-      margin-bottom: 18px;
-
+      margin-bottom: 20px;
     }
 
 
@@ -444,256 +255,51 @@
        NAMES
        ========================================= */
 
-    .hero-name {
+    .names {
 
       font-size:
         clamp(
-          32px,
-          10vw,
-          52px
+          27px,
+          8.5vw,
+          42px
         );
 
-      line-height: 1.15;
-
-      color: var(--dark-brown);
+      line-height: 1.25;
 
       font-weight: bold;
 
-      letter-spacing: 1px;
+      color: #8b4513;
 
       text-shadow:
 
-        1px 2px 2px
-        rgba(255,255,255,0.9),
+        1px 1px 2px
+        rgba(255, 255, 255, 0.9),
 
-        0 3px 8px
-        rgba(90,50,29,0.12);
-
+        1px 1px 3px
+        rgba(0, 0, 0, 0.15);
     }
 
 
-    .hero-and {
+    /* =========================================
+       AND
+       ========================================= */
 
-      margin: 10px 0;
+    .and {
 
-      font-size: 30px;
+      font-size:
+        clamp(
+          20px,
+          6vw,
+          28px
+        );
 
-      color: var(--gold);
+      color: #c49b3a;
+
+      margin: 5px 0;
 
       font-style: italic;
 
-    }
-
-
-    /* =========================================
-       HERO DATE
-       ========================================= */
-
-    .hero-date {
-
-      margin-top: 25px;
-
-      font-size: 18px;
-
-      color: var(--brown);
-
       font-weight: bold;
-
-      letter-spacing: 2px;
-
-    }
-
-
-    /* =========================================
-       HERO VENUE
-       ========================================= */
-
-    .hero-venue {
-
-      margin-top: 25px;
-
-      max-width: 430px;
-
-      padding: 15px 20px;
-
-      border-top:
-        1px solid
-        rgba(196,155,58,0.6);
-
-      border-bottom:
-        1px solid
-        rgba(196,155,58,0.6);
-
-    }
-
-
-    .hero-venue-label {
-
-      font-size: 11px;
-
-      letter-spacing: 3px;
-
-      color: var(--gold);
-
-      font-weight: bold;
-
-      margin-bottom: 7px;
-
-    }
-
-
-    .hero-venue-name {
-
-      font-size: 17px;
-
-      line-height: 1.45;
-
-      color: var(--brown);
-
-      font-weight: bold;
-
-    }
-
-
-    .hero-location {
-
-      margin-top: 5px;
-
-      font-size: 13px;
-
-      color: #80624d;
-
-    }
-
-
-    /* =========================================
-       SCROLL INDICATOR
-       ========================================= */
-
-    .scroll-indicator {
-
-      position: absolute;
-
-      bottom: 22px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      gap: 5px;
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      color: var(--gold);
-
-      animation:
-        scrollBounce 2s
-        infinite;
-
-    }
-
-
-    @keyframes scrollBounce {
-
-      0%,
-      100% {
-
-        transform:
-          translateY(0);
-
-      }
-
-      50% {
-
-        transform:
-          translateY(6px);
-
-      }
-
-    }
-
-
-    /* =========================================
-       SECTIONS
-       ========================================= */
-
-    .section {
-
-      margin-top: 30px;
-
-      padding: 30px 20px;
-
-      border-radius: 25px;
-
-      background:
-
-        rgba(255,253,248,0.88);
-
-      border:
-
-        1px solid
-        rgba(196,155,58,0.35);
-
-      box-shadow:
-
-        0 12px 35px
-        rgba(70,38,18,0.10);
-
-      text-align: center;
-
-      opacity: 0;
-
-      transform:
-        translateY(35px);
-
-      transition:
-
-        opacity 0.9s ease,
-
-        transform 0.9s ease;
-
-    }
-
-
-    .section.visible {
-
-      opacity: 1;
-
-      transform:
-        translateY(0);
-
-    }
-
-
-    /* =========================================
-       SECTION TITLE
-       ========================================= */
-
-    .section-title {
-
-      font-size: 12px;
-
-      letter-spacing: 3px;
-
-      color: var(--gold);
-
-      font-weight: bold;
-
-      margin-bottom: 15px;
-
-    }
-
-
-    .section-symbol {
-
-      font-size: 25px;
-
-      margin-bottom: 8px;
-
     }
 
 
@@ -703,16 +309,24 @@
 
     .message {
 
+      margin: 20px auto;
+
       max-width: 500px;
 
-      margin: auto;
+      font-size:
+        clamp(
+          14px,
+          4.2vw,
+          18px
+        );
 
-      font-size: 16px;
+      line-height: 1.6;
 
-      line-height: 1.8;
+      color: #68452f;
 
-      color: var(--text);
-
+      text-shadow:
+        0 1px 2px
+        rgba(255, 255, 255, 0.8);
     }
 
 
@@ -722,125 +336,78 @@
 
     .divider {
 
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 12px;
-
-      margin: 25px auto;
-
-      color: var(--gold);
-
-    }
-
-
-    .divider::before,
-    .divider::after {
-
-      content: "";
-
-      height: 1px;
-
-      width: 70px;
-
-      background:
-
-        linear-gradient(
-          to right,
-          transparent,
-          var(--gold)
+      width:
+        min(
+          180px,
+          45vw
         );
 
-    }
+      height: 2px;
 
+      background: #c49b3a;
 
-    .divider::after {
-
-      background:
-
-        linear-gradient(
-          to left,
-          transparent,
-          var(--gold)
-        );
-
+      margin: 18px auto;
     }
 
 
     /* =========================================
-       DATE CARD
+       DATE
        ========================================= */
 
-    .date-number {
+    .date {
 
       font-size:
         clamp(
-          30px,
-          9vw,
-          45px
+          22px,
+          7vw,
+          30px
         );
 
-      color: var(--dark-brown);
-
       font-weight: bold;
 
+      color: #8b4513;
+
+      text-shadow:
+        1px 1px 2px
+        rgba(255, 255, 255, 0.8);
     }
 
 
-    .date-month {
+    .day {
 
-      font-size: 19px;
+      font-size:
+        clamp(
+          16px,
+          5vw,
+          20px
+        );
 
-      letter-spacing: 3px;
+      letter-spacing: 2px;
 
-      color: var(--brown);
+      color: #a36b00;
 
-      margin-top: 4px;
-
+      margin-top: 5px;
     }
 
 
-    .date-day {
-
-      margin-top: 8px;
-
-      font-size: 13px;
-
-      letter-spacing: 4px;
-
-      color: var(--gold);
-
-      font-weight: bold;
-
-    }
-
+    /* =========================================
+       WEDDING TIME
+       ========================================= */
 
     .wedding-time {
 
-      margin-top: 20px;
+      margin-top: 8px;
 
-      display: inline-block;
-
-      padding: 10px 20px;
-
-      border-radius: 30px;
-
-      background:
-        rgba(196,155,58,0.12);
-
-      border:
-        1px solid
-        rgba(196,155,58,0.35);
-
-      font-size: 17px;
+      font-size:
+        clamp(
+          17px,
+          5vw,
+          22px
+        );
 
       font-weight: bold;
 
-      color: var(--brown);
-
+      color: #8b4513;
     }
 
 
@@ -848,154 +415,171 @@
        VENUE
        ========================================= */
 
+    .venue-title {
+
+      font-size:
+        clamp(
+          14px,
+          4.5vw,
+          18px
+        );
+
+      letter-spacing: 2px;
+
+      font-weight: bold;
+
+      color: #a36b00;
+
+      margin-bottom: 10px;
+    }
+
+
     .venue {
 
       font-size:
         clamp(
-          19px,
-          5.5vw,
-          25px
+          16px,
+          5vw,
+          20px
         );
-
-      line-height: 1.45;
 
       font-weight: bold;
 
-      color: var(--brown);
+      line-height: 1.4;
 
+      color: #68401f;
+
+      text-shadow:
+        1px 1px 2px
+        rgba(255, 255, 255, 0.8);
     }
 
 
     .address {
 
-      margin-top: 10px;
+      font-size:
+        clamp(
+          13px,
+          4vw,
+          16px
+        );
 
-      font-size: 15px;
+      line-height: 1.5;
 
-      line-height: 1.7;
+      margin-top: 5px;
 
-      color: #80624d;
-
+      color: #70513e;
     }
 
 
     /* =========================================
-       MAP BUTTON
+       GOOGLE MAP BUTTON
        ========================================= */
 
     .map-button {
 
-      margin-top: 22px;
-
+      margin-top: 15px;
     }
 
 
     .map-button a {
 
-      display: inline-flex;
+      display: inline-block;
 
-      align-items: center;
+      padding: 10px 15px;
 
-      justify-content: center;
-
-      gap: 8px;
-
-      padding: 13px 22px;
-
-      border-radius: 40px;
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #6f3d22,
-          #8b4513
-        );
+      background: #8b4513;
 
       color: white;
 
       text-decoration: none;
 
-      font-size: 13px;
+      border-radius: 25px;
+
+      font-size:
+        clamp(
+          12px,
+          3.7vw,
+          15px
+        );
 
       font-weight: bold;
 
+      transition: 0.3s;
+
       box-shadow:
-
-        0 8px 20px
-        rgba(111,61,34,0.25);
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-
+        0 4px 10px
+        rgba(0, 0, 0, 0.15);
     }
 
 
     .map-button a:hover {
 
-      transform:
-        translateY(-3px);
+      background: #a36b00;
 
-      box-shadow:
-
-        0 12px 25px
-        rgba(111,61,34,0.30);
-
+      transform: translateY(-2px);
     }
 
 
     /* =========================================
-       QR
+       QR CODE
        ========================================= */
 
     .qr-section {
 
-      margin-top: 25px;
+      margin-top: 16px;
 
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
     }
 
 
     .qr-title {
 
-      font-size: 12px;
-
-      color: var(--gold);
+      font-size:
+        clamp(
+          13px,
+          4vw,
+          15px
+        );
 
       font-weight: bold;
 
-      letter-spacing: 1px;
+      color: #8b4513;
 
-      margin-bottom: 10px;
-
+      margin-bottom: 8px;
     }
 
 
+    /*
+      QR is generated dynamically.
+      No image file is required.
+    */
+
     #mapQR {
 
-      width: 140px;
+      width: 120px;
 
-      height: 140px;
+      height: 120px;
 
-      margin: auto;
-
-      padding: 10px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
+      padding: 8px;
 
       background: white;
 
-      border-radius: 14px;
+      border-radius: 10px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       box-shadow:
-
-        0 7px 20px
-        rgba(0,0,0,0.12);
-
+        0 3px 10px
+        rgba(0, 0, 0, 0.15);
     }
 
 
@@ -1005,7 +589,23 @@
       max-width: 100%;
 
       max-height: 100%;
+    }
 
+
+    /* =========================================
+       HEART
+       ========================================= */
+
+    .heart {
+
+      font-size:
+        clamp(
+          22px,
+          7vw,
+          28px
+        );
+
+      margin: 15px 0 8px;
     }
 
 
@@ -1015,46 +615,20 @@
 
     .blessing {
 
-      font-size: 17px;
+      font-size:
+        clamp(
+          14px,
+          4vw,
+          17px
+        );
 
-      line-height: 1.8;
+      line-height: 1.5;
 
-      color: var(--text);
+      max-width: 450px;
 
-    }
+      margin: auto;
 
-
-    .heart {
-
-      font-size: 32px;
-
-      margin-bottom: 15px;
-
-      animation:
-
-        heartbeat 1.5s
-        infinite;
-
-    }
-
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-
-        transform:
-          scale(1);
-
-      }
-
-      50% {
-
-        transform:
-          scale(1.12);
-
-      }
-
+      color: #68452f;
     }
 
 
@@ -1062,299 +636,197 @@
        COUNTDOWN
        ========================================= */
 
-    .countdown-grid {
+    #countdown {
 
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 8px;
-
-      margin-top: 18px;
-
-    }
-
-
-    .count-box {
-
-      padding: 12px 4px;
-
-      border-radius: 15px;
-
-      background:
-
-        linear-gradient(
-          145deg,
-          #fffdf8,
-          #f5ead8
-        );
-
-      border:
-        1px solid
-        rgba(196,155,58,0.30);
-
-    }
-
-
-    .count-number {
-
-      display: block;
+      margin-top: 15px;
 
       font-size:
         clamp(
-          20px,
-          6vw,
-          30px
+          13px,
+          4vw,
+          18px
         );
 
-      color: var(--brown);
+      color: #8b4513;
 
       font-weight: bold;
 
-    }
-
-
-    .count-label {
-
-      display: block;
-
-      margin-top: 3px;
-
-      font-size: 9px;
-
-      letter-spacing: 1px;
-
-      color: #92755e;
-
+      line-height: 1.5;
     }
 
 
     /* =========================================
-       WHATSAPP
+       BUTTONS
        ========================================= */
 
-    .share-button {
-
-      width: 100%;
+    .buttons {
 
       margin-top: 18px;
 
-      padding: 15px 20px;
+      display: flex;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+    }
+
+
+    button {
 
       border: none;
 
-      border-radius: 40px;
+      padding: 10px 16px;
 
-      background:
+      border-radius: 25px;
 
-        linear-gradient(
-          135deg,
-          #6f3d22,
-          #9a5a2d
-        );
+      background: #8b4513;
 
       color: white;
 
-      font-family: inherit;
-
-      font-size: 14px;
-
-      font-weight: bold;
+      font-size:
+        clamp(
+          12px,
+          3.8vw,
+          15px
+        );
 
       cursor: pointer;
 
+      transition: 0.3s;
+
       box-shadow:
-
-        0 8px 20px
-        rgba(111,61,34,0.22);
-
-      transition:
-        transform 0.25s ease;
-
+        0 4px 10px
+        rgba(0, 0, 0, 0.15);
     }
 
 
-    .share-button:hover {
+    button:hover {
 
-      transform:
-        translateY(-3px);
+      background: #a36b00;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================
+       SMALL HEIGHT PHONES
+       ========================================= */
+
+    @media (max-height: 700px) {
+
+      .invitation {
+
+        padding-top:
+          max(
+            15px,
+            env(safe-area-inset-top)
+          );
+
+        padding-bottom:
+          max(
+            15px,
+            env(safe-area-inset-bottom)
+          );
+      }
+
+
+      .flower {
+
+        font-size: 28px;
+
+        margin-bottom: 4px;
+      }
+
+
+      .save-date {
+
+        margin-bottom: 12px;
+      }
+
+
+      .message {
+
+        margin: 12px auto;
+
+        line-height: 1.4;
+      }
+
+
+      .divider {
+
+        margin: 12px auto;
+      }
+
+
+      .qr-section {
+
+        margin-top: 10px;
+      }
+
+
+      #mapQR {
+
+        width: 85px;
+
+        height: 85px;
+
+        padding: 5px;
+      }
+
+
+      .heart {
+
+        margin: 8px 0 5px;
+      }
+
+
+      #countdown {
+
+        margin-top: 8px;
+      }
+
+
+      .buttons {
+
+        margin-top: 10px;
+      }
 
     }
 
 
     /* =========================================
-       FOOTER
+       VERY SMALL WIDTH PHONES
        ========================================= */
 
-    .footer {
-
-      text-align: center;
-
-      padding: 35px 10px 20px;
-
-      color: var(--gold);
-
-      font-size: 13px;
-
-      letter-spacing: 1px;
-
-    }
-
-
-    .footer-heart {
-
-      margin-top: 8px;
-
-      font-size: 20px;
-
-    }
-
-
-    /* =========================================
-       TOAST
-       ========================================= */
-
-    #toast {
-
-      position: fixed;
-
-      left: 50%;
-
-      bottom: 25px;
-
-      transform:
-        translate(-50%, 100px);
-
-      padding: 12px 20px;
-
-      border-radius: 30px;
-
-      background: var(--dark-brown);
-
-      color: white;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 13px;
-
-      z-index: 1000;
-
-      opacity: 0;
-
-      transition:
-
-        transform 0.3s ease,
-
-        opacity 0.3s ease;
-
-      pointer-events: none;
-
-    }
-
-
-    #toast.show {
-
-      transform:
-        translate(-50%, 0);
-
-      opacity: 1;
-
-    }
-
-
-    /* =========================================
-       RESPONSIVE
-       ========================================= */
-
-    @media (max-width: 380px) {
+    @media (max-width: 350px) {
 
       .invitation {
 
         padding-left: 12px;
 
         padding-right: 12px;
-
       }
 
 
-      .hero-frame {
+      .names {
 
-        padding-left: 15px;
-
-        padding-right: 15px;
-
+        font-size: 26px;
       }
 
 
-      .hero-name {
+      .venue {
 
-        font-size: 29px;
-
+        font-size: 15px;
       }
 
 
-      .section {
+      .map-button a {
 
-        padding:
-          25px 15px;
+        font-size: 11px;
 
-      }
-
-
-      .countdown-grid {
-
-        gap: 5px;
-
-      }
-
-    }
-
-
-    /* =========================================
-       SMALL HEIGHT DEVICES
-       ========================================= */
-
-    @media (max-height: 700px) {
-
-      .hero {
-
-        min-height: 90vh;
-
-      }
-
-
-      .hero-frame {
-
-        min-height: 78vh;
-
-        padding-top: 25px;
-
-        padding-bottom: 35px;
-
-      }
-
-
-      .hero-flower {
-
-        font-size: 38px;
-
-        margin-bottom: 10px;
-
-      }
-
-
-      .hero-date {
-
-        margin-top: 15px;
-
-      }
-
-
-      .hero-venue {
-
-        margin-top: 15px;
-
+        padding: 9px 12px;
       }
 
     }
@@ -1366,47 +838,45 @@
 
     @media print {
 
+      html,
+      body {
+
+        width: auto;
+
+        height: auto;
+      }
+
+
       body {
 
         background: white;
 
+        overflow: visible;
       }
 
 
-      #particles,
-      .scroll-indicator,
-      .share-button,
+      .buttons,
       #countdown {
 
         display: none;
-
       }
 
 
       .invitation {
 
-        max-width: 100%;
+        width: 100%;
 
-      }
+        height: auto;
 
+        min-height: 100vh;
 
-      .hero {
-
-        min-height: auto;
-
-      }
-
-
-      .section {
-
-        opacity: 1;
-
-        transform: none;
+        overflow: visible;
 
         box-shadow: none;
 
-        page-break-inside: avoid;
+        print-color-adjust: exact;
 
+        -webkit-print-color-adjust: exact;
       }
 
     }
@@ -1420,590 +890,239 @@
 
 
   <!-- =========================================
-       FLOATING PARTICLES
+       WEDDING INVITATION
        ========================================= -->
 
-  <div id="particles"></div>
+  <div class="invitation">
 
 
-  <!-- =========================================
-       MAIN INVITATION
-       ========================================= -->
+    <!-- FLOWER -->
 
-  <main class="invitation">
+    <div class="flower">
+      💐
+    </div>
 
 
-    <!-- =======================================
-         OPENING HERO
-         ======================================= -->
+    <!-- SAVE THE DATE -->
 
-    <section class="hero">
+    <div class="save-date">
+      SAVE THE DATE
+    </div>
 
-      <div class="hero-frame">
 
+    <!-- GROOM -->
 
-        <div class="hero-flower">
-          💐
-        </div>
+    <div class="names">
+      P. KALAIYARASAN
+    </div>
 
 
-        <div class="opening-text">
-          SAVE THE DATE
-        </div>
+    <!-- AND -->
 
+    <div class="and">
+      &
+    </div>
 
-        <div class="hero-name">
-          P. KALAIYARASAN
-        </div>
 
+    <!-- BRIDE -->
 
-        <div class="hero-and">
-          &
-        </div>
+    <div class="names">
+      M. SARANYA
+    </div>
 
 
-        <div class="hero-name">
-          M. SARANYA
-        </div>
+    <!-- MESSAGE -->
 
+    <div class="message">
 
-        <div class="hero-date">
-          25 OCTOBER 2026
-        </div>
+      With the blessings of our beloved families,<br>
 
+      we invite you to join us as we begin<br>
 
-        <div class="hero-venue">
+      our beautiful journey together.
 
-          <div class="hero-venue-label">
-            WEDDING VENUE
-          </div>
+    </div>
 
 
-          <div class="hero-venue-name">
-            KT Varadharaj Goundar
-            Thirumana Mandapam
-          </div>
+    <div class="divider"></div>
 
 
-          <div class="hero-location">
-            Ramiyanahalli, Dharmapuri,
-            Tamil Nadu
-          </div>
+    <!-- WEDDING DATE -->
 
-        </div>
+    <div class="date">
+      25 OCTOBER 2026
+    </div>
 
 
-        <div class="scroll-indicator">
+    <div class="day">
+      SUNDAY
+    </div>
 
-          <span>
-            SCROLL
-          </span>
 
-          <span>
-            ↓
-          </span>
+    <!-- WEDDING TIME -->
 
-        </div>
+    <div class="wedding-time">
+      🕔 5:00 AM
+    </div>
 
 
-      </div>
+    <div class="divider"></div>
 
-    </section>
 
+    <!-- VENUE -->
 
-    <!-- =======================================
-         MESSAGE
-         ======================================= -->
+    <div class="venue-title">
+      WEDDING VENUE
+    </div>
 
-    <section class="section reveal">
 
-      <div class="section-symbol">
-        🌸
-      </div>
+    <div class="venue">
+      KT Varadharaj Goundar Thirumana Mandapam
+    </div>
 
 
-      <div class="section-title">
-        WITH LOVE
-      </div>
+    <div class="address">
+      Ramiyanahalli, Dharmapuri,<br>
+      Tamil Nadu
+    </div>
 
 
-      <div class="message">
+    <!-- GOOGLE MAPS -->
 
-        With the blessings of our beloved families,<br>
+    <div class="map-button">
 
-        we invite you to join us as we begin<br>
-
-        our beautiful journey together.
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         WEDDING DATE
-         ======================================= -->
-
-    <section class="section reveal">
-
-      <div class="section-symbol">
-        💍
-      </div>
-
-
-      <div class="section-title">
-        WEDDING DAY
-      </div>
-
-
-      <div class="date-number">
-        25
-      </div>
-
-
-      <div class="date-month">
-        OCTOBER 2026
-      </div>
-
-
-      <div class="date-day">
-        SUNDAY
-      </div>
-
-
-      <div class="divider">
-        ❈
-      </div>
-
-
-      <div class="wedding-time">
-        🕔 5:00 AM
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         VENUE
-         ======================================= -->
-
-    <section class="section reveal">
-
-      <div class="section-symbol">
-        📍
-      </div>
-
-
-      <div class="section-title">
-        WEDDING VENUE
-      </div>
-
-
-      <div class="venue">
-        KT Varadharaj Goundar
-        Thirumana Mandapam
-      </div>
-
-
-      <div class="address">
-
-        Ramiyanahalli, Dharmapuri,<br>
-
-        Tamil Nadu
-
-      </div>
-
-
-      <!-- GOOGLE MAP -->
-
-      <div class="map-button">
-
-        <a
-          href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          📍 View Wedding Venue on Google Maps
-
-        </a>
-
-      </div>
-
-
-      <!-- QR CODE -->
-
-      <div class="qr-section">
-
-        <div class="qr-title">
-          SCAN FOR WEDDING LOCATION
-        </div>
-
-
-        <div id="mapQR"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         BLESSING
-         ======================================= -->
-
-    <section class="section reveal">
-
-      <div class="heart">
-        ❤️
-      </div>
-
-
-      <div class="blessing">
-
-        Your presence and blessings<br>
-
-        will make our special day memorable.
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         COUNTDOWN
-         ======================================= -->
-
-    <section class="section reveal">
-
-      <div class="section-symbol">
-        ⏳
-      </div>
-
-
-      <div class="section-title">
-        COUNTDOWN TO OUR SPECIAL DAY
-      </div>
-
-
-      <div
-        id="countdown"
-        class="countdown-grid"
+      <a
+        href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        📍 View Wedding Venue on Google Maps
+      </a>
 
-        <div class="count-box">
-
-          <span
-            id="days"
-            class="count-number"
-          >
-            0
-          </span>
-
-          <span class="count-label">
-            DAYS
-          </span>
-
-        </div>
+    </div>
 
 
-        <div class="count-box">
+    <!-- =========================================
+         GENERATED QR CODE
+         ========================================= -->
 
-          <span
-            id="hours"
-            class="count-number"
-          >
-            0
-          </span>
+    <div class="qr-section">
 
-          <span class="count-label">
-            HOURS
-          </span>
-
-        </div>
-
-
-        <div class="count-box">
-
-          <span
-            id="minutes"
-            class="count-number"
-          >
-            0
-          </span>
-
-          <span class="count-label">
-            MINUTES
-          </span>
-
-        </div>
-
-
-        <div class="count-box">
-
-          <span
-            id="seconds"
-            class="count-number"
-          >
-            0
-          </span>
-
-          <span class="count-label">
-            SECONDS
-          </span>
-
-        </div>
-
+      <div class="qr-title">
+        Scan for Wedding Location
       </div>
 
 
-      <button
-        class="share-button"
-        onclick="shareWhatsApp()"
-      >
+      <div id="mapQR"></div>
 
+    </div>
+
+
+    <!-- HEART -->
+
+    <div class="heart">
+      ❤️
+    </div>
+
+
+    <!-- BLESSING -->
+
+    <div class="blessing">
+
+      Your presence and blessings<br>
+
+      will make our special day memorable.
+
+    </div>
+
+
+    <!-- COUNTDOWN -->
+
+    <div id="countdown"></div>
+
+
+    <!-- WHATSAPP -->
+
+    <div class="buttons">
+
+      <button onclick="shareWhatsApp()">
         📱 Share on WhatsApp
-
       </button>
 
-    </section>
+    </div>
 
 
-    <!-- =======================================
-         FOOTER
-         ======================================= -->
-
-    <footer class="footer">
-
-      P. KALAIYARASAN & M. SARANYA
-
-      <div class="footer-heart">
-        💐 ❤️ 💐
-      </div>
-
-    </footer>
-
-
-  </main>
-
-
-  <!-- =========================================
-       TOAST
-       ========================================= -->
-
-  <div id="toast"></div>
+  </div>
 
 
   <script>
 
 
     /* =========================================
-       GLOBAL CONFIGURATION
+       GOOGLE MAP URL
        ========================================= */
 
-    const WEDDING_CONFIG = {
-
-      mapURL:
-        "https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9",
-
-      weddingDate:
-        "2026-10-25T05:00:00+05:30",
-
-      groom:
-        "P. KALAIYARASAN",
-
-      bride:
-        "M. SARANYA",
-
-      venue:
-        "KT Varadharaj Goundar Thirumana Mandapam",
-
-      address:
-        "Ramiyanahalli, Dharmapuri, Tamil Nadu"
-
-    };
-
-
-    /* =========================================
-       DOM HELPER
-       ========================================= */
-
-    function getElement(id) {
-
-      return document.getElementById(id);
-
-    }
-
-
-    /* =========================================
-       CREATE FLOATING PARTICLES
-       ========================================= */
-
-    function createParticles() {
-
-      const container =
-        getElement("particles");
-
-      const symbols = [
-        "🌸",
-        "✦",
-        "❈",
-        "✧",
-        "💮"
-      ];
-
-
-      for (
-        let i = 0;
-        i < 18;
-        i++
-      ) {
-
-        const particle =
-          document.createElement("span");
-
-
-        particle.className =
-          "particle";
-
-
-        particle.innerHTML =
-          symbols[
-            Math.floor(
-              Math.random() *
-              symbols.length
-            )
-          ];
-
-
-        particle.style.left =
-          Math.random() * 100 + "%";
-
-
-        particle.style.animationDuration =
-          12 +
-          Math.random() * 14 +
-          "s";
-
-
-        particle.style.animationDelay =
-          Math.random() * 12 +
-          "s";
-
-
-        particle.style.fontSize =
-          8 +
-          Math.random() * 10 +
-          "px";
-
-
-        container.appendChild(
-          particle
-        );
-
-      }
-
-    }
+    const mapURL =
+      "https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9";
 
 
     /* =========================================
        GENERATE QR CODE
        ========================================= */
 
-    function generateQRCode() {
+    new QRCode(
+      document.getElementById("mapQR"),
+      {
+        text: mapURL,
 
-      const qrContainer =
-        getElement("mapQR");
+        width: 120,
 
+        height: 120,
 
-      if (!qrContainer) {
+        colorDark: "#000000",
 
-        return;
+        colorLight: "#ffffff",
 
+        correctLevel:
+          QRCode.CorrectLevel.H
       }
-
-
-      qrContainer.innerHTML = "";
-
-
-      new QRCode(
-
-        qrContainer,
-
-        {
-
-          text:
-            WEDDING_CONFIG.mapURL,
-
-          width: 120,
-
-          height: 120,
-
-          colorDark:
-            "#000000",
-
-          colorLight:
-            "#ffffff",
-
-          correctLevel:
-            QRCode.CorrectLevel.H
-
-        }
-
-      );
-
-    }
+    );
 
 
     /* =========================================
-       FORMAT NUMBER
+       WEDDING COUNTDOWN
        ========================================= */
 
-    function formatNumber(number) {
+    /*
+      Wedding:
+      25 October 2026
+      5:00 AM IST
+    */
 
-      return String(
-        number
-      ).padStart(2, "0");
-
-    }
-
-
-    /* =========================================
-       GET COUNTDOWN VALUES
-       ========================================= */
-
-    function calculateCountdown() {
-
-      const weddingTime =
-        new Date(
-          WEDDING_CONFIG.weddingDate
-        ).getTime();
+    const weddingDate =
+      new Date(
+        "2026-10-25T05:00:00+05:30"
+      ).getTime();
 
 
-      const currentTime =
+    function updateCountdown() {
+
+      const now =
         new Date().getTime();
 
 
       const difference =
-        weddingTime -
-        currentTime;
+        weddingDate - now;
 
 
       if (difference <= 0) {
 
-        return {
+        document.getElementById(
+          "countdown"
+        ).innerHTML =
+          "💐 Today is our special day! 💐";
 
-          expired: true,
-
-          days: 0,
-
-          hours: 0,
-
-          minutes: 0,
-
-          seconds: 0
-
-        };
-
+        return;
       }
 
 
@@ -2044,190 +1163,37 @@
         );
 
 
-      return {
+      document.getElementById(
+        "countdown"
+      ).innerHTML =
 
-        expired: false,
-
-        days,
-
-        hours,
-
-        minutes,
-
-        seconds
-
-      };
+        `💍 ${days} Days ` +
+        `${hours} Hours ` +
+        `${minutes} Minutes ` +
+        `${seconds} Seconds`;
 
     }
 
 
-    /* =========================================
-       UPDATE COUNTDOWN UI
-       ========================================= */
-
-    function updateCountdown() {
-
-      const result =
-        calculateCountdown();
+    setInterval(
+      updateCountdown,
+      1000
+    );
 
 
-      if (result.expired) {
-
-        getElement("days").innerText =
-          "00";
-
-        getElement("hours").innerText =
-          "00";
-
-        getElement("minutes").innerText =
-          "00";
-
-        getElement("seconds").innerText =
-          "00";
-
-
-        const title =
-          document.querySelector(
-            ".section:last-of-type .section-title"
-          );
-
-
-        if (title) {
-
-          title.innerText =
-            "💐 TODAY IS OUR SPECIAL DAY! 💐";
-
-        }
-
-
-        return;
-
-      }
-
-
-      getElement("days").innerText =
-        result.days;
-
-
-      getElement("hours").innerText =
-        formatNumber(
-          result.hours
-        );
-
-
-      getElement("minutes").innerText =
-        formatNumber(
-          result.minutes
-        );
-
-
-      getElement("seconds").innerText =
-        formatNumber(
-          result.seconds
-        );
-
-    }
+    updateCountdown();
 
 
     /* =========================================
-       REVEAL SECTIONS ON SCROLL
+       WHATSAPP SHARE
        ========================================= */
 
-    function initializeScrollReveal() {
-
-      const sections =
-        document.querySelectorAll(
-          ".reveal"
-        );
+    function shareWhatsApp() {
 
 
-      const observer =
-        new IntersectionObserver(
+      const message =
 
-          function(entries) {
-
-            entries.forEach(
-              function(entry) {
-
-                if (
-                  entry.isIntersecting
-                ) {
-
-                  entry.target.classList.add(
-                    "visible"
-                  );
-
-                }
-
-              }
-            );
-
-          },
-
-          {
-
-            threshold: 0.15
-
-          }
-
-        );
-
-
-      sections.forEach(
-        function(section) {
-
-          observer.observe(
-            section
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =========================================
-       SHOW TOAST
-       ========================================= */
-
-    function showToast(message) {
-
-      const toast =
-        getElement("toast");
-
-
-      toast.innerText =
-        message;
-
-
-      toast.classList.add(
-        "show"
-      );
-
-
-      setTimeout(
-        function() {
-
-          toast.classList.remove(
-            "show"
-          );
-
-        },
-
-        2500
-
-      );
-
-    }
-
-
-    /* =========================================
-       BUILD WHATSAPP MESSAGE
-       ========================================= */
-
-    function buildWhatsAppMessage() {
-
-      return `💐✨ WEDDING INVITATION ✨💐
+`💐✨ WEDDING INVITATION ✨💐
 
 With the blessings of our beloved families,
 we warmly invite you to join us
@@ -2250,7 +1216,7 @@ Ramiyanahalli, Dharmapuri,
 Tamil Nadu
 
 📌 GOOGLE MAPS
-${WEDDING_CONFIG.mapURL}
+${mapURL}
 
 🙏 Your presence and blessings
 will make our special day
@@ -2259,279 +1225,20 @@ truly memorable.
 💐 We look forward to celebrating
 this beautiful beginning with you. 💐`;
 
-    }
-
-
-    /* =========================================
-       SHARE WHATSAPP
-       ========================================= */
-
-    function shareWhatsApp() {
-
-      const message =
-        buildWhatsAppMessage();
-
 
       const whatsappURL =
+
         "https://wa.me/?text=" +
-        encodeURIComponent(
-          message
-        );
+        encodeURIComponent(message);
 
 
-      window.open(
-        whatsappURL,
-        "_blank"
-      );
+      window.location.href =
+        whatsappURL;
 
     }
-
-
-    /* =========================================
-       COPY MAP URL
-       ========================================= */
-
-    async function copyMapURL() {
-
-      try {
-
-        await navigator.clipboard.writeText(
-          WEDDING_CONFIG.mapURL
-        );
-
-
-        showToast(
-          "📍 Wedding location copied!"
-        );
-
-      }
-
-      catch (error) {
-
-        showToast(
-          "Please open Google Maps directly."
-        );
-
-      }
-
-    }
-
-
-    /* =========================================
-       ADD KEYBOARD SUPPORT
-       ========================================= */
-
-    function initializeKeyboardSupport() {
-
-      document.addEventListener(
-        "keydown",
-        function(event) {
-
-          if (
-            event.key === "Escape"
-          ) {
-
-            window.scrollTo({
-
-              top: 0,
-
-              behavior: "smooth"
-
-            });
-
-          }
-
-        }
-      );
-
-    }
-
-
-    /* =========================================
-       PREVENT ACCIDENTAL DOUBLE CLICK
-       ========================================= */
-
-    function preventDoubleShare() {
-
-      const button =
-        document.querySelector(
-          ".share-button"
-        );
-
-
-      if (!button) {
-
-        return;
-
-      }
-
-
-      let locked = false;
-
-
-      button.addEventListener(
-        "click",
-        function() {
-
-          if (locked) {
-
-            return;
-
-          }
-
-
-          locked = true;
-
-
-          setTimeout(
-            function() {
-
-              locked = false;
-
-            },
-
-            1200
-
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =========================================
-       HERO SCROLL FUNCTION
-       ========================================= */
-
-    function scrollToInvitation() {
-
-      const firstSection =
-        document.querySelector(
-          ".section"
-        );
-
-
-      if (!firstSection) {
-
-        return;
-
-      }
-
-
-      firstSection.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "start"
-
-      });
-
-    }
-
-
-    /* =========================================
-       INITIALIZE HERO SCROLL
-       ========================================= */
-
-    function initializeHeroScroll() {
-
-      const indicator =
-        document.querySelector(
-          ".scroll-indicator"
-        );
-
-
-      if (!indicator) {
-
-        return;
-
-      }
-
-
-      indicator.style.cursor =
-        "pointer";
-
-
-      indicator.addEventListener(
-        "click",
-        scrollToInvitation
-      );
-
-    }
-
-
-    /* =========================================
-       PAGE VISIBILITY HANDLER
-       ========================================= */
-
-    function initializeVisibilityRefresh() {
-
-      document.addEventListener(
-        "visibilitychange",
-        function() {
-
-          if (
-            !document.hidden
-          ) {
-
-            updateCountdown();
-
-          }
-
-        }
-      );
-
-    }
-
-
-    /* =========================================
-       INITIALIZE EVERYTHING
-       ========================================= */
-
-    function initializeWeddingInvitation() {
-
-      createParticles();
-
-      generateQRCode();
-
-      updateCountdown();
-
-      initializeScrollReveal();
-
-      initializeKeyboardSupport();
-
-      preventDoubleShare();
-
-      initializeHeroScroll();
-
-      initializeVisibilityRefresh();
-
-    }
-
-
-    /* =========================================
-       START APPLICATION
-       ========================================= */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      initializeWeddingInvitation
-    );
-
-
-    /* =========================================
-       COUNTDOWN TIMER
-       ========================================= */
-
-    setInterval(
-      updateCountdown,
-      1000
-    );
 
 
   </script>
-
 
 </body>
 
