@@ -19,7 +19,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">\n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">\n\n  <style>
 
     /* =========================================
        RESET
@@ -47,6 +47,7 @@
     body {
 
       font-family:
+        "Cormorant Garamond",
         Georgia,
         "Times New Roman",
         serif;
@@ -108,8 +109,8 @@
           env(safe-area-inset-bottom)
         );
 
-      padding-left: 14px;
-      padding-right: 14px;
+      padding-left: 12px;
+      padding-right: 12px;
 
       text-align: center;
 
@@ -217,9 +218,9 @@
 
       font-size:
         clamp(
-          11px,
-          2.5vh,
-          16px
+          9px,
+          1.9vh,
+          13px
         );
 
       letter-spacing:
@@ -252,9 +253,9 @@
 
       font-size:
         clamp(
-          23px,
-          5.6vh,
-          38px
+          20px,
+          4.6vh,
+          31px
         );
 
       line-height: 1.05;
@@ -281,9 +282,9 @@
 
       font-size:
         clamp(
-          16px,
-          3.5vh,
-          25px
+          14px,
+          2.8vh,
+          20px
         );
 
       color: #c49b3a;
@@ -316,9 +317,9 @@
 
       font-size:
         clamp(
-          11px,
-          2.35vh,
-          16px
+          9px,
+          1.85vh,
+          13px
         );
 
       line-height: 1.3;
@@ -367,9 +368,9 @@
 
       font-size:
         clamp(
-          18px,
-          4.2vh,
-          28px
+          16px,
+          3.5vh,
+          24px
         );
 
       line-height: 1.05;
@@ -388,9 +389,9 @@
 
       font-size:
         clamp(
-          12px,
-          2.7vh,
-          18px
+          10px,
+          2.2vh,
+          15px
         );
 
       letter-spacing: 2px;
@@ -413,9 +414,9 @@
 
       font-size:
         clamp(
-          14px,
-          3vh,
-          20px
+          12px,
+          2.5vh,
+          17px
         );
 
       line-height: 1.1;
@@ -434,9 +435,9 @@
 
       font-size:
         clamp(
-          11px,
-          2.4vh,
-          16px
+          9px,
+          1.9vh,
+          13px
         );
 
       letter-spacing: 2px;
@@ -457,9 +458,9 @@
 
       font-size:
         clamp(
-          13px,
-          2.8vh,
-          18px
+          11px,
+          2.35vh,
+          15px
         );
 
       font-weight: bold;
@@ -478,9 +479,9 @@
 
       font-size:
         clamp(
-          10px,
-          2.1vh,
-          14px
+          8px,
+          1.7vh,
+          12px
         );
 
       line-height: 1.25;
@@ -505,7 +506,7 @@
 
       display: inline-block;
 
-      padding: 7px 12px;
+      padding: 6px 11px;
 
       background: #8b4513;
 
@@ -517,9 +518,9 @@
 
       font-size:
         clamp(
-          10px,
-          2vh,
-          13px
+          9px,
+          1.7vh,
+          12px
         );
 
       font-weight: bold;
@@ -562,9 +563,9 @@
 
       font-size:
         clamp(
-          10px,
-          2vh,
-          13px
+          9px,
+          1.7vh,
+          12px
         );
 
       font-weight: bold;
@@ -646,9 +647,9 @@
 
       font-size:
         clamp(
-          10px,
-          2.1vh,
-          14px
+          8px,
+          1.7vh,
+          12px
         );
 
       line-height: 1.25;
@@ -671,9 +672,9 @@
 
       font-size:
         clamp(
-          10px,
-          2vh,
-          14px
+          8px,
+          1.7vh,
+          12px
         );
 
       color: #8b4513;
@@ -696,7 +697,7 @@
 
       justify-content: center;
 
-      gap: 6px;
+      gap: 5px;
 
       flex-wrap: wrap;
     }
@@ -706,7 +707,7 @@
 
       border: none;
 
-      padding: 7px 12px;
+      padding: 6px 11px;
 
       border-radius: 20px;
 
@@ -716,9 +717,9 @@
 
       font-size:
         clamp(
-          10px,
-          2vh,
-          13px
+          9px,
+          1.7vh,
+          12px
         );
 
       cursor: pointer;
@@ -860,6 +861,43 @@
       }
     }
 
+
+
+    /* =========================================
+       ELEGANT COMPACT TYPOGRAPHY
+       ========================================= */
+
+    .save-date,
+    .day,
+    .venue-title,
+    .qr-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(8px, 1.7vh, 12px);
+      letter-spacing: 1.5px;
+    }
+
+    .names,
+    .date,
+    .venue {
+      letter-spacing: 0.3px;
+    }
+
+    .message,
+    .address,
+    .blessing,
+    #countdown {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.1px;
+    }
+
+    .message {
+      line-height: 1.22;
+    }
+
+    .address,
+    .blessing {
+      line-height: 1.18;
+    }
 
     /* =========================================
        PRINT
