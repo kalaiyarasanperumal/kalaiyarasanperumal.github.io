@@ -1,5 +1,5 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -14,11 +14,9 @@
   <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
 
   <!-- QR CODE LIBRARY -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- GOOGLE FONT -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -63,13 +61,19 @@
       height: 100dvh;
       min-height: 100dvh;
 
-      background: #f5ead8;
+      background:
+        radial-gradient(
+          circle at top,
+          #fffaf0 0%,
+          #f8e9d0 55%,
+          #ead0b0 100%
+        );
 
       display: flex;
       justify-content: center;
       align-items: center;
 
-      color: #5a321d;
+      color: #5b2432;
 
       overflow: hidden;
     }
@@ -87,8 +91,8 @@
       background-image:
 
         linear-gradient(
-          rgba(255, 253, 248, 0.70),
-          rgba(255, 253, 248, 0.70)
+          rgba(255, 250, 240, 0.63),
+          rgba(255, 245, 232, 0.63)
         ),
 
         url("./wedding-bg.jpeg");
@@ -123,7 +127,9 @@
       align-items: center;
       justify-content: center;
 
-      box-shadow: none;
+      box-shadow:
+        inset 0 0 70px
+        rgba(139, 69, 19, 0.10);
     }
 
 
@@ -147,7 +153,13 @@
           60px
         );
 
-      opacity: 0.35;
+      opacity: 0.42;
+
+      filter:
+        drop-shadow(
+          0 2px 4px
+          rgba(163, 107, 0, 0.18)
+        );
 
       z-index: 0;
 
@@ -171,7 +183,13 @@
           60px
         );
 
-      opacity: 0.35;
+      opacity: 0.42;
+
+      filter:
+        drop-shadow(
+          0 2px 4px
+          rgba(163, 107, 0, 0.18)
+        );
 
       z-index: 0;
 
@@ -180,9 +198,7 @@
 
 
     .invitation > * {
-
       position: relative;
-
       z-index: 1;
     }
 
@@ -203,6 +219,12 @@
       margin-bottom: 2px;
 
       line-height: 1;
+
+      filter:
+        drop-shadow(
+          0 2px 3px
+          rgba(128, 50, 70, 0.20)
+        );
     }
 
 
@@ -223,13 +245,17 @@
 
       letter-spacing: 2px;
 
-      color: #a36b00;
+      color: #a66a00;
 
       font-weight: bold;
 
       margin-bottom: 5px;
 
       line-height: 1.1;
+
+      text-shadow:
+        0 1px 1px
+        rgba(255, 255, 255, 0.9);
     }
 
 
@@ -250,16 +276,16 @@
 
       font-weight: bold;
 
-      color: #8b4513;
+      color: #7d2941;
 
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
 
       text-shadow:
         1px 1px 2px
-        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.95),
 
-        1px 1px 3px
-        rgba(0, 0, 0, 0.15);
+        2px 2px 4px
+        rgba(110, 38, 58, 0.16);
     }
 
 
@@ -276,7 +302,7 @@
           19px
         );
 
-      color: #c49b3a;
+      color: #c18a22;
 
       margin: 2px 0;
 
@@ -285,6 +311,10 @@
       font-weight: bold;
 
       line-height: 1;
+
+      text-shadow:
+        0 1px 2px
+        rgba(255, 255, 255, 0.8);
     }
 
 
@@ -315,11 +345,11 @@
 
       line-height: 1.25;
 
-      color: #68452f;
+      color: #694451;
 
       text-shadow:
         0 1px 2px
-        rgba(255, 255, 255, 0.8);
+        rgba(255, 255, 255, 0.9);
     }
 
 
@@ -335,15 +365,25 @@
           38vw
         );
 
-      height: 1px;
+      height: 2px;
 
-      background: #c49b3a;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #c18a22,
+          #e4b95d,
+          #c18a22,
+          transparent
+        );
 
       margin:
         5px
         auto;
 
       flex: 0 0 auto;
+
+      border-radius: 50%;
     }
 
 
@@ -364,11 +404,14 @@
 
       font-weight: bold;
 
-      color: #8b4513;
+      color: #8a3048;
 
       text-shadow:
         1px 1px 2px
-        rgba(255, 255, 255, 0.8);
+        rgba(255, 255, 255, 0.9),
+
+        1px 2px 3px
+        rgba(110, 38, 58, 0.12);
     }
 
 
@@ -385,7 +428,7 @@
 
       letter-spacing: 2px;
 
-      color: #a36b00;
+      color: #b1740b;
 
       margin-top: 2px;
 
@@ -396,7 +439,7 @@
 
 
     /* =========================================
-       EVENT CONTAINER
+       EVENTS
        ========================================= */
 
     .events {
@@ -405,7 +448,7 @@
 
       justify-content: center;
 
-      align-items: stretch;
+      align-items: flex-start;
 
       gap: 10px;
 
@@ -418,26 +461,50 @@
 
 
     /* =========================================
+       EVENT COLUMN
+       ========================================= */
+
+    .event-wrapper {
+
+      width: 50%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+
+    /* =========================================
        EVENT CARD
        ========================================= */
 
     .event {
 
-      width: 50%;
+      width: 100%;
 
       padding: 7px 5px;
 
-      border: 1px solid
-        rgba(163, 107, 0, 0.45);
+      border:
+        1px solid
+        rgba(178, 126, 35, 0.55);
 
       border-radius: 12px;
 
       background:
-        rgba(255, 250, 240, 0.45);
+        linear-gradient(
+          145deg,
+          rgba(255, 252, 245, 0.72),
+          rgba(255, 237, 215, 0.52)
+        );
 
       box-shadow:
-        0 2px 8px
-        rgba(0, 0, 0, 0.06);
+        0 3px 12px
+        rgba(113, 55, 65, 0.10),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.8);
     }
 
 
@@ -448,6 +515,12 @@
       line-height: 1;
 
       margin-bottom: 3px;
+
+      filter:
+        drop-shadow(
+          0 2px 3px
+          rgba(120, 50, 60, 0.15)
+        );
     }
 
 
@@ -464,7 +537,7 @@
 
       letter-spacing: 1.5px;
 
-      color: #a36b00;
+      color: #b1740b;
 
       font-weight: bold;
 
@@ -481,7 +554,7 @@
           17px
         );
 
-      color: #8b4513;
+      color: #842f46;
 
       font-weight: bold;
 
@@ -504,62 +577,41 @@
 
       line-height: 1.2;
 
-      color: #68401f;
+      color: #674351;
 
       font-weight: bold;
     }
 
 
-    .event-address {
-
-      font-family: Arial, Helvetica, sans-serif;
-
-      font-size:
-        clamp(
-          7px,
-          1.35vh,
-          9px
-        );
-
-      line-height: 1.15;
-
-      color: #70513e;
-
-      margin-top: 2px;
-    }
-
-
     /* =========================================
-       MAP BUTTONS
+       LOCATION BUTTON
+       DIRECTLY BELOW EACH BOX
        ========================================= */
 
-    .map-links {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 5px;
-
-      margin-top: 5px;
-
-      flex-wrap: wrap;
-    }
-
-
-    .map-links a {
+    .location-button {
 
       display: inline-block;
 
-      padding: 5px 9px;
+      margin-top: 5px;
 
-      background: #8b4513;
+      padding: 5px 8px;
 
-      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #8f2f4c,
+          #b44b5f
+        );
+
+      color: #fffaf3;
 
       text-decoration: none;
 
       border-radius: 20px;
+
+      border:
+        1px solid
+        rgba(255, 220, 150, 0.65);
 
       font-family: Arial, Helvetica, sans-serif;
 
@@ -574,22 +626,124 @@
 
       line-height: 1.1;
 
+      white-space: nowrap;
+
       box-shadow:
-        0 3px 8px
-        rgba(0, 0, 0, 0.15);
-    }
+        0 3px 9px
+        rgba(104, 35, 53, 0.25),
 
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.22);
 
-    .map-links a:hover {
+      cursor: pointer;
 
-      background: #a36b00;
+      -webkit-tap-highlight-color: transparent;
 
-      transform: translateY(-1px);
+      animation:
+        locationBlink
+        2s
+        ease-in-out
+        infinite;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
 
     /* =========================================
-       QR CODE - LARGE & EASY TO SCAN
+       LOCATION BLINK
+       ========================================= */
+
+    @keyframes locationBlink {
+
+      0% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+        box-shadow:
+          0 3px 9px
+          rgba(104, 35, 53, 0.25),
+
+          inset 0 1px 0
+          rgba(255, 255, 255, 0.22);
+      }
+
+      50% {
+
+        opacity: 0.82;
+
+        transform: scale(1.035);
+
+        box-shadow:
+          0 4px 16px
+          rgba(193, 138, 34, 0.42),
+
+          0 0 8px
+          rgba(193, 138, 34, 0.20);
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+        box-shadow:
+          0 3px 9px
+          rgba(104, 35, 53, 0.25),
+
+          inset 0 1px 0
+          rgba(255, 255, 255, 0.22);
+      }
+    }
+
+
+    /* =========================================
+       TOUCH
+       ========================================= */
+
+    .location-button:active {
+
+      transform: scale(0.94);
+
+      background:
+        linear-gradient(
+          135deg,
+          #a66a00,
+          #c18a22
+        );
+
+      animation: none;
+
+      box-shadow:
+        0 2px 6px
+        rgba(80, 35, 40, 0.25);
+    }
+
+
+    .location-button:hover {
+
+      background:
+        linear-gradient(
+          135deg,
+          #a66a00,
+          #c18a22
+        );
+
+      transform: scale(1.04);
+
+      box-shadow:
+        0 5px 15px
+        rgba(166, 106, 0, 0.28);
+    }
+
+
+    /* =========================================
+       QR SECTION
        ========================================= */
 
     .qr-section {
@@ -617,13 +771,17 @@
 
       font-weight: bold;
 
-      color: #8b4513;
+      color: #8a3048;
 
       margin-bottom: 5px;
 
       line-height: 1.1;
     }
 
+
+    /* =========================================
+       QR CODE
+       ========================================= */
 
     #mapQR {
 
@@ -643,11 +801,16 @@
 
       justify-content: center;
 
-      border: 2px solid #c49b3a;
+      border:
+        2px solid
+        #c18a22;
 
       box-shadow:
-        0 3px 10px
-        rgba(0, 0, 0, 0.15);
+        0 4px 13px
+        rgba(95, 45, 55, 0.18),
+
+        0 0 0 3px
+        rgba(255, 248, 230, 0.65);
 
       flex-shrink: 0;
     }
@@ -684,6 +847,12 @@
       margin: 3px 0 1px;
 
       line-height: 1;
+
+      filter:
+        drop-shadow(
+          0 2px 3px
+          rgba(160, 50, 70, 0.18)
+        );
     }
 
 
@@ -706,13 +875,13 @@
 
       max-width: 90vw;
 
-      color: #68452f;
+      color: #6b4553;
     }
 
 
     /* =========================================
        COUNTDOWN
-       SMALL + SINGLE LINE
+       SINGLE LINE
        ========================================= */
 
     #countdown {
@@ -721,12 +890,6 @@
 
       font-family: Arial, Helvetica, sans-serif;
 
-      /*
-         Responsive width-based size.
-         This prevents the countdown from
-         becoming huge on tall mobile screens.
-      */
-
       font-size:
         clamp(
           8px,
@@ -734,7 +897,7 @@
           14px
         );
 
-      color: #13138b;
+      color: #7d2941;
 
       font-weight: 800;
 
@@ -744,18 +907,13 @@
 
       text-shadow:
         0 1px 2px
-        rgba(255, 255, 255, 0.9);
+        rgba(255, 255, 255, 0.95);
 
       width: 100%;
 
       max-width: 100%;
 
       text-align: center;
-
-      /*
-         IMPORTANT:
-         Keep countdown on ONE LINE
-      */
 
       white-space: nowrap;
 
@@ -778,37 +936,59 @@
       .invitation {
 
         padding-top: 4px;
+
         padding-bottom: 4px;
       }
+
 
       .flower {
         font-size: 17px;
       }
 
+
       .message {
+
         margin: 3px auto;
+
         line-height: 1.15;
       }
 
+
       .divider {
+
         margin: 3px auto;
       }
 
+
       .events {
+
         margin-top: 3px;
+
         gap: 5px;
       }
 
+
       .event {
+
         padding: 5px 3px;
       }
 
-      .qr-section {
-        margin-top: 3px;
+
+      .location-button {
+
+        margin-top: 4px;
+
+        padding: 5px 7px;
+
+        animation-duration: 2.2s;
       }
 
 
-      /* QR stays large enough to scan */
+      .qr-section {
+
+        margin-top: 3px;
+      }
+
 
       #mapQR {
 
@@ -821,11 +1001,10 @@
 
 
       .heart {
+
         margin: 2px 0 1px;
       }
 
-
-      /* Countdown stays small */
 
       #countdown {
 
@@ -854,36 +1033,42 @@
       .invitation {
 
         padding-left: 6px;
+
         padding-right: 6px;
       }
 
+
       .names {
+
         font-size: 21px;
       }
 
+
       .events {
+
         gap: 4px;
       }
 
+
       .event {
+
         padding: 5px 2px;
       }
 
+
       .event-venue {
+
         font-size: 8px;
       }
 
-      .event-address {
+
+      .location-button {
+
         font-size: 7px;
+
+        padding: 5px 6px;
       }
 
-      .map-links a {
-        font-size: 7px;
-        padding: 5px 7px;
-      }
-
-
-      /* QR */
 
       #mapQR {
 
@@ -894,8 +1079,6 @@
         padding: 4px;
       }
 
-
-      /* Countdown */
 
       #countdown {
 
@@ -923,10 +1106,13 @@
       .invitation {
 
         padding-left: 30px;
+
         padding-right: 30px;
       }
 
+
       .events {
+
         max-width: 650px;
       }
 
@@ -951,6 +1137,19 @@
 
 
     /* =========================================
+       REDUCE MOTION
+       ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .location-button {
+
+        animation: none;
+      }
+    }
+
+
+    /* =========================================
        PRINT
        ========================================= */
 
@@ -960,8 +1159,10 @@
       body {
 
         width: auto;
+
         height: auto;
       }
+
 
       body {
 
@@ -970,10 +1171,18 @@
         overflow: visible;
       }
 
+
       #countdown {
 
         display: none;
       }
+
+
+      .location-button {
+
+        animation: none;
+      }
+
 
       .invitation {
 
@@ -997,26 +1206,33 @@
 
 </head>
 
+
 <body>
 
   <div class="invitation">
 
 
-    <!-- FLOWER -->
+    <!-- =========================================
+         FLOWER
+         ========================================= -->
 
     <div class="flower">
       💐
     </div>
 
 
-    <!-- SAVE THE DATE -->
+    <!-- =========================================
+         SAVE THE DATE
+         ========================================= -->
 
     <div class="save-date">
       SAVE THE DATE
     </div>
 
 
-    <!-- NAMES -->
+    <!-- =========================================
+         NAMES
+         ========================================= -->
 
     <div class="names">
       P. KALAIYARASAN
@@ -1033,7 +1249,9 @@
     </div>
 
 
-    <!-- MESSAGE -->
+    <!-- =========================================
+         MESSAGE
+         ========================================= -->
 
     <div class="message">
 
@@ -1049,7 +1267,9 @@
     <div class="divider"></div>
 
 
-    <!-- DATE -->
+    <!-- =========================================
+         DATE
+         ========================================= -->
 
     <div class="date">
       25 OCTOBER 2026
@@ -1068,91 +1288,100 @@
     <div class="events">
 
 
-      <!-- MARRIAGE -->
+      <!-- =======================================
+           MARRIAGE
+           ======================================= -->
 
-      <div class="event">
+      <div class="event-wrapper">
 
-        <div class="event-icon">
-          🛕
+        <div class="event">
+
+          <div class="event-icon">
+            🛕
+          </div>
+
+          <div class="event-title">
+            MARRIAGE
+          </div>
+
+          <div class="event-time">
+            4:00 AM
+          </div>
+
+          <div class="event-venue">
+            Kaaniyamman Temple,
+            Erulapatti
+          </div>
+
         </div>
 
-        <div class="event-title">
-          MARRIAGE
-        </div>
 
-        <div class="event-time">
-          4:00 AM
-        </div>
+        <!-- Marriage Location Button -->
 
-        <div class="event-venue">
-          Kaaniyamman Temple,
-          Erulapatti
-        </div>
+        <a
+          class="location-button"
+          href="https://www.google.com/maps/search/?api=1&query=Kaaniyamman+Temple+Erulapatti+Dharmapuri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🛕 Marriage Location
+        </a>
 
       </div>
 
 
-      <!-- RECEPTION -->
+      <!-- =======================================
+           RECEPTION
+           ======================================= -->
 
-      <div class="event">
+      <div class="event-wrapper">
 
-        <div class="event-icon">
-          🎉
+        <div class="event">
+
+          <div class="event-icon">
+            🎉
+          </div>
+
+          <div class="event-title">
+            RECEPTION
+          </div>
+
+          <div class="event-time">
+            7:00 AM – 11:00 AM
+          </div>
+
+          <div class="event-venue">
+            KT Varadharaj Goundar
+            Thirumana Mandapam
+          </div>
+
         </div>
 
-        <div class="event-title">
-          RECEPTION
-        </div>
 
-        <div class="event-time">
-          7:00 AM – 11:00 AM
-        </div>
+        <!-- Reception Location Button -->
 
-        <div class="event-venue">
-          KT Varadharaj Goundar
-          Thirumana Mandapam
-        </div>
+        <a
+          class="location-button"
+          href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Reception Location
+        </a>
 
       </div>
-
 
     </div>
 
 
     <!-- =========================================
-         MAP LINKS
-         ========================================= -->
-
-    <div class="map-links">
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Kaaniyamman+Temple+Erulapatti+Dharmapuri"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        🛕 Marriage Location
-      </a>
-
-
-      <a
-        href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📍 Reception Location
-      </a>
-
-    </div>
-
-
-    <!-- =========================================
-         QR CODE
+         RECEPTION QR CODE
          ========================================= -->
 
     <div class="qr-section">
 
       <div class="qr-title">
-        Scan for Reception Location
+        📍 Scan for Reception Location
       </div>
 
       <div id="mapQR"></div>
@@ -1160,14 +1389,18 @@
     </div>
 
 
-    <!-- HEART -->
+    <!-- =========================================
+         HEART
+         ========================================= -->
 
     <div class="heart">
       ❤️
     </div>
 
 
-    <!-- BLESSING -->
+    <!-- =========================================
+         BLESSING
+         ========================================= -->
 
     <div class="blessing">
 
@@ -1178,7 +1411,9 @@
     </div>
 
 
-    <!-- COUNTDOWN -->
+    <!-- =========================================
+         COUNTDOWN
+         ========================================= -->
 
     <div id="countdown"></div>
 
@@ -1194,7 +1429,7 @@
        ========================================= */
 
     const receptionMapURL =
-      "https://www.google.com/maps/place/KT+Varadharaj+Goundar+Thirumana+Mandapam/@12.0305916,78.3749742,17z/data=!3m1!4b1!4m6!3m5!1s0x3bac6de727ca0cb5:0xc419dc6da4621153!8m2!3d12.0305864!4d78.3775491!16s%2Fg%2F11c846k78r?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
+      "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
 
 
     /* =========================================
@@ -1206,25 +1441,39 @@
 
 
     /* =========================================
-       GENERATE QR CODE
+       GENERATE RECEPTION QR CODE
        ========================================= */
 
-    new QRCode(
-      document.getElementById("mapQR"),
-      {
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
 
-        text: receptionMapURL,
+        const qrContainer =
+          document.getElementById("mapQR");
 
-        width: 200,
 
-        height: 200,
+        qrContainer.innerHTML = "";
 
-        colorDark: "#000000",
 
-        colorLight: "#ffffff",
+        new QRCode(
+          qrContainer,
+          {
 
-        correctLevel:
-          QRCode.CorrectLevel.H
+            text: receptionMapURL,
+
+            width: 200,
+
+            height: 200,
+
+            colorDark: "#000000",
+
+            colorLight: "#ffffff",
+
+            correctLevel:
+              QRCode.CorrectLevel.H
+
+          }
+        );
 
       }
     );
@@ -1242,6 +1491,10 @@
 
     function updateCountdown() {
 
+      const countdown =
+        document.getElementById("countdown");
+
+
       const now =
         new Date().getTime();
 
@@ -1252,9 +1505,7 @@
 
       if (difference <= 0) {
 
-        document.getElementById(
-          "countdown"
-        ).innerHTML =
+        countdown.innerHTML =
           "💐 Today is our special day! 💐";
 
         return;
@@ -1298,9 +1549,7 @@
         );
 
 
-      document.getElementById(
-        "countdown"
-      ).innerHTML =
+      countdown.innerHTML =
 
         `💍 ${days} Days ` +
         `${hours} Hours ` +
@@ -1323,3 +1572,4 @@
 </body>
 
 </html>
+```
