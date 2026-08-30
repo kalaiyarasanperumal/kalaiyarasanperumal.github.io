@@ -1,958 +1,1081 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+
 >
 
-<title>Kalaiyarasan & Saranya | Wedding Invitation</title>
+  <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- QR CODE LIBRARY -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
-  rel="stylesheet"
->
+  <!-- GOOGLE FONT -->
 
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* =========================================
-   RESET
-   ========================================= */
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+    /* =========================================
+       RESET
+       ========================================= */
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* =========================================
-   BODY
-   ========================================= */
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-body {
 
-  width: 100%;
-  height: 100dvh;
+    /* =========================================
+       BODY
+       ========================================= */
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    "Times New Roman",
-    serif;
+    body {
 
-  background: #f5ead8;
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
+        serif;
 
-  color: #5a321d;
+      width: 100%;
+      height: 100dvh;
+      min-height: 100dvh;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      background: #f5ead8;
 
-  overflow: hidden;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+      color: #5a321d;
 
-/* =========================================
-   MAIN INVITATION
-   ========================================= */
+      overflow: hidden;
+    }
 
-.invitation {
 
-  position: relative;
+    /* =========================================
+       INVITATION
+       ========================================= */
 
-  width: 100vw;
-  height: 100dvh;
+    .invitation {
 
-  padding-top:
-    max(6px, env(safe-area-inset-top));
+      width: 100dvw;
+      height: 100dvh;
 
-  padding-bottom:
-    max(6px, env(safe-area-inset-bottom));
+      background-image:
 
-  padding-left: 10px;
-  padding-right: 10px;
+        linear-gradient(
+          rgba(255, 253, 248, 0.70),
+          rgba(255, 253, 248, 0.70)
+        ),
 
-  display: flex;
-  flex-direction: column;
+        url("./wedding-bg.jpeg");
 
-  align-items: center;
-  justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-  text-align: center;
+      padding-top:
+        max(
+          8px,
+          env(safe-area-inset-top)
+        );
 
-  overflow: hidden;
+      padding-bottom:
+        max(
+          8px,
+          env(safe-area-inset-bottom)
+        );
 
-  background-image:
+      padding-left: 12px;
+      padding-right: 12px;
 
-    linear-gradient(
-      rgba(255, 253, 248, 0.62),
-      rgba(255, 253, 248, 0.62)
-    ),
+      text-align: center;
 
-    url("./wedding-bg.jpeg");
+      position: relative;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      overflow: hidden;
 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-/* =========================================
-   DECORATION
-   ========================================= */
+      box-shadow: none;
+    }
 
-.invitation::before {
 
-  content: "🌸";
+    /* =========================================
+       DECORATIVE FLOWERS
+       ========================================= */
 
-  position: absolute;
+    .invitation::before {
 
-  top: 3px;
-  left: 7px;
+      content: "🌸";
 
-  font-size: clamp(28px, 7vw, 52px);
+      position: absolute;
 
-  opacity: 0.32;
+      top: 5px;
+      left: 10px;
 
-  pointer-events: none;
-}
+      font-size:
+        clamp(
+          35px,
+          9vw,
+          60px
+        );
 
-.invitation::after {
+      opacity: 0.35;
 
-  content: "🌸";
+      z-index: 0;
 
-  position: absolute;
+      pointer-events: none;
+    }
 
-  right: 7px;
-  bottom: 3px;
 
-  font-size: clamp(28px, 7vw, 52px);
+    .invitation::after {
 
-  opacity: 0.32;
+      content: "🌸";
 
-  pointer-events: none;
-}
+      position: absolute;
 
-.invitation > * {
-  position: relative;
-  z-index: 2;
-}
+      bottom: 5px;
+      right: 10px;
 
+      font-size:
+        clamp(
+          35px,
+          9vw,
+          60px
+        );
 
-/* =========================================
-   FLOWER
-   ========================================= */
+      opacity: 0.35;
 
-.flower {
+      z-index: 0;
 
-  font-size: clamp(18px, 3.4vh, 28px);
+      pointer-events: none;
+    }
 
-  line-height: 1;
 
-  margin-bottom: 2px;
-}
+    .invitation > * {
 
+      position: relative;
 
-/* =========================================
-   SAVE DATE
-   ========================================= */
+      z-index: 1;
+    }
 
-.save-date {
 
-  font-family: Arial, Helvetica, sans-serif;
+    /* =========================================
+       FLOWER
+       ========================================= */
 
-  font-size: clamp(8px, 1.55vh, 11px);
+    .flower {
 
-  font-weight: bold;
+      font-size:
+        clamp(
+          18px,
+          3.8vh,
+          30px
+        );
 
-  letter-spacing: 1.6px;
+      margin-bottom: 2px;
 
-  color: #a36b00;
+      line-height: 1;
+    }
 
-  line-height: 1;
 
-  margin-bottom: 5px;
-}
+    /* =========================================
+       SAVE THE DATE
+       ========================================= */
 
+    .save-date {
 
-/* =========================================
-   NAMES
-   ========================================= */
+      font-family: Arial, Helvetica, sans-serif;
 
-.names {
+      font-size:
+        clamp(
+          8px,
+          1.7vh,
+          12px
+        );
 
-  font-size: clamp(20px, 4.2vh, 30px);
+      letter-spacing: 2px;
 
-  line-height: 1;
+      color: #a36b00;
 
-  font-weight: 700;
+      font-weight: bold;
 
-  color: #8b4513;
+      margin-bottom: 5px;
 
-  letter-spacing: 0.3px;
+      line-height: 1.1;
+    }
 
-  text-shadow:
-    1px 1px 2px rgba(255,255,255,0.9),
-    1px 1px 3px rgba(0,0,0,0.15);
-}
 
+    /* =========================================
+       NAMES
+       ========================================= */
 
-/* =========================================
-   AND
-   ========================================= */
+    .names {
 
-.and {
+      font-size:
+        clamp(
+          21px,
+          4.5vh,
+          31px
+        );
 
-  font-size: clamp(13px, 2.5vh, 18px);
+      line-height: 1;
 
-  font-style: italic;
+      font-weight: bold;
 
-  font-weight: bold;
+      color: #8b4513;
 
-  color: #c49b3a;
+      letter-spacing: 0.5px;
 
-  line-height: 1;
+      text-shadow:
+        1px 1px 2px
+        rgba(255, 255, 255, 0.9),
 
-  margin: 2px 0;
-}
+        1px 1px 3px
+        rgba(0, 0, 0, 0.15);
+    }
 
 
-/* =========================================
-   MESSAGE
-   ========================================= */
+    /* =========================================
+       AND
+       ========================================= */
 
-.message {
+    .and {
 
-  font-family: Arial, Helvetica, sans-serif;
+      font-size:
+        clamp(
+          13px,
+          2.6vh,
+          19px
+        );
 
-  font-size: clamp(8px, 1.55vh, 11px);
+      color: #c49b3a;
 
-  line-height: 1.18;
+      margin: 2px 0;
 
-  color: #68452f;
+      font-style: italic;
 
-  max-width: 90vw;
+      font-weight: bold;
 
-  margin: 5px auto 4px;
-}
+      line-height: 1;
+    }
 
 
-/* =========================================
-   DIVIDER
-   ========================================= */
+    /* =========================================
+       MESSAGE
+       ========================================= */
 
-.divider {
+    .message {
 
-  width: min(145px, 35vw);
+      font-family: Arial, Helvetica, sans-serif;
 
-  height: 1px;
+      margin:
+        clamp(
+          5px,
+          1.2vh,
+          10px
+        )
+        auto;
 
-  background: #c49b3a;
+      max-width: min(500px, 92vw);
 
-  margin: 4px auto;
+      font-size:
+        clamp(
+          8px,
+          1.65vh,
+          12px
+        );
 
-  flex-shrink: 0;
-}
+      line-height: 1.25;
 
+      color: #68452f;
 
-/* =========================================
-   DATE
-   ========================================= */
+      text-shadow:
+        0 1px 2px
+        rgba(255, 255, 255, 0.8);
+    }
 
-.date {
 
-  font-size: clamp(15px, 3.1vh, 22px);
+    /* =========================================
+       DIVIDER
+       ========================================= */
 
-  line-height: 1;
+    .divider {
 
-  font-weight: bold;
+      width:
+        min(
+          150px,
+          38vw
+        );
 
-  color: #8b4513;
-}
+      height: 1px;
 
-.day {
+      background: #c49b3a;
 
-  font-family: Arial, Helvetica, sans-serif;
+      margin:
+        5px
+        auto;
 
-  font-size: clamp(8px, 1.55vh, 11px);
+      flex: 0 0 auto;
+    }
 
-  letter-spacing: 1.5px;
 
-  color: #a36b00;
+    /* =========================================
+       DATE
+       ========================================= */
 
-  margin-top: 2px;
+    .date {
 
-  line-height: 1;
-}
+      font-size:
+        clamp(
+          16px,
+          3.3vh,
+          23px
+        );
 
+      line-height: 1;
 
-/* =========================================
-   EVENT
-   ========================================= */
+      font-weight: bold;
 
-.event {
+      color: #8b4513;
 
-  width: 100%;
+      text-shadow:
+        1px 1px 2px
+        rgba(255, 255, 255, 0.8);
+    }
 
-  max-width: 500px;
 
-  display: flex;
+    .day {
 
-  flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
 
-  align-items: center;
-}
+      font-size:
+        clamp(
+          8px,
+          1.6vh,
+          11px
+        );
 
+      letter-spacing: 2px;
 
-/* =========================================
-   EVENT TITLE
-   ========================================= */
+      color: #a36b00;
 
-.event-title {
+      margin-top: 2px;
 
-  font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.1;
 
-  font-size: clamp(8px, 1.55vh, 11px);
+      font-weight: bold;
+    }
 
-  font-weight: bold;
 
-  letter-spacing: 1.6px;
+    /* =========================================
+       EVENT CONTAINER
+       ========================================= */
 
-  color: #a36b00;
+    .events {
 
-  line-height: 1;
+      display: flex;
 
-  margin-bottom: 2px;
-}
+      justify-content: center;
 
+      align-items: stretch;
 
-/* =========================================
-   EVENT TIME
-   ========================================= */
+      gap: 10px;
 
-.event-time {
+      width: 100%;
 
-  font-size: clamp(12px, 2.3vh, 17px);
+      max-width: 600px;
 
-  font-weight: bold;
+      margin-top: 6px;
+    }
 
-  color: #8b4513;
 
-  line-height: 1;
+    /* =========================================
+       EVENT CARD
+       ========================================= */
 
-  margin-bottom: 2px;
-}
+    .event {
 
+      width: 50%;
 
-/* =========================================
-   VENUE
-   ========================================= */
+      padding: 7px 5px;
 
-.venue {
+      border: 1px solid
+        rgba(163, 107, 0, 0.45);
 
-  font-size: clamp(10px, 2vh, 14px);
+      border-radius: 12px;
 
-  font-weight: bold;
+      background:
+        rgba(255, 250, 240, 0.45);
 
-  line-height: 1.08;
+      box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.06);
+    }
 
-  color: #68401f;
 
-  max-width: 94vw;
+    .event-icon {
 
-  text-shadow:
-    1px 1px 2px rgba(255,255,255,0.8);
-}
+      font-size: 18px;
 
+      line-height: 1;
 
-/* =========================================
-   ADDRESS
-   ========================================= */
+      margin-bottom: 3px;
+    }
 
-.address {
 
-  font-family: Arial, Helvetica, sans-serif;
+    .event-title {
 
-  font-size: clamp(7px, 1.35vh, 10px);
+      font-family: Arial, Helvetica, sans-serif;
 
-  line-height: 1.08;
+      font-size:
+        clamp(
+          8px,
+          1.65vh,
+          11px
+        );
 
-  color: #70513e;
+      letter-spacing: 1.5px;
 
-  margin-top: 2px;
-}
+      color: #a36b00;
 
+      font-weight: bold;
 
-/* =========================================
-   MAP BUTTON
-   ========================================= */
+      margin-bottom: 3px;
+    }
 
-.map-button {
 
-  margin-top: 3px;
-}
+    .event-time {
 
-.map-button a {
+      font-size:
+        clamp(
+          13px,
+          2.5vh,
+          17px
+        );
 
-  display: inline-block;
+      color: #8b4513;
 
-  padding: 5px 9px;
+      font-weight: bold;
 
-  border-radius: 18px;
+      line-height: 1.05;
 
-  background: #8b4513;
+      margin-bottom: 4px;
+    }
 
-  color: white;
 
-  text-decoration: none;
+    .event-venue {
 
-  font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
 
-  font-size: clamp(7px, 1.35vh, 10px);
+      font-size:
+        clamp(
+          8px,
+          1.6vh,
+          11px
+        );
 
-  font-weight: bold;
+      line-height: 1.2;
 
-  line-height: 1;
+      color: #68401f;
 
-  box-shadow:
-    0 3px 8px rgba(0,0,0,0.15);
-}
+      font-weight: bold;
+    }
 
-.map-button a:hover {
-  background: #a36b00;
-}
 
+    .event-address {
 
-/* =========================================
-   QR SECTION
-   ========================================= */
+      font-family: Arial, Helvetica, sans-serif;
 
-.qr-section {
+      font-size:
+        clamp(
+          7px,
+          1.35vh,
+          9px
+        );
 
-  margin-top: 3px;
+      line-height: 1.15;
 
-  display: flex;
+      color: #70513e;
 
-  flex-direction: column;
+      margin-top: 2px;
+    }
 
-  align-items: center;
-}
 
-.qr-title {
+    /* =========================================
+       MAP BUTTONS
+       ========================================= */
 
-  font-family: Arial, Helvetica, sans-serif;
+    .map-links {
 
-  font-size: clamp(7px, 1.3vh, 9px);
+      display: flex;
 
-  font-weight: bold;
+      justify-content: center;
 
-  color: #8b4513;
+      gap: 5px;
 
-  line-height: 1;
+      margin-top: 5px;
 
-  margin-bottom: 2px;
-}
+      flex-wrap: wrap;
+    }
 
 
-/* =========================================
-   QR CODE
-   ========================================= */
+    .map-links a {
 
-.qr-code {
+      display: inline-block;
 
-  width: clamp(42px, 7vh, 58px);
+      padding: 5px 9px;
 
-  height: clamp(42px, 7vh, 58px);
+      background: #8b4513;
 
-  padding: 2px;
+      color: white;
 
-  background: white;
+      text-decoration: none;
 
-  border-radius: 5px;
+      border-radius: 20px;
 
-  display: flex;
+      font-family: Arial, Helvetica, sans-serif;
 
-  align-items: center;
-  justify-content: center;
+      font-size:
+        clamp(
+          7px,
+          1.4vh,
+          10px
+        );
 
-  box-shadow:
-    0 2px 7px rgba(0,0,0,0.15);
-}
+      font-weight: bold;
 
-.qr-code img,
-.qr-code canvas {
+      line-height: 1.1;
 
-  width: 100% !important;
-  height: 100% !important;
+      box-shadow:
+        0 3px 8px
+        rgba(0, 0, 0, 0.15);
+    }
 
-  max-width: 100%;
-  max-height: 100%;
-}
 
+    .map-links a:hover {
 
-/* =========================================
-   HEART
-   ========================================= */
+      background: #a36b00;
 
-.heart {
+      transform: translateY(-1px);
+    }
 
-  font-size: clamp(13px, 2.4vh, 19px);
 
-  line-height: 1;
+    /* =========================================
+       QR CODE
+       ========================================= */
 
-  margin: 3px 0 1px;
-}
+    .qr-section {
 
+      margin-top: 5px;
 
-/* =========================================
-   BLESSING
-   ========================================= */
+      display: flex;
 
-.blessing {
+      flex-direction: column;
 
-  font-family: Arial, Helvetica, sans-serif;
+      align-items: center;
+    }
 
-  font-size: clamp(7px, 1.35vh, 10px);
 
-  line-height: 1.1;
+    .qr-title {
 
-  color: #68452f;
-}
+      font-family: Arial, Helvetica, sans-serif;
 
+      font-size:
+        clamp(
+          7px,
+          1.4vh,
+          10px
+        );
 
-/* =========================================
-   COUNTDOWN
-   ========================================= */
+      font-weight: bold;
 
-#countdown {
+      color: #8b4513;
 
-  font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 3px;
 
-  font-size: clamp(7px, 1.35vh, 10px);
+      line-height: 1.1;
+    }
 
-  font-weight: bold;
 
-  color: #13138b;
+    #mapQR {
 
-  line-height: 1;
+      width:
+        clamp(
+          52px,
+          8vh,
+          70px
+        );
 
-  margin-top: 3px;
-}
+      height:
+        clamp(
+          52px,
+          8vh,
+          70px
+        );
 
+      padding: 3px;
 
-/* =========================================
-   WHATSAPP BUTTON
-   ========================================= */
+      background: white;
 
-.buttons {
+      border-radius: 6px;
 
-  margin-top: 4px;
-}
+      display: flex;
 
-button {
+      align-items: center;
 
-  border: none;
+      justify-content: center;
 
-  padding: 5px 10px;
+      box-shadow:
+        0 3px 8px
+        rgba(0, 0, 0, 0.12);
+    }
 
-  border-radius: 18px;
 
-  background: #8b4513;
+    #mapQR img,
+    #mapQR canvas {
 
-  color: white;
+      max-width: 100%;
+      max-height: 100%;
+    }
 
-  font-family: Arial, Helvetica, sans-serif;
 
-  font-size: clamp(7px, 1.35vh, 10px);
+    /* =========================================
+       HEART
+       ========================================= */
 
-  font-weight: bold;
+    .heart {
 
-  line-height: 1;
+      font-size:
+        clamp(
+          14px,
+          2.8vh,
+          21px
+        );
 
-  cursor: pointer;
+      margin: 3px 0 1px;
 
-  box-shadow:
-    0 3px 8px rgba(0,0,0,0.15);
-}
+      line-height: 1;
+    }
 
-button:hover {
-  background: #a36b00;
-}
 
+    /* =========================================
+       BLESSING
+       ========================================= */
 
-/* =========================================
-   SMALL HEIGHT DEVICES
-   ========================================= */
+    .blessing {
 
-@media (max-height: 700px) {
+      font-family: Arial, Helvetica, sans-serif;
 
-  .flower {
-    font-size: 18px;
-  }
+      font-size:
+        clamp(
+          7px,
+          1.4vh,
+          10px
+        );
 
-  .save-date {
-    margin-bottom: 3px;
-  }
+      line-height: 1.2;
 
-  .message {
-    margin: 3px auto;
-  }
+      max-width: 90vw;
 
-  .divider {
-    margin: 3px auto;
-  }
+      color: #68452f;
+    }
 
-  .qr-code {
-    width: 40px;
-    height: 40px;
-  }
 
-  .qr-section {
-    margin-top: 2px;
-  }
+    /* =========================================
+       COUNTDOWN
+       ========================================= */
 
-  .heart {
-    margin: 2px 0 1px;
-  }
+    #countdown {
 
-  .buttons {
-    margin-top: 3px;
-  }
-}
+      margin-top: 3px;
 
+      font-family: Arial, Helvetica, sans-serif;
 
-/* =========================================
-   VERY SHORT DEVICES
-   ========================================= */
+      font-size:
+        clamp(
+          7px,
+          1.4vh,
+          10px
+        );
 
-@media (max-height: 600px) {
+      color: #13138b;
 
-  .flower {
-    display: none;
-  }
+      font-weight: bold;
 
-  .names {
-    font-size: 20px;
-  }
+      line-height: 1.2;
+    }
 
-  .message {
-    font-size: 8px;
-    margin: 2px auto;
-  }
 
-  .divider {
-    margin: 2px auto;
-  }
+    /* =========================================
+       WHATSAPP BUTTON
+       ========================================= */
 
-  .qr-code {
-    width: 34px;
-    height: 34px;
-  }
+    .buttons {
 
-  .heart {
-    display: none;
-  }
+      margin-top: 4px;
 
-  #countdown {
-    display: none;
-  }
-}
+      display: flex;
 
+      justify-content: center;
+    }
 
-/* =========================================
-   VERY SMALL WIDTH
-   ========================================= */
 
-@media (max-width: 350px) {
+    button {
 
-  .invitation {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
+      border: none;
 
-  .venue {
-    font-size: 9px;
-  }
+      padding: 5px 10px;
 
-  .map-button a {
-    padding: 4px 7px;
-  }
+      border-radius: 20px;
 
-  .qr-code {
-    width: 38px;
-    height: 38px;
-  }
-}
+      background: #8b4513;
 
+      color: white;
 
-/* =========================================
-   DESKTOP
-   ========================================= */
+      font-family: Arial, Helvetica, sans-serif;
 
-@media (min-width: 768px) {
+      font-size:
+        clamp(
+          8px,
+          1.45vh,
+          10px
+        );
 
-  .invitation {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
+      cursor: pointer;
 
+      line-height: 1.1;
 
-/* =========================================
-   PRINT
-   ========================================= */
+      box-shadow:
+        0 3px 8px
+        rgba(0, 0, 0, 0.15);
+    }
 
-@media print {
 
-  html,
-  body {
-    width: auto;
-    height: auto;
-  }
+    button:hover {
 
-  body {
-    overflow: visible;
-    background: white;
-  }
+      background: #a36b00;
 
-  .invitation {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    overflow: visible;
+      transform: translateY(-1px);
+    }
 
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
 
-  .buttons,
-  #countdown {
-    display: none;
-  }
-}
+    /* =========================================
+       SHORT PHONE
+       ========================================= */
 
-</style>
+    @media (max-height: 650px) {
+
+      .invitation {
+
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+
+      .flower {
+        font-size: 17px;
+      }
+
+      .message {
+        margin: 3px auto;
+        line-height: 1.15;
+      }
+
+      .divider {
+        margin: 3px auto;
+      }
+
+      .events {
+        margin-top: 3px;
+        gap: 5px;
+      }
+
+      .event {
+        padding: 5px 3px;
+      }
+
+      .qr-section {
+        margin-top: 3px;
+      }
+
+      #mapQR {
+        width: 48px;
+        height: 48px;
+      }
+
+      .heart {
+        margin: 2px 0 1px;
+      }
+
+      #countdown {
+        margin-top: 2px;
+      }
+
+      .buttons {
+        margin-top: 3px;
+      }
+    }
+
+
+    /* =========================================
+       VERY SMALL PHONE
+       ========================================= */
+
+    @media (max-width: 350px) {
+
+      .invitation {
+
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      .names {
+        font-size: 21px;
+      }
+
+      .events {
+        gap: 4px;
+      }
+
+      .event {
+        padding: 5px 2px;
+      }
+
+      .event-venue {
+        font-size: 8px;
+      }
+
+      .event-address {
+        font-size: 7px;
+      }
+
+      .map-links a {
+        font-size: 7px;
+        padding: 5px 7px;
+      }
+    }
+
+
+    /* =========================================
+       DESKTOP
+       ========================================= */
+
+    @media (min-width: 768px) {
+
+      .invitation {
+
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .events {
+        max-width: 650px;
+      }
+    }
+
+
+    /* =========================================
+       PRINT
+       ========================================= */
+
+    @media print {
+
+      html,
+      body {
+
+        width: auto;
+        height: auto;
+      }
+
+      body {
+
+        background: white;
+
+        overflow: visible;
+      }
+
+      .buttons,
+      #countdown {
+
+        display: none;
+      }
+
+      .invitation {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 100vh;
+
+        overflow: visible;
+
+        box-shadow: none;
+
+        print-color-adjust: exact;
+
+        -webkit-print-color-adjust: exact;
+      }
+    }
+
+  </style>
 
 </head>
 
-
 <body>
 
+  <!-- =========================================
+       WEDDING INVITATION
+       ========================================= -->
 
-<div class="invitation">
+  <div class="invitation">
 
+<!-- FLOWER -->
 
-  <!-- =====================================
-       HEADER
-       ===================================== -->
-
-  <div class="flower">
-    💐
-  </div>
-
-  <div class="save-date">
-    SAVE THE DATE
-  </div>
+<div class="flower">
+  💐
+</div>
 
 
-  <!-- =====================================
-       NAMES
-       ===================================== -->
+<!-- SAVE THE DATE -->
 
-  <div class="names">
-    P. KALAIYARASAN
-  </div>
-
-  <div class="and">
-    &
-  </div>
-
-  <div class="names">
-    M. SARANYA
-  </div>
+<div class="save-date">
+  SAVE THE DATE
+</div>
 
 
-  <!-- =====================================
-       MESSAGE
-       ===================================== -->
+<!-- NAMES -->
 
-  <div class="message">
-
-    With the blessings of our beloved families,<br>
-    we invite you to join us as we begin<br>
-    our beautiful journey together.
-
-  </div>
+<div class="names">
+  P. KALAIYARASAN
+</div>
 
 
-  <div class="divider"></div>
+<div class="and">
+  &
+</div>
 
 
-  <!-- =====================================
-       DATE
-       ===================================== -->
-
-  <div class="date">
-    25 OCTOBER 2026
-  </div>
-
-  <div class="day">
-    SUNDAY
-  </div>
+<div class="names">
+  M. SARANYA
+</div>
 
 
-  <div class="divider"></div>
+<!-- MESSAGE -->
+
+<div class="message">
+
+  With the blessings of our beloved families,<br>
+
+  we invite you to join us as we begin<br>
+
+  our beautiful journey together.
+
+</div>
 
 
-  <!-- =====================================
-       MARRIAGE
-       ===================================== -->
+<div class="divider"></div>
+
+
+<!-- DATE -->
+
+<div class="date">
+  25 OCTOBER 2026
+</div>
+
+
+<div class="day">
+  SUNDAY
+</div>
+
+
+<!-- =========================================
+     EVENTS
+     ========================================= -->
+
+<div class="events">
+
+
+  <!-- MARRIAGE -->
 
   <div class="event">
+
+    <div class="event-icon">
+      🛕
+    </div>
 
     <div class="event-title">
       MARRIAGE
     </div>
 
     <div class="event-time">
-      🕓 4:00 AM
+      4:00 AM
     </div>
 
-    <div class="venue">
-      Kaaniyamman Temple
+    <div class="event-venue">
+      Kaliamman Kovil
     </div>
 
-    <div class="address">
-      Erulapatti, Dharmapuri, Tamil Nadu
-    </div>
-
-
-    <div class="map-button">
-
-      <a
-        href="https://maps.app.goo.gl/W2qHmgkyr3HUAXyL9"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📍 View Marriage Venue
-      </a>
-
-    </div>
-
-
-    <div class="qr-section">
-
-      <div class="qr-title">
-        Scan for Marriage Location
-      </div>
-
-      <div
-        id="marriageQR"
-        class="qr-code"
-      ></div>
-
+    <div class="event-address">
+      Iralapatti
     </div>
 
   </div>
 
 
-  <div class="divider"></div>
-
-
-  <!-- =====================================
-       RECEPTION
-       ===================================== -->
+  <!-- RECEPTION -->
 
   <div class="event">
+
+    <div class="event-icon">
+      🎉
+    </div>
 
     <div class="event-title">
       RECEPTION
     </div>
 
     <div class="event-time">
-      🕖 7:00 AM – 11:00 AM
+      7:00 AM – 11:00 AM
     </div>
 
-    <div class="venue">
-      KT Varadharaj Goundar Thirumana Mandapam
+    <div class="event-venue">
+      KT Varadharaj Goundar
+      Thirumana Mandapam
     </div>
 
-    <div class="address">
-      Ramiyanahalli, Dharmapuri, Tamil Nadu
+    <div class="event-address">
+      Hospital Road, Ramiyanahalli,<br>
+      Dharmapuri, Tamil Nadu
     </div>
-
-
-    <div class="map-button">
-
-      <a
-        href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📍 View Reception Venue
-      </a>
-
-    </div>
-
-
-    <div class="qr-section">
-
-      <div class="qr-title">
-        Scan for Reception Location
-      </div>
-
-      <div
-        id="receptionQR"
-        class="qr-code"
-      ></div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =====================================
-       FOOTER
-       ===================================== -->
-
-  <div class="heart">
-    ❤️
-  </div>
-
-  <div class="blessing">
-
-    Your presence and blessings<br>
-    will make our special day memorable.
-
-  </div>
-
-
-  <div id="countdown"></div>
-
-
-  <div class="buttons">
-
-    <button onclick="shareWhatsApp()">
-      📱 Share on WhatsApp
-    </button>
 
   </div>
 
@@ -960,166 +1083,236 @@ button:hover {
 </div>
 
 
-<script>
+<!-- =========================================
+     MAP LINKS
+     ========================================= -->
+
+<div class="map-links">
+
+  <!--
+    Replace this URL with the exact
+    Google Maps location for Kaliamman Kovil,
+    Iralapatti if available.
+  -->
+
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Kaliamman+Kovil+Iralapatti+Dharmapuri"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    🛕 Marriage Location
+  </a>
 
 
-/* =========================================
-   MAP LINKS
-   ========================================= */
+  <a
+    href="https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📍 Reception Location
+  </a>
 
-const marriageMapURL =
-  "https://maps.app.goo.gl/W2qHmgkyr3HUAXyL9";
-
-
-const receptionMapURL =
-  "https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9";
-
-
-/* =========================================
-   MARRIAGE QR
-   ========================================= */
-
-new QRCode(
-  document.getElementById("marriageQR"),
-  {
-
-    text: marriageMapURL,
-
-    width: 120,
-
-    height: 120,
-
-    colorDark: "#000000",
-
-    colorLight: "#ffffff",
-
-    correctLevel:
-      QRCode.CorrectLevel.H
-
-  }
-);
+</div>
 
 
-/* =========================================
-   RECEPTION QR
-   ========================================= */
+<!-- =========================================
+     QR CODE
+     ========================================= -->
 
-new QRCode(
-  document.getElementById("receptionQR"),
-  {
+<div class="qr-section">
 
-    text: receptionMapURL,
+  <div class="qr-title">
+    Scan for Reception Location
+  </div>
 
-    width: 120,
+  <div id="mapQR"></div>
 
-    height: 120,
-
-    colorDark: "#000000",
-
-    colorLight: "#ffffff",
-
-    correctLevel:
-      QRCode.CorrectLevel.H
-
-  }
-);
+</div>
 
 
-/* =========================================
-   COUNTDOWN
-   ========================================= */
+<!-- HEART -->
 
-const weddingDate =
-  new Date(
-    "2026-10-25T04:00:00+05:30"
-  ).getTime();
+<div class="heart">
+  ❤️
+</div>
 
 
-function updateCountdown() {
+<!-- BLESSING -->
 
-  const now =
-    new Date().getTime();
+<div class="blessing">
 
-  const difference =
-    weddingDate - now;
+  Your presence and blessings<br>
 
+  will make our special day memorable.
 
-  if (difference <= 0) {
-
-    document.getElementById(
-      "countdown"
-    ).innerHTML =
-      "💐 Today is our special day! 💐";
-
-    return;
-  }
+</div>
 
 
-  const days =
-    Math.floor(
-      difference /
-      (1000 * 60 * 60 * 24)
+<!-- COUNTDOWN -->
+
+<div id="countdown"></div>
+
+
+<!-- WHATSAPP -->
+
+<div class="buttons">
+
+  <button onclick="shareWhatsApp()">
+    📱 Share on WhatsApp
+  </button>
+
+</div>
+```
+
+  </div>
+
+  <script>
+
+
+    /* =========================================
+       RECEPTION GOOGLE MAP URL
+       ========================================= */
+
+    const receptionMapURL =
+      "https://maps.app.goo.gl/JRMwHxyvvhkbEu4n9";
+
+
+    /* =========================================
+       MARRIAGE GOOGLE MAP URL
+       ========================================= */
+
+    const marriageMapURL =
+      "https://www.google.com/maps/search/?api=1&query=Kaliamman+Kovil+Iralapatti+Dharmapuri";
+
+
+    /* =========================================
+       GENERATE QR CODE
+       ========================================= */
+
+    new QRCode(
+      document.getElementById("mapQR"),
+      {
+
+        text: receptionMapURL,
+
+        width: 120,
+
+        height: 120,
+
+        colorDark: "#000000",
+
+        colorLight: "#ffffff",
+
+        correctLevel:
+          QRCode.CorrectLevel.H
+
+      }
     );
 
 
-  const hours =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60 * 60 * 24)
-      ) /
-      (1000 * 60 * 60)
-    );
+    /* =========================================
+       WEDDING COUNTDOWN
+       ========================================= */
+
+    /*
+      Marriage:
+      25 October 2026
+      4:00 AM IST
+    */
+
+    const weddingDate =
+      new Date(
+        "2026-10-25T04:00:00+05:30"
+      ).getTime();
 
 
-  const minutes =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60 * 60)
-      ) /
-      (1000 * 60)
-    );
+    function updateCountdown() {
+
+      const now =
+        new Date().getTime();
 
 
-  const seconds =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60)
-      ) /
+      const difference =
+        weddingDate - now;
+
+
+      if (difference <= 0) {
+
+        document.getElementById(
+          "countdown"
+        ).innerHTML =
+          "💐 Today is our special day! 💐";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (
+            difference %
+            (1000 * 60 * 60 * 24)
+          ) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (
+            difference %
+            (1000 * 60 * 60)
+          ) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (
+            difference %
+            (1000 * 60)
+          ) /
+          1000
+        );
+
+
+      document.getElementById(
+        "countdown"
+      ).innerHTML =
+
+        `💍 ${days} Days ` +
+        `${hours} Hours ` +
+        `${minutes} Minutes ` +
+        `${seconds} Seconds`;
+
+    }
+
+
+    setInterval(
+      updateCountdown,
       1000
     );
 
 
-  document.getElementById(
-    "countdown"
-  ).innerHTML =
-
-    `💍 ${days} Days ` +
-    `${hours} Hours ` +
-    `${minutes} Minutes ` +
-    `${seconds} Seconds`;
-
-}
+    updateCountdown();
 
 
-setInterval(
-  updateCountdown,
-  1000
-);
+    /* =========================================
+       WHATSAPP SHARE
+       ========================================= */
 
-updateCountdown();
-
-
-/* =========================================
-   WHATSAPP SHARE
-   ========================================= */
-
-function shareWhatsApp() {
+    function shareWhatsApp() {
 
 
-  const message =
+      const message =
 
 `💐✨ WEDDING INVITATION ✨💐
 
@@ -1135,26 +1328,21 @@ and bless us on our special day. ❤️
 25 OCTOBER 2026
 SUNDAY
 
-💒 MARRIAGE
-🕓 4:00 AM
-
-📍 KAANIYAMMAN TEMPLE
-Erulapatti, Dharmapuri,
-Tamil Nadu
-
-📌 Marriage Location
-${marriageMapURL}
+🛕 MARRIAGE
+4:00 AM
+Kaliamman Kovil
+Iralapatti
 
 🎉 RECEPTION
-🕖 7:00 AM – 11:00 AM
+7:00 AM – 10:00 AM
+KT Varadharaj Goundar Thirumana Mandapam
+Hospital Road, Ramiyanahalli,
+Dharmapuri, Tamil Nadu
 
-📍 KT VARADHARAJ GOUNDAR
-THIRUMANA MANDAPAM
+📍 MARRIAGE LOCATION
+${marriageMapURL}
 
-Ramiyanahalli, Dharmapuri,
-Tamil Nadu
-
-📌 Reception Location
+📍 RECEPTION LOCATION
 ${receptionMapURL}
 
 🙏 Your presence and blessings
@@ -1165,19 +1353,19 @@ truly memorable.
 this beautiful beginning with you. 💐`;
 
 
-  const whatsappURL =
-    "https://wa.me/?text=" +
-    encodeURIComponent(message);
+      const whatsappURL =
+
+        "https://wa.me/?text=" +
+        encodeURIComponent(message);
 
 
-  window.location.href =
-    whatsappURL;
+      window.location.href =
+        whatsappURL;
 
-}
+    }
 
-</script>
+  </script>
 
 </body>
 
 </html>
-```
