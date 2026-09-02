@@ -1,0 +1,1587 @@
+<template>
+  <div class="invitation">
+
+```
+<!-- FLOWER -->
+<div class="flower">
+  💐
+</div>
+
+<!-- SAVE THE DATE -->
+<div class="save-date">
+  SAVE THE DATE
+</div>
+
+<!-- NAMES -->
+<div class="names">
+  P. KALAIYARASAN
+</div>
+
+<div class="and">
+  &
+</div>
+
+<div class="names">
+  M. SARANYA
+</div>
+
+<!-- MESSAGE -->
+<div class="message">
+  With the blessings of our beloved families,<br>
+  we invite you to join us as we begin<br>
+  our beautiful journey together.
+</div>
+
+<div class="divider"></div>
+
+<!-- DATE -->
+<div class="date">
+  25 OCTOBER 2026
+</div>
+
+<div class="day">
+  SUNDAY
+</div>
+
+<!-- EVENTS -->
+<div class="events">
+
+  <!-- MARRIAGE -->
+  <div class="event-wrapper">
+
+    <div class="event">
+
+      <div class="event-icon">
+        🛕
+      </div>
+
+      <div class="event-title">
+        MARRIAGE
+      </div>
+
+      <div class="event-time">
+        4:00 AM
+      </div>
+
+      <div class="event-venue">
+        Kalyana Kaanika Eswaran Temple,<br>
+        Erulapatti
+      </div>
+
+    </div>
+
+    <!-- Marriage Location -->
+    <a
+      class="location-button"
+      :href="marriageMapURL"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🛕 Marriage Location
+    </a>
+
+  </div>
+
+  <!-- RECEPTION -->
+  <div class="event-wrapper">
+
+    <div class="event">
+
+      <div class="event-icon">
+        🎉
+      </div>
+
+      <div class="event-title">
+        RECEPTION
+      </div>
+
+      <div class="event-time">
+        7:00 AM – 10:00 AM
+      </div>
+
+      <div class="event-venue">
+        KT Varadharaj Goundar<br>
+        Thirumana Mandapam
+      </div>
+
+    </div>
+
+    <!-- Reception Location -->
+    <a
+      class="location-button"
+      :href="receptionMapURL"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      📍 Reception Location
+    </a>
+
+  </div>
+
+</div>
+
+<!-- RECEPTION QR CODE -->
+<div class="qr-section">
+
+  <div class="qr-title">
+    📍 Scan for Reception Location
+  </div>
+
+  <div
+    id="mapQR"
+    ref="qrContainer"
+  ></div>
+
+</div>
+
+<!-- HEART -->
+<div class="heart">
+  ❤️
+</div>
+
+<!-- BLESSING -->
+<div class="blessing">
+  Your presence and blessings<br>
+  will make our special day memorable.
+</div>
+
+<!-- COUNTDOWN -->
+<div id="countdown">
+  <span v-if="countdownFinished">
+    💐 Today is our special day! 💐
+  </span>
+
+  <span v-else>
+    💍 {{ countdown.days }} Days
+    {{ countdown.hours }} Hours
+    {{ countdown.minutes }} Minutes
+    {{ countdown.seconds }} Seconds
+  </span>
+</div>
+```
+
+  </div>
+</template>
+
+<script setup>
+
+import { ref, onMounted, onUnmounted } from "vue";
+import QRCode from "qrcode";
+
+
+/* =========================================
+   GOOGLE MAP URLS
+   ========================================= */
+
+const receptionMapURL =
+  "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
+
+const marriageMapURL =
+  "https://maps.app.goo.gl/YxusGM3brmkNWr9F8";
+
+
+/* =========================================
+   QR CODE
+   ========================================= */
+
+const qrContainer = ref(null);
+
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+const weddingDate =
+  new Date(
+    "2026-10-25T04:00:00+05:30"
+  ).getTime();
+
+
+const countdown = ref({
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0
+});
+
+
+const countdownFinished = ref(false);
+
+let countdownTimer = null;
+
+
+/* =========================================
+   UPDATE COUNTDOWN
+   ========================================= */
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+
+  const difference =
+    weddingDate - now;
+
+
+  if (difference <= 0) {
+
+    countdownFinished.value = true;
+
+    if (countdownTimer) {
+      clearInterval(countdownTimer);
+    }
+
+    return;
+  }
+
+
+  countdown.value.days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+  countdown.value.hours =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60 * 24)
+      ) /
+      (1000 * 60 * 60)
+    );
+
+
+  countdown.value.minutes =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60)
+      ) /
+      (1000 * 60)
+    );
+
+
+  countdown.value.seconds =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60)
+      ) /
+      1000
+    );
+}
+
+
+/* =========================================
+   COMPONENT MOUNT
+   ========================================= */
+
+onMounted(async () => {
+
+  /*
+   * Generate QR code for reception
+   */
+
+  if (qrContainer.value) {
+
+    const canvas =
+      document.createElement("canvas");
+
+    await QRCode.toCanvas(
+      canvas,
+      receptionMapURL,
+      {
+        width: 200,
+        margin: 0,
+
+        color: {
+          dark: "#000000",
+          light: "#ffffff"
+        },
+
+        errorCorrectionLevel: "H"
+      }
+    );
+
+    qrContainer.value.appendChild(canvas);
+  }
+
+
+  /*
+   * Start countdown
+   */
+
+  updateCountdown();
+
+  countdownTimer =
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+});
+
+
+/* =========================================
+   COMPONENT UNMOUNT
+   ========================================= */
+
+onUnmounted(() => {
+
+  if (countdownTimer) {
+    clearInterval(countdownTimer);
+  }
+
+});
+
+</script>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #fffaf0 0%,
+      #f8e9d0 55%,
+      #ead0b0 100%
+    );
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #5b2432;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   GOOGLE FONT
+   ========================================= */
+
+/* @import url(
+  "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+); */
+
+
+/* =========================================
+   INVITATION
+   ========================================= */
+
+.invitation {
+
+  width: 100dvw;
+  height: 100dvh;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255, 250, 240, 0.63),
+      rgba(255, 245, 232, 0.63)
+    ),
+
+    url("./assets/wedding-bg.jpeg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  padding-top:
+    max(
+      8px,
+      env(safe-area-inset-top)
+    );
+
+  padding-bottom:
+    max(
+      8px,
+      env(safe-area-inset-bottom)
+    );
+
+  padding-left: 12px;
+  padding-right: 12px;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    inset 0 0 70px
+    rgba(139, 69, 19, 0.10);
+}
+
+
+/* =========================================
+   DECORATIVE FLOWERS
+   ========================================= */
+
+.invitation::before {
+
+  content: "🌸";
+
+  position: absolute;
+
+  top: 5px;
+  left: 10px;
+
+  font-size:
+    clamp(
+      35px,
+      9vw,
+      60px
+    );
+
+  opacity: 0.42;
+
+  filter:
+    drop-shadow(
+      0 2px 4px
+      rgba(163, 107, 0, 0.18)
+    );
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+.invitation::after {
+
+  content: "🌸";
+
+  position: absolute;
+
+  bottom: 5px;
+  right: 10px;
+
+  font-size:
+    clamp(
+      35px,
+      9vw,
+      60px
+    );
+
+  opacity: 0.42;
+
+  filter:
+    drop-shadow(
+      0 2px 4px
+      rgba(163, 107, 0, 0.18)
+    );
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+.invitation > * {
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   FLOWER
+   ========================================= */
+
+.flower {
+
+  font-size:
+    clamp(
+      18px,
+      3.8vh,
+      30px
+    );
+
+  margin-bottom: 2px;
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(128, 50, 70, 0.20)
+    );
+}
+
+
+/* =========================================
+   SAVE THE DATE
+   ========================================= */
+
+.save-date {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      1.7vh,
+      12px
+    );
+
+  letter-spacing: 2px;
+
+  color: #a66a00;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+
+  line-height: 1.1;
+
+  text-shadow:
+    0 1px 1px
+    rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   NAMES
+   ========================================= */
+
+.names {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      21px,
+      4.5vh,
+      31px
+    );
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #7d2941;
+
+  letter-spacing: 0.8px;
+
+  text-shadow:
+
+    1px 1px 2px
+    rgba(255, 255, 255, 0.95),
+
+    2px 2px 4px
+    rgba(110, 38, 58, 0.16);
+}
+
+
+/* =========================================
+   AND
+   ========================================= */
+
+.and {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      13px,
+      2.6vh,
+      19px
+    );
+
+  color: #c18a22;
+
+  margin: 2px 0;
+
+  font-style: italic;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-shadow:
+    0 1px 2px
+    rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.message {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  margin:
+    clamp(
+      5px,
+      1.2vh,
+      10px
+    )
+    auto;
+
+  max-width:
+    min(
+      500px,
+      92vw
+    );
+
+  font-size:
+    clamp(
+      8px,
+      1.65vh,
+      12px
+    );
+
+  line-height: 1.25;
+
+  color: #694451;
+
+  font-weight: 600;
+
+  text-shadow:
+    0 1px 2px
+    rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+.divider {
+
+  width:
+    min(
+      150px,
+      38vw
+    );
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c18a22,
+      #e4b95d,
+      #c18a22,
+      transparent
+    );
+
+  margin: 5px auto;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   DATE
+   ========================================= */
+
+.date {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      16px,
+      3.3vh,
+      23px
+    );
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #8a3048;
+
+  text-shadow:
+
+    1px 1px 2px
+    rgba(255, 255, 255, 0.9),
+
+    1px 2px 3px
+    rgba(110, 38, 58, 0.12);
+}
+
+
+/* =========================================
+   DAY
+   ========================================= */
+
+.day {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      1.6vh,
+      11px
+    );
+
+  letter-spacing: 2px;
+
+  color: #b1740b;
+
+  margin-top: 2px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   EVENTS
+   ========================================= */
+
+.events {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  margin-top: 6px;
+}
+
+
+/* =========================================
+   EVENT COLUMN
+   ========================================= */
+
+.event-wrapper {
+
+  width: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   EVENT CARD
+   ========================================= */
+
+.event {
+
+  width: 100%;
+
+  padding: 7px 5px;
+
+  border:
+    1px solid
+    rgba(178, 126, 35, 0.55);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 252, 245, 0.72),
+      rgba(255, 237, 215, 0.52)
+    );
+
+  box-shadow:
+
+    0 3px 12px
+    rgba(113, 55, 65, 0.10),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   EVENT ICON
+   ========================================= */
+
+.event-icon {
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  margin-bottom: 3px;
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(120, 50, 60, 0.15)
+    );
+}
+
+
+/* =========================================
+   EVENT TITLE
+   ========================================= */
+
+.event-title {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      1.65vh,
+      11px
+    );
+
+  letter-spacing: 1.5px;
+
+  color: #b1740b;
+
+  font-weight: 700;
+
+  margin-bottom: 3px;
+}
+
+
+/* =========================================
+   EVENT TIME
+   ========================================= */
+
+.event-time {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      13px,
+      2.5vh,
+      17px
+    );
+
+  color: #842f46;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  margin-bottom: 4px;
+}
+
+
+/* =========================================
+   EVENT VENUE
+   ========================================= */
+
+.event-venue {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      1.6vh,
+      11px
+    );
+
+  line-height: 1.2;
+
+  color: #674351;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   LOCATION BUTTON
+   ========================================= */
+
+.location-button {
+
+  display: inline-block;
+
+  margin-top: 5px;
+
+  padding: 5px 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8f2f4c,
+      #b44b5f
+    );
+
+  color: #fffaf3;
+
+  text-decoration: none;
+
+  border-radius: 20px;
+
+  border:
+    1px solid
+    rgba(255, 220, 150, 0.65);
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      7px,
+      1.4vh,
+      10px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  white-space: nowrap;
+
+  box-shadow:
+
+    0 3px 9px
+    rgba(104, 35, 53, 0.25),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.22);
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  animation:
+    locationBlink
+    2s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+/* =========================================
+   LOCATION BLINK
+   ========================================= */
+
+@keyframes locationBlink {
+
+  0% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow:
+
+      0 3px 9px
+      rgba(104, 35, 53, 0.25),
+
+      inset 0 1px 0
+      rgba(255, 255, 255, 0.22);
+  }
+
+  50% {
+
+    opacity: 0.82;
+
+    transform: scale(1.035);
+
+    box-shadow:
+
+      0 4px 16px
+      rgba(193, 138, 34, 0.42),
+
+      0 0 8px
+      rgba(193, 138, 34, 0.20);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow:
+
+      0 3px 9px
+      rgba(104, 35, 53, 0.25),
+
+      inset 0 1px 0
+      rgba(255, 255, 255, 0.22);
+  }
+}
+
+
+/* =========================================
+   TOUCH
+   ========================================= */
+
+.location-button:active {
+
+  transform: scale(0.94);
+
+  background:
+    linear-gradient(
+      135deg,
+      #a66a00,
+      #c18a22
+    );
+
+  animation: none;
+
+  box-shadow:
+    0 2px 6px
+    rgba(80, 35, 40, 0.25);
+}
+
+
+.location-button:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #a66a00,
+      #c18a22
+    );
+
+  transform: scale(1.04);
+
+  box-shadow:
+    0 5px 15px
+    rgba(166, 106, 0, 0.28);
+}
+
+
+/* =========================================
+   QR SECTION
+   ========================================= */
+
+.qr-section {
+
+  margin-top: 7px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   QR TITLE
+   ========================================= */
+
+.qr-title {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      1.5vh,
+      11px
+    );
+
+  font-weight: 700;
+
+  color: #8a3048;
+
+  margin-bottom: 5px;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================
+   QR CODE
+   ========================================= */
+
+#mapQR {
+
+  width: 105px;
+
+  height: 105px;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    2px solid
+    #c18a22;
+
+  box-shadow:
+
+    0 4px 13px
+    rgba(95, 45, 55, 0.18),
+
+    0 0 0 3px
+    rgba(255, 248, 230, 0.65);
+
+  flex-shrink: 0;
+}
+
+
+#mapQR canvas {
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  max-width: none !important;
+
+  max-height: none !important;
+
+  display: block;
+}
+
+
+/* =========================================
+   HEART
+   ========================================= */
+
+.heart {
+
+  font-size:
+    clamp(
+      14px,
+      2.8vh,
+      21px
+    );
+
+  margin: 3px 0 1px;
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(160, 50, 70, 0.18)
+    );
+}
+
+
+/* =========================================
+   BLESSING
+   ========================================= */
+
+.blessing {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      7px,
+      1.4vh,
+      10px
+    );
+
+  line-height: 1.2;
+
+  max-width: 90vw;
+
+  color: #6b4553;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+#countdown {
+
+  margin-top: 6px;
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-size:
+    clamp(
+      8px,
+      2.45vw,
+      14px
+    );
+
+  color: #7d2941;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+
+  text-shadow:
+    0 1px 2px
+    rgba(255, 255, 255, 0.95);
+
+  width: 100%;
+
+  max-width: 100%;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: clip;
+
+  padding-left: 2px;
+
+  padding-right: 2px;
+}
+
+
+/* =========================================
+   SHORT PHONE
+   ========================================= */
+
+@media (max-height: 650px) {
+
+  .invitation {
+
+    padding-top: 4px;
+
+    padding-bottom: 4px;
+  }
+
+
+  .flower {
+    font-size: 17px;
+  }
+
+
+  .message {
+
+    margin: 3px auto;
+
+    line-height: 1.15;
+  }
+
+
+  .divider {
+    margin: 3px auto;
+  }
+
+
+  .events {
+
+    margin-top: 3px;
+
+    gap: 5px;
+  }
+
+
+  .event {
+    padding: 5px 3px;
+  }
+
+
+  .location-button {
+
+    margin-top: 4px;
+
+    padding: 5px 7px;
+
+    animation-duration: 2.2s;
+  }
+
+
+  .qr-section {
+    margin-top: 3px;
+  }
+
+
+  #mapQR {
+
+    width: 95px;
+
+    height: 95px;
+
+    padding: 4px;
+  }
+
+
+  .heart {
+    margin: 2px 0 1px;
+  }
+
+
+  #countdown {
+
+    margin-top: 4px;
+
+    font-size:
+      clamp(
+        8px,
+        2.45vw,
+        13px
+      );
+
+    line-height: 1;
+
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONE
+   ========================================= */
+
+@media (max-width: 350px) {
+
+  .invitation {
+
+    padding-left: 6px;
+
+    padding-right: 6px;
+  }
+
+
+  .names {
+    font-size: 21px;
+  }
+
+
+  .events {
+    gap: 4px;
+  }
+
+
+  .event {
+    padding: 5px 2px;
+  }
+
+
+  .event-venue {
+    font-size: 8px;
+  }
+
+
+  .location-button {
+
+    font-size: 7px;
+
+    padding: 5px 6px;
+  }
+
+
+  #mapQR {
+
+    width: 90px;
+
+    height: 90px;
+
+    padding: 4px;
+  }
+
+
+  #countdown {
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    margin-top: 4px;
+
+    white-space: nowrap;
+
+    width: 100%;
+
+    overflow: hidden;
+  }
+}
+
+
+/* =========================================
+   DESKTOP
+   ========================================= */
+
+@media (min-width: 768px) {
+
+  .invitation {
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+  }
+
+
+  .events {
+    max-width: 650px;
+  }
+
+
+  #mapQR {
+
+    width: 120px;
+
+    height: 120px;
+
+    padding: 5px;
+  }
+
+
+  #countdown {
+
+    font-size: 14px;
+
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .location-button {
+    animation: none;
+  }
+}
+
+
+/* =========================================
+   PRINT
+   ========================================= */
+
+@media print {
+
+  html,
+  body {
+
+    width: auto;
+
+    height: auto;
+  }
+
+
+  body {
+
+    background: white;
+
+    overflow: visible;
+  }
+
+
+  #countdown {
+    display: none;
+  }
+
+
+  .location-button {
+    animation: none;
+  }
+
+
+  .invitation {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow: visible;
+
+    box-shadow: none;
+
+    print-color-adjust: exact;
+
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+</style>
