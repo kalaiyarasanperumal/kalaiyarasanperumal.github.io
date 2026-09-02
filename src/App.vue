@@ -341,7 +341,7 @@ body {
       rgba(255, 250, 240, 0.63),
       rgba(255, 245, 232, 0.63)
     ),
-    url("./assets/wedding-bg.jpeg");
+    url("/wedding-bg.jpeg");
 
   background-size: cover;
   background-position: center;
