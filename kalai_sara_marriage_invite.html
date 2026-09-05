@@ -1,984 +1,787 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-
->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Kalaiyarasan & Saranya | Wedding Invitation</title>
-
-  <!-- QR CODE LIBRARY -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <!-- GOOGLE FONTS -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
     rel="stylesheet"
-  >
+  />
 
   <style>
-
-    /* =========================================
-       RESET
-       ========================================= */
-
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html,
-    body {
+    html, body {
       width: 100%;
       height: 100%;
-      overflow: hidden;
     }
-
-
-    /* =========================================
-       BODY
-       ========================================= */
 
     body {
       font-family: "Cormorant Garamond", Georgia, serif;
-
-      width: 100%;
-      height: 100dvh;
-      min-height: 100dvh;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #fffaf0 0%,
-          #f8e9d0 55%,
-          #ead0b0 100%
-        );
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      color: #5b2432;
+      color: #641f31;
+      background: #ead5b6;
       overflow: hidden;
     }
 
-
-    /* =========================================
-       INVITATION
-       ========================================= */
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
     .invitation {
-      width: 100dvw;
+      position: relative;
+      width: 100vw;
       height: 100dvh;
+      min-height: 560px;
+      overflow: hidden;
 
-      background-image:
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        max(14px, env(safe-area-inset-top))
+        max(14px, env(safe-area-inset-right))
+        max(14px, env(safe-area-inset-bottom))
+        max(14px, env(safe-area-inset-left));
+
+      background:
         linear-gradient(
-          rgba(255, 250, 240, 0.63),
-          rgba(255, 245, 232, 0.63)
+          rgba(255, 248, 235, 0.72),
+          rgba(255, 242, 222, 0.82)
         ),
         url("./wedding-bg.jpeg");
 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      padding-top:
-        max(
-          8px,
-          env(safe-area-inset-top)
-        );
-
-      padding-bottom:
-        max(
-          8px,
-          env(safe-area-inset-bottom)
-        );
-
-      padding-left: 12px;
-      padding-right: 12px;
-
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      box-shadow:
-        inset 0 0 70px
-        rgba(139, 69, 19, 0.10);
     }
-
-
-    /* =========================================
-       DECORATIVE FLOWERS
-       ========================================= */
 
     .invitation::before {
-      content: "🌸";
-
+      content: "";
       position: absolute;
-      top: 5px;
-      left: 10px;
-
-      font-size:
-        clamp(
-          35px,
-          9vw,
-          60px
-        );
-
-      opacity: 0.42;
-
-      filter:
-        drop-shadow(
-          0 2px 4px
-          rgba(163, 107, 0, 0.18)
-        );
-
-      z-index: 0;
+      inset: 0;
       pointer-events: none;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.22) 0%,
+          transparent 45%
+        ),
+        radial-gradient(
+          circle at center,
+          transparent 45%,
+          rgba(91, 29, 43, 0.14) 100%
+        );
+      z-index: 0;
     }
-
 
     .invitation::after {
-      content: "🌸";
-
+      content: "";
       position: absolute;
-      bottom: 5px;
-      right: 10px;
-
-      font-size:
-        clamp(
-          35px,
-          9vw,
-          60px
-        );
-
-      opacity: 0.42;
-
-      filter:
-        drop-shadow(
-          0 2px 4px
-          rgba(163, 107, 0, 0.18)
-        );
-
-      z-index: 0;
+      inset: 10px;
+      border: 1px solid rgba(174, 126, 42, 0.38);
+      border-radius: 18px;
       pointer-events: none;
-    }
-
-
-    .invitation > * {
-      position: relative;
       z-index: 1;
     }
 
-
-    /* =========================================
-       FLOWER
-       ========================================= */
-
-    .flower {
-      font-size:
-        clamp(
-          18px,
-          3.8vh,
-          30px
-        );
-
-      margin-bottom: 2px;
-      line-height: 1;
-
-      filter:
-        drop-shadow(
-          0 2px 3px
-          rgba(128, 50, 70, 0.20)
-        );
+    .corner {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.9;
     }
 
-
-    /* =========================================
-       SAVE THE DATE
-       ========================================= */
-
-    .save-date {
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          8px,
-          1.7vh,
-          12px
-        );
-
-      letter-spacing: 2px;
-      color: #a66a00;
-      font-weight: 700;
-
-      margin-bottom: 5px;
-      line-height: 1.1;
-
-      text-shadow:
-        0 1px 1px
-        rgba(255, 255, 255, 0.9);
+    .corner::before,
+    .corner::after {
+      content: "";
+      position: absolute;
+      border-color: #b98728;
+      border-style: solid;
     }
 
-
-    /* =========================================
-       NAMES
-       ========================================= */
-
-    .names {
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          21px,
-          4.5vh,
-          31px
-        );
-
-      line-height: 1;
-      font-weight: 700;
-
-      color: #7d2941;
-
-      letter-spacing: 0.8px;
-
-      text-shadow:
-        1px 1px 2px
-        rgba(255, 255, 255, 0.95),
-
-        2px 2px 4px
-        rgba(110, 38, 58, 0.16);
+    .corner.top-left {
+      top: 12px;
+      left: 12px;
     }
 
-
-    /* =========================================
-       AND
-       ========================================= */
-
-    .and {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size:
-        clamp(
-          13px,
-          2.6vh,
-          19px
-        );
-
-      color: #c18a22;
-
-      margin: 2px 0;
-
-      font-style: italic;
-      font-weight: 700;
-
-      line-height: 1;
-
-      text-shadow:
-        0 1px 2px
-        rgba(255, 255, 255, 0.8);
+    .corner.top-left::before {
+      inset: 0;
+      border-width: 2px 0 0 2px;
+      border-radius: 30px 0 0 0;
     }
 
-
-    /* =========================================
-       MESSAGE
-       ========================================= */
-
-    .message {
-      font-family: "Cormorant Garamond", serif;
-
-      margin:
-        clamp(
-          5px,
-          1.2vh,
-          10px
-        )
-        auto;
-
-      max-width: min(500px, 92vw);
-
-      font-size:
-        clamp(
-          8px,
-          1.65vh,
-          12px
-        );
-
-      line-height: 1.25;
-
-      color: #694451;
-
-      font-weight: 600;
-
-      text-shadow:
-        0 1px 2px
-        rgba(255, 255, 255, 0.9);
+    .corner.top-left::after {
+      width: 40px;
+      height: 40px;
+      top: 11px;
+      left: 11px;
+      border-width: 1px 0 0 1px;
+      border-radius: 16px 0 0 0;
     }
 
-
-    /* =========================================
-       DIVIDER
-       ========================================= */
-
-    .divider {
-      width:
-        min(
-          150px,
-          38vw
-        );
-
-      height: 2px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #c18a22,
-          #e4b95d,
-          #c18a22,
-          transparent
-        );
-
-      margin: 5px auto;
-
-      flex: 0 0 auto;
-
-      border-radius: 50%;
+    .corner.bottom-right {
+      right: 12px;
+      bottom: 12px;
+      transform: rotate(180deg);
     }
 
-
-    /* =========================================
-       DATE
-       ========================================= */
-
-    .date {
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          16px,
-          3.3vh,
-          23px
-        );
-
-      line-height: 1;
-
-      font-weight: 700;
-
-      color: #8a3048;
-
-      text-shadow:
-        1px 1px 2px
-        rgba(255, 255, 255, 0.9),
-
-        1px 2px 3px
-        rgba(110, 38, 58, 0.12);
+    .corner.bottom-right::before {
+      inset: 0;
+      border-width: 2px 0 0 2px;
+      border-radius: 30px 0 0 0;
     }
 
-
-    /* =========================================
-       DAY
-       ========================================= */
-
-    .day {
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          8px,
-          1.6vh,
-          11px
-        );
-
-      letter-spacing: 2px;
-
-      color: #b1740b;
-
-      margin-top: 2px;
-
-      line-height: 1.1;
-
-      font-weight: 700;
+    .corner.bottom-right::after {
+      width: 40px;
+      height: 40px;
+      top: 11px;
+      left: 11px;
+      border-width: 1px 0 0 1px;
+      border-radius: 16px 0 0 0;
     }
 
-
-    /* =========================================
-       EVENTS
-       ========================================= */
-
-    .events {
-      display: flex;
-
-      justify-content: center;
-      align-items: flex-start;
-
-      gap: 10px;
-
-      width: 100%;
-      max-width: 600px;
-
-      margin-top: 6px;
-    }
-
-
-    /* =========================================
-       EVENT COLUMN
-       ========================================= */
-
-    .event-wrapper {
-      width: 50%;
+    .content {
+      position: relative;
+      z-index: 4;
+      width: min(720px, 100%);
+      max-height: 100%;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      animation: fadeIn 1.2s ease both;
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    /* =========================================
-       EVENT CARD
-       ========================================= */
-
-    .event {
+    .wedding-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 100%;
+      margin-bottom: 2px;
+    }
 
-      padding: 7px 5px;
+    .premium-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-bottom: 8px;
+      color: #b4862c;
+      opacity: 0.95;
+    }
 
-      border:
-        1px solid
-        rgba(178, 126, 35, 0.55);
+    .premium-ornament .ornament-line {
+      width: 52px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a8751b, #d4ad5b);
+    }
 
-      border-radius: 12px;
+    .premium-ornament .ornament-line.right {
+      background: linear-gradient(90deg, #d4ad5b, #a8751b, transparent);
+    }
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 252, 245, 0.72),
-          rgba(255, 237, 215, 0.52)
-        );
+    .ornament-diamond {
+      font-size: 5px;
+      color: #a8751b;
+    }
+
+    .ornament-symbol {
+      font-size: 16px;
+      line-height: 1;
+      color: #b27b1e;
+      text-shadow: 0 1px 3px rgba(120, 75, 15, 0.25);
+    }
+
+    .save-date-premium {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 13px;
+    }
+
+    .save-line {
+      width: 35px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #bd8b32);
+    }
+
+    .save-line:last-child {
+      background: linear-gradient(90deg, #bd8b32, transparent);
+    }
+
+    .save-date-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      min-width: 174px;
+      padding: 7px 17px 6px;
+
+      border: 1px solid rgba(173, 125, 36, 0.75);
+      border-radius: 4px;
+
+      background: linear-gradient(
+        135deg,
+        rgba(108, 31, 48, 0.96),
+        rgba(133, 42, 62, 0.96)
+      );
 
       box-shadow:
-        0 3px 12px
-        rgba(113, 55, 65, 0.10),
+        0 4px 12px rgba(91, 29, 43, 0.18),
+        inset 0 1px 0 rgba(255, 225, 155, 0.28);
 
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.8);
+      overflow: visible;
     }
 
-
-    .event-icon {
-      font-size: 18px;
-
-      line-height: 1;
-
-      margin-bottom: 3px;
-
-      filter:
-        drop-shadow(
-          0 2px 3px
-          rgba(120, 50, 60, 0.15)
-        );
+    .save-date-content::before,
+    .save-date-content::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border: 1px solid #d5ad5a;
+      transform: rotate(45deg);
+      background: #78263c;
     }
 
+    .save-date-content::before {
+      left: -4px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
 
-    /* =========================================
-       EVENT TITLE
-       ========================================= */
+    .save-date-content::after {
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
 
-    .event-title {
+    .save-small {
       font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          8px,
-          1.65vh,
-          11px
-        );
-
-      letter-spacing: 1.5px;
-
-      color: #b1740b;
-
-      font-weight: 700;
-
-      margin-bottom: 3px;
+      font-size: 8px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: #f1d58f;
     }
 
-
-    /* =========================================
-       EVENT TIME
-       ========================================= */
-
-    .event-time {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size:
-        clamp(
-          13px,
-          2.5vh,
-          17px
-        );
-
-      color: #842f46;
-
+    .save-main {
+      font-family: "Cinzel", serif;
+      font-size: 11px;
+      letter-spacing: 2.3px;
       font-weight: 700;
+      color: #fff5d9;
+      text-shadow: 0 1px 2px rgba(60, 18, 28, 0.45);
+    }
 
-      line-height: 1.05;
+    .couple-names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
 
+    .groom-name,
+    .bride-name {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: #75243a;
+      line-height: 1;
+      letter-spacing: 2.5px;
+      text-align: center;
+      text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95),
+        0 2px 5px rgba(92, 30, 43, 0.18);
+    }
+
+    .groom-name,
+    .bride-name {
+      font-size: clamp(27px, 5.8vh, 44px);
+    }
+
+    .groom-name {
+      margin-bottom: 5px;
+    }
+
+    .bride-name {
+      margin-top: 5px;
+    }
+
+    .name-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      height: 23px;
+      margin: 1px 0;
+    }
+
+    .name-ornament span {
+      width: 35px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #b58225);
+    }
+
+    .name-ornament span:last-child {
+      background: linear-gradient(90deg, #b58225, transparent);
+    }
+
+    .name-ornament b {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 600;
+      font-style: italic;
+      color: #b17b20;
+      text-shadow: 0 1px 2px rgba(112, 70, 15, 0.18);
+    }
+
+    .name-bottom-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 8px;
       margin-bottom: 4px;
     }
 
+    .name-bottom-ornament span {
+      width: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #bd8a2c);
+    }
 
-    /* =========================================
-       EVENT VENUE
-       ========================================= */
+    .name-bottom-ornament span:last-child {
+      background: linear-gradient(90deg, #bd8a2c, transparent);
+    }
 
-    .event-venue {
-      font-family: "Cormorant Garamond", serif;
+    .name-bottom-ornament i {
+      font-size: 11px;
+      font-style: normal;
+      color: #b27b1e;
+    }
 
-      font-size:
-        clamp(
-          8px,
-          1.6vh,
-          11px
-        );
-
-      line-height: 1.2;
-
-      color: #674351;
-
+    .message {
+      max-width: 540px;
+      margin: clamp(7px, 1.3vh, 11px) auto;
+      font-size: clamp(10px, 1.8vh, 14px);
+      line-height: 1.3;
       font-weight: 600;
+      color: #69434d;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
     }
 
-
-    /* =========================================
-       LOCATION BUTTON
-       ========================================= */
-
-    .location-button {
-      display: inline-block;
-
-      margin-top: 5px;
-
-      padding: 5px 8px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #8f2f4c,
-          #b44b5f
-        );
-
-      color: #fffaf3;
-
-      text-decoration: none;
-
-      border-radius: 20px;
-
-      border:
-        1px solid
-        rgba(255, 220, 150, 0.65);
-
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          7px,
-          1.4vh,
-          10px
-        );
-
-      font-weight: 700;
-
-      line-height: 1.1;
-
-      white-space: nowrap;
-
-      box-shadow:
-        0 3px 9px
-        rgba(104, 35, 53, 0.25),
-
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.22);
-
-      cursor: pointer;
-
-      -webkit-tap-highlight-color: transparent;
-
-      animation:
-        locationBlink
-        2s
-        ease-in-out
-        infinite;
-
-      transition:
-        transform 0.15s ease,
-        background 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-
-    /* =========================================
-       LOCATION BLINK
-       ========================================= */
-
-    @keyframes locationBlink {
-
-      0% {
-        opacity: 1;
-
-        transform: scale(1);
-
-        box-shadow:
-          0 3px 9px
-          rgba(104, 35, 53, 0.25),
-
-          inset 0 1px 0
-          rgba(255, 255, 255, 0.22);
-      }
-
-      50% {
-        opacity: 0.82;
-
-        transform: scale(1.035);
-
-        box-shadow:
-          0 4px 16px
-          rgba(193, 138, 34, 0.42),
-
-          0 0 8px
-          rgba(193, 138, 34, 0.20);
-      }
-
-      100% {
-        opacity: 1;
-
-        transform: scale(1);
-
-        box-shadow:
-          0 3px 9px
-          rgba(104, 35, 53, 0.25),
-
-          inset 0 1px 0
-          rgba(255, 255, 255, 0.22);
-      }
-    }
-
-
-    /* =========================================
-       TOUCH
-       ========================================= */
-
-    .location-button:active {
-      transform: scale(0.94);
-
-      background:
-        linear-gradient(
-          135deg,
-          #a66a00,
-          #c18a22
-        );
-
-      animation: none;
-
-      box-shadow:
-        0 2px 6px
-        rgba(80, 35, 40, 0.25);
-    }
-
-
-    .location-button:hover {
-      background:
-        linear-gradient(
-          135deg,
-          #a66a00,
-          #c18a22
-        );
-
-      transform: scale(1.04);
-
-      box-shadow:
-        0 5px 15px
-        rgba(166, 106, 0, 0.28);
-    }
-
-
-    /* =========================================
-       QR SECTION
-       ========================================= */
-
-    .qr-section {
-      margin-top: 7px;
-
+    .divider {
+      width: min(260px, 52vw);
       display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 3px auto 6px;
+      color: #b47b1b;
+    }
 
+    .divider::before,
+    .divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #b47b1b);
+    }
+
+    .divider::after {
+      background: linear-gradient(90deg, #b47b1b, transparent);
+    }
+
+    .divider span {
+      font-size: 11px;
+    }
+
+    .date {
+      font-family: "Cinzel", serif;
+      font-size: clamp(17px, 3.6vh, 27px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #832c46;
+    }
+
+    .day {
+      margin-top: 4px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(8px, 1.55vh, 11px);
+      letter-spacing: 4px;
+      color: #a96f13;
+      font-weight: 700;
+    }
+
+    .events {
+      width: min(640px, 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .event-wrapper {
+      min-width: 0;
+      display: flex;
       flex-direction: column;
-
       align-items: center;
     }
 
+    .event {
+      position: relative;
+      width: 100%;
+      padding: 10px 8px 11px;
 
-    /* =========================================
-       QR TITLE
-       ========================================= */
+      border: 1px solid rgba(171, 117, 25, 0.48);
+      border-radius: 16px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.78),
+        rgba(255, 239, 210, 0.62)
+      );
+
+      box-shadow:
+        0 7px 22px rgba(94, 40, 50, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+      backdrop-filter: blur(4px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .event:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 11px 28px rgba(94, 40, 50, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      width: 34px;
+      height: 2px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: #c18b27;
+    }
+
+    .event-icon {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      font-size: 19px;
+      line-height: 1;
+      filter: drop-shadow(0 2px 2px rgba(80, 30, 40, 0.14));
+    }
+
+    .event-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(8px, 1.55vh, 11px);
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #a36d11;
+      margin-bottom: 4px;
+    }
+
+    .event-time {
+      font-size: clamp(14px, 2.6vh, 19px);
+      line-height: 1;
+      font-weight: 700;
+      color: #812b45;
+      margin-bottom: 5px;
+    }
+
+    .event-venue {
+      font-size: clamp(8px, 1.55vh, 11px);
+      line-height: 1.25;
+      font-weight: 600;
+      color: #67434d;
+    }
+
+    .location-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      margin-top: 6px;
+      min-height: 28px;
+      padding: 5px 12px;
+
+      border-radius: 30px;
+      border: 1px solid rgba(238, 200, 110, 0.72);
+
+      background: linear-gradient(135deg, #79263f, #a33b54);
+      color: #fff8eb;
+      text-decoration: none;
+
+      font-family: "Cinzel", serif;
+      font-size: clamp(7px, 1.4vh, 10px);
+      font-weight: 700;
+      white-space: nowrap;
+
+      box-shadow:
+        0 4px 12px rgba(94, 31, 48, 0.23),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .location-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(94, 31, 48, 0.3);
+    }
+
+    .location-button:active {
+      transform: scale(0.95);
+    }
+
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 6px;
+    }
 
     .qr-title {
       font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          8px,
-          1.5vh,
-          11px
-        );
-
+      font-size: clamp(7px, 1.45vh, 10px);
+      letter-spacing: 1.5px;
       font-weight: 700;
-
-      color: #8a3048;
-
-      margin-bottom: 5px;
-
-      line-height: 1.1;
+      color: #842d46;
+      margin-bottom: 4px;
     }
 
-
-    /* =========================================
-       QR CODE
-       ========================================= */
-
     #mapQR {
-      width: 105px;
-      height: 105px;
-
+      width: 94px;
+      height: 94px;
       padding: 5px;
 
-      background: #ffffff;
-
-      border-radius: 8px;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      border:
-        2px solid
-        #c18a22;
+      background: #fff;
+      border: 2px solid #bd8825;
+      border-radius: 10px;
 
       box-shadow:
-        0 4px 13px
-        rgba(95, 45, 55, 0.18),
-
-        0 0 0 3px
-        rgba(255, 248, 230, 0.65);
-
-      flex-shrink: 0;
+        0 4px 14px rgba(82, 37, 47, 0.18),
+        0 0 0 3px rgba(255, 248, 229, 0.72);
     }
-
 
     #mapQR img,
     #mapQR canvas {
+      display: block;
       width: 100% !important;
       height: 100% !important;
-
-      max-width: none !important;
-      max-height: none !important;
-
-      display: block;
     }
-
-
-    /* =========================================
-       HEART
-       ========================================= */
 
     .heart {
-      font-size:
-        clamp(
-          14px,
-          2.8vh,
-          21px
-        );
-
-      margin: 3px 0 1px;
-
+      margin-top: 4px;
+      font-size: 14px;
       line-height: 1;
-
-      filter:
-        drop-shadow(
-          0 2px 3px
-          rgba(160, 50, 70, 0.18)
-        );
+      animation: heartbeat 2.5s ease-in-out infinite;
     }
 
-
-    /* =========================================
-       BLESSING
-       ========================================= */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
 
     .blessing {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size:
-        clamp(
-          7px,
-          1.4vh,
-          10px
-        );
-
+      margin-top: 3px;
+      font-size: clamp(7px, 1.4vh, 10px);
       line-height: 1.2;
-
-      max-width: 90vw;
-
-      color: #6b4553;
-
       font-weight: 600;
+      color: #6b4652;
     }
-
-
-    /* =========================================
-       COUNTDOWN
-       ========================================= */
 
     #countdown {
-      margin-top: 6px;
-
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(
-          8px,
-          2.45vw,
-          14px
-        );
-
-      color: #7d2941;
-
-      font-weight: 700;
-
-      line-height: 1;
-
-      letter-spacing: 0;
-
-      text-shadow:
-        0 1px 2px
-        rgba(255, 255, 255, 0.95);
-
       width: 100%;
-      max-width: 100%;
-
-      text-align: center;
-
+      margin-top: 6px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(8px, 2.1vw, 13px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #7c2941;
       white-space: nowrap;
-
-      overflow: hidden;
-
-      text-overflow: clip;
-
-      padding-left: 2px;
-      padding-right: 2px;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
     }
 
-
-    /* =========================================
-       SHORT PHONE
-       ========================================= */
-
-    @media (max-height: 650px) {
-
+    @media (max-height: 680px) {
       .invitation {
-        padding-top: 4px;
-        padding-bottom: 4px;
+        min-height: 0;
+        padding-top: 7px;
+        padding-bottom: 7px;
       }
 
-      .flower {
-        font-size: 17px;
+      .premium-ornament {
+        margin-bottom: 4px;
+      }
+
+      .save-date-premium {
+        margin-bottom: 8px;
+      }
+
+      .save-date-content {
+        padding: 5px 14px;
+        min-width: 150px;
+      }
+
+      .save-small {
+        font-size: 7px;
+      }
+
+      .save-main {
+        font-size: 9px;
+      }
+
+      .groom-name,
+      .bride-name {
+        font-size: clamp(22px, 5vh, 34px);
+        letter-spacing: 2px;
+      }
+
+      .name-ornament {
+        height: 18px;
+      }
+
+      .name-ornament b {
+        font-size: 20px;
+      }
+
+      .name-bottom-ornament {
+        margin-top: 4px;
       }
 
       .message {
-        margin: 3px auto;
+        margin: 4px auto;
         line-height: 1.15;
       }
 
       .divider {
-        margin: 3px auto;
+        margin: 2px auto 4px;
       }
 
       .events {
-        margin-top: 3px;
-        gap: 5px;
+        margin-top: 4px;
+        gap: 6px;
       }
 
       .event {
-        padding: 5px 3px;
+        padding: 6px 5px 7px;
+      }
+
+      .event-icon {
+        font-size: 15px;
       }
 
       .location-button {
-        margin-top: 4px;
-        padding: 5px 7px;
-        animation-duration: 2.2s;
+        min-height: 24px;
+        padding: 4px 8px;
       }
 
       .qr-section {
-        margin-top: 3px;
+        margin-top: 4px;
       }
 
       #mapQR {
-        width: 95px;
-        height: 95px;
+        width: 82px;
+        height: 82px;
         padding: 4px;
       }
 
       .heart {
-        margin: 2px 0 1px;
+        margin-top: 2px;
       }
 
       #countdown {
-        margin-top: 4px;
-
-        font-size:
-          clamp(
-            8px,
-            2.45vw,
-            13px
-          );
-
-        line-height: 1;
-
-        white-space: nowrap;
+        margin-top: 3px;
+        font-size: clamp(7px, 2vw, 11px);
       }
     }
 
-
-    /* =========================================
-       VERY SMALL PHONE
-       ========================================= */
-
-    @media (max-width: 350px) {
-
+    @media (max-width: 360px) {
       .invitation {
         padding-left: 6px;
         padding-right: 6px;
       }
 
-      .names {
+      .invitation::after {
+        inset: 5px;
+      }
+
+      .corner {
+        width: 65px;
+        height: 65px;
+      }
+
+      .premium-ornament .ornament-line {
+        width: 30px;
+      }
+
+      .save-date-content {
+        min-width: 135px;
+        padding: 5px 10px;
+      }
+
+      .save-small {
+        font-size: 6px;
+        letter-spacing: 1.5px;
+      }
+
+      .save-main {
+        font-size: 8px;
+        letter-spacing: 1.7px;
+      }
+
+      .groom-name,
+      .bride-name {
         font-size: 21px;
+        letter-spacing: 1.5px;
+      }
+
+      .message {
+        font-size: 8px;
       }
 
       .events {
@@ -986,98 +789,96 @@ content="width=device-width, initial-scale=1.0, viewport-fit=cover"
       }
 
       .event {
-        padding: 5px 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+
+      .event-title {
+        letter-spacing: 1px;
       }
 
       .event-venue {
-        font-size: 8px;
+        font-size: 7px;
       }
 
       .location-button {
-        font-size: 7px;
-        padding: 5px 6px;
+        font-size: 6.5px;
+        padding: 4px 6px;
       }
 
       #mapQR {
-        width: 90px;
-        height: 90px;
-        padding: 4px;
+        width: 76px;
+        height: 76px;
       }
 
       #countdown {
-        font-size: 8px;
-        line-height: 1;
-        margin-top: 4px;
-        white-space: nowrap;
-        width: 100%;
-        overflow: hidden;
+        font-size: 7px;
       }
     }
 
-
-    /* =========================================
-       DESKTOP
-       ========================================= */
-
     @media (min-width: 768px) {
-
       .invitation {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding: 30px;
+      }
+
+      .content {
+        transform: scale(1.03);
       }
 
       .events {
-        max-width: 650px;
+        max-width: 660px;
+      }
+
+      .save-date-content {
+        min-width: 205px;
+        padding: 9px 22px 8px;
+      }
+
+      .save-small {
+        font-size: 9px;
+      }
+
+      .save-main {
+        font-size: 12px;
+      }
+
+      .groom-name,
+      .bride-name {
+        font-size: 42px;
+      }
+
+      .name-ornament b {
+        font-size: 28px;
       }
 
       #mapQR {
-        width: 120px;
-        height: 120px;
-        padding: 5px;
+        width: 110px;
+        height: 110px;
       }
 
       #countdown {
         font-size: 14px;
-        white-space: nowrap;
       }
     }
-
-
-    /* =========================================
-       REDUCE MOTION
-       ========================================= */
 
     @media (prefers-reduced-motion: reduce) {
-
-      .location-button {
+      .heart,
+      .event,
+      .content {
         animation: none;
+        transition: none;
       }
     }
 
-
-    /* =========================================
-       PRINT
-       ========================================= */
-
     @media print {
-
-      html,
-      body {
+      html, body {
         width: auto;
         height: auto;
+        overflow: visible;
       }
 
       body {
         background: white;
-        overflow: visible;
-      }
-
-      #countdown {
-        display: none;
-      }
-
-      .location-button {
-        animation: none;
       }
 
       .invitation {
@@ -1085,332 +886,213 @@ content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         height: auto;
         min-height: 100vh;
         overflow: visible;
-        box-shadow: none;
-
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
+
+      #countdown {
+        display: none;
+      }
+
+      .heart {
+        animation: none;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
+  <main class="invitation">
 
-  <div class="invitation">
+    <div class="corner top-left"></div>
+    <div class="corner bottom-right"></div>
 
-```
-<!-- FLOWER -->
+    <section class="content">
 
-<div class="flower">
-  💐
-</div>
+      <!-- PREMIUM WEDDING HEADER -->
+      <div class="wedding-header">
 
+        <div class="top-ornament premium-ornament">
+          <span class="ornament-line left"></span>
+          <span class="ornament-diamond">◆</span>
+          <span class="ornament-symbol">✦</span>
+          <span class="ornament-diamond">◆</span>
+          <span class="ornament-line right"></span>
+        </div>
 
-<!-- SAVE THE DATE -->
+        <div class="save-date-premium">
+          <span class="save-line"></span>
 
-<div class="save-date">
-  SAVE THE DATE
-</div>
+          <div class="save-date-content">
+            <span class="save-main">SAVE</span>
+            <span class="save-main">THE DATE</span>
+          </div>
 
+          <span class="save-line"></span>
+        </div>
 
-<!-- NAMES -->
+        <div class="couple-names">
+          <div class="groom-name">P. KALAIYARASAN</div>
 
-<div class="names">
-  P. KALAIYARASAN
-</div>
+          <div class="name-ornament">
+            <span></span>
+            <b>&amp;</b>
+            <span></span>
+          </div>
 
-<div class="and">
-  &
-</div>
+          <div class="bride-name">M. SARANYA</div>
+        </div>
 
-<div class="names">
-  M. SARANYA
-</div>
+        <div class="name-bottom-ornament">
+          <span></span>
+          <i>❈</i>
+          <span></span>
+        </div>
 
-
-<!-- MESSAGE -->
-
-<div class="message">
-  With the blessings of our beloved families,<br>
-  we invite you to join us as we begin<br>
-  our beautiful journey together.
-</div>
-
-
-<div class="divider"></div>
-
-
-<!-- DATE -->
-
-<div class="date">
-  25 OCTOBER 2026
-</div>
-
-<div class="day">
-  SUNDAY
-</div>
-
-
-<!-- EVENTS -->
-
-<div class="events">
-
-
-  <!-- MARRIAGE -->
-
-  <div class="event-wrapper">
-
-    <div class="event">
-
-      <div class="event-icon">
-        🛕
       </div>
 
-      <div class="event-title">
-        MARRIAGE
+      <!-- MESSAGE -->
+      <div class="message">
+        With the blessings of our beloved families,<br />
+        we invite you to join us as we begin<br />
+        our beautiful journey together.
       </div>
 
-      <div class="event-time">
-        4:00 AM
+      <!-- DIVIDER -->
+      <div class="divider">
+        <span>✦</span>
       </div>
 
-      <div class="event-venue">
-        Kalyana Kaanika Eswaran Temple,<br>
-        Erulapatti
+      <!-- DATE -->
+      <div class="date">25 OCTOBER 2026</div>
+      <div class="day">SUNDAY</div>
+
+      <!-- EVENTS -->
+      <div class="events">
+
+        <div class="event-wrapper">
+          <div class="event">
+            <div class="event-icon">🛕</div>
+            <div class="event-title">MARRIAGE</div>
+            <div class="event-time">4:00 AM</div>
+            <div class="event-venue">
+              Kalyana Kaanika Eswaran Temple,<br />
+              Erulapatti
+            </div>
+          </div>
+
+          <a
+            class="location-button"
+            href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🛕 Marriage Location
+          </a>
+        </div>
+
+        <div class="event-wrapper">
+          <div class="event">
+            <div class="event-icon">🎉</div>
+            <div class="event-title">RECEPTION</div>
+            <div class="event-time">7:00 AM – 10:00 AM</div>
+            <div class="event-venue">
+              KT Varadharaj Goundar<br />
+              Thirumana Mandapam
+            </div>
+          </div>
+
+          <a
+            class="location-button"
+            href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📍 Reception Location
+          </a>
+        </div>
+
       </div>
 
-    </div>
-
-
-    <!-- Marriage Location Button -->
-
-    <a
-      class="location-button"
-      href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      🛕 Marriage Location
-    </a>
-
-  </div>
-
-
-  <!-- RECEPTION -->
-
-  <div class="event-wrapper">
-
-    <div class="event">
-
-      <div class="event-icon">
-        🎉
+      <!-- QR -->
+      <div class="qr-section">
+        <div class="qr-title">SCAN FOR RECEPTION LOCATION</div>
+        <div id="mapQR" aria-label="QR code for reception location"></div>
       </div>
 
-      <div class="event-title">
-        RECEPTION
+      <!-- BLESSING -->
+      <div class="heart">❤️</div>
+
+      <div class="blessing">
+        Your presence and blessings<br />
+        will make our special day memorable.
       </div>
 
-      <div class="event-time">
-        7:00 AM – 10:00 AM
-      </div>
+      <!-- COUNTDOWN -->
+      <div id="countdown">💍 Loading our special day...</div>
 
-      <div class="event-venue">
-        KT Varadharaj Goundar<br>
-        Thirumana Mandapam
-      </div>
-
-    </div>
-
-
-    <!-- Reception Location Button -->
-
-    <a
-      class="location-button"
-      href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      📍 Reception Location
-    </a>
-
-  </div>
-
-</div>
-
-
-<!-- RECEPTION QR CODE -->
-
-<div class="qr-section">
-
-  <div class="qr-title">
-    📍 Scan for Reception Location
-  </div>
-
-  <div id="mapQR"></div>
-
-</div>
-
-
-<!-- HEART -->
-
-<div class="heart">
-  ❤️
-</div>
-
-
-<!-- BLESSING -->
-
-<div class="blessing">
-  Your presence and blessings<br>
-  will make our special day memorable.
-</div>
-
-
-<!-- COUNTDOWN -->
-
-<div id="countdown"></div>
-```
-
-  </div>
+    </section>
+  </main>
 
   <script>
-
-    /* =========================================
-       RECEPTION GOOGLE MAP URL
-       ========================================= */
+    const marriageMapURL =
+      "https://maps.app.goo.gl/YxusGM3brmkNWr9F8";
 
     const receptionMapURL =
       "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
 
+    document.addEventListener("DOMContentLoaded", () => {
+      const qrContainer = document.getElementById("mapQR");
 
-    /* =========================================
-       MARRIAGE GOOGLE MAP URL
-       ========================================= */
+      qrContainer.innerHTML = "";
 
-    const marriageMapURL =
-      "https://maps.app.goo.gl/YxusGM3brmkNWr9F8";
-
-
-    /* =========================================
-       GENERATE RECEPTION QR CODE
-       ========================================= */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        const qrContainer =
-          document.getElementById("mapQR");
-
-        qrContainer.innerHTML = "";
-
-        new QRCode(
-          qrContainer,
-          {
-            text: receptionMapURL,
-
-            width: 200,
-            height: 200,
-
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-
-            correctLevel:
-              QRCode.CorrectLevel.H
-          }
-        );
-
-      }
-    );
-
-
-    /* =========================================
-       WEDDING COUNTDOWN
-       ========================================= */
+      new QRCode(qrContainer, {
+        text: receptionMapURL,
+        width: 200,
+        height: 200,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    });
 
     const weddingDate =
-      new Date(
-        "2026-10-25T04:00:00+05:30"
-      ).getTime();
-
+      new Date("2026-10-25T04:00:00+05:30").getTime();
 
     function updateCountdown() {
-
       const countdown =
         document.getElementById("countdown");
 
-      const now =
-        new Date().getTime();
-
       const difference =
-        weddingDate - now;
-
+        weddingDate - Date.now();
 
       if (difference <= 0) {
-
         countdown.innerHTML =
           "💐 Today is our special day! 💐";
-
         return;
       }
 
+      const totalSeconds =
+        Math.floor(difference / 1000);
 
       const days =
-        Math.floor(
-          difference /
-          (1000 * 60 * 60 * 24)
-        );
-
+        Math.floor(totalSeconds / 86400);
 
       const hours =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60 * 60 * 24)
-          ) /
-          (1000 * 60 * 60)
-        );
-
+        Math.floor((totalSeconds % 86400) / 3600);
 
       const minutes =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60 * 60)
-          ) /
-          (1000 * 60)
-        );
-
+        Math.floor((totalSeconds % 3600) / 60);
 
       const seconds =
-        Math.floor(
-          (
-            difference %
-            (1000 * 60)
-          ) /
-          1000
-        );
+        totalSeconds % 60;
 
-
-      countdown.innerHTML =
-        `💍 ${days} Days ` +
-        `${hours} Hours ` +
-        `${minutes} Minutes ` +
-        `${seconds} Seconds`;
+      countdown.textContent =
+        `💍 ${days} Days  •  ${hours} Hours  •  ${minutes} Minutes  •  ${seconds} Seconds`;
     }
 
-
-    setInterval(
-      updateCountdown,
-      1000
-    );
-
-
     updateCountdown();
-
+    setInterval(updateCountdown, 1000);
   </script>
-
 </body>
 </html>
