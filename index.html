@@ -61,7 +61,6 @@
       --silk: rgba(255, 241, 211, 0.82);
     }
 
-
     /* =========================================================
        APP
     ========================================================= */
@@ -80,7 +79,6 @@
           #16070a 100%
         );
     }
-
 
     /* =========================================================
        CINEMATIC LIGHT
@@ -138,7 +136,6 @@
       }
     }
 
-
     /* =========================================================
        SILK TEXTURE
     ========================================================= */
@@ -161,7 +158,6 @@
       mix-blend-mode: screen;
       opacity: .55;
     }
-
 
     /* =========================================================
        GOLD DUST
@@ -253,7 +249,6 @@
         opacity: 0;
       }
     }
-
 
     /* =========================================================
        PETALS
@@ -366,7 +361,6 @@
       }
     }
 
-
     /* =========================================================
        SCENES
     ========================================================= */
@@ -413,7 +407,6 @@
         max(30px, env(safe-area-inset-bottom));
     }
 
-
     /* =========================================================
        BACKGROUND
     ========================================================= */
@@ -455,14 +448,12 @@
       z-index: -2;
     }
 
-
     /* =========================================================
        ROYAL BORDER
     ========================================================= */
 
     .royal-border {
       position: absolute;
-
       inset: 13px;
 
       border:
@@ -497,7 +488,6 @@
 
       transform: rotate(180deg);
     }
-
 
     /* =========================================================
        TEMPLE ARCH
@@ -554,7 +544,6 @@
         );
     }
 
-
     /* =========================================================
        KOLAM
     ========================================================= */
@@ -583,6 +572,7 @@
       content: "";
 
       position: absolute;
+
       inset: 25px;
 
       border:
@@ -593,9 +583,9 @@
 
     .kolam::after {
       inset: 50px;
+
       transform: rotate(22.5deg);
     }
-
 
     /* =========================================================
        PEACOCK
@@ -627,7 +617,6 @@
 
       transform: scaleX(-1);
     }
-
 
     /* =========================================================
        DEEPAM
@@ -701,7 +690,6 @@
         transform: scale(1.2);
       }
     }
-
 
     /* =========================================================
        OPENING
@@ -836,7 +824,6 @@
       }
     }
 
-
     /* =========================================================
        SECTION
     ========================================================= */
@@ -898,7 +885,6 @@
         0 2px 8px rgba(0,0,0,.55);
     }
 
-
     /* =========================================================
        MONOGRAM
     ========================================================= */
@@ -912,6 +898,7 @@
       margin: 0 auto 22px;
 
       display: grid;
+
       place-items: center;
 
       border:
@@ -977,7 +964,6 @@
       }
     }
 
-
     /* =========================================================
        NAMES
     ========================================================= */
@@ -1026,6 +1012,7 @@
 
       50% {
         transform: scale(1.15);
+
         opacity: 1;
 
         text-shadow:
@@ -1069,9 +1056,9 @@
 
     .names-rule b {
       color: #e1bb68;
+
       font-size: 10px;
     }
-
 
     /* =========================================================
        EVENT CARD
@@ -1176,7 +1163,6 @@
         0 2px 7px rgba(0,0,0,.45);
     }
 
-
     /* =========================================================
        MAP BUTTON
     ========================================================= */
@@ -1234,7 +1220,6 @@
       transform: scale(.94);
     }
 
-
     /* =========================================================
        MAP
     ========================================================= */
@@ -1289,7 +1274,6 @@
       line-height: 1.35;
     }
 
-
     /* =========================================================
        QR
     ========================================================= */
@@ -1338,7 +1322,6 @@
       width: 100% !important;
       height: 100% !important;
     }
-
 
     /* =========================================================
        BLESSING
@@ -1403,7 +1386,6 @@
       text-shadow:
         0 2px 8px rgba(0,0,0,.55);
     }
-
 
     /* =========================================================
        FINAL COUNTDOWN
@@ -1540,7 +1522,6 @@
         0 2px 8px rgba(0,0,0,.8);
     }
 
-
     /* =========================================================
        WEDDING DAY
     ========================================================= */
@@ -1573,9 +1554,8 @@
       }
     }
 
-
     /* =========================================================
-       SCROLL TO BEGIN
+       SCROLL HINT
     ========================================================= */
 
     .scroll-hint {
@@ -1585,6 +1565,8 @@
       left: 50%;
 
       z-index: 50;
+
+      transform: translateX(-50%);
 
       display: flex;
 
@@ -1596,10 +1578,12 @@
 
       gap: 8px;
 
-      padding: 12px 24px;
+      pointer-events: none;
+    }
 
-      min-width: 190px;
+    /* PAGE 1 TEXT */
 
+    .scroll-text {
       color: #fff;
 
       font-family: "Cinzel", serif;
@@ -1612,42 +1596,23 @@
 
       white-space: nowrap;
 
-      background:
-        rgba(70, 15, 30, .82);
-
-      border:
-        1px solid var(--gold-light);
-
-      border-radius: 40px;
-
-      box-shadow:
-        0 0 10px rgba(212,175,55,.45),
-        0 0 25px rgba(212,175,55,.25),
-        inset 0 0 15px rgba(212,175,55,.12);
-
-      cursor: pointer;
-
-      appearance: none;
-
-      -webkit-appearance: none;
-
-      animation:
-        scrollPop 2s ease-in-out infinite,
-        scrollGlow 2s ease-in-out infinite;
-    }
-
-    .scroll-hint span:first-child {
-      font-weight: 900;
-
       text-shadow:
         0 0 6px rgba(255,255,255,.8),
-        0 0 15px rgba(212,175,55,.8);
+        0 0 15px rgba(212,175,55,.8),
+        0 0 30px rgba(212,175,55,.4);
+
+      animation:
+        scrollTextGlow 2s ease-in-out infinite;
     }
 
+    /* ARROW ON EVERY PAGE */
+
     .scroll-arrow {
+      display: block;
+
       font-family: Arial, sans-serif;
 
-      font-size: 27px;
+      font-size: 30px;
 
       font-weight: bold;
 
@@ -1657,53 +1622,24 @@
 
       text-shadow:
         0 0 8px rgba(212,175,55,.9),
-        0 0 18px rgba(212,175,55,.7);
+        0 0 18px rgba(212,175,55,.8),
+        0 0 30px rgba(212,175,55,.5);
 
       animation:
         arrowBounce 1.2s ease-in-out infinite;
     }
 
-    .scroll-hint:hover {
-      transform:
-        translateX(-50%)
-        scale(1.1);
-    }
-
-    .scroll-hint:active {
-      transform:
-        translateX(-50%)
-        scale(.95);
-    }
-
-    @keyframes scrollPop {
+    @keyframes scrollTextGlow {
 
       0%,
       100% {
-        transform:
-          translateX(-50%)
-          scale(1);
+        opacity: .65;
+        transform: scale(1);
       }
 
       50% {
-        transform:
-          translateX(-50%)
-          scale(1.08);
-      }
-    }
-
-    @keyframes scrollGlow {
-
-      0%,
-      100% {
-        box-shadow:
-          0 0 10px rgba(212,175,55,.4),
-          0 0 25px rgba(212,175,55,.2);
-      }
-
-      50% {
-        box-shadow:
-          0 0 18px rgba(212,175,55,.8),
-          0 0 40px rgba(212,175,55,.5);
+        opacity: 1;
+        transform: scale(1.05);
       }
     }
 
@@ -1712,13 +1648,14 @@
       0%,
       100% {
         transform: translateY(0);
+        opacity: .75;
       }
 
       50% {
-        transform: translateY(8px);
+        transform: translateY(9px);
+        opacity: 1;
       }
     }
-
 
     /* =========================================================
        PAGE DOTS
@@ -1766,7 +1703,6 @@
         0 0 10px rgba(228,189,106,.6);
     }
 
-
     /* =========================================================
        COVER
     ========================================================= */
@@ -1781,6 +1717,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       background:
@@ -1798,7 +1735,6 @@
     .cover.open {
       transform: translateY(-100%);
       opacity: 0;
-
       pointer-events: none;
     }
 
@@ -1896,6 +1832,7 @@
       height: 95px;
 
       display: grid;
+
       place-items: center;
 
       border:
@@ -2064,7 +2001,6 @@
       }
     }
 
-
     /* =========================================================
        AUDIO BUTTON
     ========================================================= */
@@ -2091,6 +2027,7 @@
       color: #f0d28a;
 
       display: grid;
+
       place-items: center;
 
       cursor: pointer;
@@ -2130,7 +2067,6 @@
           0 0 25px rgba(227,188,99,.4);
       }
     }
-
 
     /* =========================================================
        MOBILE
@@ -2214,21 +2150,17 @@
 
       .scroll-hint {
         bottom: 22px;
+      }
 
-        min-width: 180px;
-
-        padding: 11px 20px;
-
+      .scroll-text {
         font-size: 11px;
-
         letter-spacing: .16em;
       }
 
       .scroll-arrow {
-        font-size: 24px;
+        font-size: 26px;
       }
     }
-
 
     /* =========================================================
        VERY SMALL MOBILE
@@ -2252,12 +2184,10 @@
         font-size: 22px;
       }
 
-      .scroll-hint {
-        min-width: 165px;
+      .scroll-text {
         font-size: 10px;
       }
     }
-
 
     /* =========================================================
        SHORT DEVICES
@@ -2272,7 +2202,6 @@
 
       .deepam {
         margin-bottom: 8px;
-
         transform: scale(.8);
       }
 
@@ -2287,7 +2216,6 @@
 
       .event-card {
         margin-top: 12px;
-
         padding: 18px 12px;
       }
 
@@ -2308,7 +2236,6 @@
       }
     }
 
-
     /* =========================================================
        REDUCED MOTION
     ========================================================= */
@@ -2319,9 +2246,7 @@
       *::before,
       *::after {
         animation-duration: .01ms !important;
-
         animation-iteration-count: 1 !important;
-
         scroll-behavior: auto !important;
       }
     }
@@ -2329,35 +2254,27 @@
   </style>
 </head>
 
-
 <body>
 
 <div class="app">
-
 
   <!-- =======================================================
        GLOBAL EFFECTS
   ======================================================== -->
 
   <div class="cinematic-light"></div>
-
   <div class="silk-texture"></div>
 
-
   <div class="gold-dust">
-
     <span></span>
     <span></span>
     <span></span>
     <span></span>
     <span></span>
     <span></span>
-
   </div>
-
 
   <div class="petal-field">
-
     <span class="petal"></span>
     <span class="petal"></span>
     <span class="petal"></span>
@@ -2366,9 +2283,7 @@
     <span class="petal"></span>
     <span class="petal"></span>
     <span class="petal"></span>
-
   </div>
-
 
   <!-- =======================================================
        OPENING COVER
@@ -2382,45 +2297,31 @@
         WITH THE BLESSINGS OF OUR FAMILIES
       </div>
 
-
       <div class="cover-monogram">
-
         K
         <span style="font-size:18px;">♥</span>
         S
-
       </div>
-
 
       <div class="cover-title">
-
         Wedding<br>
         Invitation
-
       </div>
-
 
       <div class="cover-date">
-
         25 • OCTOBER • 2026
-
       </div>
-
 
       <button
         class="cover-enter"
         id="enterButton"
         type="button"
       >
-
         OPEN THE INVITATION
-
       </button>
 
     </div>
-
   </div>
-
 
   <!-- =======================================================
        PAGE DOTS
@@ -2438,7 +2339,6 @@
 
   </div>
 
-
   <!-- =======================================================
        MUSIC
   ======================================================== -->
@@ -2449,32 +2349,25 @@
     aria-label="Toggle music"
     type="button"
   >
-
     ♪
-
   </button>
-
 
   <audio
     id="weddingAudio"
     loop
     preload="auto"
   >
-
     <source
       src="./nadaswaram.mp3"
       type="audio/mpeg"
     >
-
   </audio>
-
 
   <!-- =======================================================
        SCENES
   ======================================================== -->
 
   <main class="scenes" id="scenes">
-
 
     <!-- =====================================================
          SCENE 1 — OPENING
@@ -2487,11 +2380,9 @@
       <div class="temple-arch"></div>
 
       <div class="peacock left">🦚</div>
-
       <div class="peacock right">🦚</div>
 
       <div class="kolam"></div>
-
 
       <div class="opening-content">
 
@@ -2499,26 +2390,21 @@
           ॐ
         </div>
 
-
         <div class="temple-title">
           A SOUTH INDIAN WEDDING CELEBRATION
         </div>
-
 
         <div class="deepam">
           🪔
         </div>
 
-
         <div class="opening-title">
           Two Hearts
         </div>
 
-
         <div class="opening-subtitle">
           ONE BEAUTIFUL JOURNEY
         </div>
-
 
         <div class="opening-date">
           25 OCTOBER 2026 • SUNDAY
@@ -2526,28 +2412,18 @@
 
       </div>
 
-
-      <!-- PROMINENT SCROLL BUTTON -->
-
-      <button
-        class="scroll-hint"
-        id="scrollToBegin"
-        type="button"
-        aria-label="Scroll to begin"
-      >
-
-        <span>
-          SCROLL TO BEGIN
+      <!-- PAGE 1 -->
+      <div class="scroll-hint">
+        <span class="scroll-text">
+          Scroll Down To Begin
         </span>
 
         <span class="scroll-arrow">
           ↓
         </span>
-
-      </button>
+      </div>
 
     </section>
-
 
     <!-- =====================================================
          SCENE 2 — THE COUPLE
@@ -2557,22 +2433,23 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
 
         <div class="eyebrow">
           THE COUPLE
         </div>
 
-
         <div class="monogram">
 
           K
-          <span>♥</span>
+
+          <span>
+            ♥
+          </span>
+
           S
 
         </div>
-
 
         <div class="names">
 
@@ -2590,7 +2467,6 @@
 
         </div>
 
-
         <div class="names-rule">
 
           <span></span>
@@ -2603,7 +2479,6 @@
 
         </div>
 
-
         <p class="section-text">
 
           Two souls, two families and one beautiful
@@ -2615,8 +2490,16 @@
 
       </div>
 
-    </section>
+      <!-- PAGE 2 -->
+      <div class="scroll-hint">
 
+        <span class="scroll-arrow">
+          ↓
+        </span>
+
+      </div>
+
+    </section>
 
     <!-- =====================================================
          SCENE 3 — MARRIAGE
@@ -2626,18 +2509,15 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
 
         <div class="eyebrow">
           WITH DIVINE BLESSINGS
         </div>
 
-
         <div class="section-title">
           Marriage
         </div>
-
 
         <div class="event-card">
 
@@ -2645,29 +2525,22 @@
             🛕
           </div>
 
-
           <div class="event-name">
             THE SACRED CEREMONY
           </div>
-
 
           <div class="event-time">
             4:00 AM
           </div>
 
-
           <div class="event-date">
             SUNDAY • 25 OCTOBER 2026
           </div>
 
-
           <div class="event-venue">
-
             Kalyana Kaanika Eswaran Temple<br>
             Erulapatti
-
           </div>
-
 
           <a
             class="map-button"
@@ -2675,17 +2548,23 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             🛕 VIEW MARRIAGE LOCATION
-
           </a>
 
         </div>
 
       </div>
 
-    </section>
+      <!-- PAGE 3 -->
+      <div class="scroll-hint">
 
+        <span class="scroll-arrow">
+          ↓
+        </span>
+
+      </div>
+
+    </section>
 
     <!-- =====================================================
          SCENE 4 — RECEPTION
@@ -2695,18 +2574,15 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
 
         <div class="eyebrow">
           CELEBRATE WITH US
         </div>
 
-
         <div class="section-title">
           Reception
         </div>
-
 
         <div class="event-card">
 
@@ -2714,30 +2590,23 @@
             🌸
           </div>
 
-
           <div class="event-name">
             RECEPTION
           </div>
-
 
           <div class="event-time">
             7:00 AM – 10:00 AM
           </div>
 
-
           <div class="event-date">
             SUNDAY • 25 OCTOBER 2026
           </div>
 
-
           <div class="event-venue">
-
             KT Varadharaj Goundar<br>
             Thirumana Mandapam<br>
             Ramiyanahalli
-
           </div>
-
 
           <a
             class="map-button"
@@ -2745,17 +2614,23 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             📍 VIEW RECEPTION LOCATION
-
           </a>
 
         </div>
 
       </div>
 
-    </section>
+      <!-- PAGE 4 -->
+      <div class="scroll-hint">
 
+        <span class="scroll-arrow">
+          ↓
+        </span>
+
+      </div>
+
+    </section>
 
     <!-- =====================================================
          SCENE 5 — LOCATIONS
@@ -2765,21 +2640,17 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
 
         <div class="eyebrow">
           FIND YOUR WAY TO OUR CELEBRATION
         </div>
 
-
         <div class="section-title">
           The Locations
         </div>
 
-
         <div class="map-layout">
-
 
           <div class="map-box">
 
@@ -2787,14 +2658,10 @@
               🛕 MARRIAGE
             </h3>
 
-
             <p>
-
               Kalyana Kaanika Eswaran Temple<br>
               Erulapatti
-
             </p>
-
 
             <a
               class="map-button"
@@ -2802,13 +2669,10 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-
               VIEW LOCATION
-
             </a>
 
           </div>
-
 
           <div class="map-box">
 
@@ -2816,14 +2680,10 @@
               📍 RECEPTION
             </h3>
 
-
             <p>
-
               KT Varadharaj Goundar<br>
               Thirumana Mandapam
-
             </p>
-
 
             <a
               class="map-button"
@@ -2831,16 +2691,12 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-
               VIEW LOCATION
-
             </a>
 
           </div>
 
-
         </div>
-
 
         <div class="qr-wrapper">
 
@@ -2848,15 +2704,22 @@
             SCAN FOR RECEPTION LOCATION
           </div>
 
-
           <div id="mapQR"></div>
 
         </div>
 
       </div>
 
-    </section>
+      <!-- PAGE 5 -->
+      <div class="scroll-hint">
 
+        <span class="scroll-arrow">
+          ↓
+        </span>
+
+      </div>
+
+    </section>
 
     <!-- =====================================================
          SCENE 6 — FAMILY BLESSINGS
@@ -2866,24 +2729,18 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
 
         <div class="blessing-card">
-
 
           <div class="blessing-symbol">
             🪔
           </div>
 
-
           <h2>
-
             With the blessings<br>
             of our families…
-
           </h2>
-
 
           <p>
 
@@ -2898,13 +2755,20 @@
 
           </p>
 
-
         </div>
 
       </div>
 
-    </section>
+      <!-- PAGE 6 -->
+      <div class="scroll-hint">
 
+        <span class="scroll-arrow">
+          ↓
+        </span>
+
+      </div>
+
+    </section>
 
     <!-- =====================================================
          SCENE 7 — FINAL COUNTDOWN
@@ -2914,24 +2778,19 @@
 
       <div class="royal-border"></div>
 
-
       <div class="section-content">
-
 
         <div class="deepam">
           🪔
         </div>
 
-
         <div class="eyebrow">
           OUR SPECIAL DAY IS ALMOST HERE
         </div>
 
-
         <div class="section-title">
           The Countdown
         </div>
-
 
         <p class="section-text">
 
@@ -2940,9 +2799,7 @@
 
         </p>
 
-
         <div class="countdown-box">
-
 
           <div class="time-unit">
 
@@ -2956,7 +2813,6 @@
 
           </div>
 
-
           <div class="time-unit">
 
             <strong id="hours">
@@ -2968,7 +2824,6 @@
             </span>
 
           </div>
-
 
           <div class="time-unit">
 
@@ -2982,7 +2837,6 @@
 
           </div>
 
-
           <div class="time-unit">
 
             <strong id="seconds">
@@ -2995,14 +2849,11 @@
 
           </div>
 
-
         </div>
-
 
         <div class="countdown-date">
           25 OCTOBER 2026
         </div>
-
 
         <div class="countdown-message">
 
@@ -3012,16 +2863,14 @@
 
         </div>
 
-
       </div>
 
+ 
     </section>
-
 
   </main>
 
 </div>
-
 
 <!-- =========================================================
      ALL JAVASCRIPT
@@ -3030,7 +2879,6 @@
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-
 
   /* =========================================================
      ELEMENTS
@@ -3059,7 +2907,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let musicPlaying = false;
 
-
   /* =========================================================
      MAP URLS
   ========================================================= */
@@ -3069,7 +2916,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const receptionMapURL =
     "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
-
 
   /* =========================================================
      QR CODE
@@ -3101,7 +2947,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   /* =========================================================
      WEDDING DATE
   ========================================================= */
@@ -3111,7 +2956,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "2026-10-25T04:00:00+05:30"
     ).getTime();
 
-
   /* =========================================================
      COUNTDOWN
   ========================================================= */
@@ -3120,7 +2964,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const difference =
       weddingDate - Date.now();
-
 
     const daysElement =
       document.getElementById("days");
@@ -3134,36 +2977,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const secondsElement =
       document.getElementById("seconds");
 
-
     const countdownScene =
       document.querySelector(
         ".countdown-scene"
       );
-
 
     const countdownTitle =
       countdownScene?.querySelector(
         ".section-title"
       );
 
-
     const countdownText =
       countdownScene?.querySelector(
         ".section-text"
       );
-
 
     const countdownMessage =
       document.querySelector(
         ".countdown-message"
       );
 
-
     const countdownBox =
       document.querySelector(
         ".countdown-box"
       );
-
 
     /* =======================================================
        WEDDING DAY
@@ -3171,14 +3008,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (difference <= 0) {
 
-      daysElement.textContent = "00";
+      daysElement.textContent =
+        "00";
 
-      hoursElement.textContent = "00";
+      hoursElement.textContent =
+        "00";
 
-      minutesElement.textContent = "00";
+      minutesElement.textContent =
+        "00";
 
-      secondsElement.textContent = "00";
-
+      secondsElement.textContent =
+        "00";
 
       if (countdownScene) {
 
@@ -3188,14 +3028,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
       if (countdownTitle) {
 
         countdownTitle.textContent =
           "The Day Has Arrived";
 
       }
-
 
       if (countdownText) {
 
@@ -3204,14 +3042,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
       if (countdownMessage) {
 
         countdownMessage.textContent =
           "With the love and blessings of our families, we joyfully welcome you to celebrate this special day with us. Your presence makes our happiness complete.";
 
       }
-
 
       if (countdownBox) {
 
@@ -3220,11 +3056,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
       return;
-
     }
-
 
     /* =======================================================
        NORMAL COUNTDOWN
@@ -3235,12 +3068,10 @@ document.addEventListener("DOMContentLoaded", () => {
         difference / 1000
       );
 
-
     const days =
       Math.floor(
         totalSeconds / 86400
       );
-
 
     const hours =
       Math.floor(
@@ -3248,17 +3079,14 @@ document.addEventListener("DOMContentLoaded", () => {
         3600
       );
 
-
     const minutes =
       Math.floor(
         (totalSeconds % 3600) /
         60
       );
 
-
     const seconds =
       totalSeconds % 60;
-
 
     daysElement.textContent =
       String(days).padStart(
@@ -3266,20 +3094,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "0"
       );
 
-
     hoursElement.textContent =
       String(hours).padStart(
         2,
         "0"
       );
 
-
     minutesElement.textContent =
       String(minutes).padStart(
         2,
         "0"
       );
-
 
     secondsElement.textContent =
       String(seconds).padStart(
@@ -3289,45 +3114,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   updateCountdown();
-
 
   setInterval(
     updateCountdown,
     1000
   );
-
-
-  /* =========================================================
-     SCROLL TO BEGIN
-  ========================================================= */
-
-  const scrollToBegin =
-    document.getElementById(
-      "scrollToBegin"
-    );
-
-
-  if (scrollToBegin) {
-
-    scrollToBegin.addEventListener(
-      "click",
-      () => {
-
-        if (sceneElements[1]) {
-
-          sceneElements[1].scrollIntoView({
-            behavior: "smooth"
-          });
-
-        }
-
-      }
-    );
-
-  }
-
 
   /* =========================================================
      MUSIC
@@ -3339,13 +3131,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-
     audio.volume = 0.35;
-
 
     const playPromise =
       audio.play();
-
 
     if (
       playPromise !== undefined
@@ -3355,7 +3144,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
 
           musicPlaying = true;
-
 
           if (audioButton) {
 
@@ -3384,7 +3172,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   /* =========================================================
      OPEN INVITATION
   ========================================================= */
@@ -3406,7 +3193,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   /* =========================================================
      MUSIC ON / OFF
   ========================================================= */
@@ -3423,10 +3209,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           musicPlaying = false;
 
-
           audioButton.textContent =
             "♪";
-
 
           audioButton.classList.remove(
             "playing"
@@ -3444,7 +3228,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   /* =========================================================
      AUDIO EVENTS
   ========================================================= */
@@ -3457,10 +3240,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         musicPlaying = true;
 
-
         audioButton.textContent =
           "♫";
-
 
         audioButton.classList.add(
           "playing"
@@ -3469,17 +3250,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-
     audio.addEventListener(
       "pause",
       () => {
 
         musicPlaying = false;
 
-
         audioButton.textContent =
           "♪";
-
 
         audioButton.classList.remove(
           "playing"
@@ -3489,7 +3267,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }
-
 
   /* =========================================================
      SCENE OBSERVER
@@ -3508,13 +3285,11 @@ document.addEventListener("DOMContentLoaded", () => {
               return;
             }
 
-
             const index =
               [...sceneElements]
                 .indexOf(
                   entry.target
                 );
-
 
             dots.forEach(
               dot =>
@@ -3522,7 +3297,6 @@ document.addEventListener("DOMContentLoaded", () => {
                   "active"
                 )
             );
-
 
             if (dots[index]) {
 
@@ -3543,12 +3317,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-
   sceneElements.forEach(
     scene =>
       observer.observe(scene)
   );
-
 
   /* =========================================================
      DOT NAVIGATION
@@ -3578,13 +3350,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-
   /* =========================================================
      TOUCH SWIPE
   ========================================================= */
 
   let touchStartY = 0;
-
 
   scenes.addEventListener(
     "touchstart",
@@ -3600,7 +3370,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-
   scenes.addEventListener(
     "touchend",
     event => {
@@ -3609,11 +3378,9 @@ document.addEventListener("DOMContentLoaded", () => {
         event.changedTouches[0]
           .screenY;
 
-
       const difference =
         touchStartY -
         touchEndY;
-
 
       if (
         Math.abs(difference) < 45
@@ -3621,19 +3388,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-
       const current =
         Math.round(
           scenes.scrollTop /
           window.innerHeight
         );
 
-
       let next =
         difference > 0
           ? current + 1
           : current - 1;
-
 
       next =
         Math.max(
@@ -3643,7 +3407,6 @@ document.addEventListener("DOMContentLoaded", () => {
             next
           )
         );
-
 
       sceneElements[next]
         .scrollIntoView({
@@ -3655,7 +3418,6 @@ document.addEventListener("DOMContentLoaded", () => {
       passive: true
     }
   );
-
 
   /* =========================================================
      KEYBOARD NAVIGATION
@@ -3671,7 +3433,6 @@ document.addEventListener("DOMContentLoaded", () => {
           window.innerHeight
         );
 
-
       if (
         event.key === "ArrowDown" ||
         event.key === "PageDown"
@@ -3683,14 +3444,12 @@ document.addEventListener("DOMContentLoaded", () => {
             current + 1
           );
 
-
         sceneElements[next]
           .scrollIntoView({
             behavior: "smooth"
           });
 
       }
-
 
       if (
         event.key === "ArrowUp" ||
@@ -3703,7 +3462,6 @@ document.addEventListener("DOMContentLoaded", () => {
             current - 1
           );
 
-
         sceneElements[previous]
           .scrollIntoView({
             behavior: "smooth"
@@ -3713,7 +3471,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   );
-
 
 });
 
