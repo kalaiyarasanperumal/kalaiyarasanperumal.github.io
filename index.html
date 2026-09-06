@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-  >
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
   <title>KALAIYARASAN ♥ SARANYA | Wedding Invitation</title>
 
@@ -22,16 +21,49 @@
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
+
 
   <style>
+
+    /* =========================================================
+       PREMIUM WEDDING THEME
+    ========================================================= */
+
+    :root {
+
+      --wine-deep: #120308;
+      --wine-dark: #210710;
+      --wine: #541629;
+      --wine-mid: #6c2037;
+      --wine-light: #8b304b;
+
+      --gold-deep: #9b712c;
+      --gold: #c79a43;
+      --gold-light: #f3d994;
+      --gold-bright: #ffe8a9;
+
+      --cream: #fff5df;
+      --cream-soft: #f7e8cb;
+
+      --glass-dark: rgba(28, 5, 13, .78);
+      --glass: rgba(58, 13, 28, .72);
+      --glass-light: rgba(105, 31, 53, .64);
+
+      --border-gold: rgba(231, 190, 91, .55);
+
+      --shadow:
+        0 25px 80px rgba(0, 0, 0, .42);
+    }
+
 
     /* =========================================================
        RESET
     ========================================================= */
 
-    * {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -45,21 +77,18 @@
     }
 
     body {
-      background: #190b0d;
-      color: #fff7e7;
+      background: var(--wine-deep);
+      color: var(--cream);
       font-family: "Cormorant Garamond", Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    :root {
-      --wine: #641f31;
-      --wine-dark: #350d18;
-      --wine-light: #9e4059;
-      --gold: #c89b45;
-      --gold-light: #f1d58f;
-      --gold-dark: #8a641d;
-      --cream: #fff5df;
-      --silk: rgba(255, 241, 211, 0.82);
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
+
 
     /* =========================================================
        APP
@@ -73,28 +102,27 @@
 
       background:
         radial-gradient(
-          circle at center,
-          #6b2639 0%,
-          #350f1b 48%,
-          #16070a 100%
+          ellipse at 50% 35%,
+          #722b43 0%,
+          #4b1427 32%,
+          #260812 68%,
+          #120308 100%
         );
     }
+
 
     /* =========================================================
        CINEMATIC LIGHT
     ========================================================= */
 
     .cinematic-light {
-      position: absolute;
+      position: fixed;
 
-      width: 70vw;
-      height: 70vw;
-
-      max-width: 700px;
-      max-height: 700px;
+      width: min(720px, 90vw);
+      height: min(720px, 90vw);
 
       left: 50%;
-      top: 45%;
+      top: 42%;
 
       transform: translate(-50%, -50%);
 
@@ -103,17 +131,18 @@
       background:
         radial-gradient(
           circle,
-          rgba(255, 224, 157, .25) 0%,
-          rgba(218, 165, 67, .10) 35%,
-          transparent 72%
+          rgba(255, 225, 159, .18) 0%,
+          rgba(220, 170, 74, .08) 32%,
+          transparent 70%
         );
 
-      filter: blur(4px);
+      filter: blur(7px);
 
       pointer-events: none;
+      z-index: 1;
 
       animation:
-        cinematicLight 9s ease-in-out infinite;
+        cinematicLight 10s ease-in-out infinite;
     }
 
     @keyframes cinematicLight {
@@ -122,7 +151,7 @@
       100% {
         transform:
           translate(-50%, -50%)
-          scale(.85);
+          scale(.90);
 
         opacity: .65;
       }
@@ -130,18 +159,19 @@
       50% {
         transform:
           translate(-48%, -52%)
-          scale(1.18);
+          scale(1.08);
 
         opacity: 1;
       }
     }
+
 
     /* =========================================================
        SILK TEXTURE
     ========================================================= */
 
     .silk-texture {
-      position: absolute;
+      position: fixed;
       inset: 0;
 
       pointer-events: none;
@@ -149,28 +179,31 @@
       background:
         repeating-linear-gradient(
           115deg,
-          rgba(255,255,255,.018) 0px,
-          rgba(255,255,255,.018) 1px,
+          rgba(255, 255, 255, .014) 0,
+          rgba(255, 255, 255, .014) 1px,
           transparent 1px,
-          transparent 5px
+          transparent 6px
         );
 
       mix-blend-mode: screen;
-      opacity: .55;
+      opacity: .6;
+
+      z-index: 20;
     }
+
 
     /* =========================================================
        GOLD DUST
     ========================================================= */
 
     .gold-dust {
-      position: absolute;
+      position: fixed;
       inset: 0;
 
       pointer-events: none;
       overflow: hidden;
 
-      z-index: 12;
+      z-index: 18;
     }
 
     .gold-dust span {
@@ -181,49 +214,49 @@
 
       border-radius: 50%;
 
-      background: #f1d58f;
+      background: var(--gold-light);
 
       box-shadow:
-        0 0 8px rgba(241,213,143,.9);
+        0 0 9px rgba(243, 217, 148, .85);
 
       animation:
-        dustFloat 7s linear infinite;
+        dustFloat 9s linear infinite;
     }
 
     .gold-dust span:nth-child(1) {
-      left: 12%;
-      top: 80%;
-      animation-delay: -1s;
+      left: 8%;
+      top: 84%;
+      animation-delay: -2s;
     }
 
     .gold-dust span:nth-child(2) {
       left: 22%;
-      top: 65%;
-      animation-delay: -5s;
-    }
-
-    .gold-dust span:nth-child(3) {
-      left: 35%;
-      top: 90%;
-      animation-delay: -3s;
-    }
-
-    .gold-dust span:nth-child(4) {
-      left: 57%;
-      top: 70%;
+      top: 72%;
       animation-delay: -6s;
     }
 
+    .gold-dust span:nth-child(3) {
+      left: 39%;
+      top: 90%;
+      animation-delay: -4s;
+    }
+
+    .gold-dust span:nth-child(4) {
+      left: 55%;
+      top: 70%;
+      animation-delay: -7s;
+    }
+
     .gold-dust span:nth-child(5) {
-      left: 72%;
-      top: 86%;
-      animation-delay: -2s;
+      left: 73%;
+      top: 82%;
+      animation-delay: -3s;
     }
 
     .gold-dust span:nth-child(6) {
-      left: 88%;
-      top: 58%;
-      animation-delay: -4s;
+      left: 90%;
+      top: 64%;
+      animation-delay: -5s;
     }
 
     @keyframes dustFloat {
@@ -231,44 +264,45 @@
       0% {
         transform:
           translateY(40px)
-          scale(.4);
+          scale(.35);
 
         opacity: 0;
       }
 
-      25% {
+      20% {
         opacity: .8;
       }
 
       100% {
         transform:
           translateY(-75vh)
-          translateX(50px)
+          translateX(45px)
           scale(1);
 
         opacity: 0;
       }
     }
 
+
     /* =========================================================
        PETALS
     ========================================================= */
 
     .petal-field {
-      position: absolute;
+      position: fixed;
       inset: 0;
 
       overflow: hidden;
       pointer-events: none;
 
-      z-index: 15;
+      z-index: 17;
     }
 
     .petal {
       position: absolute;
 
-      width: 11px;
-      height: 17px;
+      width: 9px;
+      height: 15px;
 
       border-radius:
         80% 20% 80% 20%;
@@ -276,14 +310,14 @@
       background:
         linear-gradient(
           135deg,
-          #f7b2b9,
-          #b54861
+          #f2aeb9,
+          #9f3c58
         );
 
-      opacity: .75;
+      opacity: .58;
 
       animation:
-        fallingPetal 9s linear infinite;
+        fallingPetal 12s linear infinite;
     }
 
     .petal:nth-child(1) {
@@ -293,41 +327,37 @@
 
     .petal:nth-child(2) {
       left: 17%;
-      animation-delay: -7s;
-      transform: scale(.7);
-    }
-
-    .petal:nth-child(3) {
-      left: 29%;
-      animation-delay: -4s;
-      transform: scale(.8);
-    }
-
-    .petal:nth-child(4) {
-      left: 43%;
       animation-delay: -8s;
     }
 
+    .petal:nth-child(3) {
+      left: 31%;
+      animation-delay: -5s;
+    }
+
+    .petal:nth-child(4) {
+      left: 45%;
+      animation-delay: -10s;
+    }
+
     .petal:nth-child(5) {
-      left: 56%;
-      animation-delay: -3s;
-      transform: scale(.65);
+      left: 58%;
+      animation-delay: -4s;
     }
 
     .petal:nth-child(6) {
-      left: 69%;
-      animation-delay: -6s;
+      left: 71%;
+      animation-delay: -7s;
     }
 
     .petal:nth-child(7) {
-      left: 82%;
+      left: 84%;
       animation-delay: -1s;
-      transform: scale(.75);
     }
 
     .petal:nth-child(8) {
       left: 94%;
-      animation-delay: -5s;
+      animation-delay: -6s;
     }
 
     @keyframes fallingPetal {
@@ -341,14 +371,14 @@
           rotate(0deg);
       }
 
-      10% {
-        opacity: .8;
+      12% {
+        opacity: .7;
       }
 
       50% {
         transform:
-          translateX(70px)
-          rotate(180deg);
+          translateX(65px)
+          rotate(190deg);
       }
 
       100% {
@@ -356,10 +386,11 @@
         opacity: 0;
 
         transform:
-          translateX(-50px)
+          translateX(-45px)
           rotate(430deg);
       }
     }
+
 
     /* =========================================================
        SCENES
@@ -375,25 +406,33 @@
       overflow-x: hidden;
 
       scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
 
       scrollbar-width: none;
 
-      scroll-behavior: smooth;
-
       z-index: 5;
+
+      overscroll-behavior-y: contain;
     }
 
     .scenes::-webkit-scrollbar {
       display: none;
     }
 
+
+    /* =========================================================
+       SCENE
+    ========================================================= */
+
     .scene {
       position: relative;
 
       width: 100%;
       min-height: 100dvh;
+      height: 100dvh;
 
       scroll-snap-align: start;
+      scroll-snap-stop: always;
 
       display: flex;
       align-items: center;
@@ -402,10 +441,11 @@
       overflow: hidden;
 
       padding:
-        max(30px, env(safe-area-inset-top))
+        max(35px, env(safe-area-inset-top))
         20px
-        max(30px, env(safe-area-inset-bottom));
+        max(55px, env(safe-area-inset-bottom));
     }
+
 
     /* =========================================================
        BACKGROUND
@@ -419,15 +459,17 @@
 
       background:
         linear-gradient(
-          rgba(39,10,18,.28),
-          rgba(39,10,18,.45)
+          rgba(39, 8, 17, .30),
+          rgba(30, 5, 12, .64)
         ),
         url("./wedding-bg.jpeg");
 
       background-size: cover;
       background-position: center;
 
-      filter: saturate(.9);
+      filter:
+        saturate(.88)
+        contrast(1.04);
 
       z-index: -3;
     }
@@ -440,13 +482,15 @@
 
       background:
         radial-gradient(
-          circle at center,
-          transparent 15%,
-          rgba(31,8,14,.6) 100%
+          ellipse at center,
+          transparent 10%,
+          rgba(18, 3, 8, .18) 48%,
+          rgba(18, 3, 8, .78) 100%
         );
 
       z-index: -2;
     }
+
 
     /* =========================================================
        ROYAL BORDER
@@ -454,40 +498,57 @@
 
     .royal-border {
       position: absolute;
-      inset: 13px;
+      inset: 12px;
 
       border:
-        1px solid rgba(231,190,91,.65);
+        1px solid var(--border-gold);
 
-      border-radius: 18px;
+      border-radius: 19px;
 
       pointer-events: none;
 
       z-index: 30;
+
+      box-shadow:
+        inset 0 0 30px rgba(230, 186, 87, .025);
     }
 
     .royal-border::before,
     .royal-border::after {
-      content: "❦";
-
       position: absolute;
 
-      font-size: 27px;
+      font-size: 25px;
 
-      color: #e1b95d;
+      color: var(--gold-light);
+
+      text-shadow:
+        0 0 10px rgba(241, 213, 143, .3);
     }
 
     .royal-border::before {
-      top: -17px;
+      content: "❦";
+
+      top: -16px;
       left: 20px;
+
+      background: var(--wine-dark);
+
+      padding: 0 6px;
     }
 
     .royal-border::after {
-      bottom: -17px;
+      content: "❦";
+
+      bottom: -16px;
       right: 20px;
+
+      background: var(--wine-dark);
+
+      padding: 0 6px;
 
       transform: rotate(180deg);
     }
+
 
     /* =========================================================
        TEMPLE ARCH
@@ -499,50 +560,111 @@
       top: 0;
       left: 50%;
 
-      width: min(420px, 92vw);
-      height: 150px;
+      width: min(430px, 92vw);
+      height: 148px;
 
       transform: translateX(-50%);
 
       border:
-        2px solid rgba(210,165,69,.6);
+        2px solid rgba(214, 171, 79, .62);
 
       border-top: none;
 
       border-radius:
-        0 0 210px 210px;
+        0 0 220px 220px;
 
       background:
         linear-gradient(
           180deg,
-          rgba(102,29,46,.8),
-          rgba(48,11,20,.15)
+          rgba(101, 27, 45, .78),
+          rgba(46, 9, 18, .15)
         );
 
       box-shadow:
-        inset 0 -20px 40px rgba(234,190,91,.08),
-        0 20px 80px rgba(0,0,0,.25);
+        inset 0 -24px 50px rgba(236, 190, 88, .08),
+        0 20px 80px rgba(0, 0, 0, .30);
 
       z-index: 1;
     }
 
+
+    /* =========================================================
+       TEMPLE K ♥ S
+    ========================================================= */
+
     .temple-arch::before {
-      content: "🛕";
+      content: "K ♥ S";
 
       position: absolute;
 
       left: 50%;
-      top: 34px;
+      top: 29px;
 
       transform: translateX(-50%);
 
-      font-size: 52px;
+      width: 150px;
+      height: 66px;
 
-      filter:
-        drop-shadow(
-          0 4px 10px rgba(0,0,0,.4)
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--gold-bright);
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: 40px;
+      font-weight: 400;
+
+      letter-spacing: 0;
+      white-space: nowrap;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(243, 217, 148, .16),
+          rgba(70, 15, 29, .35) 62%,
+          transparent 100%
         );
+
+      border:
+        1px solid rgba(243, 217, 148, .68);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 4px rgba(218, 174, 75, .045),
+        0 0 26px rgba(218, 174, 75, .20),
+        inset 0 0 20px rgba(255, 220, 145, .06);
+
+      text-shadow:
+        0 2px 7px rgba(0, 0, 0, .75),
+        0 0 17px rgba(241, 213, 143, .40);
+
+      z-index: 5;
+
+      animation:
+        templeMonogramGlow 4s ease-in-out infinite;
     }
+
+    @keyframes templeMonogramGlow {
+
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 4px rgba(218, 174, 75, .04),
+          0 0 20px rgba(218, 174, 75, .15),
+          inset 0 0 18px rgba(255, 220, 145, .04);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 6px rgba(218, 174, 75, .06),
+          0 0 34px rgba(218, 174, 75, .27),
+          inset 0 0 24px rgba(255, 220, 145, .08);
+      }
+    }
+
 
     /* =========================================================
        KOLAM
@@ -551,18 +673,18 @@
     .kolam {
       position: absolute;
 
-      width: 210px;
-      height: 210px;
+      width: 220px;
+      height: 220px;
 
       left: 50%;
-      bottom: -70px;
+      bottom: -82px;
 
       transform: translateX(-50%);
 
       border:
-        1px dotted rgba(236,199,116,.45);
+        1px dotted rgba(236, 199, 116, .38);
 
-      opacity: .5;
+      opacity: .40;
 
       border-radius: 50%;
     }
@@ -573,19 +695,20 @@
 
       position: absolute;
 
-      inset: 25px;
+      inset: 26px;
 
       border:
-        1px solid rgba(236,199,116,.42);
+        1px solid rgba(236, 199, 116, .34);
 
       transform: rotate(45deg);
     }
 
     .kolam::after {
-      inset: 50px;
+      inset: 52px;
 
       transform: rotate(22.5deg);
     }
+
 
     /* =========================================================
        PEACOCK
@@ -594,29 +717,45 @@
     .peacock {
       position: absolute;
 
-      font-size: 55px;
+      font-size: 54px;
 
-      opacity: .65;
+      opacity: .45;
 
       filter:
-        drop-shadow(
-          0 4px 10px rgba(0,0,0,.4)
-        );
+        drop-shadow(0 4px 12px rgba(0, 0, 0, .55));
 
       z-index: 3;
+
+      user-select: none;
     }
 
     .peacock.left {
       left: 18px;
-      top: 27%;
+      top: 28%;
     }
 
     .peacock.right {
       right: 18px;
-      top: 27%;
+      top: 28%;
 
       transform: scaleX(-1);
     }
+
+
+    /* =========================================================
+       CONTENT
+    ========================================================= */
+
+    .content {
+      position: relative;
+
+      width: min(850px, 94vw);
+
+      z-index: 10;
+
+      text-align: center;
+    }
+
 
     /* =========================================================
        DEEPAM
@@ -625,24 +764,26 @@
     .deepam {
       position: relative;
 
-      width: 80px;
-      height: 80px;
+      width: 76px;
+      height: 76px;
 
-      margin: 0 auto 20px;
+      margin:
+        0 auto 13px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: 44px;
+      font-size: 42px;
 
       filter:
         drop-shadow(
-          0 0 16px rgba(255,193,70,.9)
+          0 0 15px
+          rgba(255, 193, 70, .72)
         );
 
       animation:
-        lampGlow 2.5s ease-in-out infinite;
+        lampGlow 3s ease-in-out infinite;
     }
 
     .deepam::before {
@@ -650,31 +791,31 @@
 
       position: absolute;
 
-      width: 90px;
-      height: 90px;
+      width: 88px;
+      height: 88px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(255,198,81,.35),
+          rgba(255, 198, 81, .28),
           transparent 70%
         );
 
       animation:
-        lampPulse 2s ease-in-out infinite;
+        lampPulse 3s ease-in-out infinite;
     }
 
     @keyframes lampGlow {
 
       0%,
       100% {
-        transform: scale(.95);
+        transform: scale(.97);
       }
 
       50% {
-        transform: scale(1.06);
+        transform: scale(1.04);
       }
     }
 
@@ -682,161 +823,20 @@
 
       0%,
       100% {
-        opacity: .5;
+        opacity: .45;
+        transform: scale(.95);
       }
 
       50% {
-        opacity: 1;
-        transform: scale(1.2);
+        opacity: .9;
+        transform: scale(1.12);
       }
     }
+
 
     /* =========================================================
-       OPENING
+       TYPOGRAPHY
     ========================================================= */
-
-    .opening-content {
-      width: min(700px, 94vw);
-
-      text-align: center;
-
-      position: relative;
-
-      z-index: 10;
-    }
-
-    .temple-title {
-      font-family: "Cinzel", serif;
-
-      font-size:
-        clamp(10px, 2vw, 15px);
-
-      letter-spacing: 5px;
-
-      color: #f1d58f;
-
-      margin-bottom: 18px;
-
-      text-transform: uppercase;
-    }
-
-    .om {
-      font-size: 28px;
-
-      color: #f0cf82;
-
-      margin-bottom: 14px;
-
-      animation:
-        softGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes softGlow {
-
-      0%,
-      100% {
-        opacity: .6;
-      }
-
-      50% {
-        opacity: 1;
-
-        text-shadow:
-          0 0 20px rgba(241,213,143,.9);
-      }
-    }
-
-    .opening-title {
-      font-family: "Great Vibes", cursive;
-
-      font-size:
-        clamp(48px, 12vw, 100px);
-
-      font-weight: 400;
-
-      color: #fff1c9;
-
-      line-height: .9;
-
-      text-shadow:
-        0 4px 20px rgba(0,0,0,.5),
-        0 0 30px rgba(226,184,86,.18);
-
-      animation:
-        titleReveal 2s cubic-bezier(.2,.8,.2,1) both;
-    }
-
-    .opening-subtitle {
-      margin-top: 25px;
-
-      font-family: "Cinzel", serif;
-
-      letter-spacing: 4px;
-
-      font-size:
-        clamp(9px, 2vw, 14px);
-
-      color: #f1d58f;
-    }
-
-    .opening-date {
-      margin-top: 30px;
-
-      display: inline-flex;
-
-      padding: 10px 22px;
-
-      border:
-        1px solid rgba(225,184,84,.65);
-
-      background:
-        rgba(48,10,20,.45);
-
-      font-family: "Cinzel", serif;
-
-      letter-spacing: 3px;
-
-      font-size: 11px;
-
-      color: #fff1c9;
-    }
-
-    @keyframes titleReveal {
-
-      from {
-        opacity: 0;
-
-        transform:
-          translateY(35px)
-          scale(.92);
-
-        filter: blur(8px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
-
-        filter: blur(0);
-      }
-    }
-
-    /* =========================================================
-       SECTION
-    ========================================================= */
-
-    .section-content {
-      width: min(650px, 94vw);
-
-      text-align: center;
-
-      position: relative;
-
-      z-index: 10;
-    }
 
     .eyebrow {
       font-family: "Cinzel", serif;
@@ -845,161 +845,219 @@
 
       letter-spacing: 4px;
 
-      color: #f1d58f;
+      color: var(--gold-light);
 
-      margin-bottom: 14px;
+      margin-bottom: 11px;
     }
 
+    .main-title,
     .section-title {
       font-family: "Great Vibes", cursive;
 
-      font-size:
-        clamp(44px, 10vw, 78px);
-
-      color: #fff2ce;
-
       font-weight: 400;
 
-      line-height: 1;
-
-      margin-bottom: 16px;
+      color: #fff1cb;
 
       text-shadow:
-        0 4px 18px rgba(0,0,0,.45);
+        0 4px 22px rgba(0, 0, 0, .55),
+        0 0 28px rgba(226, 184, 86, .15);
     }
 
-    .section-text {
-      max-width: 520px;
-
-      margin: 0 auto;
-
+    .main-title {
       font-size:
-        clamp(14px, 2.8vw, 18px);
+        clamp(55px, 13vw, 105px);
 
-      line-height: 1.55;
-
-      color:
-        rgba(255,245,223,.92);
-
-      text-shadow:
-        0 2px 8px rgba(0,0,0,.55);
+      line-height: .95;
     }
+
+    .section-title {
+      font-size:
+        clamp(45px, 9vw, 78px);
+
+      line-height: .95;
+    }
+
 
     /* =========================================================
-       MONOGRAM
+       PAGE 1
     ========================================================= */
 
-    .monogram {
-      position: relative;
+    .page-one-content {
+      width: min(760px, 94vw);
 
-      width: 100px;
-      height: 100px;
+      min-height: 100%;
 
-      margin: 0 auto 22px;
+      display: flex;
+      flex-direction: column;
 
-      display: grid;
+      align-items: center;
+      justify-content: center;
 
-      place-items: center;
+      padding:
+        108px 0 50px;
+    }
+
+    .page-one-content > * {
+      flex-shrink: 0;
+    }
+
+    .temple-title {
+      font-family: "Cinzel", serif;
+
+      font-size:
+        clamp(8px, 2vw, 14px);
+
+      letter-spacing: 5px;
+
+      line-height: 1.35;
+
+      color: var(--gold-light);
+
+      margin-bottom: 13px;
+    }
+
+    .page-one-content .deepam {
+      margin-bottom: 7px;
+    }
+
+    .page-one-content .main-title {
+      margin-bottom: 7px;
+    }
+
+    .one-subtitle {
+      font-family: "Cinzel", serif;
+
+      font-size:
+        clamp(8px, 2vw, 13px);
+
+      letter-spacing: 4px;
+
+      line-height: 1.4;
+
+      color: var(--gold-light);
+    }
+
+    .date-pill {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 14px;
+
+      padding: 9px 21px;
 
       border:
-        1px solid #d6ad57;
+        1px solid rgba(225, 184, 84, .65);
 
-      border-radius: 50%;
+      border-radius: 999px;
 
       background:
-        radial-gradient(
-          circle,
-          rgba(255,235,179,.18),
-          rgba(82,20,34,.5)
+        linear-gradient(
+          135deg,
+          rgba(66, 14, 28, .78),
+          rgba(35, 7, 15, .64)
         );
 
-      font-family: "Great Vibes", cursive;
-
-      font-size: 43px;
-
-      color: #f0d18b;
-
-      box-shadow:
-        0 0 0 6px rgba(218,174,75,.07),
-        0 0 35px rgba(218,174,75,.15);
-
-      animation:
-        royalSpin 16s linear infinite;
-    }
-
-    .monogram span {
-      font-size: 22px;
-      margin: 0 3px;
-    }
-
-    .monogram::before,
-    .monogram::after {
-      content: "✦";
-
-      position: absolute;
-
-      font-family: Georgia, serif;
+      font-family: "Cinzel", serif;
 
       font-size: 9px;
 
-      color: #f1d58f;
+      letter-spacing: 2.5px;
+
+      color: #fff1c9;
+
+      white-space: nowrap;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, .20),
+        inset 0 1px rgba(255, 255, 255, .06);
     }
 
-    .monogram::before {
-      top: 12px;
-    }
-
-    .monogram::after {
-      bottom: 12px;
-    }
-
-    @keyframes royalSpin {
-
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
 
     /* =========================================================
-       NAMES
+       COUPLE CARD
     ========================================================= */
+
+    .couple-card {
+      position: relative;
+
+      width: min(640px, 92vw);
+
+      margin:
+        17px auto 0;
+
+      padding:
+        18px 22px 20px;
+
+      border:
+        1px solid rgba(224, 181, 85, .48);
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(105, 29, 52, .70),
+          rgba(31, 6, 14, .78)
+        );
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      box-shadow:
+        var(--shadow),
+        inset 0 1px rgba(255, 255, 255, .08);
+    }
+
+    .couple-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 7px;
+
+      border:
+        1px solid rgba(235, 196, 108, .10);
+
+      border-radius: 19px;
+
+      pointer-events: none;
+    }
+
+    .couple-card .eyebrow {
+      margin-bottom: 9px;
+    }
 
     .names {
       font-family: "Cinzel", serif;
 
       font-size:
-        clamp(22px, 6vw, 42px);
+        clamp(18px, 5vw, 31px);
 
-      letter-spacing: 3px;
+      letter-spacing: 2.3px;
 
-      line-height: 1.35;
+      line-height: 1.18;
 
       color: #fff2ce;
 
-      text-align: center;
-
       text-shadow:
-        0 3px 15px rgba(0,0,0,.55);
+        0 3px 15px rgba(0, 0, 0, .55);
     }
 
     .names .heart {
       font-family: "Great Vibes", cursive;
 
-      font-size: 32px;
+      font-size: 27px;
 
-      color: #e0b75e;
+      color: var(--gold-light);
 
-      margin: 4px 0;
+      margin: 2px 0;
 
-      text-shadow:
-        0 0 12px rgba(224,183,94,.8);
+      line-height: 1;
 
       animation:
-        heartGlow 2s ease-in-out infinite;
+        heartGlow 2.5s ease-in-out infinite;
     }
 
     @keyframes heartGlow {
@@ -1007,16 +1065,15 @@
       0%,
       100% {
         transform: scale(1);
-        opacity: .8;
+        opacity: .80;
       }
 
       50% {
-        transform: scale(1.15);
-
+        transform: scale(1.10);
         opacity: 1;
 
         text-shadow:
-          0 0 20px rgba(224,183,94,1);
+          0 0 18px rgba(224, 183, 94, .8);
       }
     }
 
@@ -1025,11 +1082,12 @@
 
       align-items: center;
 
-      gap: 12px;
+      gap: 10px;
 
-      width: min(340px, 70vw);
+      width: min(280px, 65vw);
 
-      margin: 22px auto;
+      margin:
+        10px auto;
     }
 
     .names-rule span {
@@ -1041,7 +1099,7 @@
         linear-gradient(
           90deg,
           transparent,
-          #d5aa50
+          var(--gold)
         );
     }
 
@@ -1049,50 +1107,82 @@
       background:
         linear-gradient(
           90deg,
-          #d5aa50,
+          var(--gold),
           transparent
         );
     }
 
     .names-rule b {
-      color: #e1bb68;
+      color: var(--gold-light);
 
-      font-size: 10px;
+      font-size: 9px;
     }
 
+    .couple-text {
+      max-width: 510px;
+
+      margin: auto;
+
+      font-size:
+        clamp(13px, 2.7vw, 17px);
+
+      line-height: 1.35;
+
+      color:
+        rgba(255, 236, 223, .93);
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, .55);
+    }
+
+
     /* =========================================================
-       EVENT CARD
+       PAGE 2
     ========================================================= */
 
-    .event-card {
+    .page-two-content {
+      width: min(900px, 95vw);
+    }
+
+    .page-two-content > .section-title {
+      margin-bottom: 17px;
+    }
+
+
+    /* =========================================================
+       LOCATION PANEL
+    ========================================================= */
+
+    .location-panel {
       position: relative;
 
-      width: min(560px, 92vw);
+      width: min(780px, 94vw);
 
-      margin: 24px auto 0;
+      margin: 0 auto;
 
-      padding: 30px 22px;
+      padding: 16px;
 
       border:
-        1px solid rgba(224,181,85,.5);
+        1px solid rgba(224, 181, 85, .50);
 
-      border-radius: 24px;
+      border-radius: 26px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(86,22,37,.82),
-          rgba(36,8,15,.72)
+          rgba(91, 23, 42, .82),
+          rgba(27, 5, 12, .84)
         );
 
-      box-shadow:
-        0 20px 70px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
 
-      backdrop-filter: blur(10px);
+      box-shadow:
+        var(--shadow),
+        inset 0 1px rgba(255, 255, 255, .07);
     }
 
-    .event-card::before {
+    .location-panel::before {
       content: "";
 
       position: absolute;
@@ -1100,68 +1190,130 @@
       inset: 7px;
 
       border:
-        1px solid rgba(224,181,85,.16);
+        1px solid rgba(236, 197, 108, .09);
 
-      border-radius: 18px;
+      border-radius: 20px;
 
       pointer-events: none;
     }
 
-    .event-icon {
-      font-size: 45px;
+    .locations-grid {
+      display: grid;
 
-      margin-bottom: 12px;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 13px;
+    }
+
+
+    /* =========================================================
+       LOCATION CARD
+    ========================================================= */
+
+    .location-card {
+      position: relative;
+
+      min-width: 0;
+
+      padding:
+        19px 14px 16px;
+
+      border:
+        1px solid rgba(226, 183, 87, .37);
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(57, 12, 25, .82),
+          rgba(27, 5, 12, .72)
+        );
+
+      box-shadow:
+        inset 0 1px rgba(255, 255, 255, .04);
+    }
+
+    .location-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 6px;
+
+      border:
+        1px solid rgba(224, 181, 85, .10);
+
+      border-radius: 15px;
+
+      pointer-events: none;
+    }
+
+    .location-icon {
+      font-size: 30px;
+
+      margin-bottom: 5px;
 
       filter:
         drop-shadow(
-          0 4px 10px rgba(0,0,0,.35)
+          0 4px 10px rgba(0, 0, 0, .4)
         );
     }
 
-    .event-name {
+    .location-label {
       font-family: "Cinzel", serif;
 
-      font-size: 11px;
+      font-size: 8px;
 
-      letter-spacing: 4px;
+      letter-spacing: 2.5px;
 
-      color: #dcb45e;
+      color: var(--gold-light);
 
-      margin-bottom: 12px;
+      margin-bottom: 7px;
     }
 
-    .event-time {
+    .location-time {
       font-family: "Cinzel", serif;
 
       font-size:
-        clamp(24px, 6vw, 36px);
+        clamp(20px, 4vw, 29px);
+
+      line-height: 1.1;
 
       color: #fff1c9;
 
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+
+      white-space: nowrap;
     }
 
-    .event-date {
-      font-size: 15px;
+    .location-date {
+      font-size: 11px;
 
       color: #e2bd6b;
 
-      letter-spacing: 2px;
+      letter-spacing: 1.1px;
 
-      margin-bottom: 15px;
+      line-height: 1.3;
+
+      margin-bottom: 8px;
     }
 
-    .event-venue {
-      font-size: 16px;
+    .location-name {
+      font-size: 14px;
 
-      line-height: 1.45;
+      line-height: 1.3;
+
+      min-height: 57px;
 
       color:
-        rgba(255,244,220,.92);
+        rgba(255, 244, 220, .94);
 
       text-shadow:
-        0 2px 7px rgba(0,0,0,.45);
+        0 2px 7px rgba(0, 0, 0, .45);
     }
+
 
     /* =========================================================
        MAP BUTTON
@@ -1173,11 +1325,14 @@
       align-items: center;
       justify-content: center;
 
-      gap: 7px;
+      gap: 6px;
 
-      margin-top: 22px;
+      margin-top: 11px;
 
-      padding: 11px 20px;
+      padding: 9px 14px;
+
+      border:
+        1px solid rgba(237, 202, 119, .58);
 
       border-radius: 999px;
 
@@ -1188,106 +1343,62 @@
       background:
         linear-gradient(
           135deg,
-          #a53e59,
-          #641c32
+          #a33d58,
+          #641b31
         );
-
-      border:
-        1px solid rgba(237,202,119,.55);
 
       font-family: "Cinzel", serif;
 
-      font-size: 8px;
+      font-size: 7px;
 
-      letter-spacing: 1.8px;
+      letter-spacing: 1.1px;
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,.28);
+        0 8px 24px rgba(0, 0, 0, .28);
 
       transition:
         transform .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        border-color .25s ease;
     }
 
     .map-button:hover {
       transform: translateY(-2px);
 
+      border-color:
+        rgba(255, 222, 147, .85);
+
       box-shadow:
-        0 12px 30px rgba(0,0,0,.38);
+        0 12px 30px rgba(0, 0, 0, .40);
     }
 
     .map-button:active {
-      transform: scale(.94);
+      transform: scale(.95);
     }
 
-    /* =========================================================
-       MAP
-    ========================================================= */
-
-    .map-layout {
-      width: min(700px, 94vw);
-
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 16px;
-
-      margin-top: 25px;
-    }
-
-    .map-box {
-      position: relative;
-
-      padding: 22px 12px;
-
-      border:
-        1px solid rgba(226,183,87,.38);
-
-      border-radius: 20px;
-
-      background:
-        rgba(42,10,18,.72);
-
-      backdrop-filter: blur(8px);
-    }
-
-    .map-box h3 {
-      font-family: "Cinzel", serif;
-
-      font-size: 9px;
-
-      letter-spacing: 2px;
-
-      color: #edcc7f;
-
-      margin-bottom: 10px;
-    }
-
-    .map-box p {
-      font-size: 13px;
-
-      color:
-        rgba(255,243,216,.88);
-
-      line-height: 1.35;
-    }
 
     /* =========================================================
        QR
     ========================================================= */
 
-    .qr-wrapper {
-      margin-top: 28px;
-
-      display: inline-flex;
-
-      flex-direction: column;
+    .qr-row {
+      display: flex;
 
       align-items: center;
+      justify-content: center;
 
-      gap: 8px;
+      gap: 19px;
+
+      margin-top: 15px;
+
+      padding-top: 13px;
+
+      border-top:
+        1px solid rgba(226, 183, 87, .18);
+    }
+
+    .qr-info {
+      text-align: left;
     }
 
     .qr-title {
@@ -1297,152 +1408,191 @@
 
       letter-spacing: 2px;
 
-      color: #e6c579;
+      color: var(--gold-light);
+
+      margin-bottom: 4px;
+    }
+
+    .qr-info p {
+      font-size: 12px;
+
+      line-height: 1.25;
+
+      color:
+        rgba(255, 243, 216, .84);
     }
 
     #mapQR {
-      width: 115px;
-      height: 115px;
+      width: 92px;
+      height: 92px;
 
-      padding: 6px;
+      padding: 5px;
 
-      background: white;
-
-      border-radius: 13px;
+      background: #fff;
 
       border:
-        2px solid #d2a94f;
+        2px solid var(--gold);
+
+      border-radius: 11px;
 
       box-shadow:
-        0 10px 35px rgba(0,0,0,.3);
+        0 10px 28px rgba(0, 0, 0, .34);
+
+      flex-shrink: 0;
     }
 
     #mapQR canvas,
     #mapQR img {
       width: 100% !important;
       height: 100% !important;
+      display: block;
     }
 
+
     /* =========================================================
-       BLESSING
+       PAGE 3
+    ========================================================= */
+
+    .page-three-content {
+      width: min(700px, 94vw);
+    }
+
+
+    /* =========================================================
+       BLESSING CARD
     ========================================================= */
 
     .blessing-card {
-      width: min(600px, 92vw);
+      position: relative;
 
-      padding: 35px 22px;
+      width: min(620px, 92vw);
+
+      margin: 0 auto;
+
+      padding:
+        26px 22px;
 
       border:
-        1px solid rgba(226,184,88,.45);
+        1px solid rgba(226, 184, 88, .47);
 
-      border-radius: 24px;
+      border-radius: 26px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(92,26,43,.82),
-          rgba(35,8,15,.75)
+          rgba(94, 26, 45, .80),
+          rgba(32, 6, 14, .78)
         );
 
-      box-shadow:
-        0 20px 70px rgba(0,0,0,.3);
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
 
-      backdrop-filter: blur(10px);
+      box-shadow:
+        var(--shadow),
+        inset 0 1px rgba(255, 255, 255, .07);
+    }
+
+    .blessing-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 7px;
+
+      border:
+        1px solid rgba(236, 197, 108, .10);
+
+      border-radius: 20px;
+
+      pointer-events: none;
     }
 
     .blessing-symbol {
-      font-size: 34px;
+      font-size: 30px;
 
-      color: #e3bd68;
+      margin-bottom: 8px;
 
-      margin-bottom: 20px;
+      filter:
+        drop-shadow(
+          0 0 10px rgba(255, 194, 72, .55)
+        );
     }
 
     .blessing-card h2 {
       font-family: "Great Vibes", cursive;
 
       font-size:
-        clamp(35px, 8vw, 60px);
+        clamp(37px, 8vw, 57px);
 
       font-weight: 400;
 
+      line-height: .95;
+
       color: #fff0c7;
 
-      margin-bottom: 20px;
+      margin-bottom: 14px;
 
       text-shadow:
-        0 4px 15px rgba(0,0,0,.5);
+        0 4px 15px rgba(0, 0, 0, .5);
     }
 
     .blessing-card p {
       font-size:
-        clamp(16px, 3vw, 20px);
+        clamp(14px, 2.8vw, 18px);
 
-      line-height: 1.6;
+      line-height: 1.45;
 
       color:
-        rgba(255,243,216,.92);
+        rgba(255, 243, 216, .92);
 
       text-shadow:
-        0 2px 8px rgba(0,0,0,.55);
+        0 2px 8px rgba(0, 0, 0, .55);
     }
+
 
     /* =========================================================
-       FINAL COUNTDOWN
+       COUNTDOWN
     ========================================================= */
 
-    .countdown-scene .section-content {
-      width: min(680px, 94vw);
-      text-align: center;
+    .countdown-area {
+      margin-top: 16px;
     }
 
-    .countdown-scene .deepam {
-      margin-bottom: 12px;
-    }
-
-    .countdown-scene .section-title {
-      margin-bottom: 14px;
-    }
-
-    .countdown-scene .section-text {
-      max-width: 500px;
-      margin: 0 auto;
+    .countdown-area .deepam {
+      margin-bottom: 5px;
     }
 
     .countdown-box {
-      margin-top: 32px;
-
       display: flex;
 
       justify-content: center;
 
-      gap: 10px;
+      gap: 9px;
 
-      flex-wrap: nowrap;
+      margin-top: 15px;
     }
 
     .time-unit {
-      width: 78px;
+      width: 73px;
 
-      min-width: 0;
-
-      padding: 15px 7px;
+      padding:
+        13px 5px;
 
       border:
-        1px solid rgba(226,183,87,.42);
+        1px solid rgba(226, 183, 87, .43);
 
       background:
         linear-gradient(
           145deg,
-          rgba(86,22,37,.82),
-          rgba(30,7,14,.78)
+          rgba(86, 22, 37, .83),
+          rgba(30, 7, 14, .80)
         );
 
-      border-radius: 16px;
+      border-radius: 15px;
 
       box-shadow:
-        0 12px 35px rgba(0,0,0,.28),
-        inset 0 1px rgba(255,255,255,.06);
+        0 10px 30px rgba(0, 0, 0, .28),
+        inset 0 1px rgba(255, 255, 255, .06);
 
       backdrop-filter: blur(8px);
     }
@@ -1453,90 +1603,85 @@
       font-family: "Cinzel", serif;
 
       font-size:
-        clamp(22px, 6vw, 34px);
+        clamp(21px, 5vw, 31px);
 
       font-weight: 600;
 
-      color: #f5d990;
+      color: var(--gold-bright);
 
       line-height: 1;
 
       text-shadow:
-        0 2px 10px rgba(0,0,0,.65);
+        0 2px 10px rgba(0, 0, 0, .65);
     }
 
     .time-unit span {
       display: block;
 
-      margin-top: 8px;
+      margin-top: 7px;
 
       font-family: "Cinzel", serif;
 
-      font-size: 7px;
+      font-size: 6px;
 
       font-weight: 600;
 
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
 
       color: #d9b461;
     }
 
     .countdown-date {
-      margin-top: 28px;
+      margin-top: 13px;
 
       font-family: "Cinzel", serif;
 
-      font-size: 12px;
+      font-size: 10px;
 
       font-weight: 600;
 
-      letter-spacing: 4px;
+      letter-spacing: 3px;
 
       color: #f0ce82;
 
       text-shadow:
-        0 2px 8px rgba(0,0,0,.7);
+        0 2px 8px rgba(0, 0, 0, .7);
     }
 
     .countdown-message {
-      max-width: 500px;
+      max-width: 560px;
 
-      margin: 18px auto 0;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+      margin:
+        9px auto 0;
 
       font-size:
-        clamp(15px, 3vw, 19px);
+        clamp(13px, 2.6vw, 17px);
 
-      font-weight: 500;
-
-      line-height: 1.5;
+      line-height: 1.35;
 
       color:
-        rgba(255,244,220,.92);
+        rgba(255, 244, 220, .92);
 
       text-shadow:
-        0 2px 8px rgba(0,0,0,.8);
+        0 2px 8px rgba(0, 0, 0, .8);
     }
+
 
     /* =========================================================
        WEDDING DAY
     ========================================================= */
 
-    .countdown-scene.wedding-day .countdown-box {
+    .wedding-day .countdown-box {
       display: none;
     }
 
-    .countdown-scene.wedding-day .countdown-date {
-      margin-top: 25px;
+    .wedding-day .countdown-area {
+      margin-top: 10px;
     }
 
-    .countdown-scene.wedding-day .section-title {
+    .wedding-day .section-title {
       animation:
-        weddingTitleGlow 2s ease-in-out infinite;
+        weddingTitleGlow 2.5s ease-in-out infinite;
     }
 
     @keyframes weddingTitleGlow {
@@ -1544,118 +1689,16 @@
       0%,
       100% {
         text-shadow:
-          0 4px 18px rgba(0,0,0,.45);
+          0 4px 18px rgba(0, 0, 0, .45);
       }
 
       50% {
         text-shadow:
-          0 4px 18px rgba(0,0,0,.45),
-          0 0 30px rgba(241,213,143,.85);
+          0 4px 18px rgba(0, 0, 0, .45),
+          0 0 30px rgba(241, 213, 143, .75);
       }
     }
 
-    /* =========================================================
-       SCROLL HINT
-    ========================================================= */
-
-    .scroll-hint {
-      position: absolute;
-
-      bottom: 28px;
-      left: 50%;
-
-      z-index: 50;
-
-      transform: translateX(-50%);
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 8px;
-
-      pointer-events: none;
-    }
-
-    /* PAGE 1 TEXT */
-
-    .scroll-text {
-      color: #fff;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 13px;
-
-      font-weight: 900;
-
-      letter-spacing: .22em;
-
-      white-space: nowrap;
-
-      text-shadow:
-        0 0 6px rgba(255,255,255,.8),
-        0 0 15px rgba(212,175,55,.8),
-        0 0 30px rgba(212,175,55,.4);
-
-      animation:
-        scrollTextGlow 2s ease-in-out infinite;
-    }
-
-    /* ARROW ON EVERY PAGE */
-
-    .scroll-arrow {
-      display: block;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 30px;
-
-      font-weight: bold;
-
-      line-height: 1;
-
-      color: var(--gold-light);
-
-      text-shadow:
-        0 0 8px rgba(212,175,55,.9),
-        0 0 18px rgba(212,175,55,.8),
-        0 0 30px rgba(212,175,55,.5);
-
-      animation:
-        arrowBounce 1.2s ease-in-out infinite;
-    }
-
-    @keyframes scrollTextGlow {
-
-      0%,
-      100% {
-        opacity: .65;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes arrowBounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-        opacity: .75;
-      }
-
-      50% {
-        transform: translateY(9px);
-        opacity: 1;
-      }
-    }
 
     /* =========================================================
        PAGE DOTS
@@ -1672,36 +1715,133 @@
       z-index: 100;
 
       display: flex;
-
       flex-direction: column;
 
-      gap: 7px;
+      gap: 9px;
     }
 
     .page-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
 
       border-radius: 50%;
 
       border:
         1px solid #d7af5c;
 
-      background: transparent;
+      background:
+        rgba(255, 255, 255, .04);
+
+      cursor: pointer;
 
       transition:
         transform .3s ease,
-        background .3s ease;
+        background .3s ease,
+        box-shadow .3s ease;
     }
 
     .page-dot.active {
-      background: #e4bd6a;
+      background: var(--gold-light);
 
-      transform: scale(1.7);
+      transform: scale(1.65);
 
       box-shadow:
-        0 0 10px rgba(228,189,106,.6);
+        0 0 12px rgba(228, 189, 106, .7);
     }
+
+
+    /* =========================================================
+       SCROLL HINT
+    ========================================================= */
+
+    .scroll-hint {
+      position: absolute;
+
+      bottom: 20px;
+      left: 50%;
+
+      z-index: 50;
+
+      transform: translateX(-50%);
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 4px;
+
+      pointer-events: none;
+    }
+
+    .scroll-text {
+      color: #fff;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+      white-space: nowrap;
+
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .65),
+        0 0 15px rgba(212, 175, 55, .65);
+
+      animation:
+        scrollTextGlow 2.5s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+      display: block;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 25px;
+
+      font-weight: bold;
+
+      line-height: 1;
+
+      color: var(--gold-light);
+
+      text-shadow:
+        0 0 8px rgba(212, 175, 55, .75),
+        0 0 18px rgba(212, 175, 55, .55);
+
+      animation:
+        arrowBounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollTextGlow {
+
+      0%,
+      100% {
+        opacity: .62;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes arrowBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: .70;
+      }
+
+      50% {
+        transform: translateY(7px);
+        opacity: 1;
+      }
+    }
+
 
     /* =========================================================
        COVER
@@ -1709,7 +1849,6 @@
 
     .cover {
       position: fixed;
-
       inset: 0;
 
       z-index: 200;
@@ -1717,65 +1856,89 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
+
+      padding: 20px;
 
       background:
         radial-gradient(
-          circle,
-          #70283d,
-          #280a12 75%
+          ellipse at center,
+          #702a42 0%,
+          #400e20 43%,
+          #1a040b 100%
         );
 
       transition:
-        transform 1.3s cubic-bezier(.77,0,.175,1),
+        transform 1.3s cubic-bezier(.77, 0, .175, 1),
         opacity 1s ease;
+    }
+
+    .cover::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(243, 217, 148, .08),
+          transparent 48%
+        );
+
+      pointer-events: none;
     }
 
     .cover.open {
       transform: translateY(-100%);
       opacity: 0;
+
       pointer-events: none;
     }
+
+
+    /* =========================================================
+       COVER CARD
+    ========================================================= */
 
     .cover-card {
       position: relative;
 
-      width: min(390px, 88vw);
-
-      min-height: 530px;
+      width: min(400px, 88vw);
+      min-height: 520px;
 
       display: flex;
 
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
 
-      padding: 35px 25px;
+      padding:
+        38px 26px;
 
       border:
-        1px solid rgba(231,190,91,.65);
+        1px solid rgba(231, 190, 91, .72);
 
-      border-radius: 14px;
+      border-radius: 16px;
 
       background:
         linear-gradient(
           145deg,
-          #761f38,
-          #3a0d1b
+          #74223e,
+          #3a0b1b
         );
 
       box-shadow:
-        0 30px 100px rgba(0,0,0,.6);
+        0 35px 110px rgba(0, 0, 0, .65),
+        inset 0 1px rgba(255, 255, 255, .08);
 
       overflow: hidden;
 
       animation:
-        cardAppear 1.5s ease both;
+        cardAppear 1.4s ease both;
     }
 
     .cover-card::before {
@@ -1783,10 +1946,12 @@
 
       position: absolute;
 
-      inset: 12px;
+      inset: 11px;
 
       border:
-        1px solid rgba(239,203,119,.3);
+        1px solid rgba(239, 203, 119, .32);
+
+      border-radius: 10px;
 
       pointer-events: none;
     }
@@ -1796,44 +1961,59 @@
 
       position: absolute;
 
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
 
       left: 50%;
       top: 50%;
 
       transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(238,190,83,.12),
+          rgba(238, 190, 83, .12),
           transparent 70%
         );
+
+      pointer-events: none;
     }
 
     .cover-top {
+      position: relative;
+      z-index: 2;
+
       font-family: "Cinzel", serif;
 
       font-size: 8px;
 
       letter-spacing: 4px;
 
+      line-height: 1.5;
+
       color: #eac879;
 
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
+
+    /* =========================================================
+       COVER MONOGRAM
+    ========================================================= */
+
     .cover-monogram {
-      width: 95px;
-      height: 95px;
+      position: relative;
+      z-index: 2;
 
-      display: grid;
+      width: 100px;
+      height: 100px;
 
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       border:
         1px solid #d9b25c;
@@ -1842,32 +2022,57 @@
 
       font-family: "Great Vibes", cursive;
 
-      font-size: 42px;
+      font-size: 43px;
 
       color: #f4d995;
 
-      margin-bottom: 25px;
+      margin-bottom: 24px;
 
-      position: relative;
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 235, 179, .08),
+          transparent 72%
+        );
 
-      z-index: 2;
+      box-shadow:
+        0 0 0 5px rgba(218, 174, 75, .04),
+        0 0 28px rgba(218, 174, 75, .15);
     }
 
+    .cover-heart {
+      font-size: 17px;
+
+      margin:
+        0 5px;
+    }
+
+
+    /* =========================================================
+       COVER TITLE
+    ========================================================= */
+
     .cover-title {
+      position: relative;
+      z-index: 2;
+
       font-family: "Great Vibes", cursive;
 
-      font-size: 55px;
+      font-size:
+        clamp(48px, 13vw, 60px);
 
       color: #fff0c7;
 
-      line-height: .95;
+      line-height: .92;
 
-      position: relative;
-
-      z-index: 2;
+      text-shadow:
+        0 4px 20px rgba(0, 0, 0, .45);
     }
 
     .cover-date {
+      position: relative;
+      z-index: 2;
+
       margin-top: 22px;
 
       font-family: "Cinzel", serif;
@@ -1877,32 +2082,33 @@
       letter-spacing: 3px;
 
       color: #dfba65;
-
-      position: relative;
-
-      z-index: 2;
     }
 
+
+    /* =========================================================
+       OPEN BUTTON
+    ========================================================= */
+
     .cover-enter {
-      margin-top: 35px;
-
       position: relative;
-
       z-index: 2;
 
-      padding: 14px 30px;
+      margin-top: 35px;
+
+      padding:
+        14px 30px;
 
       border:
-        2px solid #f1d58f;
+        1px solid #f1d58f;
 
       border-radius: 999px;
 
       background:
         linear-gradient(
           135deg,
-          #d6a84f,
-          #8f263f,
-          #d6a84f
+          #c9953e,
+          #76213d,
+          #c9953e
         );
 
       background-size: 200% 200%;
@@ -1920,16 +2126,16 @@
       cursor: pointer;
 
       box-shadow:
-        0 0 10px rgba(241,213,143,.7),
-        0 0 25px rgba(241,213,143,.45),
-        0 10px 30px rgba(0,0,0,.45);
+        0 0 12px rgba(241, 213, 143, .55),
+        0 0 28px rgba(241, 213, 143, .28),
+        0 10px 30px rgba(0, 0, 0, .45);
 
       text-shadow:
-        0 1px 4px rgba(0,0,0,.5);
+        0 1px 4px rgba(0, 0, 0, .5);
 
       animation:
-        invitationGlow 2s ease-in-out infinite,
-        invitationGradient 4s ease infinite;
+        invitationGlow 2.5s ease-in-out infinite,
+        invitationGradient 5s ease infinite;
 
       transition:
         transform .25s ease,
@@ -1937,12 +2143,7 @@
     }
 
     .cover-enter:hover {
-      transform: scale(1.08);
-
-      box-shadow:
-        0 0 15px rgba(241,213,143,.9),
-        0 0 40px rgba(241,213,143,.65),
-        0 15px 35px rgba(0,0,0,.5);
+      transform: scale(1.05);
     }
 
     .cover-enter:active {
@@ -1954,16 +2155,16 @@
       0%,
       100% {
         box-shadow:
-          0 0 8px rgba(241,213,143,.5),
-          0 0 20px rgba(241,213,143,.3),
-          0 10px 30px rgba(0,0,0,.45);
+          0 0 8px rgba(241, 213, 143, .45),
+          0 0 20px rgba(241, 213, 143, .22),
+          0 10px 30px rgba(0, 0, 0, .45);
       }
 
       50% {
         box-shadow:
-          0 0 15px rgba(241,213,143,1),
-          0 0 40px rgba(241,213,143,.7),
-          0 12px 35px rgba(0,0,0,.5);
+          0 0 16px rgba(241, 213, 143, .90),
+          0 0 34px rgba(241, 213, 143, .55),
+          0 12px 35px rgba(0, 0, 0, .50);
       }
     }
 
@@ -1988,8 +2189,8 @@
         opacity: 0;
 
         transform:
-          scale(.8)
-          rotateX(20deg);
+          scale(.82)
+          rotateX(18deg);
       }
 
       to {
@@ -2001,8 +2202,9 @@
       }
     }
 
+
     /* =========================================================
-       AUDIO BUTTON
+       AUDIO
     ========================================================= */
 
     .audio-button {
@@ -2013,26 +2215,29 @@
 
       z-index: 120;
 
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
 
       border-radius: 50%;
 
       border:
-        1px solid rgba(227,188,99,.55);
+        1px solid rgba(227, 188, 99, .58);
 
       background:
-        rgba(53,12,22,.75);
+        rgba(39, 8, 18, .80);
 
       color: #f0d28a;
 
       display: grid;
-
       place-items: center;
 
       cursor: pointer;
 
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      box-shadow:
+        0 7px 20px rgba(0, 0, 0, .25);
 
       transition:
         transform .25s ease,
@@ -2041,11 +2246,11 @@
 
     .audio-button.playing {
       box-shadow:
-        0 0 0 5px rgba(227,188,99,.08),
-        0 0 20px rgba(227,188,99,.35);
+        0 0 0 5px rgba(227, 188, 99, .07),
+        0 0 22px rgba(227, 188, 99, .32);
 
       animation:
-        musicPulse 1.5s ease-in-out infinite;
+        musicPulse 1.7s ease-in-out infinite;
     }
 
     .audio-button:active {
@@ -2057,16 +2262,17 @@
       0%,
       100% {
         box-shadow:
-          0 0 0 5px rgba(227,188,99,.08),
-          0 0 12px rgba(227,188,99,.2);
+          0 0 0 5px rgba(227, 188, 99, .07),
+          0 0 12px rgba(227, 188, 99, .18);
       }
 
       50% {
         box-shadow:
-          0 0 0 8px rgba(227,188,99,.05),
-          0 0 25px rgba(227,188,99,.4);
+          0 0 0 8px rgba(227, 188, 99, .04),
+          0 0 26px rgba(227, 188, 99, .35);
       }
     }
+
 
     /* =========================================================
        MOBILE
@@ -2075,119 +2281,575 @@
     @media (max-width: 600px) {
 
       .scene {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding:
+          max(28px, env(safe-area-inset-top))
+          12px
+          max(48px, env(safe-area-inset-bottom));
       }
 
+
+      /* TEMPLE */
+
+      .temple-arch {
+        width: 94vw;
+        height: 118px;
+      }
+
+      .temple-arch::before {
+        width: 125px;
+        height: 58px;
+
+        top: 23px;
+
+        font-size: 31px;
+
+        letter-spacing: 0;
+      }
+
+
+      /* PEACOCKS */
+
       .peacock {
-        font-size: 38px;
-        opacity: .45;
+        font-size: 37px;
+        opacity: .28;
       }
 
       .peacock.left {
-        left: 4px;
+        left: 0;
       }
 
       .peacock.right {
-        right: 4px;
+        right: 0;
       }
 
-      .map-layout {
-        grid-template-columns: 1fr;
+
+      /* PAGE 1 */
+
+      .page-one-content {
+        width: 96vw;
+
+        padding:
+          90px 0 42px;
+      }
+
+      .temple-title {
+        max-width: 310px;
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 8px;
+      }
+
+      .page-one-content .deepam {
+        width: 61px;
+        height: 61px;
+
+        font-size: 35px;
+
+        margin-bottom: 4px;
+      }
+
+      .page-one-content .deepam::before {
+        width: 70px;
+        height: 70px;
+      }
+
+      .main-title {
+        font-size:
+          clamp(48px, 14vw, 70px);
+
+        line-height: .95;
+
+        margin-bottom: 4px;
+      }
+
+      .one-subtitle {
+        font-size: 8px;
+
+        letter-spacing: 2.8px;
+      }
+
+      .date-pill {
+        margin-top: 9px;
+
+        padding:
+          7px 14px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.7px;
+      }
+
+      .couple-card {
+        width: 94vw;
+
+        margin-top: 10px;
+
+        padding:
+          13px 12px 15px;
+
+        border-radius: 20px;
+      }
+
+      .couple-card .eyebrow {
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 7px;
+      }
+
+      .names {
+        font-size:
+          clamp(16px, 5vw, 23px);
+
+        letter-spacing: 1.6px;
+
+        line-height: 1.1;
+      }
+
+      .names .heart {
+        font-size: 22px;
+
+        margin: 1px 0;
+      }
+
+      .names-rule {
+        width: min(230px, 60vw);
+
+        margin:
+          7px auto;
+      }
+
+      .couple-text {
+        font-size: 12px;
+
+        line-height: 1.25;
+
+        max-width: 440px;
+      }
+
+
+      /* PAGE 2 */
+
+      .page-two-content {
+        width: 96vw;
+      }
+
+      .page-two-content .eyebrow {
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 6px;
+      }
+
+      .page-two-content > .section-title {
+        font-size:
+          clamp(42px, 10vw, 60px);
+
+        margin-bottom: 10px;
+      }
+
+      .location-panel {
+        width: 96vw;
+
+        padding: 9px;
+
+        border-radius: 21px;
+      }
+
+      .locations-grid {
+        gap: 7px;
+      }
+
+      .location-card {
+        padding:
+          12px 7px 10px;
+
+        border-radius: 15px;
+      }
+
+      .location-card::before {
+        inset: 5px;
+
+        border-radius: 11px;
+      }
+
+      .location-icon {
+        font-size: 24px;
+
+        margin-bottom: 3px;
+      }
+
+      .location-label {
+        font-size: 6px;
+
+        letter-spacing: 1.35px;
+
+        margin-bottom: 5px;
+      }
+
+      .location-time {
+        font-size: 16px;
+
+        margin-bottom: 3px;
+      }
+
+      .location-date {
+        font-size: 7.3px;
+
+        letter-spacing: .35px;
+
+        margin-bottom: 6px;
+      }
+
+      .location-name {
+        font-size: 10px;
+
+        min-height: 51px;
+
+        line-height: 1.2;
+      }
+
+      .map-button {
+        margin-top: 8px;
+
+        padding:
+          7px 7px;
+
+        font-size: 5px;
+
+        letter-spacing: .55px;
+
+        gap: 3px;
+      }
+
+      .qr-row {
+        margin-top: 9px;
+
+        padding-top: 9px;
+
         gap: 9px;
       }
 
-      .map-box {
-        padding: 14px 10px;
-      }
-
-      .event-card {
-        padding: 25px 15px;
-      }
-
       #mapQR {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
+
+        padding: 4px;
+
+        border-radius: 8px;
       }
 
-      .page-dots {
-        right: 8px;
-      }
-
-      .cover-card {
-        min-height: 500px;
-      }
-
-      .countdown-box {
-        gap: 6px;
-      }
-
-      .time-unit {
-        width: 68px;
-
-        padding: 13px 5px;
-
-        border-radius: 13px;
-      }
-
-      .time-unit strong {
-        font-size: 24px;
-      }
-
-      .time-unit span {
+      .qr-title {
         font-size: 6px;
-        letter-spacing: 1px;
+
+        letter-spacing: 1.1px;
       }
 
-      .countdown-date {
-        font-size: 10px;
-        letter-spacing: 3px;
+      .qr-info p {
+        font-size: 9px;
+      }
+
+
+      /* PAGE 3 */
+
+      .page-three-content {
+        width: 96vw;
+      }
+
+      .blessing-card {
+        width: 94vw;
+
+        padding:
+          19px 13px;
+
+        border-radius: 21px;
+      }
+
+      .blessing-symbol {
+        font-size: 25px;
+
+        margin-bottom: 6px;
+      }
+
+      .blessing-card h2 {
+        font-size:
+          clamp(35px, 9vw, 48px);
+
+        margin-bottom: 9px;
+      }
+
+      .blessing-card p {
+        font-size: 13px;
+
+        line-height: 1.3;
+      }
+
+      .countdown-area {
+        margin-top: 9px;
+      }
+
+      .countdown-area .deepam {
+        width: 57px;
+        height: 57px;
+
+        font-size: 33px;
+
+        margin-bottom: 2px;
+      }
+
+      .countdown-area .deepam::before {
+        width: 66px;
+        height: 66px;
+      }
+
+      .countdown-area .eyebrow {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 5px;
+      }
+
+      .countdown-area .section-title {
+        font-size:
+          clamp(42px, 10vw, 58px);
+
+        margin-bottom: 5px;
       }
 
       .countdown-message {
-        font-size: 15px;
+        font-size: 12px;
+
+        line-height: 1.25;
       }
 
-      .scroll-hint {
-        bottom: 22px;
+      .countdown-box {
+        gap: 5px;
+
+        margin-top: 8px;
       }
-
-      .scroll-text {
-        font-size: 11px;
-        letter-spacing: .16em;
-      }
-
-      .scroll-arrow {
-        font-size: 26px;
-      }
-    }
-
-    /* =========================================================
-       VERY SMALL MOBILE
-    ========================================================= */
-
-    @media (max-width: 360px) {
 
       .time-unit {
-        width: 60px;
+        width: 62px;
+
+        padding:
+          9px 3px;
+
+        border-radius: 12px;
       }
 
       .time-unit strong {
         font-size: 21px;
       }
 
-      .countdown-box {
-        gap: 4px;
+      .time-unit span {
+        margin-top: 5px;
+
+        font-size: 5px;
+
+        letter-spacing: .7px;
       }
 
-      .names {
-        font-size: 22px;
+      .countdown-date {
+        margin-top: 8px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+      }
+
+
+      /* NAVIGATION */
+
+      .page-dots {
+        right: 7px;
+
+        gap: 8px;
+      }
+
+      .page-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .scroll-hint {
+        bottom: 16px;
       }
 
       .scroll-text {
-        font-size: 10px;
+        font-size: 8px;
+      }
+
+      .scroll-arrow {
+        font-size: 22px;
+      }
+
+
+      /* AUDIO */
+
+      .audio-button {
+        left: 12px;
+        bottom: 14px;
+
+        width: 36px;
+        height: 36px;
+      }
+
+
+      /* COVER */
+
+      .cover-card {
+        width: 88vw;
+
+        min-height: 490px;
+
+        padding:
+          30px 20px;
+      }
+
+      .cover-top {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+        max-width: 260px;
+      }
+
+      .cover-monogram {
+        width: 90px;
+        height: 90px;
+
+        font-size: 39px;
+
+        margin-bottom: 21px;
+      }
+
+      .cover-title {
+        font-size:
+          clamp(46px, 13vw, 56px);
+      }
+
+      .cover-enter {
+        padding:
+          13px 24px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
       }
     }
+
+
+    /* =========================================================
+       VERY SMALL DEVICES
+    ========================================================= */
+
+    @media (max-width: 360px) {
+
+      .scene {
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+
+      .temple-arch {
+        height: 108px;
+      }
+
+      .temple-arch::before {
+        width: 108px;
+        height: 49px;
+
+        top: 20px;
+
+        font-size: 28px;
+      }
+
+      .page-one-content {
+        padding:
+          80px 0 35px;
+      }
+
+      .main-title {
+        font-size: 45px;
+      }
+
+      .temple-title {
+        font-size: 7px;
+
+        letter-spacing: 2.4px;
+      }
+
+      .date-pill {
+        font-size: 6.3px;
+
+        padding:
+          6px 10px;
+      }
+
+      .couple-card {
+        margin-top: 7px;
+
+        padding:
+          10px 9px 12px;
+      }
+
+      .names {
+        font-size: 14px;
+      }
+
+      .couple-text {
+        font-size: 10.5px;
+      }
+
+      .location-panel {
+        padding: 7px;
+      }
+
+      .location-card {
+        padding:
+          9px 5px 8px;
+      }
+
+      .location-time {
+        font-size: 14px;
+      }
+
+      .location-name {
+        font-size: 8.5px;
+
+        min-height: 45px;
+      }
+
+      .map-button {
+        font-size: 4.3px;
+
+        padding:
+          6px 5px;
+      }
+
+      #mapQR {
+        width: 61px;
+        height: 61px;
+      }
+
+      .qr-info p {
+        font-size: 8px;
+      }
+
+      .time-unit {
+        width: 56px;
+      }
+
+      .time-unit strong {
+        font-size: 19px;
+      }
+    }
+
 
     /* =========================================================
        SHORT DEVICES
@@ -2196,45 +2858,256 @@
     @media (max-height: 680px) {
 
       .scene {
-        padding-top: 22px;
-        padding-bottom: 22px;
+        padding-top: 15px;
+        padding-bottom: 27px;
       }
 
-      .deepam {
-        margin-bottom: 8px;
-        transform: scale(.8);
+      .page-one-content {
+        padding-top: 73px;
+        padding-bottom: 34px;
       }
 
-      .monogram {
-        width: 75px;
-        height: 75px;
+      .page-one-content .deepam {
+        width: 53px;
+        height: 53px;
 
-        font-size: 32px;
+        font-size: 30px;
 
-        margin-bottom: 12px;
+        margin-bottom: 1px;
       }
 
-      .event-card {
-        margin-top: 12px;
-        padding: 18px 12px;
+      .page-one-content .deepam::before {
+        width: 62px;
+        height: 62px;
       }
 
-      .section-title {
-        font-size: 42px;
+      .temple-title {
+        margin-bottom: 5px;
+      }
+
+      .main-title {
+        font-size: 50px;
+      }
+
+      .date-pill {
+        margin-top: 6px;
+
+        padding:
+          6px 12px;
+      }
+
+      .couple-card {
+        margin-top: 7px;
+
+        padding:
+          9px 11px 10px;
+      }
+
+      .names-rule {
+        margin:
+          5px auto;
+      }
+
+      .couple-text {
+        line-height: 1.18;
+      }
+
+      .page-two-content > .section-title {
+        margin-bottom: 6px;
+      }
+
+      .location-panel {
+        padding: 7px;
+      }
+
+      .location-card {
+        padding-top: 8px;
+        padding-bottom: 7px;
+      }
+
+      .location-icon {
+        font-size: 21px;
+      }
+
+      .location-time {
+        font-size: 15px;
+      }
+
+      .location-name {
+        font-size: 8.5px;
+
+        min-height: 41px;
+      }
+
+      .map-button {
+        margin-top: 5px;
+
+        padding: 5px;
+      }
+
+      .qr-row {
+        margin-top: 6px;
+
+        padding-top: 6px;
       }
 
       .blessing-card {
-        padding: 25px 15px;
+        padding:
+          15px 11px;
+      }
+
+      .blessing-card h2 {
+        font-size: 36px;
+      }
+
+      .blessing-card p {
+        font-size: 11.5px;
+      }
+
+      .countdown-area {
+        margin-top: 5px;
       }
 
       .countdown-box {
-        margin-top: 20px;
+        margin-top: 5px;
+      }
+
+      .countdown-date {
+        margin-top: 5px;
       }
 
       .scroll-hint {
-        bottom: 15px;
+        bottom: 8px;
       }
     }
+
+
+    /* =========================================================
+       EXTRA SHORT PHONES
+    ========================================================= */
+
+    @media (max-height: 600px) {
+
+      .page-one-content {
+        padding-top: 63px;
+        padding-bottom: 27px;
+      }
+
+      .page-one-content .deepam {
+        width: 46px;
+        height: 46px;
+
+        font-size: 26px;
+
+        margin-top: -4px;
+      }
+
+      .page-one-content .deepam::before {
+        width: 54px;
+        height: 54px;
+      }
+
+      .main-title {
+        font-size: 44px;
+      }
+
+      .couple-card {
+        padding:
+          7px 9px 9px;
+
+        margin-top: 5px;
+      }
+
+      .names {
+        font-size: 13.5px;
+      }
+
+      .names .heart {
+        font-size: 18px;
+      }
+
+      .couple-text {
+        font-size: 9.8px;
+      }
+
+      .location-card {
+        padding:
+          6px 4px;
+      }
+
+      .location-icon {
+        font-size: 18px;
+      }
+
+      .location-label {
+        font-size: 4.8px;
+      }
+
+      .location-time {
+        font-size: 13px;
+      }
+
+      .location-date {
+        font-size: 6.2px;
+      }
+
+      .location-name {
+        font-size: 7.7px;
+
+        min-height: 35px;
+      }
+
+      .map-button {
+        font-size: 3.8px;
+
+        padding: 4px;
+      }
+
+      #mapQR {
+        width: 55px;
+        height: 55px;
+      }
+
+      .blessing-card {
+        padding:
+          12px 9px;
+      }
+
+      .blessing-card h2 {
+        font-size: 32px;
+      }
+
+      .blessing-card p {
+        font-size: 9.8px;
+      }
+
+      .countdown-area .deepam {
+        transform: scale(.68);
+
+        margin-top: -9px;
+        margin-bottom: -9px;
+      }
+
+      .countdown-area .section-title {
+        font-size: 40px;
+      }
+
+      .countdown-message {
+        font-size: 9.8px;
+      }
+
+      .time-unit {
+        width: 52px;
+
+        padding:
+          6px 2px;
+      }
+
+      .time-unit strong {
+        font-size: 16px;
+      }
+    }
+
 
     /* =========================================================
        REDUCED MOTION
@@ -2254,958 +3127,856 @@
   </style>
 </head>
 
+
 <body>
 
-<div class="app">
+  <div class="app">
 
-  <!-- =======================================================
+
+    <!-- =======================================================
        GLOBAL EFFECTS
-  ======================================================== -->
+    ======================================================== -->
 
-  <div class="cinematic-light"></div>
-  <div class="silk-texture"></div>
+    <div class="cinematic-light"></div>
 
-  <div class="gold-dust">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="silk-texture"></div>
 
-  <div class="petal-field">
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-  </div>
+    <div class="gold-dust">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <!-- =======================================================
-       OPENING COVER
-  ======================================================== -->
+    <div class="petal-field">
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+    </div>
 
-  <div class="cover" id="cover">
 
-    <div class="cover-card">
+    <!-- =======================================================
+       COVER
+    ======================================================== -->
 
-      <div class="cover-top">
-        WITH THE BLESSINGS OF OUR FAMILIES
+    <div class="cover" id="cover">
+
+      <div class="cover-card">
+
+        <div class="cover-top">
+          WITH THE BLESSINGS OF OUR FAMILIES
+        </div>
+
+        <div class="cover-monogram">
+          K
+          <span class="cover-heart">♥</span>
+          S
+        </div>
+
+        <div class="cover-title">
+          Wedding<br>
+          Invitation
+        </div>
+
+        <div class="cover-date">
+          25 • OCTOBER • 2026
+        </div>
+
+        <button
+          class="cover-enter"
+          id="enterButton"
+          type="button">
+          OPEN THE INVITATION
+        </button>
+
       </div>
-
-      <div class="cover-monogram">
-        K
-        <span style="font-size:18px;">♥</span>
-        S
-      </div>
-
-      <div class="cover-title">
-        Wedding<br>
-        Invitation
-      </div>
-
-      <div class="cover-date">
-        25 • OCTOBER • 2026
-      </div>
-
-      <button
-        class="cover-enter"
-        id="enterButton"
-        type="button"
-      >
-        OPEN THE INVITATION
-      </button>
 
     </div>
-  </div>
 
-  <!-- =======================================================
+
+    <!-- =======================================================
        PAGE DOTS
-  ======================================================== -->
+    ======================================================== -->
 
-  <div class="page-dots">
+    <div class="page-dots">
 
-    <span class="page-dot active"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
+      <span
+        class="page-dot active"
+        data-page="0"
+        aria-label="Page 1">
+      </span>
 
-  </div>
+      <span
+        class="page-dot"
+        data-page="1"
+        aria-label="Page 2">
+      </span>
 
-  <!-- =======================================================
+      <span
+        class="page-dot"
+        data-page="2"
+        aria-label="Page 3">
+      </span>
+
+    </div>
+
+
+    <!-- =======================================================
        MUSIC
-  ======================================================== -->
+    ======================================================== -->
 
-  <button
-    class="audio-button"
-    id="audioButton"
-    aria-label="Toggle music"
-    type="button"
-  >
-    ♪
-  </button>
+    <button
+      class="audio-button"
+      id="audioButton"
+      aria-label="Toggle music"
+      type="button">
+      ♪
+    </button>
 
-  <audio
-    id="weddingAudio"
-    loop
-    preload="auto"
-  >
-    <source
-      src="./nadaswaram.mp3"
-      type="audio/mpeg"
-    >
-  </audio>
+    <audio id="weddingAudio" loop preload="auto">
+      <source
+        src="./nadaswaram.mp3"
+        type="audio/mpeg">
+    </audio>
 
-  <!-- =======================================================
-       SCENES
-  ======================================================== -->
 
-  <main class="scenes" id="scenes">
+    <!-- =======================================================
+       THREE PAGES
+    ======================================================== -->
 
-    <!-- =====================================================
-         SCENE 1 — OPENING
+    <main class="scenes" id="scenes">
+
+
+      <!-- =====================================================
+         PAGE 1
     ====================================================== -->
 
-    <section class="scene">
+      <section class="scene" id="page1">
 
-      <div class="royal-border"></div>
+        <div class="royal-border"></div>
 
-      <div class="temple-arch"></div>
+        <div class="temple-arch"></div>
 
-      <div class="peacock left">🦚</div>
-      <div class="peacock right">🦚</div>
-
-      <div class="kolam"></div>
-
-      <div class="opening-content">
-
-        <div class="om">
-          ॐ
+        <div class="peacock left">
+          🦚
         </div>
 
-        <div class="temple-title">
-          A SACRED TAMIL WEDDING CELEBRATION
+        <div class="peacock right">
+          🦚
         </div>
 
-        <div class="deepam">
-          🪔
-        </div>
+        <div class="kolam"></div>
 
-        <div class="opening-title">
-          Two Hearts
-        </div>
 
-        <div class="opening-subtitle">
-          ONE BEAUTIFUL JOURNEY
-        </div>
+        <div class="content page-one-content">
 
-        <div class="opening-date">
-          25 OCTOBER 2026 • SUNDAY
-        </div>
-
-      </div>
-
-      <!-- PAGE 1 -->
-      <div class="scroll-hint">
-        <span class="scroll-text">
-          Scroll Down To Begin
-        </span>
-
-        <span class="scroll-arrow">
-          ↓
-        </span>
-      </div>
-
-    </section>
-
-    <!-- =====================================================
-         SCENE 2 — THE COUPLE
-    ====================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          THE COUPLE
-        </div>
-
-        <div class="monogram">
-
-          K
-
-          <span>
-            ♥
-          </span>
-
-          S
-
-        </div>
-
-        <div class="names">
-
-          <div>
-            P. KALAIYARASAN
+          <div class="temple-title">
+            A SACRED TAMIL WEDDING CELEBRATION
           </div>
 
-          <div class="heart">
-            ♥
-          </div>
-
-          <div>
-            M. SARANYA
-          </div>
-
-        </div>
-
-        <div class="names-rule">
-
-          <span></span>
-
-          <b>
-            ✦
-          </b>
-
-          <span></span>
-
-        </div>
-
-        <p class="section-text">
-
-          Two souls, two families and one beautiful
-          beginning. With love in our hearts and
-          blessings from our families, we begin
-          our journey together.
-
-        </p>
-
-      </div>
-
-      <!-- PAGE 2 -->
-      <div class="scroll-hint">
-
-        <span class="scroll-arrow">
-          ↓
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================================
-         SCENE 3 — MARRIAGE
-    ====================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          WITH DIVINE BLESSINGS
-        </div>
-
-        <div class="section-title">
-          Marriage
-        </div>
-
-        <div class="event-card">
-
-          <div class="event-icon">
-            🛕
-          </div>
-
-          <div class="event-name">
-            THE SACRED CEREMONY
-          </div>
-
-          <div class="event-time">
-            4:00 AM
-          </div>
-
-          <div class="event-date">
-            SUNDAY • 25 OCTOBER 2026
-          </div>
-
-          <div class="event-venue">
-            Kalyana Kaanika Eswaran Temple<br>
-            Erulapatti
-          </div>
-
-          <a
-            class="map-button"
-            href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🛕 VIEW MARRIAGE LOCATION
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- PAGE 3 -->
-      <div class="scroll-hint">
-
-        <span class="scroll-arrow">
-          ↓
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================================
-         SCENE 4 — RECEPTION
-    ====================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          CELEBRATE WITH US
-        </div>
-
-        <div class="section-title">
-          Reception
-        </div>
-
-        <div class="event-card">
-
-          <div class="event-icon">
-            🌸
-          </div>
-
-          <div class="event-name">
-            RECEPTION
-          </div>
-
-          <div class="event-time">
-            7:00 AM – 10:00 AM
-          </div>
-
-          <div class="event-date">
-            SUNDAY • 25 OCTOBER 2026
-          </div>
-
-          <div class="event-venue">
-            KT Varadharaj Goundar<br>
-            Thirumana Mandapam<br>
-            Ramiyanahalli
-          </div>
-
-          <a
-            class="map-button"
-            href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            📍 VIEW RECEPTION LOCATION
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- PAGE 4 -->
-      <div class="scroll-hint">
-
-        <span class="scroll-arrow">
-          ↓
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================================
-         SCENE 5 — LOCATIONS
-    ====================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          FIND YOUR WAY TO OUR CELEBRATION
-        </div>
-
-        <div class="section-title">
-          The Locations
-        </div>
-
-        <div class="map-layout">
-
-          <div class="map-box">
-
-            <h3>
-              🛕 MARRIAGE
-            </h3>
-
-            <p>
-              Kalyana Kaanika Eswaran Temple<br>
-              Erulapatti
-            </p>
-
-            <a
-              class="map-button"
-              href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VIEW LOCATION
-            </a>
-
-          </div>
-
-          <div class="map-box">
-
-            <h3>
-              📍 RECEPTION
-            </h3>
-
-            <p>
-              KT Varadharaj Goundar<br>
-              Thirumana Mandapam
-            </p>
-
-            <a
-              class="map-button"
-              href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VIEW LOCATION
-            </a>
-
-          </div>
-
-        </div>
-
-        <div class="qr-wrapper">
-
-          <div class="qr-title">
-            SCAN FOR RECEPTION LOCATION
-          </div>
-
-          <div id="mapQR"></div>
-
-        </div>
-
-      </div>
-
-      <!-- PAGE 5 -->
-      <div class="scroll-hint">
-
-        <span class="scroll-arrow">
-          ↓
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================================
-         SCENE 6 — FAMILY BLESSINGS
-    ====================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="blessing-card">
-
-          <div class="blessing-symbol">
+          <div class="deepam">
             🪔
           </div>
 
-          <h2>
-            With the blessings<br>
-            of our families…
-          </h2>
+          <div class="main-title">
+            Two Hearts
+          </div>
 
-          <p>
+          <div class="one-subtitle">
+            ONE BEAUTIFUL JOURNEY
+          </div>
 
-            We invite you to be a part of our
-            most cherished celebration.
+          <div class="date-pill">
+            25 OCTOBER 2026 • SUNDAY
+          </div>
 
-            <br><br>
 
-            Your presence, love and blessings
-            will make this beautiful beginning
-            even more meaningful.
+          <div class="couple-card">
 
-          </p>
+            <div class="eyebrow">
+              THE COUPLE
+            </div>
+
+            <div class="names">
+
+              <div>
+                P. KALAIYARASAN
+              </div>
+
+              <div class="heart">
+                ♥
+              </div>
+
+              <div>
+                M. SARANYA
+              </div>
+
+            </div>
+
+            <div class="names-rule">
+
+              <span></span>
+
+              <b>✦</b>
+
+              <span></span>
+
+            </div>
+
+            <p class="couple-text">
+              Two souls, two families and one beautiful
+              beginning. With love in our hearts and
+              blessings from our families, we begin
+              our journey together.
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
 
-      <!-- PAGE 6 -->
-      <div class="scroll-hint">
+        <div class="scroll-hint">
 
-        <span class="scroll-arrow">
-          ↓
-        </span>
+          <span class="scroll-text">
+            SCROLL TO OUR CELEBRATION
+          </span>
 
-      </div>
+          <span class="scroll-arrow">
+            ↓
+          </span>
 
-    </section>
+        </div>
 
-    <!-- =====================================================
-         SCENE 7 — FINAL COUNTDOWN
+      </section>
+
+
+      <!-- =====================================================
+         PAGE 2
     ====================================================== -->
 
-    <section class="scene countdown-scene">
+      <section class="scene" id="page2">
 
-      <div class="royal-border"></div>
+        <div class="royal-border"></div>
 
-      <div class="section-content">
 
-        <div class="deepam">
-          🪔
-        </div>
+        <div class="content page-two-content">
 
-        <div class="eyebrow">
-          OUR SPECIAL DAY IS ALMOST HERE
-        </div>
+          <div class="eyebrow">
+            WITH DIVINE BLESSINGS
+          </div>
 
-        <div class="section-title">
-          The Countdown
-        </div>
+          <div class="section-title">
+            The Celebration
+          </div>
 
-        <p class="section-text">
 
-          We are getting ready to begin our beautiful
-          journey together.
+          <div class="location-panel">
 
-        </p>
+            <div class="locations-grid">
 
-        <div class="countdown-box">
 
-          <div class="time-unit">
+              <!-- MARRIAGE -->
 
-            <strong id="days">
-              00
-            </strong>
+              <div class="location-card">
 
-            <span>
-              DAYS
-            </span>
+                <div class="location-icon">
+                  🛕
+                </div>
+
+                <div class="location-label">
+                  SACRED MARRIAGE
+                </div>
+
+                <div class="location-time">
+                  4:00AM - 5:00AM
+                </div>
+
+                <div class="location-date">
+                  SUNDAY • 25 OCTOBER 2026
+                </div>
+
+                <div class="location-name">
+                  Kalyana Kaanika Eswaran Temple<br>
+                  Erulapatti
+                </div>
+
+                <a
+                  class="map-button"
+                  href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  🛕 VIEW MARRIAGE LOCATION
+                </a>
+
+              </div>
+
+
+              <!-- RECEPTION -->
+
+              <div class="location-card">
+
+                <div class="location-icon">
+                  🌸
+                </div>
+
+                <div class="location-label">
+                  RECEPTION
+                </div>
+
+                <div class="location-time">
+                  7:00AM – 10:00AM
+                </div>
+
+                <div class="location-date">
+                  SUNDAY • 25 OCTOBER 2026
+                </div>
+
+                <div class="location-name">
+                  KT Varadharaj Goundar<br>
+                  Thirumana Mandapam<br>
+                  Ramiyanahalli
+                </div>
+
+                <a
+                  class="map-button"
+                  href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  📍 VIEW RECEPTION LOCATION
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <!-- QR -->
+
+            <div class="qr-row">
+
+              <div class="qr-info">
+
+                <div class="qr-title">
+                  SCAN FOR RECEPTION LOCATION
+                </div>
+
+                <p>
+                  Scan the QR code<br>
+                  to open the location.
+                </p>
+
+              </div>
+
+              <div
+                id="mapQR"
+                aria-label="Reception location QR code">
+              </div>
+
+            </div>
 
           </div>
 
-          <div class="time-unit">
+        </div>
 
-            <strong id="hours">
-              00
-            </strong>
 
-            <span>
-              HOURS
-            </span>
+        <div class="scroll-hint">
+
+          <span class="scroll-text">
+            CONTINUE TO OUR SPECIAL DAY
+          </span>
+
+          <span class="scroll-arrow">
+            ↓
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+         PAGE 3
+    ====================================================== -->
+
+      <section
+        class="scene countdown-scene"
+        id="page3">
+
+        <div class="royal-border"></div>
+
+
+        <div class="content page-three-content">
+
+
+          <!-- FAMILY BLESSING -->
+
+          <div class="blessing-card">
+
+            <div class="blessing-symbol">
+              🪔
+            </div>
+
+            <h2>
+              With the blessings<br>
+              of our families…
+            </h2>
+
+            <p>
+              We invite you to be a part of our
+              most cherished celebration.
+
+              <br><br>
+
+              Your presence, love and blessings
+              will make this beautiful beginning
+              even more meaningful.
+            </p>
 
           </div>
 
-          <div class="time-unit">
 
-            <strong id="minutes">
-              00
-            </strong>
+          <!-- COUNTDOWN -->
 
-            <span>
-              MINUTES
-            </span>
+          <div class="countdown-area">
 
-          </div>
+            <div class="deepam">
+              🪔
+            </div>
 
-          <div class="time-unit">
+            <div class="eyebrow">
+              OUR SPECIAL DAY IS ALMOST HERE
+            </div>
 
-            <strong id="seconds">
-              00
-            </strong>
+            <div class="section-title">
+              The Countdown
+            </div>
 
-            <span>
-              SECONDS
-            </span>
+            <p class="countdown-message intro-message">
+              We are getting ready to begin our
+              beautiful journey together.
+            </p>
+
+
+            <div class="countdown-box">
+
+              <div class="time-unit">
+
+                <strong id="days">
+                  00
+                </strong>
+
+                <span>
+                  DAYS
+                </span>
+
+              </div>
+
+
+              <div class="time-unit">
+
+                <strong id="hours">
+                  00
+                </strong>
+
+                <span>
+                  HOURS
+                </span>
+
+              </div>
+
+
+              <div class="time-unit">
+
+                <strong id="minutes">
+                  00
+                </strong>
+
+                <span>
+                  MINUTES
+                </span>
+
+              </div>
+
+
+              <div class="time-unit">
+
+                <strong id="seconds">
+                  00
+                </strong>
+
+                <span>
+                  SECONDS
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="countdown-date">
+              25 OCTOBER 2026
+            </div>
+
+
+            <div class="countdown-message final-message">
+              We eagerly look forward to sharing this
+              beautiful day with you, surrounded by
+              the love and blessings of our cherished
+              family and friends.
+            </div>
 
           </div>
 
         </div>
 
-        <div class="countdown-date">
-          25 OCTOBER 2026
-        </div>
+      </section>
 
-        <div class="countdown-message">
+    </main>
 
-          We eagerly look forward to sharing this beautiful day
-          with you, surrounded by the love and blessings
-          of our cherished family and friends.
+  </div>
 
-        </div>
 
-      </div>
+  <!-- =========================================================
+     JAVASCRIPT
+  ========================================================= -->
 
- 
-    </section>
+  <script>
 
-  </main>
+    document.addEventListener("DOMContentLoaded", () => {
 
-</div>
+      /* =======================================================
+         ELEMENTS
+      ======================================================= */
 
-<!-- =========================================================
-     ALL JAVASCRIPT
-========================================================= -->
+      const cover =
+        document.getElementById("cover");
 
-<script>
+      const enterButton =
+        document.getElementById("enterButton");
 
-document.addEventListener("DOMContentLoaded", () => {
+      const audio =
+        document.getElementById("weddingAudio");
 
-  /* =========================================================
-     ELEMENTS
-  ========================================================= */
+      const audioButton =
+        document.getElementById("audioButton");
 
-  const cover =
-    document.getElementById("cover");
+      const scenes =
+        document.getElementById("scenes");
 
-  const enterButton =
-    document.getElementById("enterButton");
+      const sceneElements =
+        [...document.querySelectorAll(".scene")];
 
-  const audio =
-    document.getElementById("weddingAudio");
+      const dots =
+        [...document.querySelectorAll(".page-dot")];
 
-  const audioButton =
-    document.getElementById("audioButton");
+      let musicPlaying = false;
 
-  const scenes =
-    document.getElementById("scenes");
 
-  const sceneElements =
-    document.querySelectorAll(".scene");
+      /* =======================================================
+         RECEPTION MAP
+      ======================================================= */
 
-  const dots =
-    document.querySelectorAll(".page-dot");
+      const receptionMapURL =
+        "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
 
-  let musicPlaying = false;
 
-  /* =========================================================
-     MAP URLS
-  ========================================================= */
+      /* =======================================================
+         QR CODE
+      ======================================================= */
 
-  const marriageMapURL =
-    "https://maps.app.goo.gl/YxusGM3brmkNWr9F8";
+      const qr =
+        document.getElementById("mapQR");
 
-  const receptionMapURL =
-    "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
+      if (
+        qr &&
+        typeof QRCode !== "undefined"
+      ) {
 
-  /* =========================================================
-     QR CODE
-  ========================================================= */
+        new QRCode(qr, {
 
-  const qr =
-    document.getElementById("mapQR");
+          text: receptionMapURL,
 
-  if (
-    qr &&
-    typeof QRCode !== "undefined"
-  ) {
+          width: 200,
+          height: 200,
 
-    new QRCode(
-      qr,
-      {
-        text: receptionMapURL,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
 
-        width: 200,
-        height: 200,
-
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-
-        correctLevel:
-          QRCode.CorrectLevel.H
-      }
-    );
-
-  }
-
-  /* =========================================================
-     WEDDING DATE
-  ========================================================= */
-
-  const weddingDate =
-    new Date(
-      "2026-10-25T04:00:00+05:30"
-    ).getTime();
-
-  /* =========================================================
-     COUNTDOWN
-  ========================================================= */
-
-  function updateCountdown() {
-
-    const difference =
-      weddingDate - Date.now();
-
-    const daysElement =
-      document.getElementById("days");
-
-    const hoursElement =
-      document.getElementById("hours");
-
-    const minutesElement =
-      document.getElementById("minutes");
-
-    const secondsElement =
-      document.getElementById("seconds");
-
-    const countdownScene =
-      document.querySelector(
-        ".countdown-scene"
-      );
-
-    const countdownTitle =
-      countdownScene?.querySelector(
-        ".section-title"
-      );
-
-    const countdownText =
-      countdownScene?.querySelector(
-        ".section-text"
-      );
-
-    const countdownMessage =
-      document.querySelector(
-        ".countdown-message"
-      );
-
-    const countdownBox =
-      document.querySelector(
-        ".countdown-box"
-      );
-
-    /* =======================================================
-       WEDDING DAY
-    ======================================================= */
-
-    if (difference <= 0) {
-
-      daysElement.textContent =
-        "00";
-
-      hoursElement.textContent =
-        "00";
-
-      minutesElement.textContent =
-        "00";
-
-      secondsElement.textContent =
-        "00";
-
-      if (countdownScene) {
-
-        countdownScene.classList.add(
-          "wedding-day"
-        );
-
-      }
-
-      if (countdownTitle) {
-
-        countdownTitle.textContent =
-          "The Day Has Arrived";
-
-      }
-
-      if (countdownText) {
-
-        countdownText.textContent =
-          "Today, two hearts begin one beautiful journey together.";
-
-      }
-
-      if (countdownMessage) {
-
-        countdownMessage.textContent =
-          "With the love and blessings of our families, we joyfully welcome you to celebrate this special day with us. Your presence makes our happiness complete.";
-
-      }
-
-      if (countdownBox) {
-
-        countdownBox.style.display =
-          "none";
-
-      }
-
-      return;
-    }
-
-    /* =======================================================
-       NORMAL COUNTDOWN
-    ======================================================= */
-
-    const totalSeconds =
-      Math.floor(
-        difference / 1000
-      );
-
-    const days =
-      Math.floor(
-        totalSeconds / 86400
-      );
-
-    const hours =
-      Math.floor(
-        (totalSeconds % 86400) /
-        3600
-      );
-
-    const minutes =
-      Math.floor(
-        (totalSeconds % 3600) /
-        60
-      );
-
-    const seconds =
-      totalSeconds % 60;
-
-    daysElement.textContent =
-      String(days).padStart(
-        2,
-        "0"
-      );
-
-    hoursElement.textContent =
-      String(hours).padStart(
-        2,
-        "0"
-      );
-
-    minutesElement.textContent =
-      String(minutes).padStart(
-        2,
-        "0"
-      );
-
-    secondsElement.textContent =
-      String(seconds).padStart(
-        2,
-        "0"
-      );
-
-  }
-
-  updateCountdown();
-
-  setInterval(
-    updateCountdown,
-    1000
-  );
-
-  /* =========================================================
-     MUSIC
-  ========================================================= */
-
-  function startMusic() {
-
-    if (!audio) {
-      return;
-    }
-
-    audio.volume = 0.35;
-
-    const playPromise =
-      audio.play();
-
-    if (
-      playPromise !== undefined
-    ) {
-
-      playPromise
-        .then(() => {
-
-          musicPlaying = true;
-
-          if (audioButton) {
-
-            audioButton.textContent =
-              "♫";
-
-            audioButton.classList.add(
-              "playing"
-            );
-
-          }
-
-        })
-        .catch(error => {
-
-          console.log(
-            "Nadaswaram playback error:",
-            error
-          );
-
-          musicPlaying = false;
+          correctLevel:
+            QRCode.CorrectLevel.H
 
         });
 
-    }
+      }
 
-  }
 
-  /* =========================================================
-     OPEN INVITATION
-  ========================================================= */
+      /* =======================================================
+         WEDDING DATE
+      ======================================================= */
 
-  if (enterButton) {
+      const weddingDate =
+        new Date(
+          "2026-10-25T04:00:00+05:30"
+        ).getTime();
 
-    enterButton.addEventListener(
-      "click",
-      () => {
 
-        cover.classList.add(
-          "open"
+      /* =======================================================
+         COUNTDOWN
+      ======================================================= */
+
+      function updateCountdown() {
+
+        const difference =
+          weddingDate - Date.now();
+
+        const daysElement =
+          document.getElementById("days");
+
+        const hoursElement =
+          document.getElementById("hours");
+
+        const minutesElement =
+          document.getElementById("minutes");
+
+        const secondsElement =
+          document.getElementById("seconds");
+
+        const countdownScene =
+          document.querySelector(".countdown-scene");
+
+        const countdownTitle =
+          countdownScene?.querySelector(
+            ".section-title"
+          );
+
+        const introMessage =
+          countdownScene?.querySelector(
+            ".intro-message"
+          );
+
+        const countdownMessage =
+          countdownScene?.querySelector(
+            ".final-message"
+          );
+
+        const countdownBox =
+          countdownScene?.querySelector(
+            ".countdown-box"
+          );
+
+
+        /* =====================================================
+           WEDDING DAY
+        ====================================================== */
+
+        if (difference <= 0) {
+
+          daysElement.textContent = "00";
+          hoursElement.textContent = "00";
+          minutesElement.textContent = "00";
+          secondsElement.textContent = "00";
+
+          countdownScene.classList.add(
+            "wedding-day"
+          );
+
+          if (countdownTitle) {
+
+            countdownTitle.textContent =
+              "The Day Has Arrived";
+
+          }
+
+          if (introMessage) {
+
+            introMessage.textContent =
+              "Today, two hearts begin one beautiful journey together.";
+
+          }
+
+          if (countdownMessage) {
+
+            countdownMessage.textContent =
+              "With the love and blessings of our families, we joyfully welcome you to celebrate this special day with us. Your presence makes our happiness complete.";
+
+          }
+
+          if (countdownBox) {
+
+            countdownBox.style.display =
+              "none";
+
+          }
+
+          return;
+        }
+
+
+        /* =====================================================
+           NORMAL COUNTDOWN
+        ====================================================== */
+
+        const totalSeconds =
+          Math.floor(
+            difference / 1000
+          );
+
+        const days =
+          Math.floor(
+            totalSeconds / 86400
+          );
+
+        const hours =
+          Math.floor(
+            (totalSeconds % 86400) /
+            3600
+          );
+
+        const minutes =
+          Math.floor(
+            (totalSeconds % 3600) /
+            60
+          );
+
+        const seconds =
+          totalSeconds % 60;
+
+
+        daysElement.textContent =
+          String(days).padStart(2, "0");
+
+        hoursElement.textContent =
+          String(hours).padStart(2, "0");
+
+        minutesElement.textContent =
+          String(minutes).padStart(2, "0");
+
+        secondsElement.textContent =
+          String(seconds).padStart(2, "0");
+      }
+
+
+      updateCountdown();
+
+      const countdownTimer =
+        setInterval(
+          updateCountdown,
+          1000
         );
 
-        startMusic();
 
+      /* =======================================================
+         MUSIC
+      ======================================================= */
+
+      function startMusic() {
+
+        if (!audio) {
+          return;
+        }
+
+        audio.volume = 0.35;
+
+        const playPromise =
+          audio.play();
+
+        if (
+          playPromise !== undefined
+        ) {
+
+          playPromise
+            .then(() => {
+
+              musicPlaying = true;
+
+              audioButton.textContent =
+                "♫";
+
+              audioButton.classList.add(
+                "playing"
+              );
+
+            })
+            .catch(() => {
+
+              musicPlaying = false;
+
+            });
+
+        }
       }
-    );
 
-  }
 
-  /* =========================================================
-     MUSIC ON / OFF
-  ========================================================= */
+      /* =======================================================
+         OPEN INVITATION
+      ======================================================= */
 
-  if (audioButton) {
+      enterButton.addEventListener(
+        "click",
+        () => {
 
-    audioButton.addEventListener(
-      "click",
-      () => {
+          cover.classList.add(
+            "open"
+          );
 
-        if (musicPlaying) {
+          startMusic();
 
-          audio.pause();
+        }
+      );
+
+
+      /* =======================================================
+         MUSIC TOGGLE
+      ======================================================= */
+
+      audioButton.addEventListener(
+        "click",
+        () => {
+
+          if (musicPlaying) {
+
+            audio.pause();
+
+          } else {
+
+            startMusic();
+
+          }
+
+        }
+      );
+
+
+      /* =======================================================
+         AUDIO EVENTS
+      ======================================================= */
+
+      audio.addEventListener(
+        "play",
+        () => {
+
+          musicPlaying = true;
+
+          audioButton.textContent =
+            "♫";
+
+          audioButton.classList.add(
+            "playing"
+          );
+
+        }
+      );
+
+      audio.addEventListener(
+        "pause",
+        () => {
 
           musicPlaying = false;
 
@@ -3217,129 +3988,221 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
         }
-        else {
+      );
 
-          startMusic();
 
-        }
+      /* =======================================================
+         ACTIVE PAGE OBSERVER
+      ======================================================= */
 
-      }
-    );
+      const observer =
+        new IntersectionObserver(
+          entries => {
 
-  }
+            entries.forEach(entry => {
 
-  /* =========================================================
-     AUDIO EVENTS
-  ========================================================= */
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
 
-  if (audio) {
-
-    audio.addEventListener(
-      "play",
-      () => {
-
-        musicPlaying = true;
-
-        audioButton.textContent =
-          "♫";
-
-        audioButton.classList.add(
-          "playing"
-        );
-
-      }
-    );
-
-    audio.addEventListener(
-      "pause",
-      () => {
-
-        musicPlaying = false;
-
-        audioButton.textContent =
-          "♪";
-
-        audioButton.classList.remove(
-          "playing"
-        );
-
-      }
-    );
-
-  }
-
-  /* =========================================================
-     SCENE OBSERVER
-  ========================================================= */
-
-  const observer =
-    new IntersectionObserver(
-      entries => {
-
-        entries.forEach(
-          entry => {
-
-            if (
-              !entry.isIntersecting
-            ) {
-              return;
-            }
-
-            const index =
-              [...sceneElements]
-                .indexOf(
+              const index =
+                sceneElements.indexOf(
                   entry.target
                 );
 
-            dots.forEach(
-              dot =>
+              dots.forEach(dot => {
+
                 dot.classList.remove(
-                  "active"
-                )
-            );
-
-            if (dots[index]) {
-
-              dots[index]
-                .classList.add(
                   "active"
                 );
 
-            }
+              });
 
+              if (dots[index]) {
+
+                dots[index]
+                  .classList.add(
+                    "active"
+                  );
+
+              }
+
+            });
+
+          },
+          {
+            root: scenes,
+            threshold: .60
           }
         );
 
-      },
-      {
-        root: scenes,
-        threshold: 0.55
-      }
-    );
 
-  sceneElements.forEach(
-    scene =>
-      observer.observe(scene)
-  );
+      sceneElements.forEach(scene => {
 
-  /* =========================================================
-     DOT NAVIGATION
-  ========================================================= */
+        observer.observe(scene);
 
-  dots.forEach(
-    (dot, index) => {
+      });
 
-      dot.addEventListener(
-        "click",
-        () => {
+
+      /* =======================================================
+         DOT NAVIGATION
+      ======================================================= */
+
+      dots.forEach(
+        (dot, index) => {
+
+          dot.addEventListener(
+            "click",
+            () => {
+
+              const target =
+                sceneElements[index];
+
+              if (!target) {
+                return;
+              }
+
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+
+            }
+          );
+
+        }
+      );
+
+
+      /* =======================================================
+         TOUCH SWIPE
+      ======================================================= */
+
+      let touchStartY = 0;
+
+      scenes.addEventListener(
+        "touchstart",
+        event => {
+
+          touchStartY =
+            event.changedTouches[0]
+              .screenY;
+
+        },
+        {
+          passive: true
+        }
+      );
+
+
+      scenes.addEventListener(
+        "touchend",
+        event => {
+
+          const touchEndY =
+            event.changedTouches[0]
+              .screenY;
+
+          const difference =
+            touchStartY -
+            touchEndY;
 
           if (
-            sceneElements[index]
+            Math.abs(difference) < 45
+          ) {
+            return;
+          }
+
+          const current =
+            Math.round(
+              scenes.scrollTop /
+              scenes.clientHeight
+            );
+
+          let next =
+            difference > 0
+              ? current + 1
+              : current - 1;
+
+          next =
+            Math.max(
+              0,
+              Math.min(
+                sceneElements.length - 1,
+                next
+              )
+            );
+
+          sceneElements[next]
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+        },
+        {
+          passive: true
+        }
+      );
+
+
+      /* =======================================================
+         KEYBOARD
+      ======================================================= */
+
+      document.addEventListener(
+        "keydown",
+        event => {
+
+          const current =
+            Math.round(
+              scenes.scrollTop /
+              scenes.clientHeight
+            );
+
+          let targetIndex = null;
+
+
+          if (
+            event.key === "ArrowDown" ||
+            event.key === "PageDown"
           ) {
 
-            sceneElements[index]
+            targetIndex =
+              Math.min(
+                sceneElements.length - 1,
+                current + 1
+              );
+
+          }
+
+
+          if (
+            event.key === "ArrowUp" ||
+            event.key === "PageUp"
+          ) {
+
+            targetIndex =
+              Math.max(
+                0,
+                current - 1
+              );
+
+          }
+
+
+          if (
+            targetIndex !== null
+          ) {
+
+            event.preventDefault();
+
+            sceneElements[targetIndex]
               .scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "start"
               });
 
           }
@@ -3347,134 +4210,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-    }
-  );
 
-  /* =========================================================
-     TOUCH SWIPE
-  ========================================================= */
+      /* =======================================================
+         RESIZE
+      ======================================================= */
 
-  let touchStartY = 0;
+      let resizeTimer;
 
-  scenes.addEventListener(
-    "touchstart",
-    event => {
+      window.addEventListener(
+        "resize",
+        () => {
 
-      touchStartY =
-        event.changedTouches[0]
-          .screenY;
+          clearTimeout(resizeTimer);
 
-    },
-    {
-      passive: true
-    }
-  );
+          resizeTimer =
+            setTimeout(() => {
 
-  scenes.addEventListener(
-    "touchend",
-    event => {
+              const current =
+                Math.round(
+                  scenes.scrollTop /
+                  scenes.clientHeight
+                );
 
-      const touchEndY =
-        event.changedTouches[0]
-          .screenY;
+              if (
+                sceneElements[current]
+              ) {
 
-      const difference =
-        touchStartY -
-        touchEndY;
+                sceneElements[current]
+                  .scrollIntoView({
+                    behavior: "auto",
+                    block: "start"
+                  });
 
-      if (
-        Math.abs(difference) < 45
-      ) {
-        return;
-      }
+              }
 
-      const current =
-        Math.round(
-          scenes.scrollTop /
-          window.innerHeight
-        );
+            }, 150);
 
-      let next =
-        difference > 0
-          ? current + 1
-          : current - 1;
+        }
+      );
 
-      next =
-        Math.max(
-          0,
-          Math.min(
-            sceneElements.length - 1,
-            next
-          )
-        );
 
-      sceneElements[next]
-        .scrollIntoView({
-          behavior: "smooth"
-        });
+      /* =======================================================
+         CLEANUP
+      ======================================================= */
 
-    },
-    {
-      passive: true
-    }
-  );
+      window.addEventListener(
+        "beforeunload",
+        () => {
 
-  /* =========================================================
-     KEYBOARD NAVIGATION
-  ========================================================= */
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-      const current =
-        Math.round(
-          scenes.scrollTop /
-          window.innerHeight
-        );
-
-      if (
-        event.key === "ArrowDown" ||
-        event.key === "PageDown"
-      ) {
-
-        const next =
-          Math.min(
-            sceneElements.length - 1,
-            current + 1
+          clearInterval(
+            countdownTimer
           );
 
-        sceneElements[next]
-          .scrollIntoView({
-            behavior: "smooth"
-          });
+        }
+      );
 
-      }
+    });
 
-      if (
-        event.key === "ArrowUp" ||
-        event.key === "PageUp"
-      ) {
-
-        const previous =
-          Math.max(
-            0,
-            current - 1
-          );
-
-        sceneElements[previous]
-          .scrollIntoView({
-            behavior: "smooth"
-          });
-
-      }
-
-    }
-  );
-
-});
-
-</script>
+  </script>
 
 </body>
+
 </html>
