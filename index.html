@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+
 >
 
 <title>KALAIYARASAN ♥ SARANYA | Wedding Invitation</title>
@@ -24,11 +26,6 @@
 >
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -48,27 +45,19 @@ body {
   font-family: "Cormorant Garamond", Georgia, serif;
 }
 
-
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root {
   --wine: #641f31;
   --wine-dark: #350d18;
   --wine-light: #9e4059;
-
   --gold: #c89b45;
   --gold-light: #f1d58f;
   --gold-dark: #8a641d;
-
   --cream: #fff5df;
   --silk: rgba(255, 241, 211, 0.82);
 }
 
-
 /* =========================================================
-   CINEMATIC APP
+   APP
 ========================================================= */
 
 .app {
@@ -85,9 +74,8 @@ body {
     );
 }
 
-
 /* =========================================================
-   GLOBAL GOLD LIGHT
+   CINEMATIC LIGHT
 ========================================================= */
 
 .cinematic-light {
@@ -96,12 +84,9 @@ body {
   height: 70vw;
   max-width: 700px;
   max-height: 700px;
-
   left: 50%;
   top: 45%;
-
   transform: translate(-50%, -50%);
-
   border-radius: 50%;
 
   background:
@@ -113,15 +98,12 @@ body {
     );
 
   filter: blur(4px);
-
   pointer-events: none;
 
-  animation:
-    cinematicLight 9s ease-in-out infinite;
+  animation: cinematicLight 9s ease-in-out infinite;
 }
 
 @keyframes cinematicLight {
-
   0%,
   100% {
     transform:
@@ -138,15 +120,13 @@ body {
   }
 }
 
-
 /* =========================================================
-   SILK TEXTURE
+   SILK
 ========================================================= */
 
 .silk-texture {
   position: absolute;
   inset: 0;
-
   pointer-events: none;
 
   background:
@@ -159,10 +139,8 @@ body {
     );
 
   mix-blend-mode: screen;
-
   opacity: .55;
 }
-
 
 /* =========================================================
    GOLD DUST
@@ -177,10 +155,8 @@ body {
 
 .gold-dust span {
   position: absolute;
-
   width: 3px;
   height: 3px;
-
   border-radius: 50%;
 
   background: #f1d58f;
@@ -229,7 +205,6 @@ body {
 }
 
 @keyframes dustFloat {
-
   0% {
     transform:
       translateY(40px)
@@ -250,7 +225,6 @@ body {
   }
 }
 
-
 /* =========================================================
    PETALS
 ========================================================= */
@@ -265,7 +239,6 @@ body {
 
 .petal {
   position: absolute;
-
   width: 11px;
   height: 17px;
 
@@ -330,7 +303,6 @@ body {
 }
 
 @keyframes fallingPetal {
-
   0% {
     top: -10%;
     opacity: 0;
@@ -352,20 +324,19 @@ body {
   100% {
     top: 110%;
     opacity: 0;
+
     transform:
       translateX(-50px)
       rotate(430deg);
   }
 }
 
-
 /* =========================================================
-   SCENE SYSTEM
+   SCENES
 ========================================================= */
 
 .scenes {
   position: relative;
-
   width: 100%;
   height: 100%;
 
@@ -373,9 +344,7 @@ body {
   overflow-x: hidden;
 
   scroll-snap-type: y mandatory;
-
   scrollbar-width: none;
-
   scroll-behavior: smooth;
 
   z-index: 5;
@@ -385,10 +354,8 @@ body {
   display: none;
 }
 
-
 .scene {
   position: relative;
-
   width: 100%;
   min-height: 100dvh;
 
@@ -406,9 +373,8 @@ body {
     max(30px, env(safe-area-inset-bottom));
 }
 
-
 /* =========================================================
-   COMMON BACKGROUND
+   BACKGROUND
 ========================================================= */
 
 .scene::before {
@@ -448,17 +414,16 @@ body {
   z-index: -2;
 }
 
-
 /* =========================================================
    ROYAL BORDER
 ========================================================= */
 
 .royal-border {
   position: absolute;
-
   inset: 13px;
 
-  border: 1px solid rgba(231,190,91,.65);
+  border:
+    1px solid rgba(231,190,91,.65);
 
   border-radius: 18px;
 
@@ -474,7 +439,6 @@ body {
   position: absolute;
 
   font-size: 27px;
-
   color: #e1b95d;
 }
 
@@ -488,7 +452,6 @@ body {
   right: 20px;
   transform: rotate(180deg);
 }
-
 
 /* =========================================================
    TEMPLE ARCH
@@ -540,9 +503,10 @@ body {
   font-size: 52px;
 
   filter:
-    drop-shadow(0 4px 10px rgba(0,0,0,.4));
+    drop-shadow(
+      0 4px 10px rgba(0,0,0,.4)
+    );
 }
-
 
 /* =========================================================
    KOLAM
@@ -572,6 +536,7 @@ body {
   content: "";
 
   position: absolute;
+
   inset: 25px;
 
   border:
@@ -585,16 +550,14 @@ body {
   transform: rotate(22.5deg);
 }
 
-
 /* =========================================================
-   PEACOCK MOTIFS
+   PEACOCK
 ========================================================= */
 
 .peacock {
   position: absolute;
 
   font-size: 55px;
-
   opacity: .65;
 
   filter:
@@ -613,10 +576,8 @@ body {
 .peacock.right {
   right: 18px;
   top: 27%;
-
   transform: scaleX(-1);
 }
-
 
 /* =========================================================
    DEEPAM
@@ -667,7 +628,6 @@ body {
 }
 
 @keyframes lampGlow {
-
   0%,
   100% {
     transform: scale(.95);
@@ -679,7 +639,6 @@ body {
 }
 
 @keyframes lampPulse {
-
   0%,
   100% {
     opacity: .5;
@@ -691,9 +650,8 @@ body {
   }
 }
 
-
 /* =========================================================
-   OPENING SCENE
+   OPENING
 ========================================================= */
 
 .opening-content {
@@ -702,14 +660,14 @@ body {
   text-align: center;
 
   position: relative;
-
   z-index: 10;
 }
 
 .temple-title {
   font-family: "Cinzel", serif;
 
-  font-size: clamp(10px, 2vw, 15px);
+  font-size:
+    clamp(10px, 2vw, 15px);
 
   letter-spacing: 5px;
 
@@ -732,7 +690,6 @@ body {
 }
 
 @keyframes softGlow {
-
   0%,
   100% {
     opacity: .6;
@@ -740,16 +697,17 @@ body {
 
   50% {
     opacity: 1;
+
     text-shadow:
       0 0 20px rgba(241,213,143,.9);
   }
 }
 
-
 .opening-title {
   font-family: "Great Vibes", cursive;
 
-  font-size: clamp(48px, 12vw, 100px);
+  font-size:
+    clamp(48px, 12vw, 100px);
 
   font-weight: 400;
 
@@ -772,7 +730,8 @@ body {
 
   letter-spacing: 4px;
 
-  font-size: clamp(9px, 2vw, 14px);
+  font-size:
+    clamp(9px, 2vw, 14px);
 
   color: #f1d58f;
 }
@@ -800,85 +759,29 @@ body {
 }
 
 @keyframes titleReveal {
-
   from {
     opacity: 0;
+
     transform:
       translateY(35px)
       scale(.92);
+
     filter: blur(8px);
   }
 
   to {
     opacity: 1;
+
     transform:
       translateY(0)
       scale(1);
+
     filter: blur(0);
   }
 }
 
-
 /* =========================================================
-   TAP TO ENTER
-========================================================= */
-
-.enter-button {
-  position: relative;
-
-  margin-top: 35px;
-
-  padding: 13px 28px;
-
-  border:
-    1px solid rgba(239,203,119,.7);
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #8d3048,
-      #591626
-    );
-
-  color: #fff5df;
-
-  font-family: "Cinzel", serif;
-
-  font-size: 9px;
-
-  letter-spacing: 2.5px;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 30px rgba(0,0,0,.3),
-    inset 0 1px rgba(255,255,255,.2);
-
-  animation:
-    enterPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes enterPulse {
-
-  0%,
-  100% {
-    box-shadow:
-      0 8px 30px rgba(0,0,0,.3),
-      0 0 0 rgba(239,203,119,0);
-  }
-
-  50% {
-    box-shadow:
-      0 8px 35px rgba(0,0,0,.35),
-      0 0 25px rgba(239,203,119,.22);
-  }
-}
-
-
-/* =========================================================
-   SECTION CONTENT
+   SECTION
 ========================================================= */
 
 .section-content {
@@ -906,7 +809,8 @@ body {
 .section-title {
   font-family: "Great Vibes", cursive;
 
-  font-size: clamp(44px, 10vw, 78px);
+  font-size:
+    clamp(44px, 10vw, 78px);
 
   color: #fff2ce;
 
@@ -917,31 +821,22 @@ body {
   margin-bottom: 16px;
 }
 
-.section-title-small {
-  font-family: "Cinzel", serif;
-
-  font-size: clamp(20px, 5vw, 32px);
-
-  letter-spacing: 3px;
-
-  color: #fff0c5;
-}
-
 .section-text {
   max-width: 520px;
 
   margin: 0 auto;
 
-  font-size: clamp(14px, 2.8vw, 18px);
+  font-size:
+    clamp(14px, 2.8vw, 18px);
 
   line-height: 1.55;
 
-  color: rgba(255,245,223,.88);
+  color:
+    rgba(255,245,223,.88);
 }
 
-
 /* =========================================================
-   ROYAL MONOGRAM
+   MONOGRAM
 ========================================================= */
 
 .monogram {
@@ -1008,7 +903,6 @@ body {
 }
 
 @keyframes royalSpin {
-
   from {
     transform: rotate(0deg);
   }
@@ -1018,15 +912,15 @@ body {
   }
 }
 
-
 /* =========================================================
-   COUPLE NAMES
+   NAMES
 ========================================================= */
 
 .names {
   font-family: "Cinzel", serif;
 
-  font-size: clamp(24px, 7vw, 48px);
+  font-size:
+    clamp(24px, 7vw, 48px);
 
   letter-spacing: 3px;
 
@@ -1084,10 +978,8 @@ body {
 
 .names-rule b {
   color: #e1bb68;
-
   font-size: 10px;
 }
-
 
 /* =========================================================
    EVENT CARD
@@ -1162,7 +1054,8 @@ body {
 .event-time {
   font-family: "Cinzel", serif;
 
-  font-size: clamp(24px, 6vw, 36px);
+  font-size:
+    clamp(24px, 6vw, 36px);
 
   color: #fff1c9;
 
@@ -1184,9 +1077,9 @@ body {
 
   line-height: 1.45;
 
-  color: rgba(255,244,220,.88);
+  color:
+    rgba(255,244,220,.88);
 }
-
 
 /* =========================================================
    MAP BUTTON
@@ -1237,9 +1130,8 @@ body {
   transform: scale(.94);
 }
 
-
 /* =========================================================
-   PREMIUM MAP
+   MAP
 ========================================================= */
 
 .map-layout {
@@ -1286,11 +1178,11 @@ body {
 .map-box p {
   font-size: 13px;
 
-  color: rgba(255,243,216,.82);
+  color:
+    rgba(255,243,216,.82);
 
   line-height: 1.35;
 }
-
 
 /* =========================================================
    QR
@@ -1341,9 +1233,8 @@ body {
   height: 100% !important;
 }
 
-
 /* =========================================================
-   FAMILY BLESSING
+   BLESSING
 ========================================================= */
 
 .blessing-card {
@@ -1378,7 +1269,8 @@ body {
 .blessing-card h2 {
   font-family: "Great Vibes", cursive;
 
-  font-size: clamp(35px, 8vw, 60px);
+  font-size:
+    clamp(35px, 8vw, 60px);
 
   font-weight: 400;
 
@@ -1388,13 +1280,14 @@ body {
 }
 
 .blessing-card p {
-  font-size: clamp(16px, 3vw, 20px);
+  font-size:
+    clamp(16px, 3vw, 20px);
 
   line-height: 1.6;
 
-  color: rgba(255,243,216,.9);
+  color:
+    rgba(255,243,216,.9);
 }
-
 
 /* =========================================================
    COUNTDOWN
@@ -1450,7 +1343,6 @@ body {
   color: #cfa95b;
 }
 
-
 /* =========================================================
    CLOSING
 ========================================================= */
@@ -1485,7 +1377,8 @@ body {
 .closing-names {
   font-family: "Great Vibes", cursive;
 
-  font-size: clamp(48px, 12vw, 95px);
+  font-size:
+    clamp(48px, 12vw, 95px);
 
   line-height: 1;
 
@@ -1505,7 +1398,6 @@ body {
 }
 
 @keyframes heartbeat {
-
   0%,
   100% {
     transform: scale(1);
@@ -1542,9 +1434,8 @@ body {
     );
 }
 
-
 /* =========================================================
-   SCROLL INDICATOR
+   SCROLL HINT
 ========================================================= */
 
 .scroll-hint {
@@ -1564,7 +1455,8 @@ body {
 
   letter-spacing: 2px;
 
-  color: rgba(255,239,201,.7);
+  color:
+    rgba(255,239,201,.7);
 
   animation:
     scrollHint 2s ease-in-out infinite;
@@ -1581,10 +1473,10 @@ body {
 }
 
 @keyframes scrollHint {
-
   0%,
   100% {
     opacity: .35;
+
     transform:
       translateX(-50%)
       translateY(0);
@@ -1592,22 +1484,21 @@ body {
 
   50% {
     opacity: 1;
+
     transform:
       translateX(-50%)
       translateY(6px);
   }
 }
 
-
 /* =========================================================
-   PAGE INDICATOR
+   PAGE DOTS
 ========================================================= */
 
 .page-dots {
   position: fixed;
 
   right: 15px;
-
   top: 50%;
 
   transform: translateY(-50%);
@@ -1646,9 +1537,8 @@ body {
     0 0 10px rgba(228,189,106,.6);
 }
 
-
 /* =========================================================
-   OPENING CARD ANIMATION
+   COVER
 ========================================================= */
 
 .cover {
@@ -1661,7 +1551,6 @@ body {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   background:
@@ -1694,7 +1583,6 @@ body {
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
@@ -1746,7 +1634,8 @@ body {
   left: 50%;
   top: 50%;
 
-  transform: translate(-50%,-50%);
+  transform:
+    translate(-50%,-50%);
 
   border-radius: 50%;
 
@@ -1851,12 +1740,23 @@ body {
   letter-spacing: 2px;
 
   cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.cover-enter:hover {
+  transform: scale(1.04);
+
+  background:
+    rgba(255,255,255,.1);
 }
 
 @keyframes cardAppear {
-
   from {
     opacity: 0;
+
     transform:
       scale(.8)
       rotateX(20deg);
@@ -1864,12 +1764,12 @@ body {
 
   to {
     opacity: 1;
+
     transform:
       scale(1)
       rotateX(0);
   }
 }
-
 
 /* =========================================================
    AUDIO BUTTON
@@ -1897,13 +1797,45 @@ body {
   color: #f0d28a;
 
   display: grid;
+
   place-items: center;
 
   cursor: pointer;
 
   backdrop-filter: blur(6px);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
+.audio-button.playing {
+  box-shadow:
+    0 0 0 5px rgba(227,188,99,.08),
+    0 0 20px rgba(227,188,99,.35);
+
+  animation:
+    musicPulse 1.5s ease-in-out infinite;
+}
+
+.audio-button:active {
+  transform: scale(.9);
+}
+
+@keyframes musicPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(227,188,99,.08),
+      0 0 12px rgba(227,188,99,.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(227,188,99,.05),
+      0 0 25px rgba(227,188,99,.4);
+  }
+}
 
 /* =========================================================
    MOBILE
@@ -1956,7 +1888,6 @@ body {
   }
 }
 
-
 /* =========================================================
    SHORT DEVICES
 ========================================================= */
@@ -1976,7 +1907,9 @@ body {
   .monogram {
     width: 75px;
     height: 75px;
+
     font-size: 32px;
+
     margin-bottom: 12px;
   }
 
@@ -1994,7 +1927,6 @@ body {
   }
 }
 
-
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
@@ -2009,18 +1941,15 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
 </style>
-</head>
 
+</head>
 
 <body>
 
 <div class="app">
 
-  <!-- =====================================================
-       GLOBAL EFFECTS
-  ====================================================== -->
+  <!-- GLOBAL EFFECTS -->
 
   <div class="cinematic-light"></div>
 
@@ -2046,500 +1975,475 @@ body {
     <span class="petal"></span>
   </div>
 
-
-  <!-- =====================================================
-       CINEMATIC OPENING COVER
-  ====================================================== -->
+  <!-- OPENING COVER -->
 
   <div class="cover" id="cover">
 
-    <div class="cover-card">
+```
+<div class="cover-card">
 
-      <div class="cover-top">
-        WITH THE BLESSINGS OF OUR FAMILIES
+  <div class="cover-top">
+    WITH THE BLESSINGS OF OUR FAMILIES
+  </div>
+
+  <div class="cover-monogram">
+    K <span style="font-size:18px;">♥</span> S
+  </div>
+
+  <div class="cover-title">
+    Wedding<br>
+    Invitation
+  </div>
+
+  <div class="cover-date">
+    25 • OCTOBER • 2026
+  </div>
+
+  <button
+    class="cover-enter"
+    id="enterButton"
+    type="button"
+  >
+    OPEN THE INVITATION
+  </button>
+
+</div>
+```
+
+  </div>
+
+  <!-- PAGE DOTS -->
+
+  <div class="page-dots">
+
+```
+<span class="page-dot active"></span>
+<span class="page-dot"></span>
+<span class="page-dot"></span>
+<span class="page-dot"></span>
+<span class="page-dot"></span>
+<span class="page-dot"></span>
+<span class="page-dot"></span>
+```
+
+  </div>
+
+  <!-- =====================================================
+       REAL NADASWARAM MUSIC
+       nadaswaram.mp3 must be beside this HTML file
+  ====================================================== -->
+
+<button
+class="audio-button"
+id="audioButton"
+aria-label="Toggle music"
+type="button"
+
+>
+
+```
+♪
+```
+
+  </button>
+
+<audio
+id="weddingAudio"
+loop
+preload="auto"
+
+>
+
+```
+<source
+```
+
+```
+  src="./nadaswaram.mp3"
+  type="audio/mpeg"
+>
+```
+
+  </audio>
+
+  <!-- SCENES -->
+
+  <main class="scenes" id="scenes">
+
+```
+<!-- SCENE 1 -->
+
+<section class="scene">
+
+  <div class="royal-border"></div>
+
+  <div class="temple-arch"></div>
+
+  <div class="peacock left">🦚</div>
+
+  <div class="peacock right">🦚</div>
+
+  <div class="kolam"></div>
+
+  <div class="opening-content">
+
+    <div class="om">ॐ</div>
+
+    <div class="temple-title">
+      A SOUTH INDIAN WEDDING CELEBRATION
+    </div>
+
+    <div class="deepam">
+      🪔
+    </div>
+
+    <div class="opening-title">
+      Two Hearts
+    </div>
+
+    <div class="opening-subtitle">
+      ONE BEAUTIFUL JOURNEY
+    </div>
+
+    <div class="opening-date">
+      25 OCTOBER 2026 • SUNDAY
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    SCROLL TO BEGIN
+  </div>
+
+</section>
+
+<!-- SCENE 2 -->
+
+<section class="scene">
+
+  <div class="royal-border"></div>
+
+  <div class="section-content">
+
+    <div class="eyebrow">
+      THE COUPLE
+    </div>
+
+    <div class="monogram">
+      K <span>♥</span> S
+    </div>
+
+    <div class="names">
+      P. KALAIYARASAN
+      <span class="amp">&amp;</span>
+      M. SARANYA
+    </div>
+
+    <div class="names-rule">
+      <span></span>
+      <b>✦</b>
+      <span></span>
+    </div>
+
+    <p class="section-text">
+      Two souls, two families and one beautiful
+      beginning. With love in our hearts and
+      blessings from our families, we begin
+      our journey together.
+    </p>
+
+    <div class="countdown-box">
+
+      <div class="time-unit">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
       </div>
 
-      <div class="cover-monogram">
-        K <span style="font-size:18px;">♥</span> S
+      <div class="time-unit">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
       </div>
 
-      <div class="cover-title">
-        Wedding<br>
-        Invitation
+      <div class="time-unit">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
       </div>
 
-      <div class="cover-date">
-        25 • OCTOBER • 2026
+      <div class="time-unit">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
       </div>
-
-      <button
-        class="cover-enter"
-        id="enterButton"
-      >
-        OPEN THE INVITATION
-      </button>
 
     </div>
 
   </div>
 
+</section>
 
-  <!-- =====================================================
-       PAGE DOTS
-  ====================================================== -->
+<!-- SCENE 3 -->
 
-  <div class="page-dots">
+<section class="scene">
 
-    <span class="page-dot active"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
-    <span class="page-dot"></span>
+  <div class="royal-border"></div>
+
+  <div class="section-content">
+
+    <div class="eyebrow">
+      WITH DIVINE BLESSINGS
+    </div>
+
+    <div class="section-title">
+      Marriage
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-icon">
+        🛕
+      </div>
+
+      <div class="event-name">
+        THE SACRED CEREMONY
+      </div>
+
+      <div class="event-time">
+        4:00 AM
+      </div>
+
+      <div class="event-date">
+        SUNDAY • 25 OCTOBER 2026
+      </div>
+
+      <div class="event-venue">
+        Kalyana Kaanika Eswaran Temple<br>
+        Erulapatti
+      </div>
+
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🛕 VIEW MARRIAGE LOCATION
+      </a>
+
+    </div>
 
   </div>
 
+</section>
 
-  <!-- =====================================================
-       AUDIO
-  ====================================================== -->
+<!-- SCENE 4 -->
 
-  <button
-    class="audio-button"
-    id="audioButton"
-    aria-label="Toggle music"
-  >
-    ♪
-  </button>
+<section class="scene">
 
-  <audio
-    id="weddingAudio"
-    loop
-    preload="none"
-  >
-    <!--
-      OPTIONAL:
-      Put your nadaswaram audio file in the same folder
-      and rename it to:
+  <div class="royal-border"></div>
 
-      nadaswaram.mp3
+  <div class="section-content">
 
-      Then uncomment this:
+    <div class="eyebrow">
+      CELEBRATE WITH US
+    </div>
 
-      <source src="./nadaswaram.mp3" type="audio/mpeg">
-    -->
-  </audio>
+    <div class="section-title">
+      Reception
+    </div>
 
+    <div class="event-card">
 
-  <!-- =====================================================
-       SCENES
-  ====================================================== -->
-
-  <main class="scenes" id="scenes">
-
-
-    <!-- ===================================================
-         SCENE 1 — TEMPLE OPENING
-    ==================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="temple-arch"></div>
-
-      <div class="peacock left">🦚</div>
-      <div class="peacock right">🦚</div>
-
-      <div class="kolam"></div>
-
-      <div class="opening-content">
-
-        <div class="om">ॐ</div>
-
-        <div class="temple-title">
-          A SOUTH INDIAN WEDDING CELEBRATION
-        </div>
-
-        <div class="deepam">
-          🪔
-        </div>
-
-        <div class="opening-title">
-          Two Hearts
-        </div>
-
-        <div class="opening-subtitle">
-          ONE BEAUTIFUL JOURNEY
-        </div>
-
-        <div class="opening-date">
-          25 OCTOBER 2026 • SUNDAY
-        </div>
-
+      <div class="event-icon">
+        🌸
       </div>
 
-      <div class="scroll-hint">
-        SCROLL TO BEGIN
+      <div class="event-name">
+        RECEPTION
       </div>
 
-    </section>
+      <div class="event-time">
+        7:00 AM – 10:00 AM
+      </div>
 
+      <div class="event-date">
+        SUNDAY • 25 OCTOBER 2026
+      </div>
 
-    <!-- ===================================================
-         SCENE 2 — COUPLE
-    ==================================================== -->
+      <div class="event-venue">
+        KT Varadharaj Goundar<br>
+        Thirumana Mandapam<br>
+        Hospital Road, Ramiyanahalli<br>
+        Dharmapuri
+      </div>
 
-    <section class="scene">
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📍 VIEW RECEPTION LOCATION
+      </a>
 
-      <div class="royal-border"></div>
+    </div>
 
-      <div class="section-content">
+  </div>
 
-        <div class="eyebrow">
-          THE COUPLE
-        </div>
+</section>
 
-        <div class="monogram">
-          K <span>♥</span> S
-        </div>
+<!-- SCENE 5 -->
 
-        <div class="names">
+<section class="scene">
 
-          P. KALAIYARASAN
+  <div class="royal-border"></div>
 
-          <span class="amp">&amp;</span>
+  <div class="section-content">
 
-          M. SARANYA
+    <div class="eyebrow">
+      FIND YOUR WAY TO OUR CELEBRATION
+    </div>
 
-        </div>
+    <div class="section-title">
+      The Locations
+    </div>
 
-        <div class="names-rule">
-          <span></span>
-          <b>✦</b>
-          <span></span>
-        </div>
+    <div class="map-layout">
 
-        <p class="section-text">
-          Two souls, two families and one beautiful
-          beginning. With love in our hearts and
-          blessings from our families, we begin
-          our journey together.
+      <div class="map-box">
+
+        <h3>
+          🛕 MARRIAGE
+        </h3>
+
+        <p>
+          Kalyana Kaanika Eswaran Temple<br>
+          Erulapatti
         </p>
 
-        <div class="countdown-box">
-
-          <div class="time-unit">
-            <strong id="days">00</strong>
-            <span>DAYS</span>
-          </div>
-
-          <div class="time-unit">
-            <strong id="hours">00</strong>
-            <span>HOURS</span>
-          </div>
-
-          <div class="time-unit">
-            <strong id="minutes">00</strong>
-            <span>MINUTES</span>
-          </div>
-
-          <div class="time-unit">
-            <strong id="seconds">00</strong>
-            <span>SECONDS</span>
-          </div>
-
-        </div>
+        <a
+          class="map-button"
+          href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OPEN MAP
+        </a>
 
       </div>
 
-    </section>
+      <div class="map-box">
 
+        <h3>
+          📍 RECEPTION
+        </h3>
 
-    <!-- ===================================================
-         SCENE 3 — MARRIAGE
-    ==================================================== -->
+        <p>
+          KT Varadharaj Goundar<br>
+          Thirumana Mandapam
+        </p>
 
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          WITH DIVINE BLESSINGS
-        </div>
-
-        <div class="section-title">
-          Marriage
-        </div>
-
-        <div class="event-card">
-
-          <div class="event-icon">
-            🛕
-          </div>
-
-          <div class="event-name">
-            THE SACRED CEREMONY
-          </div>
-
-          <div class="event-time">
-            4:00 AM
-          </div>
-
-          <div class="event-date">
-            SUNDAY • 25 OCTOBER 2026
-          </div>
-
-          <div class="event-venue">
-            Kalyana Kaanika Eswaran Temple<br>
-            Erulapatti
-          </div>
-
-          <a
-            class="map-button"
-            href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🛕 VIEW MARRIAGE LOCATION
-          </a>
-
-        </div>
+        <a
+          class="map-button"
+          href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OPEN MAP
+        </a>
 
       </div>
 
-    </section>
+    </div>
 
+    <div class="qr-wrapper">
 
-    <!-- ===================================================
-         SCENE 4 — RECEPTION
-    ==================================================== -->
-
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="section-content">
-
-        <div class="eyebrow">
-          CELEBRATE WITH US
-        </div>
-
-        <div class="section-title">
-          Reception
-        </div>
-
-        <div class="event-card">
-
-          <div class="event-icon">
-            🌸
-          </div>
-
-          <div class="event-name">
-            RECEPTION
-          </div>
-
-          <div class="event-time">
-            7:00 AM – 10:00 AM
-          </div>
-
-          <div class="event-date">
-            SUNDAY • 25 OCTOBER 2026
-          </div>
-
-          <div class="event-venue">
-            KT Varadharaj Goundar<br>
-            Thirumana Mandapam<br>
-            Hospital Road, Ramiyanahalli<br>
-            Dharmapuri
-          </div>
-
-          <a
-            class="map-button"
-            href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            📍 VIEW RECEPTION LOCATION
-          </a>
-
-        </div>
-
+      <div class="qr-title">
+        SCAN FOR RECEPTION LOCATION
       </div>
 
-    </section>
+      <div id="mapQR"></div>
 
+    </div>
 
-    <!-- ===================================================
-         SCENE 5 — PREMIUM MAP
-    ==================================================== -->
+  </div>
 
-    <section class="scene">
+</section>
 
-      <div class="royal-border"></div>
+<!-- SCENE 6 -->
 
-      <div class="section-content">
+<section class="scene">
 
-        <div class="eyebrow">
-          FIND YOUR WAY TO OUR CELEBRATION
-        </div>
+  <div class="royal-border"></div>
 
-        <div class="section-title">
-          The Locations
-        </div>
+  <div class="section-content">
 
-        <div class="map-layout">
+    <div class="blessing-card">
 
-          <div class="map-box">
-
-            <h3>
-              🛕 MARRIAGE
-            </h3>
-
-            <p>
-              Kalyana Kaanika Eswaran Temple<br>
-              Erulapatti
-            </p>
-
-            <a
-              class="map-button"
-              href="https://maps.app.goo.gl/YxusGM3brmkNWr9F8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OPEN MAP
-            </a>
-
-          </div>
-
-
-          <div class="map-box">
-
-            <h3>
-              📍 RECEPTION
-            </h3>
-
-            <p>
-              KT Varadharaj Goundar<br>
-              Thirumana Mandapam
-            </p>
-
-            <a
-              class="map-button"
-              href="https://maps.app.goo.gl/ZwbVVdMYedeYfqD16"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OPEN MAP
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="qr-wrapper">
-
-          <div class="qr-title">
-            SCAN FOR RECEPTION LOCATION
-          </div>
-
-          <div id="mapQR"></div>
-
-        </div>
-
+      <div class="blessing-symbol">
+        🪔
       </div>
 
-    </section>
+      <h2>
+        With the blessings<br>
+        of our families…
+      </h2>
 
+      <p>
+        We invite you to be a part of our
+        most cherished celebration.
+        <br><br>
+        Your presence, love and blessings
+        will make this beautiful beginning
+        even more meaningful.
+      </p>
 
-    <!-- ===================================================
-         SCENE 6 — FAMILY BLESSING
-    ==================================================== -->
+    </div>
 
-    <section class="scene">
+  </div>
 
-      <div class="royal-border"></div>
+</section>
 
-      <div class="section-content">
+<!-- SCENE 7 -->
 
-        <div class="blessing-card">
+<section class="scene">
 
-          <div class="blessing-symbol">
-            🪔
-          </div>
+  <div class="royal-border"></div>
 
-          <h2>
-            With the blessings<br>
-            of our families…
-          </h2>
+  <div class="closing-content">
 
-          <p>
-            We invite you to be a part of our
-            most cherished celebration.
+    <div class="closing-lamp">
+      🪔
+    </div>
 
-            <br><br>
+    <div class="closing-small">
+      WITH LOVE &amp; GRATITUDE
+    </div>
 
-            Your presence, love and blessings
-            will make this beautiful beginning
-            even more meaningful.
-          </p>
+    <div class="closing-names">
+      KALAIYARASAN
+    </div>
 
-        </div>
+    <div class="closing-heart">
+      ♥
+    </div>
 
-      </div>
+    <div class="closing-names">
+      SARANYA
+    </div>
 
-    </section>
+    <div class="closing-line"></div>
 
+    <div class="closing-date">
+      25 • OCTOBER • 2026
+    </div>
 
-    <!-- ===================================================
-         SCENE 7 — ROYAL CLOSING
-    ==================================================== -->
+  </div>
 
-    <section class="scene">
-
-      <div class="royal-border"></div>
-
-      <div class="closing-content">
-
-        <div class="closing-lamp">
-          🪔
-        </div>
-
-        <div class="closing-small">
-          WITH LOVE &amp; GRATITUDE
-        </div>
-
-        <div class="closing-names">
-          KALAIYARASAN
-        </div>
-
-        <div class="closing-heart">
-          ♥
-        </div>
-
-        <div class="closing-names">
-          SARANYA
-        </div>
-
-        <div class="closing-line"></div>
-
-        <div class="closing-date">
-          25 • OCTOBER • 2026
-        </div>
-
-      </div>
-
-    </section>
-
+</section>
+```
 
   </main>
 
 </div>
-
 
 <script>
 
@@ -2550,40 +2454,30 @@ body {
 const receptionMapURL =
   "https://maps.app.goo.gl/ZwbVVdMYedeYfqD16";
 
-
 /* =========================================================
    QR CODE
 ========================================================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const qr =
-      document.getElementById("mapQR");
+  const qr =
+    document.getElementById("mapQR");
 
-    if (qr) {
+  if (qr && typeof QRCode !== "undefined") {
 
-      new QRCode(qr, {
-
-        text: receptionMapURL,
-
-        width: 200,
-        height: 200,
-
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-
-        correctLevel:
-          QRCode.CorrectLevel.H
-
-      });
-
-    }
+    new QRCode(qr, {
+      text: receptionMapURL,
+      width: 200,
+      height: 200,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel:
+        QRCode.CorrectLevel.H
+    });
 
   }
-);
 
+});
 
 /* =========================================================
    WEDDING DATE
@@ -2593,7 +2487,6 @@ const weddingDate =
   new Date(
     "2026-10-25T04:00:00+05:30"
   ).getTime();
-
 
 /* =========================================================
    COUNTDOWN
@@ -2614,56 +2507,45 @@ function updateCountdown() {
     return;
   }
 
-
   const totalSeconds =
     Math.floor(
       difference / 1000
     );
-
 
   const days =
     Math.floor(
       totalSeconds / 86400
     );
 
-
   const hours =
     Math.floor(
       (totalSeconds % 86400) / 3600
     );
-
 
   const minutes =
     Math.floor(
       (totalSeconds % 3600) / 60
     );
 
-
   const seconds =
     totalSeconds % 60;
-
 
   document.getElementById("days")
     .textContent =
       String(days).padStart(2, "0");
 
-
   document.getElementById("hours")
     .textContent =
       String(hours).padStart(2, "0");
-
 
   document.getElementById("minutes")
     .textContent =
       String(minutes).padStart(2, "0");
 
-
   document.getElementById("seconds")
     .textContent =
       String(seconds).padStart(2, "0");
-
 }
-
 
 updateCountdown();
 
@@ -2672,9 +2554,8 @@ setInterval(
   1000
 );
 
-
 /* =========================================================
-   OPEN INVITATION
+   ELEMENTS
 ========================================================= */
 
 const cover =
@@ -2683,6 +2564,62 @@ const cover =
 const enterButton =
   document.getElementById("enterButton");
 
+const audio =
+  document.getElementById("weddingAudio");
+
+const audioButton =
+  document.getElementById("audioButton");
+
+let musicPlaying = false;
+
+/* =========================================================
+   REAL NADASWARAM MUSIC
+========================================================= */
+
+function startMusic() {
+
+  if (!audio) {
+    return;
+  }
+
+  audio.volume = 0.35;
+
+  const playPromise =
+    audio.play();
+
+  if (playPromise !== undefined) {
+
+    playPromise
+      .then(() => {
+
+        musicPlaying = true;
+
+        audioButton.textContent =
+          "♫";
+
+        audioButton.classList.add(
+          "playing"
+        );
+
+      })
+      .catch(error => {
+
+        console.log(
+          "Nadaswaram playback error:",
+          error
+        );
+
+        musicPlaying = false;
+
+      });
+
+  }
+}
+
+/* =========================================================
+   OPEN INVITATION
+   Music starts from this user interaction
+========================================================= */
 
 enterButton.addEventListener(
   "click",
@@ -2695,61 +2632,13 @@ enterButton.addEventListener(
   }
 );
 
-
 /* =========================================================
-   AUDIO
+   MUSIC ON / OFF
 ========================================================= */
-
-const audio =
-  document.getElementById(
-    "weddingAudio"
-  );
-
-const audioButton =
-  document.getElementById(
-    "audioButton"
-  );
-
-
-let musicPlaying = false;
-
-
-function startMusic() {
-
-  if (!audio.src) {
-    return;
-  }
-
-  audio.volume = 0.35;
-
-  audio.play()
-    .then(() => {
-
-      musicPlaying = true;
-
-      audioButton.textContent =
-        "♫";
-
-    })
-    .catch(() => {});
-
-}
-
 
 audioButton.addEventListener(
   "click",
   () => {
-
-    if (!audio.src) {
-
-      alert(
-        "Add nadaswaram.mp3 in the same folder to enable music."
-      );
-
-      return;
-
-    }
-
 
     if (musicPlaying) {
 
@@ -2760,20 +2649,54 @@ audioButton.addEventListener(
       audioButton.textContent =
         "♪";
 
+      audioButton.classList.remove(
+        "playing"
+      );
+
     } else {
 
-      audio.play();
-
-      musicPlaying = true;
-
-      audioButton.textContent =
-        "♫";
+      startMusic();
 
     }
 
   }
 );
 
+/* =========================================================
+   HANDLE AUDIO EVENTS
+========================================================= */
+
+audio.addEventListener(
+  "play",
+  () => {
+
+    musicPlaying = true;
+
+    audioButton.textContent =
+      "♫";
+
+    audioButton.classList.add(
+      "playing"
+    );
+
+  }
+);
+
+audio.addEventListener(
+  "pause",
+  () => {
+
+    musicPlaying = false;
+
+    audioButton.textContent =
+      "♪";
+
+    audioButton.classList.remove(
+      "playing"
+    );
+
+  }
+);
 
 /* =========================================================
    SCENE OBSERVER
@@ -2792,7 +2715,6 @@ const dots =
     ".page-dot"
   );
 
-
 const observer =
   new IntersectionObserver(
     entries => {
@@ -2804,13 +2726,11 @@ const observer =
             return;
           }
 
-
           const index =
             [...sceneElements]
               .indexOf(
                 entry.target
               );
-
 
           dots.forEach(
             dot =>
@@ -2818,7 +2738,6 @@ const observer =
                 "active"
               )
           );
-
 
           if (dots[index]) {
 
@@ -2839,12 +2758,10 @@ const observer =
     }
   );
 
-
 sceneElements.forEach(
   scene =>
     observer.observe(scene)
 );
-
 
 /* =========================================================
    DOT NAVIGATION
@@ -2868,9 +2785,8 @@ dots.forEach(
   }
 );
 
-
 /* =========================================================
-   TOUCH SWIPE SUPPORT
+   TOUCH SWIPE
 ========================================================= */
 
 let touchStartY = 0;
@@ -2880,7 +2796,8 @@ scenes.addEventListener(
   event => {
 
     touchStartY =
-      event.changedTouches[0].screenY;
+      event.changedTouches[0]
+        .screenY;
 
   },
   {
@@ -2888,22 +2805,20 @@ scenes.addEventListener(
   }
 );
 
-
 scenes.addEventListener(
   "touchend",
   event => {
 
     const touchEndY =
-      event.changedTouches[0].screenY;
+      event.changedTouches[0]
+        .screenY;
 
     const difference =
       touchStartY - touchEndY;
 
-
     if (Math.abs(difference) < 45) {
       return;
     }
-
 
     const current =
       Math.round(
@@ -2911,12 +2826,10 @@ scenes.addEventListener(
         window.innerHeight
       );
 
-
     let next =
       difference > 0
         ? current + 1
         : current - 1;
-
 
     next =
       Math.max(
@@ -2926,7 +2839,6 @@ scenes.addEventListener(
           next
         )
       );
-
 
     sceneElements[next]
       .scrollIntoView({
@@ -2938,7 +2850,6 @@ scenes.addEventListener(
     passive: true
   }
 );
-
 
 /* =========================================================
    KEYBOARD
@@ -2953,7 +2864,6 @@ document.addEventListener(
         scenes.scrollTop /
         window.innerHeight
       );
-
 
     if (
       event.key === "ArrowDown" ||
@@ -2972,7 +2882,6 @@ document.addEventListener(
         });
 
     }
-
 
     if (
       event.key === "ArrowUp" ||
@@ -2999,32 +2908,3 @@ document.addEventListener(
 
 </body>
 </html>
-```
-
-### What changed architecturally
-
-This isn't just more CSS piled onto your existing card.
-
-**The invitation now behaves like a cinematic story:**
-
-`Opening → Couple → Marriage → Reception → Locations → Family Blessings → Closing`
-
-The opening is deliberately separated from the main invitation so the first interaction feels like **opening a physical wedding card** rather than immediately dumping all the information on the screen.
-
-The background still uses your existing `wedding-bg.jpeg`, consistent with your previous invitation design.
-
-One important point: **don't blindly add real nadaswaram audio and expect it to autoplay.** Mobile browsers commonly block autoplay with sound. The implementation therefore starts music after the user taps **OPEN THE INVITATION**, which is the technically correct approach.
-
-For the music, just put:
-
-```text
-nadaswaram.mp3
-```
-
-beside the HTML file and uncomment this inside the `<audio>` element:
-
-
-<source src="./nadaswaram.mp3" type="audio/mpeg">
-```
-
-This version is a much better direction than continuing to add decorative elements to the original one-screen card. The next level would be **actual SVG temple gopuram artwork + realistic jasmine/rose garlands + animated silk folds**, rather than emoji/CSS approximations. That would make it look genuinely premium instead of "HTML with lots of effects."
