@@ -1818,37 +1818,99 @@
       z-index: 2;
     }
 
-    .cover-enter {
-      margin-top: 35px;
+.cover-enter {
+  margin-top: 35px;
 
-      position: relative;
+  position: relative;
+  z-index: 2;
 
-      z-index: 2;
+  padding: 14px 30px;
 
-      padding: 12px 24px;
+  border: 2px solid #f1d58f;
+  border-radius: 999px;
 
-      border:
-        1px solid rgba(239,203,119,.65);
+  background:
+    linear-gradient(
+      135deg,
+      #d6a84f,
+      #8f263f,
+      #d6a84f
+    );
 
-      border-radius: 999px;
+  background-size: 200% 200%;
 
-      background:
-        rgba(255,255,255,.05);
+  color: #fff8e6;
 
-      color: #fff3d0;
+  font-family: "Cinzel", serif;
 
-      font-family: "Cinzel", serif;
+  font-size: 10px;
 
-      font-size: 8px;
+  font-weight: 700;
 
-      letter-spacing: 2px;
+  letter-spacing: 2.5px;
 
-      cursor: pointer;
+  cursor: pointer;
 
-      transition:
-        transform .25s ease,
-        background .25s ease;
-    }
+  box-shadow:
+    0 0 10px rgba(241,213,143,.7),
+    0 0 25px rgba(241,213,143,.45),
+    0 10px 30px rgba(0,0,0,.45);
+
+  text-shadow:
+    0 1px 4px rgba(0,0,0,.5);
+
+  animation:
+    invitationGlow 2s ease-in-out infinite,
+    invitationGradient 4s ease infinite;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.cover-enter:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 15px rgba(241,213,143,.9),
+    0 0 40px rgba(241,213,143,.65),
+    0 15px 35px rgba(0,0,0,.5);
+}
+
+.cover-enter:active {
+  transform: scale(.95);
+}
+
+@keyframes invitationGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(241,213,143,.5),
+      0 0 20px rgba(241,213,143,.3),
+      0 10px 30px rgba(0,0,0,.45);
+  }
+
+  50% {
+    box-shadow:
+      0 0 15px rgba(241,213,143,1),
+      0 0 40px rgba(241,213,143,.7),
+      0 12px 35px rgba(0,0,0,.5);
+  }
+}
+
+@keyframes invitationGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
     .cover-enter:hover {
       transform: scale(1.04);
@@ -2747,8 +2809,9 @@
 
         <div class="countdown-message">
 
-          We can't wait to celebrate this special day
-          with you and our loved ones.
+         We eagerly look forward to sharing this beautiful day
+with you, surrounded by the love and blessings
+of our cherished family and friends.
 
         </div>
 
