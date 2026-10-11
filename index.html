@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
     rel="stylesheet"
   />
 
@@ -41,11 +41,11 @@
       --cream: #ffffff;
       --cream-soft: #fff8e9;
 
-      --text-soft: rgba(255, 252, 245, 0.92);
-      --text-muted: rgba(255, 252, 245, 0.78);
+      --text-soft: rgba(255, 253, 248, 0.98);
+      --text-muted: rgba(255, 253, 248, 0.88);
 
-      --glass: rgba(35, 5, 14, 0.68);
-      --glass-strong: rgba(31, 4, 12, 0.84);
+      --glass: rgba(35, 5, 14, 0.75);
+      --glass-strong: rgba(31, 4, 12, 0.9);
 
       --serif: "Cormorant Garamond", Georgia, serif;
       --display: "Great Vibes", cursive;
@@ -91,6 +91,7 @@
       background: var(--maroon-deep);
       color: var(--cream);
       font-family: var(--serif);
+      font-weight: 500;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -440,7 +441,7 @@
     }
 
     .ornament span {
-      font-size: 15px;
+      font-size: 16px;
       text-shadow: 0 0 12px rgba(241, 217, 147, 0.45);
     }
 
@@ -450,14 +451,14 @@
 
     .eyebrow {
       font-family: var(--caps);
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 800;
       letter-spacing: 4px;
       text-transform: uppercase;
 
       color: var(--gold-light);
       text-align: center;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     /* =========================================================
@@ -514,7 +515,7 @@
     }
 
     .cover-card {
-      width: min(510px, 92vw);
+      width: min(530px, 92vw);
 
       position: relative;
 
@@ -584,12 +585,12 @@
       position: relative;
 
       font-family: var(--caps);
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 4px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 28px;
     }
@@ -631,7 +632,7 @@
     }
 
     .monogram span {
-      font-size: 17px;
+      font-size: 18px;
       margin: 0 6px;
     }
 
@@ -672,12 +673,12 @@
       margin-top: 25px;
 
       font-family: var(--caps);
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 3px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .open-button {
@@ -685,7 +686,7 @@
 
       margin-top: 35px;
 
-      padding: 15px 30px;
+      padding: 16px 32px;
 
       border: 1px solid var(--gold-light);
 
@@ -694,8 +695,8 @@
       color: var(--maroon-deep);
 
       font-family: var(--caps);
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 2px;
 
       cursor: pointer;
@@ -734,12 +735,12 @@
 
     .hero-kicker {
       font-family: var(--caps);
-      font-size: clamp(11px, 1.2vw, 14px);
-      font-weight: 600;
+      font-size: clamp(13px, 1.4vw, 16px);
+      font-weight: 800;
       letter-spacing: 5px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 
       margin-bottom: 18px;
     }
@@ -781,12 +782,12 @@
     .hero-subtitle {
       font-family: var(--caps);
 
-      font-size: clamp(11px, 1.4vw, 14px);
-      font-weight: 600;
+      font-size: clamp(13px, 1.6vw, 16px);
+      font-weight: 800;
       letter-spacing: 5px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 
       margin-bottom: 20px;
     }
@@ -798,18 +799,18 @@
 
       gap: 13px;
 
-      padding: 12px 28px;
+      padding: 14px 30px;
 
       border-top: 1px solid rgba(241, 217, 147, 0.38);
       border-bottom: 1px solid rgba(241, 217, 147, 0.38);
 
       font-family: var(--caps);
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 2.5px;
 
       color: var(--cream);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 
       background: rgba(25, 4, 11, 0.25);
       backdrop-filter: blur(4px);
@@ -820,11 +821,11 @@
     ========================================================= */
 
     .couple-intro {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
 
       margin: 34px auto 0;
 
-      padding: 30px 38px;
+      padding: 32px 40px;
 
       position: relative;
 
@@ -855,7 +856,7 @@
       position: absolute;
 
       color: var(--gold-light);
-      font-size: 11px;
+      font-size: 12px;
 
       top: 50%;
 
@@ -873,12 +874,12 @@
     .couple-label {
       font-family: var(--caps);
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 4px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 16px;
     }
@@ -886,14 +887,14 @@
     .names {
       font-family: var(--caps);
 
-      font-size: clamp(23px, 3.8vw, 35px);
-      font-weight: 600;
+      font-size: clamp(26px, 4.2vw, 38px);
+      font-weight: 800;
 
       letter-spacing: 3px;
       line-height: 1.35;
 
       color: var(--cream);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     .names-heart {
@@ -901,7 +902,7 @@
 
       font-family: var(--display);
 
-      font-size: 34px;
+      font-size: 38px;
 
       color: var(--gold-light);
 
@@ -909,17 +910,17 @@
     }
 
     .couple-description {
-      max-width: 610px;
+      max-width: 630px;
 
-      margin: 15px auto 0;
+      margin: 16px auto 0;
 
-      font-size: clamp(15px, 1.9vw, 19px);
-      font-weight: 400;
+      font-size: clamp(17px, 2.2vw, 21px);
+      font-weight: 600;
 
-      line-height: 1.55;
+      line-height: 1.6;
 
       color: var(--text-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
     }
 
     /* =========================================================
@@ -944,18 +945,18 @@
       color: var(--gold-light);
 
       font-family: var(--caps);
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 800;
       letter-spacing: 2px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 
-      opacity: 0.9;
+      opacity: 0.95;
 
       white-space: nowrap;
     }
 
     .scroll-indicator span:last-child {
-      font-size: 20px;
+      font-size: 22px;
 
       animation:
         scrollDown 1.8s ease-in-out infinite;
@@ -1025,7 +1026,7 @@
     .event-card {
       position: relative;
 
-      padding: 34px 30px 30px;
+      padding: 36px 32px 32px;
 
       background:
         linear-gradient(
@@ -1082,11 +1083,11 @@
       right: 16px;
 
       color: rgba(241, 217, 147, 0.42);
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .event-icon {
-      font-size: 32px;
+      font-size: 34px;
 
       margin-bottom: 13px;
 
@@ -1097,12 +1098,12 @@
     .event-type {
       font-family: var(--caps);
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 3px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 12px;
     }
@@ -1110,27 +1111,27 @@
     .event-time {
       font-family: var(--caps);
 
-      font-size: clamp(23px, 3.2vw, 32px);
-      font-weight: 600;
+      font-size: clamp(25px, 3.5vw, 34px);
+      font-weight: 800;
 
       letter-spacing: 1px;
 
       color: var(--cream);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .event-date {
       font-family: var(--caps);
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
 
       letter-spacing: 1.5px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 18px;
     }
@@ -1138,13 +1139,13 @@
     .event-location {
       min-height: 72px;
 
-      font-size: clamp(15px, 1.8vw, 18px);
-      font-weight: 400;
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 600;
 
-      line-height: 1.5;
+      line-height: 1.55;
 
       color: var(--text-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
     }
 
     .map-link {
@@ -1155,20 +1156,20 @@
 
       margin-top: 20px;
 
-      padding: 12px 20px;
+      padding: 13px 22px;
 
       border:
         1px solid rgba(241, 217, 147, 0.55);
 
       color: var(--cream);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
 
       text-decoration: none;
 
       font-family: var(--caps);
 
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 800;
 
       letter-spacing: 1.3px;
 
@@ -1203,7 +1204,7 @@
 
       gap: 20px;
 
-      max-width: 450px;
+      max-width: 480px;
 
       margin: 25px auto 0;
 
@@ -1222,30 +1223,30 @@
 
       font-family: var(--caps);
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
 
       letter-spacing: 1.5px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 6px;
     }
 
     .qr-text span {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 15px;
+      font-weight: 600;
 
       line-height: 1.4;
 
       color: var(--text-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
     }
 
     #mapQR {
-      width: 84px;
-      height: 84px;
+      width: 90px;
+      height: 90px;
 
       flex-shrink: 0;
 
@@ -1286,7 +1287,7 @@
     .blessing {
       position: relative;
 
-      padding: 31px 38px;
+      padding: 33px 40px;
 
       background:
         linear-gradient(
@@ -1331,7 +1332,7 @@
     }
 
     .blessing-icon {
-      font-size: 31px;
+      font-size: 33px;
 
       margin-bottom: 9px;
 
@@ -1354,17 +1355,17 @@
     }
 
     .blessing p {
-      max-width: 610px;
+      max-width: 630px;
 
       margin: auto;
 
-      font-size: clamp(16px, 2.1vw, 20px);
-      font-weight: 400;
+      font-size: clamp(18px, 2.3vw, 22px);
+      font-weight: 600;
 
       line-height: 1.6;
 
       color: var(--text-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
     }
 
     /* =========================================================
@@ -1388,13 +1389,13 @@
     }
 
     .countdown-message {
-      font-size: clamp(15px, 1.9vw, 19px);
-      font-weight: 400;
+      font-size: clamp(17px, 2.2vw, 21px);
+      font-weight: 600;
 
       color: var(--text-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
 
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .countdown-box {
@@ -1408,7 +1409,7 @@
     }
 
     .time-unit {
-      width: 86px;
+      width: 90px;
 
       padding: 16px 8px;
 
@@ -1446,14 +1447,14 @@
 
       font-family: var(--caps);
 
-      font-size: 30px;
+      font-size: 32px;
 
-      font-weight: 600;
+      font-weight: 800;
 
       line-height: 1;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .time-unit span {
@@ -1463,13 +1464,13 @@
 
       font-family: var(--caps);
 
-      font-size: 9px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 800;
 
       letter-spacing: 1.5px;
 
       color: var(--cream-soft);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     }
 
     .countdown-date {
@@ -1477,17 +1478,17 @@
 
       font-family: var(--caps);
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
 
       letter-spacing: 3px;
 
       color: var(--gold-light);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .final-message {
-      max-width: 600px;
+      max-width: 620px;
 
       margin: 12px auto 0;
     }
@@ -1627,7 +1628,7 @@
     }
 
     /* =========================================================
-       MOBILE (ENHANCED FONT SIZES FOR VISIBILITY)
+       MOBILE (SIGNIFICANTLY LARGER & BOLDER)
     ========================================================= */
 
     @media (max-width: 700px) {
@@ -1653,105 +1654,114 @@
       }
 
       .cover-card {
-        width: 92vw;
-        padding: 43px 24px 38px;
+        width: 94vw;
+        padding: 45px 22px 40px;
       }
 
       .cover-label {
-        font-size: 9.5px;
+        font-size: 12.5px;
+        font-weight: 800;
         letter-spacing: 2.5px;
         margin-bottom: 23px;
       }
 
       .monogram {
-        width: 88px;
-        height: 88px;
-        font-size: 40px;
+        width: 92px;
+        height: 92px;
+        font-size: 42px;
       }
 
       .monogram span {
-        font-size: 14px;
+        font-size: 16px;
         margin: 0 4px;
       }
 
       .cover-title {
         margin-top: 23px;
-        font-size: 50px;
+        font-size: 52px;
       }
 
       .cover-date {
         margin-top: 18px;
-        font-size: 9.5px;
+        font-size: 12.5px;
+        font-weight: 800;
         letter-spacing: 2px;
       }
 
       .open-button {
         margin-top: 28px;
-        font-size: 9.5px;
-        padding: 13px 20px;
+        font-size: 12.5px;
+        font-weight: 800;
+        padding: 14px 22px;
       }
 
       /* PAGE 1 */
 
       .hero-kicker {
-        font-size: 9.5px;
+        font-size: 12.5px;
+        font-weight: 800;
         letter-spacing: 2.5px;
         margin-bottom: 11px;
       }
 
       .lamp {
-        width: 53px;
-        height: 53px;
-        font-size: 32px;
+        width: 55px;
+        height: 55px;
+        font-size: 34px;
         margin-bottom: 9px;
       }
 
       .hero-title {
-        font-size: clamp(58px, 17vw, 78px);
+        font-size: clamp(60px, 17vw, 82px);
       }
 
       .hero-subtitle {
-        font-size: 9.5px;
+        font-size: 12.5px;
+        font-weight: 800;
         letter-spacing: 2.8px;
         margin-top: 3px;
         margin-bottom: 14px;
       }
 
       .date-line {
-        font-size: 9px;
+        font-size: 12px;
+        font-weight: 800;
         letter-spacing: 1.5px;
-        padding: 9px 14px;
+        padding: 11px 18px;
         gap: 8px;
       }
 
       .couple-intro {
         margin-top: 19px;
-        padding: 20px 16px;
+        padding: 22px 18px;
       }
 
       .couple-label {
-        font-size: 9px;
+        font-size: 12px;
+        font-weight: 800;
         letter-spacing: 2px;
         margin-bottom: 11px;
       }
 
       .names {
-        font-size: 19px;
+        font-size: 23px;
+        font-weight: 800;
         letter-spacing: 1.5px;
       }
 
       .names-heart {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .couple-description {
-        font-size: 13.5px;
-        line-height: 1.45;
-        margin-top: 10px;
+        font-size: 16.5px;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-top: 12px;
       }
 
       .ornament {
-        margin: 10px auto;
+        margin: 12px auto;
         gap: 8px;
       }
 
@@ -1761,37 +1771,39 @@
       }
 
       .ornament span {
-        font-size: 10px;
+        font-size: 12px;
       }
 
       .scroll-indicator {
-        font-size: 8.5px;
+        font-size: 10.5px;
+        font-weight: 800;
         letter-spacing: 1.5px;
       }
 
       .scroll-indicator span:last-child {
-        font-size: 17px;
+        font-size: 19px;
       }
 
       /* PAGE 2 */
 
       .eyebrow {
-        font-size: 9px;
+        font-size: 12px;
+        font-weight: 800;
         letter-spacing: 2px;
       }
 
       .section-title {
-        font-size: clamp(47px, 14vw, 63px);
+        font-size: clamp(48px, 14vw, 65px);
         margin-bottom: 18px;
       }
 
       .events {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 14px;
       }
 
       .event-card {
-        padding: 18px 15px;
+        padding: 20px 16px;
       }
 
       .event-card::before {
@@ -1799,122 +1811,135 @@
       }
 
       .event-icon {
-        font-size: 24px;
-        margin-bottom: 5px;
+        font-size: 26px;
+        margin-bottom: 6px;
       }
 
       .event-type {
-        font-size: 8.5px;
+        font-size: 11.5px;
+        font-weight: 800;
         letter-spacing: 1.8px;
         margin-bottom: 6px;
       }
 
       .event-time {
-        font-size: 20px;
-        margin-bottom: 4px;
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 5px;
       }
 
       .event-date {
-        font-size: 8.5px;
+        font-size: 11.5px;
+        font-weight: 800;
         letter-spacing: 1.2px;
         margin-bottom: 8px;
       }
 
       .event-location {
         min-height: auto;
-        font-size: 13px;
-        line-height: 1.35;
+        font-size: 15.5px;
+        font-weight: 600;
+        line-height: 1.4;
       }
 
       .map-link {
-        margin-top: 10px;
-        padding: 8px 12px;
-        font-size: 8px;
+        margin-top: 12px;
+        padding: 10px 16px;
+        font-size: 11px;
+        font-weight: 800;
         letter-spacing: 1px;
       }
 
       .qr-section {
-        margin-top: 12px;
-        padding-top: 10px;
-        gap: 12px;
+        margin-top: 14px;
+        padding-top: 12px;
+        gap: 14px;
       }
 
       .qr-text strong {
-        font-size: 8.5px;
+        font-size: 11.5px;
+        font-weight: 800;
         margin-bottom: 4px;
       }
 
       .qr-text span {
-        font-size: 11px;
+        font-size: 14px;
+        font-weight: 600;
       }
 
       #mapQR {
-        width: 65px;
-        height: 65px;
+        width: 72px;
+        height: 72px;
         padding: 3px;
       }
 
       /* PAGE 3 */
 
       .blessing {
-        padding: 20px 16px;
+        padding: 22px 18px;
       }
 
       .blessing-icon {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .blessing h2 {
-        font-size: clamp(38px, 11vw, 49px);
-        margin-bottom: 9px;
+        font-size: clamp(38px, 11vw, 50px);
+        margin-bottom: 11px;
       }
 
       .blessing p {
-        font-size: 13.5px;
-        line-height: 1.45;
+        font-size: 16.5px;
+        font-weight: 600;
+        line-height: 1.5;
       }
 
       .countdown-section {
-        margin-top: 16px;
+        margin-top: 18px;
       }
 
       .countdown-heading {
-        font-size: clamp(41px, 12vw, 54px);
+        font-size: clamp(42px, 12vw, 56px);
         margin-top: 6px;
       }
 
       .countdown-message {
-        font-size: 13px;
+        font-size: 15.5px;
+        font-weight: 600;
       }
 
       .countdown-box {
-        gap: 6px;
-        margin-top: 12px;
+        gap: 8px;
+        margin-top: 14px;
       }
 
       .time-unit {
-        width: 64px;
-        padding: 10px 4px;
+        width: 68px;
+        padding: 12px 4px;
       }
 
       .time-unit strong {
-        font-size: 22px;
+        font-size: 26px;
+        font-weight: 800;
       }
 
       .time-unit span {
-        font-size: 7.5px;
+        font-size: 10px;
+        font-weight: 800;
         letter-spacing: 1px;
       }
 
       .countdown-date {
-        margin-top: 11px;
-        font-size: 9px;
+        margin-top: 12px;
+        font-size: 12px;
+        font-weight: 800;
         letter-spacing: 1.7px;
       }
 
       .final-message {
-        font-size: 12.5px;
-        margin-top: 9px;
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 10px;
       }
 
       /* NAV */
@@ -1925,8 +1950,8 @@
       }
 
       .page-dot {
-        width: 8px;
-        height: 8px;
+        width: 9px;
+        height: 9px;
       }
 
       /* MUSIC */
@@ -1935,9 +1960,9 @@
         left: 12px;
         bottom:
           max(14px, env(safe-area-inset-bottom));
-        width: 38px;
-        height: 38px;
-        font-size: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
       }
     }
 
@@ -1952,11 +1977,11 @@
 
       .couple-intro {
         margin-top: 13px;
-        padding: 15px 14px;
+        padding: 16px 14px;
       }
 
       .couple-description {
-        margin-top: 7px;
+        margin-top: 8px;
       }
 
       .section-title {
@@ -1964,8 +1989,8 @@
       }
 
       .event-card {
-        padding-top: 12px;
-        padding-bottom: 11px;
+        padding-top: 14px;
+        padding-bottom: 12px;
       }
 
       .qr-section {
@@ -1973,7 +1998,7 @@
       }
 
       .blessing {
-        padding: 15px;
+        padding: 16px;
       }
 
       .countdown-section {
@@ -1987,31 +2012,31 @@
 
     @media (max-width: 380px) {
       .hero-title {
-        font-size: 55px;
+        font-size: 56px;
       }
 
       .couple-intro {
-        padding: 15px 12px;
+        padding: 16px 12px;
       }
 
       .names {
-        font-size: 17px;
+        font-size: 21px;
       }
 
       .event-time {
-        font-size: 18px;
+        font-size: 22px;
       }
 
       .event-location {
-        font-size: 12px;
+        font-size: 14.5px;
       }
 
       .time-unit {
-        width: 58px;
+        width: 60px;
       }
 
       .time-unit strong {
-        font-size: 19px;
+        font-size: 23px;
       }
     }
 
@@ -2946,7 +2971,7 @@
 
         },
         {
-            passive: true
+          passive: true
         }
       );
 
