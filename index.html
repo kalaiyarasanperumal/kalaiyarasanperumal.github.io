@@ -35,14 +35,14 @@
 
       --gold-dark: #8d6a2e;
       --gold: #c7a45e;
-      --gold-light: #f1d993;
-      --gold-pale: #f7e8b5;
+      --gold-light: #fbeac4;
+      --gold-pale: #fff2cc;
 
-      --cream: #fff8e9;
-      --cream-soft: #f2e5ca;
+      --cream: #ffffff;
+      --cream-soft: #fff8e9;
 
-      --text-soft: rgba(255, 248, 233, 0.78);
-      --text-muted: rgba(255, 248, 233, 0.58);
+      --text-soft: rgba(255, 252, 245, 0.92);
+      --text-muted: rgba(255, 252, 245, 0.78);
 
       --glass: rgba(35, 5, 14, 0.68);
       --glass-strong: rgba(31, 4, 12, 0.84);
@@ -58,9 +58,9 @@
         linear-gradient(
           120deg,
           #8d6a2e,
-          #f1d993,
+          #fbeac4,
           #c7a45e,
-          #f7e8b5,
+          #fff2cc,
           #8d6a2e
         );
     }
@@ -128,8 +128,8 @@
       background:
         linear-gradient(
           180deg,
-          rgba(20, 2, 8, 0.22),
-          rgba(35, 5, 13, 0.56)
+          rgba(20, 2, 8, 0.35),
+          rgba(35, 5, 13, 0.75)
         ),
         url("./wedding-bg.jpeg");
 
@@ -168,7 +168,7 @@
         linear-gradient(
           180deg,
           rgba(18, 2, 8, 0.08),
-          rgba(18, 2, 8, 0.78)
+          rgba(18, 2, 8, 0.85)
         );
 
       pointer-events: none;
@@ -450,12 +450,14 @@
 
     .eyebrow {
       font-family: var(--caps);
-      font-size: 10px;
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: 4px;
       text-transform: uppercase;
 
       color: var(--gold-light);
       text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     /* =========================================================
@@ -492,8 +494,8 @@
 
       background:
         linear-gradient(
-          rgba(27, 3, 11, 0.58),
-          rgba(27, 3, 11, 0.9)
+          rgba(27, 3, 11, 0.68),
+          rgba(27, 3, 11, 0.94)
         ),
         url("./wedding-bg.jpeg");
 
@@ -523,8 +525,8 @@
       background:
         linear-gradient(
           145deg,
-          rgba(70, 13, 31, 0.92),
-          rgba(28, 4, 12, 0.95)
+          rgba(70, 13, 31, 0.96),
+          rgba(28, 4, 12, 0.98)
         );
 
       border: 1px solid rgba(241, 217, 147, 0.62);
@@ -582,10 +584,12 @@
       position: relative;
 
       font-family: var(--caps);
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 4px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
       margin-bottom: 28px;
     }
@@ -668,10 +672,12 @@
       margin-top: 25px;
 
       font-family: var(--caps);
-      font-size: 9px;
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: 3px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
 
     .open-button {
@@ -679,16 +685,16 @@
 
       margin-top: 35px;
 
-      padding: 14px 27px;
+      padding: 15px 30px;
 
       border: 1px solid var(--gold-light);
 
       background: var(--gold-gradient);
 
-      color: var(--maroon-dark);
+      color: var(--maroon-deep);
 
       font-family: var(--caps);
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
 
@@ -728,10 +734,12 @@
 
     .hero-kicker {
       font-family: var(--caps);
-      font-size: clamp(9px, 1vw, 13px);
+      font-size: clamp(11px, 1.2vw, 14px);
+      font-weight: 600;
       letter-spacing: 5px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 18px;
     }
@@ -773,10 +781,12 @@
     .hero-subtitle {
       font-family: var(--caps);
 
-      font-size: clamp(9px, 1.3vw, 13px);
+      font-size: clamp(11px, 1.4vw, 14px);
+      font-weight: 600;
       letter-spacing: 5px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 20px;
     }
@@ -788,18 +798,20 @@
 
       gap: 13px;
 
-      padding: 10px 25px;
+      padding: 12px 28px;
 
       border-top: 1px solid rgba(241, 217, 147, 0.38);
       border-bottom: 1px solid rgba(241, 217, 147, 0.38);
 
       font-family: var(--caps);
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 2.5px;
 
       color: var(--cream);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
-      background: rgba(25, 4, 11, 0.12);
+      background: rgba(25, 4, 11, 0.25);
       backdrop-filter: blur(4px);
     }
 
@@ -819,8 +831,8 @@
       background:
         linear-gradient(
           145deg,
-          rgba(65, 12, 29, 0.76),
-          rgba(29, 5, 14, 0.76)
+          rgba(65, 12, 29, 0.88),
+          rgba(29, 5, 14, 0.88)
         );
 
       border-top:
@@ -830,7 +842,7 @@
         1px solid rgba(241, 217, 147, 0.42);
 
       box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.25);
+        0 25px 70px rgba(0, 0, 0, 0.35);
 
       backdrop-filter: blur(9px);
       -webkit-backdrop-filter: blur(9px);
@@ -861,10 +873,12 @@
     .couple-label {
       font-family: var(--caps);
 
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 4px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
       margin-bottom: 16px;
     }
@@ -872,12 +886,14 @@
     .names {
       font-family: var(--caps);
 
-      font-size: clamp(21px, 3.5vw, 33px);
+      font-size: clamp(23px, 3.8vw, 35px);
+      font-weight: 600;
 
       letter-spacing: 3px;
       line-height: 1.35;
 
       color: var(--cream);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     .names-heart {
@@ -897,11 +913,13 @@
 
       margin: 15px auto 0;
 
-      font-size: clamp(14px, 1.8vw, 18px);
+      font-size: clamp(15px, 1.9vw, 19px);
+      font-weight: 400;
 
-      line-height: 1.5;
+      line-height: 1.55;
 
       color: var(--text-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     /* =========================================================
@@ -926,10 +944,12 @@
       color: var(--gold-light);
 
       font-family: var(--caps);
-      font-size: 8px;
+      font-size: 10px;
+      font-weight: 600;
       letter-spacing: 2px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
-      opacity: 0.78;
+      opacity: 0.9;
 
       white-space: nowrap;
     }
@@ -1010,15 +1030,15 @@
       background:
         linear-gradient(
           145deg,
-          rgba(70, 13, 31, 0.9),
-          rgba(28, 5, 13, 0.9)
+          rgba(70, 13, 31, 0.95),
+          rgba(28, 5, 13, 0.95)
         );
 
       border:
         1px solid rgba(241, 217, 147, 0.36);
 
       box-shadow:
-        0 25px 65px rgba(0, 0, 0, 0.3);
+        0 25px 65px rgba(0, 0, 0, 0.35);
 
       text-align: center;
 
@@ -1077,10 +1097,12 @@
     .event-type {
       font-family: var(--caps);
 
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
       margin-bottom: 12px;
     }
@@ -1088,11 +1110,13 @@
     .event-time {
       font-family: var(--caps);
 
-      font-size: clamp(21px, 3vw, 30px);
+      font-size: clamp(23px, 3.2vw, 32px);
+      font-weight: 600;
 
       letter-spacing: 1px;
 
       color: var(--cream);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 
       margin-bottom: 7px;
     }
@@ -1100,11 +1124,13 @@
     .event-date {
       font-family: var(--caps);
 
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
 
       letter-spacing: 1.5px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
       margin-bottom: 18px;
     }
@@ -1112,11 +1138,13 @@
     .event-location {
       min-height: 72px;
 
-      font-size: clamp(14px, 1.7vw, 17px);
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 400;
 
-      line-height: 1.45;
+      line-height: 1.5;
 
       color: var(--text-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     .map-link {
@@ -1127,23 +1155,25 @@
 
       margin-top: 20px;
 
-      padding: 11px 18px;
+      padding: 12px 20px;
 
       border:
-        1px solid rgba(241, 217, 147, 0.46);
+        1px solid rgba(241, 217, 147, 0.55);
 
       color: var(--cream);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 
       text-decoration: none;
 
       font-family: var(--caps);
 
-      font-size: 8px;
+      font-size: 10px;
+      font-weight: 600;
 
       letter-spacing: 1.3px;
 
       background:
-        rgba(198, 161, 91, 0.08);
+        rgba(198, 161, 91, 0.15);
 
       transition:
         background 0.25s ease,
@@ -1153,32 +1183,12 @@
 
     .map-link:hover {
       background:
-        rgba(198, 161, 91, 0.2);
+        rgba(198, 161, 91, 0.3);
 
       border-color:
-        rgba(241, 217, 147, 0.8);
+        rgba(241, 217, 147, 0.9);
 
       transform: translateY(-2px);
-    }
-
-    /* =========================================================
-       EVENT CONNECTOR
-    ========================================================= */
-
-    .events::before {
-      content: "✦";
-
-      position: absolute;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      color: var(--gold-light);
-
-      opacity: 0.45;
-
-      display: none;
     }
 
     /* =========================================================
@@ -1193,14 +1203,14 @@
 
       gap: 20px;
 
-      max-width: 430px;
+      max-width: 450px;
 
-      margin: 23px auto 0;
+      margin: 25px auto 0;
 
-      padding-top: 18px;
+      padding-top: 20px;
 
       border-top:
-        1px solid rgba(241, 217, 147, 0.18);
+        1px solid rgba(241, 217, 147, 0.25);
     }
 
     .qr-text {
@@ -1212,21 +1222,25 @@
 
       font-family: var(--caps);
 
-      font-size: 9px;
+      font-size: 11px;
+      font-weight: 600;
 
       letter-spacing: 1.5px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .qr-text span {
-      font-size: 13px;
+      font-size: 14px;
+      font-weight: 400;
 
-      line-height: 1.3;
+      line-height: 1.4;
 
       color: var(--text-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     #mapQR {
@@ -1277,8 +1291,8 @@
       background:
         linear-gradient(
           145deg,
-          rgba(50, 8, 20, 0.82),
-          rgba(27, 4, 12, 0.76)
+          rgba(50, 8, 20, 0.92),
+          rgba(27, 4, 12, 0.88)
         );
 
       border-top:
@@ -1288,7 +1302,7 @@
         1px solid rgba(241, 217, 147, 0.38);
 
       box-shadow:
-        0 25px 65px rgba(0, 0, 0, 0.26);
+        0 25px 65px rgba(0, 0, 0, 0.3);
 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -1344,11 +1358,13 @@
 
       margin: auto;
 
-      font-size: clamp(15px, 2vw, 19px);
+      font-size: clamp(16px, 2.1vw, 20px);
+      font-weight: 400;
 
-      line-height: 1.5;
+      line-height: 1.6;
 
       color: var(--text-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     /* =========================================================
@@ -1372,11 +1388,13 @@
     }
 
     .countdown-message {
-      font-size: clamp(14px, 1.8vw, 18px);
+      font-size: clamp(15px, 1.9vw, 19px);
+      font-weight: 400;
 
       color: var(--text-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .countdown-box {
@@ -1384,30 +1402,30 @@
 
       justify-content: center;
 
-      gap: 10px;
+      gap: 12px;
 
       margin-top: 22px;
     }
 
     .time-unit {
-      width: 82px;
+      width: 86px;
 
-      padding: 14px 6px;
+      padding: 16px 8px;
 
       position: relative;
 
       border:
-        1px solid rgba(241, 217, 147, 0.32);
+        1px solid rgba(241, 217, 147, 0.4);
 
       background:
         linear-gradient(
           145deg,
-          rgba(55, 9, 22, 0.86),
-          rgba(26, 4, 12, 0.88)
+          rgba(55, 9, 22, 0.92),
+          rgba(26, 4, 12, 0.94)
         );
 
       box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.18);
+        0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
     .time-unit::before {
@@ -1428,13 +1446,14 @@
 
       font-family: var(--caps);
 
-      font-size: 28px;
+      font-size: 30px;
 
-      font-weight: 500;
+      font-weight: 600;
 
       line-height: 1;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
 
     .time-unit span {
@@ -1444,11 +1463,13 @@
 
       font-family: var(--caps);
 
-      font-size: 7px;
+      font-size: 9px;
+      font-weight: 600;
 
       letter-spacing: 1.5px;
 
-      color: rgba(255, 248, 233, 0.62);
+      color: var(--cream-soft);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     .countdown-date {
@@ -1456,17 +1477,19 @@
 
       font-family: var(--caps);
 
-      font-size: 10px;
+      font-size: 11px;
+      font-weight: 600;
 
       letter-spacing: 3px;
 
       color: var(--gold-light);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
 
     .final-message {
       max-width: 600px;
 
-      margin: 10px auto 0;
+      margin: 12px auto 0;
     }
 
     /* =========================================================
@@ -1490,15 +1513,15 @@
     }
 
     .page-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
 
       padding: 0;
 
       border-radius: 50%;
 
       border:
-        1px solid var(--gold-light);
+        1.5px solid var(--gold-light);
 
       background: transparent;
 
@@ -1516,7 +1539,7 @@
       transform: scale(1.55);
 
       box-shadow:
-        0 0 14px rgba(241, 217, 147, 0.55);
+        0 0 14px rgba(241, 217, 147, 0.7);
     }
 
     /* =========================================================
@@ -1533,16 +1556,16 @@
 
       z-index: 90;
 
-      width: 43px;
-      height: 43px;
+      width: 46px;
+      height: 46px;
 
       border-radius: 50%;
 
       border:
-        1px solid rgba(241, 217, 147, 0.52);
+        1.5px solid rgba(241, 217, 147, 0.7);
 
       background:
-        rgba(35, 7, 15, 0.82);
+        rgba(35, 7, 15, 0.9);
 
       color: var(--gold-light);
 
@@ -1551,13 +1574,13 @@
 
       cursor: pointer;
 
-      font-size: 17px;
+      font-size: 19px;
 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
 
       box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.3);
+        0 8px 25px rgba(0, 0, 0, 0.35);
 
       transition:
         transform 0.25s ease,
@@ -1568,7 +1591,7 @@
       transform: scale(1.08);
 
       background:
-        rgba(71, 13, 30, 0.9);
+        rgba(71, 13, 30, 0.95);
     }
 
     .music-button.playing {
@@ -1579,13 +1602,13 @@
       0%,
       100% {
         box-shadow:
-          0 8px 25px rgba(0, 0, 0, 0.3);
+          0 8px 25px rgba(0, 0, 0, 0.35);
       }
 
       50% {
         box-shadow:
-          0 8px 25px rgba(0, 0, 0, 0.3),
-          0 0 20px rgba(241, 217, 147, 0.18);
+          0 8px 25px rgba(0, 0, 0, 0.35),
+          0 0 20px rgba(241, 217, 147, 0.3);
       }
     }
 
@@ -1604,7 +1627,7 @@
     }
 
     /* =========================================================
-       MOBILE
+       MOBILE (ENHANCED FONT SIZES FOR VISIBILITY)
     ========================================================= */
 
     @media (max-width: 700px) {
@@ -1619,7 +1642,7 @@
 
       .scene {
         padding:
-          58px 13px
+          58px 16px
           max(50px, env(safe-area-inset-bottom));
       }
 
@@ -1630,12 +1653,12 @@
       }
 
       .cover-card {
-        width: 91vw;
-        padding: 43px 21px 38px;
+        width: 92vw;
+        padding: 43px 24px 38px;
       }
 
       .cover-label {
-        font-size: 7px;
+        font-size: 9.5px;
         letter-spacing: 2.5px;
         margin-bottom: 23px;
       }
@@ -1658,20 +1681,20 @@
 
       .cover-date {
         margin-top: 18px;
-        font-size: 7px;
+        font-size: 9.5px;
         letter-spacing: 2px;
       }
 
       .open-button {
         margin-top: 28px;
-        font-size: 7.5px;
-        padding: 12px 17px;
+        font-size: 9.5px;
+        padding: 13px 20px;
       }
 
       /* PAGE 1 */
 
       .hero-kicker {
-        font-size: 7px;
+        font-size: 9.5px;
         letter-spacing: 2.5px;
         margin-bottom: 11px;
       }
@@ -1688,33 +1711,33 @@
       }
 
       .hero-subtitle {
-        font-size: 7px;
+        font-size: 9.5px;
         letter-spacing: 2.8px;
         margin-top: 3px;
         margin-bottom: 14px;
       }
 
       .date-line {
-        font-size: 6.5px;
-        letter-spacing: 1.2px;
-        padding: 7px 10px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        padding: 9px 14px;
         gap: 8px;
       }
 
       .couple-intro {
         margin-top: 19px;
-        padding: 18px 13px;
+        padding: 20px 16px;
       }
 
       .couple-label {
-        font-size: 6.5px;
+        font-size: 9px;
         letter-spacing: 2px;
         margin-bottom: 11px;
       }
 
       .names {
-        font-size: 16px;
-        letter-spacing: 1.3px;
+        font-size: 19px;
+        letter-spacing: 1.5px;
       }
 
       .names-heart {
@@ -1722,8 +1745,8 @@
       }
 
       .couple-description {
-        font-size: 11px;
-        line-height: 1.38;
+        font-size: 13.5px;
+        line-height: 1.45;
         margin-top: 10px;
       }
 
@@ -1742,8 +1765,8 @@
       }
 
       .scroll-indicator {
-        font-size: 6px;
-        letter-spacing: 1.3px;
+        font-size: 8.5px;
+        letter-spacing: 1.5px;
       }
 
       .scroll-indicator span:last-child {
@@ -1753,7 +1776,7 @@
       /* PAGE 2 */
 
       .eyebrow {
-        font-size: 6.5px;
+        font-size: 9px;
         letter-spacing: 2px;
       }
 
@@ -1764,11 +1787,11 @@
 
       .events {
         grid-template-columns: 1fr;
-        gap: 9px;
+        gap: 12px;
       }
 
       .event-card {
-        padding: 14px 12px 13px;
+        padding: 18px 15px;
       }
 
       .event-card::before {
@@ -1776,68 +1799,69 @@
       }
 
       .event-icon {
-        font-size: 21px;
-        margin-bottom: 3px;
-      }
-
-      .event-type {
-        font-size: 6px;
-        letter-spacing: 1.8px;
+        font-size: 24px;
         margin-bottom: 5px;
       }
 
+      .event-type {
+        font-size: 8.5px;
+        letter-spacing: 1.8px;
+        margin-bottom: 6px;
+      }
+
       .event-time {
-        font-size: 17px;
-        margin-bottom: 3px;
+        font-size: 20px;
+        margin-bottom: 4px;
       }
 
       .event-date {
-        font-size: 6.3px;
-        letter-spacing: 1px;
-        margin-bottom: 6px;
+        font-size: 8.5px;
+        letter-spacing: 1.2px;
+        margin-bottom: 8px;
       }
 
       .event-location {
         min-height: auto;
-        font-size: 10px;
-        line-height: 1.25;
+        font-size: 13px;
+        line-height: 1.35;
       }
 
       .map-link {
-        margin-top: 7px;
-        padding: 6px 9px;
-        font-size: 5.2px;
-        letter-spacing: 0.9px;
+        margin-top: 10px;
+        padding: 8px 12px;
+        font-size: 8px;
+        letter-spacing: 1px;
       }
 
       .qr-section {
-        margin-top: 8px;
-        padding-top: 7px;
-        gap: 8px;
+        margin-top: 12px;
+        padding-top: 10px;
+        gap: 12px;
       }
 
       .qr-text strong {
-        font-size: 5.5px;
+        font-size: 8.5px;
+        margin-bottom: 4px;
       }
 
       .qr-text span {
-        font-size: 8px;
+        font-size: 11px;
       }
 
       #mapQR {
-        width: 55px;
-        height: 55px;
+        width: 65px;
+        height: 65px;
         padding: 3px;
       }
 
       /* PAGE 3 */
 
       .blessing {
-        padding: 17px 13px;
+        padding: 20px 16px;
       }
 
       .blessing-icon {
-        font-size: 22px;
+        font-size: 24px;
       }
 
       .blessing h2 {
@@ -1846,8 +1870,8 @@
       }
 
       .blessing p {
-        font-size: 11px;
-        line-height: 1.33;
+        font-size: 13.5px;
+        line-height: 1.45;
       }
 
       .countdown-section {
@@ -1860,60 +1884,60 @@
       }
 
       .countdown-message {
-        font-size: 10px;
+        font-size: 13px;
       }
 
       .countdown-box {
-        gap: 4px;
-        margin-top: 11px;
+        gap: 6px;
+        margin-top: 12px;
       }
 
       .time-unit {
-        width: 56px;
-        padding: 8px 2px;
+        width: 64px;
+        padding: 10px 4px;
       }
 
       .time-unit strong {
-        font-size: 19px;
+        font-size: 22px;
       }
 
       .time-unit span {
-        font-size: 4.8px;
-        letter-spacing: 0.7px;
+        font-size: 7.5px;
+        letter-spacing: 1px;
       }
 
       .countdown-date {
-        margin-top: 9px;
-        font-size: 6.5px;
+        margin-top: 11px;
+        font-size: 9px;
         letter-spacing: 1.7px;
       }
 
       .final-message {
-        font-size: 9.5px;
-        margin-top: 7px;
+        font-size: 12.5px;
+        margin-top: 9px;
       }
 
       /* NAV */
 
       .page-nav {
-        right: 8px;
-        gap: 9px;
+        right: 10px;
+        gap: 12px;
       }
 
       .page-dot {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
       }
 
       /* MUSIC */
 
       .music-button {
-        left: 11px;
+        left: 12px;
         bottom:
-          max(12px, env(safe-area-inset-bottom));
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+          max(14px, env(safe-area-inset-bottom));
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
       }
     }
 
@@ -1928,7 +1952,7 @@
 
       .couple-intro {
         margin-top: 13px;
-        padding: 13px 12px;
+        padding: 15px 14px;
       }
 
       .couple-description {
@@ -1940,16 +1964,16 @@
       }
 
       .event-card {
-        padding-top: 10px;
-        padding-bottom: 9px;
+        padding-top: 12px;
+        padding-bottom: 11px;
       }
 
       .qr-section {
-        margin-top: 5px;
+        margin-top: 8px;
       }
 
       .blessing {
-        padding: 12px;
+        padding: 15px;
       }
 
       .countdown-section {
@@ -1967,27 +1991,27 @@
       }
 
       .couple-intro {
-        padding: 15px 10px;
+        padding: 15px 12px;
       }
 
       .names {
-        font-size: 14px;
+        font-size: 17px;
       }
 
       .event-time {
-        font-size: 15px;
+        font-size: 18px;
       }
 
       .event-location {
-        font-size: 9px;
+        font-size: 12px;
       }
 
       .time-unit {
-        width: 51px;
+        width: 58px;
       }
 
       .time-unit strong {
-        font-size: 17px;
+        font-size: 19px;
       }
     }
 
@@ -2922,7 +2946,7 @@
 
         },
         {
-          passive: true
+            passive: true
         }
       );
 
