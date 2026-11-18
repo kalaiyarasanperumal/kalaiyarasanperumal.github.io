@@ -1,196 +1,648 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kalaiyarasan Perumal — Software Development Engineer in Test. Web, mobile, API and backend automation.">
+<meta name="description" content="Kalaiyarasan Perumal - SDET and Automation Test Engineer with 5 years of experience in Web, Mobile, API, Backend and AI-assisted test automation.">
 <title>Kalaiyarasan Perumal | SDET Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#080b13;--panel:#101725;--panel2:#131e2e;--text:#f4f7fb;--muted:#a6b1c2;--line:rgba(255,255,255,.11);--cyan:#64e5dc;--blue:#7b9cff;--pink:#c6a0ff;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 8%,rgba(72,116,255,.17),transparent 34%),radial-gradient(ellipse at 85% 30%,rgba(64,223,211,.12),transparent 30%),radial-gradient(ellipse at 55% 95%,rgba(174,111,255,.1),transparent 32%)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px}
-a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(8,11,19,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:-.5px}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:27px;color:var(--muted);font-size:13px}.navlinks a:hover{color:var(--cyan)}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
-.hero{min-height:calc(100vh - 76px);position:relative;overflow:hidden;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:60px;padding:80px 0 95px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(100,229,220,.25);background:rgba(100,229,220,.07);padding:7px 12px;border-radius:99px;color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
-h1{font-size:clamp(43px,6.3vw,78px);line-height:1.04;letter-spacing:-.065em;margin:24px 0 20px}h1 .gradient,.gradient{background:linear-gradient(100deg,var(--cyan),#9bb5ff 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;color:var(--muted);max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:750;border:1px solid var(--line);transition:.25s;cursor:pointer}.btn.primary{background:linear-gradient(110deg,var(--cyan),#91b1ff);color:#071018;border:0}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(100,229,220,.12)}.quick{display:flex;gap:24px;flex-wrap:wrap;margin-top:35px;color:var(--muted);font-size:12px}.quick strong{color:white;font-size:17px;display:block}
-.visual{position:relative;display:grid;place-items:center;min-height:480px;perspective:1000px}.orbit{position:absolute;width:390px;height:390px;border:1px solid rgba(100,229,220,.2);border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);box-shadow:0 0 70px rgba(100,229,220,.07),inset 0 0 60px rgba(123,156,255,.06);animation:orbit 18s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(123,156,255,.22);border-radius:50%;inset:35px;transform:rotate(55deg)}.orbit:after{inset:75px;border-color:rgba(198,160,255,.2)}@keyframes orbit{to{transform:rotateX(68deg) rotateZ(342deg)}}
-.profile-card{position:relative;width:min(330px,78vw);padding:13px;border:1px solid rgba(255,255,255,.18);border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.035));box-shadow:0 35px 100px rgba(0,0,0,.5);transform-style:preserve-3d;transition:transform .18s ease}.profile-card img{display:block;width:100%;height:420px;object-fit:cover;object-position:center 25%;border-radius:17px;filter:saturate(.9)}.card-tag{position:absolute;left:-32px;bottom:35px;padding:12px 16px;border:1px solid var(--line);background:rgba(12,20,32,.9);backdrop-filter:blur(14px);border-radius:13px;font-size:12px;box-shadow:0 15px 35px #0007}.card-tag b{display:block;color:var(--cyan);font-size:14px}.float-chip{position:absolute;right:-25px;top:55px;background:#111d2b;border:1px solid var(--line);border-radius:13px;padding:11px 14px;font-size:12px;box-shadow:0 15px 35px #0007}.float-chip b{color:#a9bbff}
-section{padding:92px 0;scroll-margin-top:75px}.section-head{margin-bottom:35px}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--cyan);font-weight:800}.section-head h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.045em;line-height:1.12;margin:10px 0}.section-head p{color:var(--muted);max-width:650px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.panel{background:linear-gradient(145deg,rgba(19,30,46,.92),rgba(12,18,29,.92));border:1px solid var(--line);border-radius:18px;padding:23px;transition:.25s;transform-style:preserve-3d}.panel:hover{border-color:rgba(100,229,220,.4);transform:translateY(-5px);box-shadow:0 20px 45px #0003}.panel h3{margin:8px 0;font-size:17px}.panel p{color:var(--muted);font-size:13px;margin:0}.icon{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;background:rgba(100,229,220,.1);color:var(--cyan);font-size:18px}
-.about-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}.about-note{font-size:16px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}.stat{padding:17px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}.stat strong{font-size:26px;display:block;color:var(--cyan)}.stat span{font-size:12px;color:var(--muted)}
-.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}.skill{padding:7px 11px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.035);font-size:12px;color:#dce5f3}
-.project{display:flex;flex-direction:column;min-height:220px}.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.project small{color:var(--cyan);font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800}.project h3{font-size:19px}.project .stack{color:#c1cce0;font-size:12px;margin:8px 0 12px}.project p{margin-bottom:18px}.lock{font-size:11px;color:#b7c3d5;border:1px solid var(--line);border-radius:99px;padding:4px 8px;white-space:nowrap}
-.timeline{border-left:1px solid rgba(100,229,220,.35);margin-left:9px;padding-left:28px;display:grid;gap:22px}.role{position:relative}.role:before{content:"";position:absolute;left:-35px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(100,229,220,.6)}.role h3{margin:0;font-size:19px}.role .meta{color:var(--cyan);font-size:12px;margin:3px 0 10px}.role ul{padding-left:18px;color:var(--muted);font-size:13px;margin:0}.role li{margin:5px 0}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{padding:28px}.contact-link{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.contact-link:last-child{border:0}.contact-link span{color:var(--muted);font-size:12px;display:block}
-footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:850px){.hero{grid-template-columns:1fr;gap:10px;padding-top:65px}.visual{min-height:500px}.grid{grid-template-columns:repeat(2,1fr)}.about-layout{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;padding:18px 22px;background:#0b111c;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.navlinks.open{display:flex}.menu{display:block}}
-@media(max-width:560px){.wrap{width:min(100% - 30px,var(--max))}nav{height:66px}.navlinks{top:66px}.hero{min-height:auto;padding:58px 0 55px}.hero p{font-size:15px}.visual{min-height:440px}.orbit{width:300px;height:300px}.profile-card img{height:360px}.card-tag{left:-8px}.float-chip{right:-8px}.grid{grid-template-columns:1fr}section{padding:68px 0}.stats{grid-template-columns:repeat(2,1fr)}}
-
-/* Premium motion */
-.hero:before{content:"";position:absolute;width:520px;height:520px;right:-120px;top:5%;border-radius:50%;background:radial-gradient(circle,rgba(100,229,220,.13),rgba(123,156,255,.07) 42%,transparent 70%);filter:blur(10px);animation:pulseGlow 7s ease-in-out infinite alternate;pointer-events:none}
-.hero-copy{position:relative;z-index:2;animation:heroRise .85s cubic-bezier(.2,.7,.2,1) both}
-.visual{animation:visualRise 1s .15s cubic-bezier(.2,.7,.2,1) both}
-.profile-card{animation:cardFloat 6s ease-in-out infinite}
-.float-chip{animation:chipFloat 5s ease-in-out infinite}
-.card-tag{animation:chipFloat 6s ease-in-out infinite reverse}
-@keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes visualRise{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes pulseGlow{from{transform:scale(.92);opacity:.65}to{transform:scale(1.08);opacity:1}}
-@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@keyframes chipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.cert-card{position:relative;overflow:hidden}.cert-card:after{content:"";position:absolute;width:120px;height:120px;right:-40px;bottom:-50px;background:radial-gradient(circle,rgba(100,229,220,.15),transparent 70%)}
-.ai-card{border-color:rgba(198,160,255,.22)}.ai-label{display:inline-flex;border:1px solid rgba(198,160,255,.28);background:rgba(198,160,255,.08);color:#d8c2ff;padding:4px 9px;border-radius:30px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.analytics-panel{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.analytics-panel p{max-width:600px}
-@media(max-width:850px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.cert-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
+:root {
+  --bg:#080c15;
+  --panel:#111a29;
+  --panel2:#162337;
+  --text:#f4f7fc;
+  --muted:#a5b2c5;
+  --cyan:#65e5dc;
+  --blue:#91aaff;
+  --purple:#c7a0ff;
+  --line:rgba(255,255,255,.10);
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--text);
+ font-family:Inter,Arial,sans-serif;line-height:1.7;
+ overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-2;
+ background:
+ radial-gradient(ellipse at 15% 10%,#4969a52d,transparent 35%),
+ radial-gradient(ellipse at 90% 30%,#2bb9ad22,transparent 35%),
+ radial-gradient(ellipse at 50% 100%,#8755ba20,transparent 35%);
+}
+body:after{
+ content:"";position:fixed;inset:0;z-index:-1;
+ pointer-events:none;opacity:.13;
+ background-image:
+ linear-gradient(#ffffff08 1px,transparent 1px),
+ linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+ background-size:48px 48px;
+}
+header{
+ position:sticky;top:0;z-index:100;
+ background:#080c15e8;backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--line);
+}
+nav{
+ height:75px;display:flex;align-items:center;
+ justify-content:space-between;gap:20px;
+}
+.brand{font-size:19px;font-weight:800;letter-spacing:-.5px}
+.brand span{color:var(--cyan)}
+.navlinks{display:flex;align-items:center;gap:21px;font-size:12px;color:var(--muted)}
+.navlinks a:hover{color:var(--cyan)}
+.menu{
+ display:none;background:none;color:white;
+ border:1px solid var(--line);padding:9px 13px;border-radius:9px;
+}
+.hero{
+ min-height:90vh;display:grid;
+ grid-template-columns:1.15fr .85fr;
+ align-items:center;gap:55px;padding:80px 0;
+}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:9px;
+ padding:7px 13px;border:1px solid #65e5dc55;
+ background:#65e5dc12;border-radius:30px;
+ font-size:11px;color:var(--cyan);font-weight:800;
+ letter-spacing:1px;text-transform:uppercase;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{
+ font-size:clamp(44px,6vw,76px);line-height:1.07;
+ letter-spacing:-4px;margin:24px 0 20px;
+}
+.gradient{
+ background:linear-gradient(100deg,var(--cyan),var(--blue),var(--purple));
+ background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+.hero p{max-width:650px;color:var(--muted);font-size:16px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:12px 19px;border-radius:10px;
+ border:1px solid var(--line);font-size:13px;font-weight:700;
+ transition:.25s;cursor:pointer;
+}
+.btn:hover{transform:translateY(-3px);border-color:var(--cyan)}
+.btn.primary{background:linear-gradient(110deg,var(--cyan),var(--blue));color:#07111c;border:0}
+.quick{display:flex;flex-wrap:wrap;gap:32px;margin-top:35px;color:var(--muted);font-size:11px}
+.quick strong{display:block;color:white;font-size:22px}
+.visual{display:grid;place-items:center;position:relative;min-height:470px}
+.orbit{
+ position:absolute;width:370px;height:370px;border-radius:50%;
+ border:1px solid #65e5dc30;
+ transform:rotateX(65deg) rotateZ(-20deg);
+ box-shadow:0 0 65px #65e5dc12;
+ animation:orbit 18s linear infinite;
+}
+@keyframes orbit{to{transform:rotateX(65deg) rotateZ(340deg)}}
+.profile{
+ position:relative;width:min(330px,85%);height:425px;
+ padding:12px;border:1px solid #ffffff30;border-radius:24px;
+ background:linear-gradient(145deg,#ffffff22,#ffffff04);
+ box-shadow:0 30px 90px #0008;
+ animation:float 6s ease-in-out infinite;
+}
+.profile img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+@keyframes float{50%{transform:translateY(-10px)}}
+.float{
+ position:absolute;background:#142237;border:1px solid var(--line);
+ border-radius:12px;padding:12px 16px;font-size:12px;
+ box-shadow:0 15px 35px #0008;
+}
+.float.one{right:-15px;top:55px;color:var(--cyan)}
+.float.two{left:-15px;bottom:45px}
+section{padding:85px 0;scroll-margin-top:75px}
+.kicker{font-size:11px;font-weight:800;color:var(--cyan);letter-spacing:2px;text-transform:uppercase}
+.heading{font-size:clamp(30px,4vw,45px);letter-spacing:-2px;line-height:1.2;margin:10px 0}
+.desc{max-width:700px;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+.panel{
+ background:linear-gradient(145deg,#172438ed,#0f1725ed);
+ border:1px solid var(--line);border-radius:17px;padding:23px;
+ transition:.3s;
+}
+.panel:hover{transform:translateY(-5px);border-color:#65e5dc66;box-shadow:0 20px 45px #0004}
+.panel h3{font-size:17px;margin:10px 0}
+.panel p{font-size:13px;color:var(--muted);margin:0}
+.icon{
+ width:42px;height:42px;display:grid;place-items:center;
+ border-radius:12px;background:#65e5dc17;color:var(--cyan);font-size:19px;
+}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.stat{padding:18px;border:1px solid var(--line);border-radius:13px;background:#ffffff05}
+.stat strong{display:block;color:var(--cyan);font-size:24px}
+.stat span{color:var(--muted);font-size:11px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.skill{padding:6px 10px;border:1px solid var(--line);background:#ffffff06;border-radius:8px;font-size:11px;color:#dbe6f6}
+.project{min-height:250px;display:flex;flex-direction:column}
+.project small{color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.project h3{font-size:19px}
+.stack{font-size:11px;color:#c4d2e8;margin:7px 0 13px}
+.tag{display:inline-block;border:1px solid var(--line);padding:4px 8px;border-radius:20px;color:var(--muted);font-size:10px}
+.ai{border-color:#c7a0ff40}
+.ai small{color:var(--purple)}
+.ai .icon{color:var(--purple);background:#c7a0ff16}
+.timeline{border-left:1px solid #65e5dc55;margin-left:10px;padding-left:28px;display:grid;gap:35px}
+.role{position:relative}
+.role:before{
+ content:"";position:absolute;left:-35px;top:9px;
+ width:12px;height:12px;background:var(--cyan);border-radius:50%;
+ box-shadow:0 0 15px #65e5dc99;
+}
+.role h3{margin:0;font-size:19px}
+.meta{color:var(--cyan);font-size:12px;margin:4px 0 12px}
+.role ul{padding-left:19px;color:var(--muted);font-size:13px}
+.role li{margin:6px 0}
+.award{border-left:3px solid var(--cyan)}
+.award-year{color:var(--cyan);font-weight:800;font-size:12px}
+.ai-work{border-color:#c7a0ff35}
+.ai-work h3{color:#e0ceff}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-link{display:flex;gap:13px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}
+.contact-link span{display:block;color:var(--muted);font-size:11px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:11px}
+.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.filterbar{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.filter{
+ background:#ffffff08;color:var(--muted);border:1px solid var(--line);
+ padding:8px 14px;border-radius:25px;font-size:11px;cursor:pointer;
+}
+.filter.active,.filter:hover{background:#65e5dc20;color:var(--cyan);border-color:#65e5dc70}
+.project.hidden{display:none}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr}
+ .visual{min-height:470px}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .navlinks{display:none;position:absolute;top:75px;left:0;right:0;padding:20px;background:#0b111c;flex-direction:column;align-items:flex-start}
+ .navlinks.open{display:flex}
+ .menu{display:block}
+}
+@media(max-width:580px){
+ .wrap{width:calc(100% - 30px)}
+ .grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .contact{grid-template-columns:1fr}
+ .hero{padding:55px 0}
+ section{padding:65px 0}
+ h1{letter-spacing:-2px}
+ .profile{height:385px}
+ .orbit{width:300px;height:300px}
+ .float.one{right:0}
+ .float.two{left:0}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap"><nav>
-<a class="brand" href="#home">Kalai's Website<span>.</span></a>
-<div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#medium">Medium</a><a href="#ai-testing">AI Testing</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a><a href="resume.pdf" download="Kalaiyarasan_Perumal_Resume.pdf">Resume ↓</a></div>
-<button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
-</nav></div></header>
-<main>
-<div class="wrap hero" id="home">
-<div class="hero-copy">
-<div class="eyebrow"><i class="dot"></i> Software Development Engineer in Test</div>
-<h1>Building quality<br>into every <span class="gradient">release.</span></h1>
-<p>I'm Kalaiyarasan Perumal, an SDET with 5+ years of experience across web, mobile, API and backend test automation. I build reliable automation, improve release confidence, and help teams ship with quality.</p>
-<div class="actions"><a class="btn primary" href="#projects">Explore my work ↗</a><a class="btn" href="#contact">Let's connect</a><a class="btn" href="resume.pdf" download="Kalaiyarasan_Perumal_Resume.pdf">Download Resume ↓</a></div>
-<div class="quick"><div><strong>5+</strong>Years of experience</div><div><strong>Web · Mobile</strong>Automation focus</div><div><strong>API · Backend</strong>Quality engineering</div></div>
+
+<header>
+<div class="wrap">
+<nav>
+<a href="#home" class="brand">KALAI<span>.</span></a>
+<div class="navlinks" id="navlinks">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#ai">AI Experience</a>
+<a href="#experience">Experience</a>
+<a href="#awards">Awards</a>
+<a href="#contact">Contact</a>
+<a href="resume.pdf" download>Resume ↓</a>
 </div>
+<button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+</nav>
+</div>
+</header>
+
+<main>
+
+<div class="wrap hero" id="home">
+<div>
+<div class="eyebrow"><span class="dot"></span> SDET | Automation Test Engineer</div>
+<h1>Engineering<br>quality through<br><span class="gradient">automation.</span></h1>
+<p>
+I'm Kalaiyarasan Perumal, an Automation Test Engineer with around 5 years of experience building reliable automation solutions across web, mobile, API and backend applications. I focus on automation frameworks, cross-platform testing, CI/CD integration and AI-assisted engineering.
+</p>
+<div class="actions">
+<a class="btn primary" href="#projects">Explore My Projects ↗</a>
+<a class="btn" href="#contact">Let's Connect</a>
+<a class="btn" href="resume.pdf" download>Download Resume ↓</a>
+</div>
+<div class="quick">
+<div><strong>5+</strong>Years Experience</div>
+<div><strong>Web & Mobile</strong>Automation</div>
+<div><strong>API & Backend</strong>Quality Engineering</div>
+</div>
+</div>
+
 <div class="visual">
 <div class="orbit"></div>
-<div class="profile-card" id="tiltCard"><img src="profile.jpg" alt="Kalaiyarasan Perumal at work"><div class="card-tag">Quality engineering<b>Automation • Reliability • Scale</b></div><div class="float-chip">SDET <b>✦</b> Engineer</div></div>
+<div class="profile">
+<img src="profile.jpg" alt="Kalaiyarasan Perumal">
+</div>
+<div class="float one">✦ AI-Assisted Engineering</div>
+<div class="float two">Automation • Reliability • Quality</div>
 </div>
 </div>
 
-<section id="about"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">01 / About</div><h2>Curious by nature.<br><span class="gradient">Quality by practice.</span></h2></div>
-<div class="about-layout">
-<div class="panel reveal"><p class="about-note">I work across the testing lifecycle — from understanding requirements and designing test coverage to building automation frameworks, investigating failures, and supporting releases. My experience includes large-scale mobile and backend applications at The Walt Disney Company, along with web and API automation projects at Annular Technologies.</p><div class="stats"><div class="stat"><strong>5+</strong><span>Years in testing</span></div><div class="stat"><strong>3</strong><span>Core testing areas</span></div><div class="stat"><strong>Android</strong><span>Mobile platform</span></div><div class="stat"><strong>iOS</strong><span>Mobile platform</span></div></div></div>
-<div class="panel reveal"><div class="kicker">What I bring</div><h3>End-to-end quality ownership</h3><p>Framework development, functional and regression validation, cross-device coverage, API and service testing, CI/CD execution, failure analysis and release support.</p><div class="skills"><span class="skill">Framework Development</span><span class="skill">Mobile Automation</span><span class="skill">API Testing</span><span class="skill">Backend Testing</span><span class="skill">Release Validation</span><span class="skill">Cross-device Testing</span><span class="skill">CI/CD</span></div></div>
-</div></div></section>
-
-<section id="skills"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">02 / Technical toolkit</div><h2>Tools I use to make<br><span class="gradient">testing dependable.</span></h2></div>
+<section id="about">
+<div class="wrap">
+<div class="kicker">01 / About Me</div>
+<h2 class="heading">Turning complex testing challenges<br>into <span class="gradient">reliable automation.</span></h2>
+<p class="desc">
+I have around 5 years of experience in software quality engineering, working with enterprise applications across entertainment, news, education and business platforms.
+</p>
+<div class="stats">
+<div class="stat"><strong>5+</strong><span>Years of experience</span></div>
+<div class="stat"><strong>4</strong><span>Testing domains</span></div>
+<div class="stat"><strong>Android</strong><span>Mobile testing</span></div>
+<div class="stat"><strong>iOS</strong><span>Mobile testing</span></div>
+</div>
 <div class="grid">
-<div class="panel reveal"><div class="icon">⌘</div><h3>Programming</h3><div class="skills"><span class="skill">TypeScript</span><span class="skill">JavaScript</span><span class="skill">Java</span><span class="skill">Python</span><span class="skill">Scala</span><span class="skill">SQL</span></div></div>
-<div class="panel reveal"><div class="icon">▣</div><h3>Web & Mobile Automation</h3><div class="skills"><span class="skill">Appium</span><span class="skill">WebdriverIO</span><span class="skill">Playwright</span><span class="skill">Selenium</span><span class="skill">Cypress</span><span class="skill">XCUITest</span></div></div>
-<div class="panel reveal"><div class="icon">⌁</div><h3>API & Backend</h3><div class="skills"><span class="skill">Karate</span><span class="skill">Postman</span><span class="skill">WireMock</span><span class="skill">REST API</span><span class="skill">Microservices</span></div></div>
-<div class="panel reveal"><div class="icon">◷</div><h3>Test & Performance</h3><div class="skills"><span class="skill">TestNG</span><span class="skill">Cucumber</span><span class="skill">JMeter</span><span class="skill">TestProject</span></div></div>
-<div class="panel reveal"><div class="icon">⇧</div><h3>CI/CD & DevOps</h3><div class="skills"><span class="skill">GitLab CI/CD</span><span class="skill">Jenkins</span><span class="skill">GitHub Actions</span><span class="skill">TeamCity</span><span class="skill">Docker</span></div></div>
-<div class="panel reveal"><div class="icon">☁</div><h3>Device & Collaboration</h3><div class="skills"><span class="skill">BrowserStack</span><span class="skill">Sauce Labs</span><span class="skill">Jira</span><span class="skill">qTest</span><span class="skill">Confluence</span></div></div>
-</div></div></section>
-
-<section id="projects"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">03 / Selected work</div><h2>Projects & <span class="gradient">platforms.</span></h2><p>Selected projects from my professional experience. Some repositories are private due to client confidentiality.</p></div>
-<div class="grid">
-<div class="panel project reveal"><div class="project-top"><small>Mobile automation</small><span class="lock">Private</span></div><h3>ESPN Mobile</h3><div class="stack">TypeScript · Appium · WebdriverIO · Roxas</div><p>Mobile automation for Android and iOS, with cross-device execution, regression coverage and CI pipeline support.</p></div>
-<div class="panel project reveal"><div class="project-top"><small>Mobile automation</small><span class="lock">Private</span></div><h3>Marvel Mobile</h3><div class="stack">JavaScript · Appium · WebdriverIO</div><p>Reusable mobile automation components and cross-device validation for the Marvel application.</p></div>
-<div class="panel project reveal"><div class="project-top"><small>Backend testing</small><span class="lock">Private</span></div><h3>Disney Streaming Backend</h3><div class="stack">Karate · WireMock · Scala · Python</div><p>Backend API automation, mock services for integration testing and microservice validation.</p></div>
-<div class="panel project reveal"><div class="project-top"><small>Web automation</small><span class="lock">Private</span></div><h3>Plex Systems</h3><div class="stack">Java · Selenium · TestNG</div><p>Web and desktop automation coverage, regression validation and release testing.</p></div>
-<div class="panel project reveal"><div class="project-top"><small>Web automation</small><span class="lock">Private</span></div><h3>Savvas Learning</h3><div class="stack">JavaScript · Playwright</div><p>UI automation framework development and functional test automation.</p></div>
-<div class="panel project reveal"><div class="project-top"><small>UI & API testing</small><span class="lock">Private</span></div><h3>ACOS</h3><div class="stack">Java · Selenium · Karate · Postman</div><p>Combined UI and API automation with sprint and production release testing.</p></div>
-<div class="panel project reveal ai-card"><div class="project-top"><small>AI testing · POC concept</small><span class="ai-label">AI / GenAI</span></div><h3>AI-Assisted Test Case Generator</h3><div class="stack">LLM · Prompt engineering · Test design</div><p>Prototype workflow to convert user stories and acceptance criteria into structured test scenarios, edge cases and test data suggestions—with human review.</p></div>
-<div class="panel project reveal ai-card"><div class="project-top"><small>AI testing · POC concept</small><span class="ai-label">AI / GenAI</span></div><h3>Self-Healing UI Automation Research</h3><div class="stack">Playwright · DOM analysis · AI-assisted locator recovery</div><p>Explore resilient locator strategies that suggest alternatives when UI selectors change, with confidence scoring and explicit validation.</p></div>
-<div class="panel project reveal ai-card"><div class="project-top"><small>API quality · POC concept</small><span class="ai-label">AI / GenAI</span></div><h3>API Test & Risk Analyzer</h3><div class="stack">REST · OpenAPI · LLM-assisted analysis</div><p>Analyze API specifications to suggest boundary cases, negative tests, schema checks and risk-focused regression coverage.</p></div>
+<div class="panel">
+<div class="icon">⚙</div>
+<h3>Automation Frameworks</h3>
+<p>Developing reusable automation frameworks using Playwright, Selenium, Appium and WebDriverIO.</p>
 </div>
-<div class="panel reveal" style="margin-top:17px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><div class="kicker">Public repository</div><h3 style="margin:5px 0">JMeter Performance Testing POC</h3><p>Explore my public performance testing work on GitHub.</p></div><a class="btn" href="https://github.com/kalaiyarasanperumal/JmeterPOC_ZT" target="_blank" rel="noopener">View repository ↗</a></div>
-</div></section>
-
-
-<section id="medium"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">07 / Writing & knowledge sharing</div><h2>Ideas, experiments & <span class="gradient">testing insights.</span></h2>
-<p>Technical articles and practical notes from my automation journey — sharing tools, frameworks, and lessons learned.</p></div>
-<div class="grid">
-<a class="panel project reveal" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">
-<div class="project-top"><small>Mobile automation · Appium</small><span class="lock">Medium ↗</span></div>
-<h3>Automation with Appium & WebdriverIO (Android & iOS)</h3>
-<p>Exploring mobile automation across Android and iOS using Appium and WebdriverIO.</p>
-</a>
-<a class="panel project reveal" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">
-<div class="project-top"><small>Testing tools · Review</small><span class="lock">Medium ↗</span></div>
-<h3>Revolutionize Your Testing Process with TestProject.io</h3>
-<p>A review and walkthrough of TestProject for web and mobile test automation.</p>
-</a>
-<a class="panel project reveal" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">
-<div class="project-top"><small>API testing · Mocking</small><span class="lock">Medium ↗</span></div>
-<h3>What is WireMock & Standalone?</h3>
-<p>Introduction to WireMock, API mocking, and isolating dependencies during API tests.</p>
-</a>
-<a class="panel project reveal" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">
-<div class="project-top"><small>CI/CD · Playwright</small><span class="lock">Medium ↗</span></div>
-<h3>Test Automation with Playwright & JavaScript in Jenkins</h3>
-<p>Building automation into CI/CD pipelines with Cucumber and HTML reports.</p>
-</a>
+<div class="panel">
+<div class="icon">▣</div>
+<h3>Mobile Quality Engineering</h3>
+<p>Testing iOS and Android applications across phones, tablets and different device configurations.</p>
 </div>
-<div class="panel reveal" style="margin-top:17px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-<div><div class="kicker">My Medium profile</div><h3 style="margin:5px 0">Kalaiyarasan SDET Automation</h3><p>Follow my articles, notes and testing experiments.</p></div>
-<a class="btn primary" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">Read on Medium ↗</a>
+<div class="panel">
+<div class="icon">⌁</div>
+<h3>API & Backend Validation</h3>
+<p>Validating REST APIs, business logic, microservices and distributed backend integrations.</p>
 </div>
-</div></section>
+</div>
+</div>
+</section>
 
-
-<section id="ai-testing"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">05 / Emerging technology</div><h2>Exploring <span class="gradient">AI in quality engineering.</span></h2><p>Practical ideas for using AI responsibly in test design, automation maintenance and quality analysis. These are POC concepts—not claimed production projects.</p></div>
+<section id="skills">
+<div class="wrap">
+<div class="kicker">02 / Technical Expertise</div>
+<h2 class="heading">My technical <span class="gradient">toolkit.</span></h2>
+<p class="desc">Technologies and tools used across professional projects and automation workflows.</p>
 <div class="grid">
-<div class="panel project reveal ai-card"><span class="ai-label">Test design</span><h3>AI-generated test scenarios</h3><p>Use requirements and acceptance criteria to draft test scenarios, boundary cases and risk-based coverage. Validate outputs before adding them to the suite.</p></div>
-<div class="panel project reveal ai-card"><span class="ai-label">Automation reliability</span><h3>AI-assisted failure triage</h3><p>Summarize logs, screenshots and stack traces to help classify flaky tests, environment issues and likely product defects.</p></div>
-<div class="panel project reveal ai-card"><span class="ai-label">API testing</span><h3>Intelligent API test suggestions</h3><p>Explore specification-driven suggestions for schema, negative, security-minded and edge-case tests.</p></div>
-</div></div></section>
-<section id="certifications"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">06 / Professional development</div><h2>Certifications & <span class="gradient">continuous learning.</span></h2><p>Replace these cards with your verified certification names, issuers and credential links. No certification is claimed until you add the exact details.</p></div>
-<div class="cert-grid">
-<div class="panel cert-card reveal"><div class="icon">🏅</div><h3>Automation & QA</h3><p>Add your certification title, issuing organization and credential URL.</p></div>
-<div class="panel cert-card reveal"><div class="icon">☁</div><h3>Cloud / DevOps</h3><p>Add relevant cloud, CI/CD or DevOps credentials if applicable.</p></div>
-<div class="panel cert-card reveal"><div class="icon">🤖</div><h3>AI & Emerging Tech</h3><p>Add AI, GenAI or prompt-engineering certifications and courses.</p></div>
-</div></div></section>
-<section id="linkedin"><div class="wrap"><div class="panel analytics-panel reveal">
-<div><div class="kicker">Professional network</div><h2 style="margin:7px 0">Let's connect on <span class="gradient">LinkedIn.</span></h2><p>Connect for SDET opportunities, quality engineering discussions, automation ideas and professional collaborations.</p></div>
-<a class="btn primary" href="https://www.linkedin.com/in/kalaiyarasanperumal" target="_blank" rel="noopener">View LinkedIn profile ↗</a>
-</div></div></section>
+<div class="panel"><div class="icon">⌘</div><h3>Programming</h3><div class="skills">
+<span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">Python</span><span class="skill">Scala</span><span class="skill">Swift</span><span class="skill">SQL</span>
+</div></div>
+<div class="panel"><div class="icon">▣</div><h3>Web & Mobile Automation</h3><div class="skills">
+<span class="skill">Playwright</span><span class="skill">Selenium</span><span class="skill">Appium</span><span class="skill">WebDriverIO</span><span class="skill">XCUITest</span><span class="skill">TestProject</span><span class="skill">Roxas</span>
+</div></div>
+<div class="panel"><div class="icon">⌁</div><h3>API & Backend</h3><div class="skills">
+<span class="skill">Karate</span><span class="skill">Postman</span><span class="skill">WireMock</span><span class="skill">Swagger</span><span class="skill">REST API</span><span class="skill">Microservices</span>
+</div></div>
+<div class="panel"><div class="icon">◷</div><h3>Testing Frameworks</h3><div class="skills">
+<span class="skill">TestNG</span><span class="skill">Cucumber BDD</span><span class="skill">Functional</span><span class="skill">Regression</span><span class="skill">Smoke</span><span class="skill">Cross-platform</span>
+</div></div>
+<div class="panel"><div class="icon">⇧</div><h3>CI/CD & DevOps</h3><div class="skills">
+<span class="skill">GitLab CI/CD</span><span class="skill">Jenkins</span><span class="skill">GitHub Actions</span><span class="skill">TeamCity</span><span class="skill">Git</span>
+</div></div>
+<div class="panel"><div class="icon">🤖</div><h3>AI-Assisted Development</h3><div class="skills">
+<span class="skill">Claude.ai</span><span class="skill">Amazon Q</span><span class="skill">GitHub Copilot</span><span class="skill">Cursor</span>
+</div></div>
+</div>
+</div>
+</section>
 
-<section id="experience"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">06 / Experience</div><h2>Where I've <span class="gradient">made an impact.</span></h2></div>
-<div class="panel reveal"><div class="timeline">
-<div class="role"><h3>Software Development Engineer in Test – I</h3><div class="meta">The Walt Disney Company · ZuciTech Software Solutions · June 2023 – Present</div><ul><li>Develop and maintain mobile automation frameworks for ESPN and Marvel applications using Appium, WebdriverIO and TypeScript/JavaScript.</li><li>Execute and support automation across Android, iPhone, iPad and tablet devices.</li><li>Maintain CI/CD pipeline executions, investigate flaky tests and improve automation stability.</li><li>Build backend API automation and mock services for Disney Streaming Backend validation.</li><li>Support regression testing, sprint activities and production releases.</li></ul></div>
-<div class="role"><h3>Software Development Engineer in Test</h3><div class="meta">Annular Technologies · January 2022 – May 2023</div><ul><li>Built web automation using Selenium and Playwright for Plex Systems and Savvas Learning.</li><li>Developed API automation using Karate and Postman, and supported UI/API testing for ACOS.</li><li>Managed test execution and defect tracking using Jira and qTest.</li><li>Supported sprint and production release testing.</li></ul></div>
-</div></div></div></section>
+<section id="projects">
+<div class="wrap">
+<div class="kicker">03 / Professional Projects</div>
+<h2 class="heading">Projects & <span class="gradient">platforms.</span></h2>
+<p class="desc">Enterprise testing experience across Disney, news, sports, streaming, education and business applications. Some project details and repositories are confidential.</p>
 
-<section id="contact"><div class="wrap">
-<div class="section-head reveal"><div class="kicker">09 / Contact</div><h2>Let's build better quality<br><span class="gradient">into what comes next.</span></h2><p>Open to SDET, QA Automation, freelance, contract and collaboration opportunities.</p></div>
+<div class="filterbar">
+<button class="filter active" data-filter="all">All Projects</button>
+<button class="filter" data-filter="mobile">Mobile</button>
+<button class="filter" data-filter="backend">Backend / API</button>
+<button class="filter" data-filter="web">Web</button>
+</div>
+
+<div class="grid" id="projectGrid">
+
+<div class="panel project reveal" data-category="mobile">
+<small>iOS Mobile Automation</small>
+<h3>ABC News Mobile Application</h3>
+<div class="stack">XCUITest · Swift · Xcode · GitLab CI/CD</div>
+<p>Automated regression and new-feature test cases for the ABC News iOS application. Integrated test execution into GitLab pipelines and contributed to the automation reporting portal.</p>
+</div>
+
+<div class="panel project reveal" data-category="mobile">
+<small>Mobile Automation</small>
+<h3>ESPN Mobile App</h3>
+<div class="stack">TypeScript · Appium · WebDriverIO · Roxas</div>
+<p>Developed and maintained cross-platform automation for Android phones, tablets, iPhones and iPads. Supported daily CI execution, regression coverage, locator maintenance and release validation.</p>
+</div>
+
+<div class="panel project reveal" data-category="mobile">
+<small>Mobile Automation</small>
+<h3>Marvel Unlimited</h3>
+<div class="stack">JavaScript · Appium · WebDriverIO · Roxas</div>
+<p>Built reusable mobile automation scripts for Android and iOS. Investigated flaky tests, updated locators, validated application stability and supported production releases.</p>
+</div>
+
+<div class="panel project reveal" data-category="backend">
+<small>Backend / API Automation</small>
+<h3>Disney Streaming Backend (DSS)</h3>
+<div class="stack">Karate · Java · BDD · WireMock · Scala · Python</div>
+<p>Created API automation scripts for backend microservices, developed WireMock services and validated requests, responses, business logic and distributed data flows.</p>
+</div>
+
+<div class="panel project reveal" data-category="web">
+<small>Web Automation</small>
+<h3>Plex Systems</h3>
+<div class="stack">Java · Selenium · TestNG · Cucumber · Jenkins</div>
+<p>Developed web automation scripts and executed functional, regression and smoke testing. Maintained test cases and execution reports using qTest Manager.</p>
+</div>
+
+<div class="panel project reveal" data-category="web">
+<small>Web Automation</small>
+<h3>Saavas Learning</h3>
+<div class="stack">Playwright · JavaScript · Cucumber · Jenkins</div>
+<p>Built Playwright automation scripts from user stories and acceptance criteria. Maintained automated scenarios and collaborated with development teams to resolve defects.</p>
+</div>
+
+<div class="panel project reveal" data-category="web">
+<small>Web & API Automation</small>
+<h3>ACOS</h3>
+<div class="stack">Java · Selenium · Karate · Postman · SQL · Swagger</div>
+<p>Implemented UI and API automation, validated application data with SQL queries and worked with developers to investigate and report application defects.</p>
+</div>
+
+</div>
+
+<div class="panel" style="margin-top:20px">
+<div class="kicker">Public Repository</div>
+<h3>JMeter Performance Testing POC</h3>
+<p>Explore my performance testing experiments and automation work on GitHub.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/kalaiyarasanperumal/JmeterPOC_ZT" target="_blank" rel="noopener">View GitHub Repository ↗</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="ai">
+<div class="wrap">
+<div class="kicker">04 / AI in Quality Engineering</div>
+<h2 class="heading">Combining automation with<br><span class="gradient">AI-assisted development.</span></h2>
+<p class="desc">
+I use AI-assisted development tools to support coding, understand complex automation workflows, improve debugging and accelerate test engineering tasks. AI-generated suggestions are reviewed and validated before being used.
+</p>
+
+<div class="grid">
+<div class="panel ai-work reveal">
+<div class="icon">✦</div>
+<h3>Claude.ai</h3>
+<p>Use AI-assisted reasoning to understand complex code, explore automation approaches, generate code suggestions, review test logic and troubleshoot failures.</p>
+<div class="skills"><span class="skill">Code Assistance</span><span class="skill">Debugging</span><span class="skill">Test Design</span></div>
+</div>
+
+<div class="panel ai-work reveal">
+<div class="icon">⌘</div>
+<h3>Amazon Q</h3>
+<p>Use AI coding assistance to explore unfamiliar codebases, understand existing implementations, suggest code improvements and accelerate automation development.</p>
+<div class="skills"><span class="skill">Code Navigation</span><span class="skill">Code Suggestions</span><span class="skill">Development Support</span></div>
+</div>
+
+<div class="panel ai-work reveal">
+<div class="icon">⚡</div>
+<h3>GitHub Copilot</h3>
+<p>Assist with writing repetitive automation code, generating test method suggestions, completing functions and improving development productivity.</p>
+<div class="skills"><span class="skill">Code Completion</span><span class="skill">Test Scripts</span><span class="skill">Productivity</span></div>
+</div>
+
+<div class="panel ai-work reveal">
+<div class="icon">◈</div>
+<h3>Cursor</h3>
+<p>Use AI-assisted IDE capabilities to understand code, navigate related files, refactor implementations and explore automation framework improvements.</p>
+<div class="skills"><span class="skill">Code Understanding</span><span class="skill">Refactoring</span><span class="skill">IDE Assistance</span></div>
+</div>
+
+<div class="panel ai-work reveal">
+<div class="icon">◎</div>
+<h3>AI-Assisted Test Design</h3>
+<p>Explore AI-assisted generation of positive, negative, boundary and edge-case scenarios from requirements and acceptance criteria, with manual review.</p>
+<div class="skills"><span class="skill">Test Scenarios</span><span class="skill">Edge Cases</span><span class="skill">Test Coverage</span></div>
+</div>
+
+<div class="panel ai-work reveal">
+<div class="icon">⌁</div>
+<h3>AI-Assisted Debugging</h3>
+<p>Use AI assistance to interpret stack traces, review automation code, understand failure patterns and suggest possible improvements to test stability.</p>
+<div class="skills"><span class="skill">Log Analysis</span><span class="skill">Failure Investigation</span><span class="skill">Code Review</span></div>
+</div>
+</div>
+
+<div class="panel" style="margin-top:20px">
+<div class="kicker">My approach to AI</div>
+<h3>AI accelerates engineering. Validation ensures quality.</h3>
+<p>AI-generated code, test scenarios and debugging suggestions must be reviewed, executed and validated. I do not treat AI-generated output as a replacement for engineering judgment or actual test evidence.</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+<div class="kicker">05 / Career Journey</div>
+<h2 class="heading">Professional <span class="gradient">experience.</span></h2>
+
+<div class="panel">
+<div class="timeline">
+
+<div class="role">
+<h3>Automation Test Engineer</h3>
+<div class="meta">The Walt Disney Company | ZuciTech Software Solutions Pvt. Ltd. · June 2023 – Present · Bengaluru</div>
+<ul>
+<li>Working across ABC News, ESPN Mobile, Marvel Unlimited and Disney Streaming Backend projects.</li>
+<li>Developing iOS automation using XCUITest, Swift and Xcode.</li>
+<li>Building Android and iOS automation using Appium, WebDriverIO, TypeScript and JavaScript.</li>
+<li>Maintaining reusable automation components using the Roxas framework.</li>
+<li>Creating Karate-based API automation and WireMock mock services for backend integrations.</li>
+<li>Integrating automation into GitLab CI/CD and GitHub Actions workflows.</li>
+<li>Investigating flaky automation failures, updating locators and supporting release validation.</li>
+<li>Using AI-assisted development tools to support coding, debugging and test engineering workflows.</li>
+</ul>
+</div>
+
+<div class="role">
+<h3>SDET</h3>
+<div class="meta">Annular Technologies · January 2022 – May 2023 · Chennai</div>
+<ul>
+<li>Worked on Plex Systems, Saavas Learning and ACOS projects.</li>
+<li>Developed Selenium automation using Java, TestNG and Cucumber BDD.</li>
+<li>Built Playwright automation scripts using JavaScript and Cucumber BDD.</li>
+<li>Created API automation using Karate and Postman.</li>
+<li>Validated application data using SQL and Swagger API documentation.</li>
+<li>Maintained test plans, test cases and execution results using qTest Manager.</li>
+<li>Tracked defects and collaborated with development teams to resolve issues.</li>
+<li>Supported functional, regression, smoke and production release testing.</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="awards">
+<div class="wrap">
+<div class="kicker">06 / Recognition</div>
+<h2 class="heading">Awards & <span class="gradient">achievements.</span></h2>
+<p class="desc">Recognition received for dedication, consistent performance and contributions to the team.</p>
+
+<div class="grid">
+<div class="panel award reveal">
+<div class="icon">🏆</div>
+<div class="award-year">2023 · ANNULAR TECHNOLOGIES</div>
+<h3>Hardworking Bee of the Year</h3>
+<p>Recognized for dedication, hard work, consistent performance and contributions to the organization and team.</p>
+</div>
+
+<div class="panel award reveal">
+<div class="icon">🌟</div>
+<div class="award-year">NOVEMBER 2024 · ZUCITECH</div>
+<h3>Employee of the Month</h3>
+<p>Recognized for consistent performance, commitment to responsibilities and valuable contributions to the team.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education">
+<div class="wrap">
+<div class="kicker">07 / Education & Learning</div>
+<h2 class="heading">Education & <span class="gradient">training.</span></h2>
+<div class="grid">
+<div class="panel">
+<div class="icon">🎓</div>
+<h3>Bachelor of Engineering</h3>
+<p>Electrical and Electronics Engineering</p>
+<div class="stack">Anand Institute of Higher Technology · Chennai</div>
+</div>
+<div class="panel">
+<div class="icon">📘</div>
+<h3>Software Testing Course</h3>
+<p>Software Testing Training</p>
+<div class="stack">QSpiders · Velachery</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="writing">
+<div class="wrap">
+<div class="kicker">08 / Knowledge Sharing</div>
+<h2 class="heading">Testing insights & <span class="gradient">technical writing.</span></h2>
+<p class="desc">Explore my articles and technical notes about automation testing, mobile testing, API testing and testing tools.</p>
+<div class="panel">
+<div class="icon">✍</div>
+<h3>Kalaiyarasan SDET Automation</h3>
+<p>Articles and learning notes covering Appium, WebDriverIO, TestProject, WireMock, Playwright and CI/CD automation.</p>
+<div class="actions">
+<a class="btn primary" href="https://medium.com/@kalaiyarasan_sdet_automation" target="_blank" rel="noopener">Explore My Medium ↗</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div class="kicker">09 / Get In Touch</div>
+<h2 class="heading">Let's build better quality<br><span class="gradient">into what comes next.</span></h2>
+<p class="desc">Open to SDET, QA Automation, Software Test Engineer and Quality Engineering opportunities.</p>
+
 <div class="contact">
-<div class="panel contact-card reveal"><h3>Get in touch</h3>
-<a class="contact-link" href="mailto:kalaiyarasansdet6@gmail.com"><div class="icon">✉</div><div>Email<span>kalaiyarasan61097@gmail.com</span></div></a>
-<a class="contact-link" href="https://www.linkedin.com/in/kalaiyarasanperumal" target="_blank" rel="noopener"><div class="icon">in</div><div>LinkedIn<span>linkedin.com/in/kalaiyarasanperumal</span></div></a>
-<a class="contact-link" href="https://github.com/kalaiyarasanperumal" target="_blank" rel="noopener"><div class="icon">⌘</div><div>GitHub<span>github.com/kalaiyarasanperumal</span></div></a>
+<div class="panel">
+<h3>Contact Information</h3>
+<a class="contact-link" href="tel:+919042650727">☎ <div>Phone<span>+91 9042650727</span></div></a>
+<a class="contact-link" href="mailto:kalaiyarasan61097@gmail.com">✉ <div>Email<span>kalaiyarasan61097@gmail.com</span></div></a>
+<a class="contact-link" href="https://www.linkedin.com/in/kalaiyarasanperumal/" target="_blank" rel="noopener">in <div>LinkedIn<span>linkedin.com/in/kalaiyarasanperumal</span></div></a>
+<a class="contact-link" href="https://github.com/kalaiyarasanperumal/" target="_blank" rel="noopener">⌘ <div>GitHub<span>github.com/kalaiyarasanperumal</span></div></a>
 </div>
-<div class="panel contact-card reveal"><div class="kicker">A quick note</div><h3>Have a project or opportunity?</h3><p style="color:var(--muted);font-size:14px">I'd be happy to discuss test automation, mobile quality engineering, API testing, or ways to improve your release confidence.</p><a class="btn primary" style="margin-top:15px" href="mailto:kalaiyarasan61097@gmail.com?subject=Let's%20connect">Send me an email ↗</a><p style="font-size:11px;color:var(--muted);margin-top:25px">Based in Bengaluru, India</p></div>
-</div></div></section>
-</main>
-<footer><div class="wrap foot"><span>© <span id="year"></span> Kalaiyarasan Perumal. Built with care.</span><a href="#home">Back to top ↑</a><a href="https://YOUR-GOATCOUNTER-SITE.goatcounter.com" target="_blank" rel="noopener">Visitor analytics ↗</a></div></footer>
-<script>
-const menu=document.getElementById('menu'), links=document.getElementById('navlinks');
-menu.addEventListener('click',()=>links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-document.getElementById('year').textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const card=document.getElementById('tiltCard');
-if(window.matchMedia('(pointer:fine)').matches){card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg) translateZ(8px)`});card.addEventListener('mouseleave',()=>card.style.transform='rotateY(0) rotateX(0)')}
-</script>
 
-<!-- Setup: create a GoatCounter site, replace YOUR-GOATCOUNTER-SITE in both tracking and footer URLs. The dashboard reports unique visitors/page views; uniqueness is browser-based and cannot guarantee one count per human. -->
-<!-- Privacy-friendly visitor analytics. Replace YOUR-GOATCOUNTER-SITE with your GoatCounter site code after setup. -->
-<script data-goatcounter="https://YOUR-GOATCOUNTER-SITE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<div class="panel">
+<div class="kicker">Available for opportunities</div>
+<h3>Have an opportunity or project?</h3>
+<p>I'd love to discuss automation engineering, mobile testing, API quality, AI-assisted development and software quality improvements.</p>
+<div class="actions">
+<a class="btn primary" href="mailto:kalaiyarasan61097@gmail.com?subject=SDET%20Opportunity">Let's Connect ↗</a>
+</div>
+<p style="margin-top:25px">📍 Bengaluru, India</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap footer">
+<span>© <span id="year"></span> Kalaiyarasan Perumal. All rights reserved.</span>
+<a href="#home">Back to top ↑</a>
+<a href="https://github.com/kalaiyarasanperumal" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+</footer>
+
+<script>
+const menu = document.getElementById('menu');
+const links = document.getElementById('navlinks');
+
+menu.addEventListener('click', () => {
+ links.classList.toggle('open');
+});
+
+links.querySelectorAll('a').forEach(link => {
+ link.addEventListener('click', () => links.classList.remove('open'));
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const filters = document.querySelectorAll('.filter');
+const projects = document.querySelectorAll('.project[data-category]');
+
+filters.forEach(button => {
+ button.addEventListener('click', () => {
+  filters.forEach(f => f.classList.remove('active'));
+  button.classList.add('active');
+
+  const category = button.dataset.filter;
+
+  projects.forEach(project => {
+   const show = category === 'all' || project.dataset.category === category;
+   project.classList.toggle('hidden', !show);
+  });
+ });
+});
+</script>
 
 </body>
 </html>
